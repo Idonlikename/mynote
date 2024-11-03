@@ -1,0 +1,1972 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.34">
+    
+    
+      
+        <title>第三章内存管理 - My Note</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.35f28582.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="My Note" class="md-header__button md-logo" aria-label="My Note" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            My Note
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              第三章内存管理
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="My Note" class="md-nav__button md-logo" aria-label="My Note" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    My Note
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Code
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Code
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../code/Python%E5%9F%BA%E7%A1%80/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Computer
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Computer
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    OS
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            OS
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    进程管理
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      内存的基础知识
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="内存的基础知识">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      计算机内部存储层次
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="计算机内部存储层次">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      芯片内
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      芯片外
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      主存
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      外存
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      思维导图
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      什么是内存？有何作用？
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="什么是内存？有何作用？">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      （1）存储单元
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="（1）存储单元">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      存储器
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      （2）几个常用数量单位&amp;内存地址
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      进程运行的基本原理
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="进程运行的基本原理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      指令的工作原理
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vs" class="md-nav__link">
+    <span class="md-ellipsis">
+      逻辑地址（相对地址）vs物理地址（绝对地址）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      从写程序到程序运行—编译、链接、装入
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      装入模块装入内存
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      装入的三种方式
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="装入的三种方式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      ①绝对装入
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      ②静态重定位
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      ③动态重定位
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      链接的三种方式
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="链接的三种方式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      ① 静态链接
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      ②装入时动态链接
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      ③运行时动态链接
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      内存管理管些什么？
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="内存管理管些什么？">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      思维导图
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.内存空间的分配与回收
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.内存空间的扩展（实现虚拟性）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.地址转换（实现进程的运行）
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.地址转换（实现进程的运行）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      三种装入方式
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.内存保护
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.内存保护">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      内存保护的两种方式
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      覆盖技术与交换技术
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="覆盖技术与交换技术">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    <span class="md-ellipsis">
+      思维导图
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    <span class="md-ellipsis">
+      覆盖技术
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    <span class="md-ellipsis">
+      交换技术
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="交换技术">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    <span class="md-ellipsis">
+      第一个问题：进程放在外存的何种位置？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_26" class="md-nav__link">
+    <span class="md-ellipsis">
+      第二个问题：应该什么时候交换？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_27" class="md-nav__link">
+    <span class="md-ellipsis">
+      第三个问题：应该换出哪些进程？
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_28" class="md-nav__link">
+    <span class="md-ellipsis">
+      内存的分配与回收
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="内存的分配与回收">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_29" class="md-nav__link">
+    <span class="md-ellipsis">
+      思维导图
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_30" class="md-nav__link">
+    <span class="md-ellipsis">
+      连续分配管理方式
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="连续分配管理方式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.单一连续分配
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.固定分区分配
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.固定分区分配">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      （1）分区说明表
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.动态分区分配（可变分区分配）
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.动态分区分配（可变分区分配）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_31" class="md-nav__link">
+    <span class="md-ellipsis">
+      内存分区分配问题的重要性：
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="内存分区分配问题的重要性：">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_32" class="md-nav__link">
+    <span class="md-ellipsis">
+      第一个问题：系统要用怎样的数据结构记录内存的使用情况呢？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_33" class="md-nav__link">
+    <span class="md-ellipsis">
+      第二个问题：当多个空闲分区都能满足要求时，应该选择哪个分区进行分配？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_34" class="md-nav__link">
+    <span class="md-ellipsis">
+      第三个问题：如何进行分区的分配和回收操作？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_35" class="md-nav__link">
+    <span class="md-ellipsis">
+      如何分配？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_36" class="md-nav__link">
+    <span class="md-ellipsis">
+      如何回收？
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.内部碎片与外部碎片
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_37" class="md-nav__link">
+    <span class="md-ellipsis">
+      动态内存分配四中算法
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="动态内存分配四中算法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_38" class="md-nav__link">
+    <span class="md-ellipsis">
+      思维导图
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.首次适应算法
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.最佳适应算法
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.最坏（大）适应算法
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.邻近适应算法
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.四种算法归纳比较
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-" class="md-nav__link">
+    <span class="md-ellipsis">
+      分页存储-非连续分配管理
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="分页存储-非连续分配管理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_39" class="md-nav__link">
+    <span class="md-ellipsis">
+      分页存储
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="分页存储">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.为什么学习分页存储？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.基本分页存储管理的思想
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.分页存储管理的重要概念
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.如何实现地址的转换
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.如何实现地址的转换">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_40" class="md-nav__link">
+    <span class="md-ellipsis">
+      如何确定一个逻辑地址对应的页号，页内偏移量？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      为什么页面大小一般设为2的整数次幂？
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_41" class="md-nav__link">
+    <span class="md-ellipsis">
+      分页存储的逻辑结构
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_42" class="md-nav__link">
+    <span class="md-ellipsis">
+      页表
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="页表">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_43" class="md-nav__link">
+    <span class="md-ellipsis">
+      页面和页表的关系：
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_44" class="md-nav__link">
+    <span class="md-ellipsis">
+      分页存储管理的基本地址变换结构
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="分页存储管理的基本地址变换结构">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.页表寄存器
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.页表寄存器">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_45" class="md-nav__link">
+    <span class="md-ellipsis">
+      地址变换过程
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.对页表项大小的进一步讨论
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_46" class="md-nav__link">
+    <span class="md-ellipsis">
+      块表地址变换结构
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="块表地址变换结构">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.局部性原理引入快表机制
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2tlb" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.快表（TLB）
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.快表（TLB）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_47" class="md-nav__link">
+    <span class="md-ellipsis">
+      一个例图了解基于快表的地址变换结构
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.基本地址变换与快表地址变换的比较
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_48" class="md-nav__link">
+    <span class="md-ellipsis">
+      二级页表原理以及地址结构
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="二级页表原理以及地址结构">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.为什么引入二级页表？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.二级页表的原理和地址结构
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.二级页表的原理和地址结构">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_49" class="md-nav__link">
+    <span class="md-ellipsis">
+      对页表再次分组
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_50" class="md-nav__link">
+    <span class="md-ellipsis">
+      二级页表的地址结构及对应关系
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.如何实现二级页表的地址变换？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.几个小细节
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_51" class="md-nav__link">
+    <span class="md-ellipsis">
+      基本分段存储管理（段表、地址变换、信息共享）
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="基本分段存储管理（段表、地址变换、信息共享）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.什么是分段？
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.什么是分段？">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_52" class="md-nav__link">
+    <span class="md-ellipsis">
+      分段的逻辑地址结构
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.段表
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.地址变换
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.分段、分页管理的对比
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.分段、分页管理的对比">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_53" class="md-nav__link">
+    <span class="md-ellipsis">
+      分段实现信息共享共享
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_54" class="md-nav__link">
+    <span class="md-ellipsis">
+      为什么分页不方便实现信息共享和保护？
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="_1">第三章内存管理</h1>
+<h2 id="_2">内存的基础知识</h2>
+<h3 id="_3">计算机内部存储层次</h3>
+<p>计算机系统的存储器被组织成一个6个层次的金字塔形的层次结构， 如下图：</p>
+<h4 id="_4">芯片内</h4>
+<p>S0层为CPU内部<strong>寄存器</strong>——<u>速度最快但是存储量最小</u>，只有KB级别
+S1层为芯片内部的<strong>高速缓存(cache)</strong>内存——L1、L2缓存，速度的分别。</p>
+<h4 id="_5">芯片外</h4>
+<p>S2层为芯片外的<strong>高速缓存</strong>(SRAM、 DRAM、 DDRAM)——存储量更大的缓存。</p>
+<h4 id="_6">主存</h4>
+<p>S3层为主存储器(Flash、PROM、EPROM、 EEPROM)——我们常说的<u><strong>内存就是主存储器，也就是内存条</strong></u></p>
+<h4 id="_7">外存</h4>
+<p>S4层为外部存储器(磁盘、光盘、CF、SD卡)——存储量大可以上至TB但是相应的读取速度慢。
+S5层为远程二级存储(分布式文件系统、Web服务器)</p>
+<p><img alt="img" src="https://img-blog.csdnimg.cn/20181111105740265.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaWJvMTIzMDEyMw==,size_16,color_FFFFFF,t_70" /></p>
+<p>在这种存储器分层结构中，<strong><u>上面一层的存储器作为下一层存储器的高速缓存</u></strong>。</p>
+<p>理解这里的高速缓存：</p>
+<p>下一层可以存储更多更大的数据但慢，而上一层的存储器速度更快但小</p>
+<p>所以可以把下一层中被用到的内存传输给上一层处理。</p>
+<p>所以说上一层是下一层的</p>
+<p>例如：</p>
+<p><strong>CPU寄存器</strong>就是<strong>cache</strong>的高速缓存，<u>寄存器保存来自cache的字</u>; </p>
+<p><strong>cache</strong>又是<strong>内存层</strong>的高速缓存，<u>缓存将从内存中提取数据送给CPU进行处理，并将CPU的处理结果返回到内存中</u>;</p>
+<p><strong>内存</strong>又是<strong>主存储器</strong>的高速缓存，<u>内将经常用到的数据从Flash等主存储器中提取出来，放到内存中，从而加快了CPU的运行效率</u>。</p>
+<p>嵌入式系统的主存储器容量是有限的，磁盘、光盘或CF、SD卡等外部存储器用来保存大信息量的数据。在某些带有分布式文件系统的嵌入式网络系统中，外部存储器就作为其他系统中被存储数据的高速缓存。</p>
+<p>另一个图：</p>
+<p><img alt="img" src="https://img-blog.csdnimg.cn/20190814201531864.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQxNjMxMDUx,size_16,color_FFFFFF,t_70" /></p>
+<p>如上图所示，<strong><u>越往上，存储介质的访问速度越快，价格也越高</u></strong>。其中<strong>寄存器</strong>、<strong>高速缓存</strong>、<strong>主存储器</strong>和<strong>磁盘缓存</strong>均<u>属于存储管理的管辖范畴，<strong>掉电后它们存储的信息不再存在</strong>。</u></p>
+<p><strong>固定磁盘</strong>和<strong>可移动存储介质</strong><u>属于设备管理的管辖范畴</u>，它们存储的信息将被长期保存。而<u>磁盘缓存本身并不是一种实际存在的存储介质，它依托于固定磁盘，提供对主存储空间的扩充。</u></p>
+<p><strong><u>可执行的程序必须被保存在计算机的主存储器（内存）中</u></strong>，与外围设备交换的信息一般也依托于主存储器地质空间。由于处理器在执行指令时主存访问时间远大于其他处理时间，寄存器会告诉缓存被引入来加快指令的执行。</p>
+<p><strong>寄存器</strong>是访问速度最快但最昂贵的存储器，它的容量小，一般以字（word）为单位。一个计算机系统可能包括几十个甚至上百个寄存器，用于加速存储访问速度，如：寄存器操作数的使用，或用地质寄存器加快转换速度。</p>
+<p><strong>高速缓存</strong>的容量稍大，其访问速度快于主存储器，利用它存放主存中一些经常访问的信息可以大幅度提高程序执行速度。</p>
+<p>由于程序在执行和处理数据时存在着<u><strong>顺序性</strong>、<strong>局部性</strong>、<strong>循环性</strong>和<strong>排他性</strong></u>，因此在程序执行时，<u>有时并不需要把程序和数据全部调入内存，而只需先调入一部分，待需要时逐步调入</u>。</p>
+<p>这样，计算机系统为了<u>容纳更多的算题树，或是为了处理更大批量的数据，就可以在磁盘上建立<strong>磁盘缓存</strong></u>以<u><strong>扩充主存储器的存储空间</strong></u>。</p>
+<p>算题的程序和处理的数据可以装入<strong>磁盘缓存</strong>，操作系统自动实现主存储器和磁盘缓存之间数据的调进调出，从而向用户提供了比实际存储容量大的存储空间。</p>
+<p>地址转换与存储保护</p>
+<p><u><strong>用户编写程序时，是从0地址开始编排用户地址空间的，我们把用户编程时用的地址成为逻辑地址（相对地址）</strong></u>。</p>
+<p><strong>而当程序运行时</strong>，它将被<u>装入主存储地址空间的某些部分，此时程序和数据的实际地址一般不可能同原来的逻辑地质一致</u>，<strong><u>我们把程序在内存中的实际地址称为物理地址（绝对地址）</u></strong>。相应构成了用户编程使用的逻辑地址空间和用户实际运行的物理地址空间。</p>
+<p>为了保证程序的正确运行，<u>必须<strong>把程序和数据的逻辑地址转换为物理地址</strong>，这一工作称为<strong>地址转换</strong>或<strong>重定位</strong></u>。</p>
+<p>地址转换有两种方式：</p>
+<p>一种方式是在作业<strong>装入时</strong>由作业<strong>装入程序</strong>实现地址转换，称为<strong>静态重定位</strong>；</p>
+<p>另一种是在<strong>程序执行时</strong>实现地址转换，称为<strong>动态重定位</strong>。</p>
+<p>动态重定位必须借助于硬件的地址转换机构（<strong>定位寄存器</strong>）的实现。</p>
+<h3 id="_8">思维导图</h3>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200421170005542.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkxNDYwNA==,size_16,color_FFFFFF,t_70" /></p>
+<h3 id="_9">什么是内存？有何作用？</h3>
+<p>内存可存放数据。</p>
+<p>程序执行前，<u>需要将程序放入内存中才能被CPU所处理</u>----缓和CPU和硬盘之间速度的矛盾。</p>
+<p>解释：硬盘的内存存储量大但是读取速度慢，CPU的计算速度很快，很容易导致<u>硬盘的读取速度拖累CPU的处理速度</u>。所以需要内存用来帮助我们存取数据进行处理。（找到一个存储和速度都适宜的介质）</p>
+<p>以手机理解内存与外存：8+256  8G是内存  256G是外存</p>
+<h4 id="1">（1）存储单元</h4>
+<p>存储单元是计算机系统中用于存储二进制数据的<strong>最小单元</strong>。我们在学习C语言时<strong>指针所指的地址</strong>正是存储单元。</p>
+<h6 id="_10">存储器</h6>
+<p>主要功能：</p>
+<p>存放<strong>程序</strong>和<strong>数据</strong></p>
+<p>两个分类：<strong>主存储器</strong>（主存也就是<strong>内存</strong>，<u><strong>CPU能够直接访问</strong></u>）和<strong>辅助存储器</strong>（<strong>外存</strong>，<strong>磁盘硬盘</strong>）</p>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200128214649133.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkxNDYwNA==,size_16,color_FFFFFF,t_70" /></p>
+<p>主存储器组成：</p>
+<ul>
+<li>每个<strong>存储元件</strong>存储一位二进制代码0/1</li>
+<li><strong>存储单元</strong>可存储一串二进制代码，称这串<strong>代码为存储字</strong>。称这串代码的<strong>位数为存储字长</strong>，比如我图中所画每个存储单元存储8位的二进制数，存储字长为8。</li>
+<li>存储字长可以是1B或是字节（byte）的偶数倍，1（<strong>字节，B，byte</strong>）=8bit(<strong>bit</strong>就是<strong>位</strong>，也叫<strong>比特位</strong>)</li>
+</ul>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200128222556742.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkxNDYwNA==,size_16,color_FFFFFF,t_70" /></p>
+<p><strong>主存储器的工作方式</strong>
+系统中有多个程序并发执行，多个程序的数据同时放到内存中。而我们的主存（内存）按照数据<strong>按存储单元的地址进行存取</strong>，以对大量的数据进行区分。这种存取方式称为<strong>按地址存取方式</strong>（<strong>相联存储器按内容访问</strong>）</p>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200421170913619.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkxNDYwNA==,size_16,color_FFFFFF,t_70" /></p>
+<h4 id="2">（2）几个常用数量单位&amp;内存地址</h4>
+<p>1byte=1B=8bit</p>
+<p>2^10^=1024B=1KB</p>
+<p>2^20^=1024KB=1MB</p>
+<p>2^30^=1024MB=1GB</p>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200421171510336.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkxNDYwNA==,size_16,color_FFFFFF,t_70" /></p>
+<h3 id="_11">进程运行的基本原理</h3>
+<h4 id="_12">指令的工作原理</h4>
+<p>从x=x+1大致看一下指令的执行过程：</p>
+<p>分为三个部分：x = 的<strong>赋值指令</strong></p>
+<p>​                          <strong>提取x的指令</strong></p>
+<p>​                          对x进行+1的<strong>操作指令</strong></p>
+<p>这三种指令的对于计算机而言组成一般是<u>（指定操作行为的<strong>操作码</strong>，存取数据的<strong>目标地址</strong>，取数据的<strong>原地址</strong>）</u></p>
+<p>对于这个指令：</p>
+<p>①我们读取第一个指令，即x=x+1中的右边的"x"。这个指令告诉我们这行代码的操作对象是谁。其意味着我们要对x进行<strong>取出计算操作</strong>，所以我们从变量x所在地址取出他的值，将其放到寄存器中。</p>
+<p>②我们读取第二条指令，即x=x+1中的"+1"。告诉我们要对寄存器中的x进行<strong>+1的操作</strong>。</p>
+<p>​   具体他的指令是：（<strong>操作码</strong>（+），<strong>目标地址</strong>（寄存器的地址），<strong>具体加的数是多少</strong>）</p>
+<p>③我们读取第三条指令，即最后的"x="指令。在前面的指令中我们的计算机已经计算完了x的值，现在要采取<strong>赋值操作</strong>。</p>
+<p>​   那对于这个指令：（<strong>赋值操作码（"="），目标地址（"="的左边），原地址（"=的右边"）</strong>），将右边的值从寄存器中取出，将其放在"=的左边"的变量上。也就是x原来的位置上。</p>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200421172536502.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkxNDYwNA==,size_16,color_FFFFFF,t_70" /></p>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200421172647125.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkxNDYwNA==,size_16,color_FFFFFF,t_70" /><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200421172713286.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkxNDYwNA==,size_16,color_FFFFFF,t_70" /></p>
+<h4 id="vs">逻辑地址（相对地址）vs物理地址（绝对地址）</h4>
+<p>同样指向地址为179的位置。</p>
+<p>对于地址为100的位置而言，其<strong>相对位置</strong>为79。</p>
+<p>而179为这个位置的<strong>绝对位置</strong>。</p>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/2020042117344477.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkxNDYwNA==,size_16,color_FFFFFF,t_70" /></p>
+<p>程序经过编译、链接后生成的指令中<strong>指明的是逻辑地址（相对地址）</strong>，即：相对于进程起始地址而言的地址。</p>
+<p>在我们编写程序代码时，程序的内存地址是从0地址开始编排用户程序的地址空间的，我们把编程时用的地址称为逻辑地址（相对地址）。而当运行程序时我们则需要把这些<strong><u>程序中的相对位置转为绝对位置来使我们的程序能够稳定运行</u></strong>。</p>
+<h4 id="_13">从写程序到程序运行—编译、链接、装入</h4>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200421180308143.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkxNDYwNA==,size_16,color_FFFFFF,t_70" /></p>
+<p>程序经过<strong>编译</strong>、<strong>链接</strong>处理后，<strong>生成装入模块</strong>，从而<strong>作为进程运行</strong>。</p>
+<p><strong>编译</strong>：通过<strong>编译程序（编译器）</strong>，将用户的源代码编译成若干个目标模块。（<strong>将高级语言翻译为机器语言</strong>）</p>
+<p><strong>链接</strong>：由<strong>链接程序</strong>将编译后的各个目标模块，以及<strong>将所需的函数库链接</strong>在一起，<u>可以理解为组装在一起形成一个完整的<strong>装入模块</strong></u>。这个装入模块也就是<code>.exe</code>文件</p>
+<p><strong>装入</strong>：装入程序将装入模块<strong>装入内存</strong>进行<strong>运行</strong>。</p>
+<h4 id="_14">装入模块装入内存</h4>
+<p>不修改装入模块中的指令地址就直接装入内存的话（若采用了绝对地址装入，可能会对未分配地址的操作而出错）：</p>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200421182039112.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkxNDYwNA==,size_16,color_FFFFFF,t_70" /><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200421182303963.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkxNDYwNA==,size_16,color_FFFFFF,t_70" /></p>
+<h4 id="_15">装入的三种方式</h4>
+<p>因为确定在进程运行时，会将程序的数据根据相对位置装入，我们没办法知道他确切的装入了哪个地址。所以<strong><u>如何将相对地址转为正确绝对地址是一个问题</u></strong>。因而我们延伸出三种装入方式，来帮助我们将装入模块装载在内存中。</p>
+<p>这三种装入方式都是为了<strong><u>解决将指令中的逻辑地址转化为物理地址</u></strong>。</p>
+<h5 id="1_1">①绝对装入</h5>
+<p>绝对装入是在我们的程序尚还<strong>==在编译时==</strong>，<u><strong>就将程序的逻辑地址改写成正确的绝对地址来进行的装入</strong></u>。</p>
+<p><u><strong>灵活度低</strong>，<strong>只适用于单道程序环境</strong></u>。</p>
+<p>补充：<strong>单道程序环境</strong>是指<u>一次只能执行一个程序的计算机环境</u>。在这种环境下，计算机系统一次只能处理一个用户程序，直到该程序执行完毕或者被中断。这种环境通常用于早期的计算机系统，特别是那些没有操作系统支持的系统中。</p>
+<p><u>个人理解：单道程序环境因为只能运行一个程序，所以他装入的初始地址都是定死的，所以可以用绝对装入通用更改。</u></p>
+<p>在单道程序环境下，用户需要等待当前程序执行完毕，才能执行下一个程序。这种环境的特点包括：</p>
+<ol>
+<li><strong>顺序执行</strong>：每个程序按照顺序依次执行，直到完成或者被中断。</li>
+<li><strong>资源独占</strong>：一旦程序开始执行，它会独占计算机的资源，包括CPU、内存和输入输出设备。</li>
+<li><strong>无操作系统支持</strong>：在早期的计算机系统中，可能没有操作系统来管理多个程序的执行，因此只能采用单道程序环境。</li>
+</ol>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200421202025892.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkxNDYwNA==,size_16,color_FFFFFF,t_70" /></p>
+<h5 id="2_1">②静态重定位</h5>
+<p><strong>静态重定位是指在==<u>装入模块时</u>==，它<u>根据装配模块将==要装入的内存起始位置==，直接修改装配模块中的有关使用地址</u>的指令</strong>。</p>
+<p>在静态重定位中，<strong>程序中的地址信息是在<u>==装入时一次完成的==</u></strong>。装入程序会<strong><u>根据程序中的地址引用以及装入内存的起始位置，将相对地址修改为实际的物理地址</u></strong>。</p>
+<p>操作系统的装入程序要<u><strong>把装配模块和重定位项表一起装入内存</strong></u>。由装配模块的实际装入起始地址得到<strong>重定位因子</strong>，然后实施如下两步：</p>
+<p>①<strong>取重定位项（装入内存的起始位置）</strong>，<strong>加上重定位因子</strong>（相对于相对地址的起始位置改变量）而<strong>得到需要修改位置的实际地址</strong>；理解：获取相对于代码默认的位置和实际位置的差值。</p>
+<p>②<strong>对实际地址中的内容再做加重定位因子的修改</strong>，从而完成指令代码的修改。对程序内部空间的指令的位置修改。</p>
+<p>对所有的重定位项实施上述两步操作后，静态重定位才完成，而后可启动程序执行。使用过的重定位项表内存副本随即被废弃。要求<u><strong>内存必须连续</strong></u>，<strong>必须分配程序要求的所有的内存空间</strong>。</p>
+<p><strong>优点</strong>：是<strong>无需增加硬件</strong>地址转换机构，便于实现程序的静态连接。在早期计算机系统中大多采用这种方案。 </p>
+<p><strong>缺点</strong>：内存空间<strong>不能移动</strong>，也<strong>不能再申请内存空间</strong>；各个<strong>用户进程很难共享</strong>内存中同一程序的副本</p>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200421202117615.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkxNDYwNA==,size_16,color_FFFFFF,t_70" /></p>
+<h5 id="3">③动态重定位</h5>
+<p><strong>动态重定位是指，<u>==在程序执行过程中==进行地址重定位</u>。更确切地说，是<u>==在CPU每次访问内存单元前==才进行地址变换</u>。</strong></p>
+<p>动态重定位可使装配模块<strong>不加任何修改</strong>而装入内存。但是它<strong>需要硬件</strong>——<strong>重定位寄存器</strong>的支持。</p>
+<p>实际上就是依靠重定位寄存器存当中放入模块的初始的位置。在==运行时==直接运行模块和这个初始位置，来达到通过模块自身的相对位置达到绝对位置的效果。可以理解为没有任何修改，是在运行引用地址的时候自动使用（寄存器+相对地址）</p>
+<p><strong>优点</strong>：1）目标<strong>模块装入内存时无需任何修改</strong>，因而装入之后再搬迁也不会影响其正确执行，这对于<strong>存储器紧缩</strong>、<strong>解决碎片问题</strong>是极其有利的；</p>
+<p>​           2）一个程序由若干个相对独立的目标模块组成时，每个目标<strong>模块可以分开装入</strong>一个存储区域，这些<strong>存储区域可以不是顺序相邻的</strong>，只要<strong>各个模块有自己对应的定位寄存器就行</strong>。</p>
+<p><strong>缺点：</strong>需要<strong>硬件支持</strong>。</p>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200421202516120.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkxNDYwNA==,size_16,color_FFFFFF,t_70" /></p>
+<h4 id="_16"><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200421202728962.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkxNDYwNA==,size_16,color_FFFFFF,t_70" /><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200421202859982.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkxNDYwNA==,size_16,color_FFFFFF,t_70" />链接的三种方式</h4>
+<h5 id="1_2">① 静态链接</h5>
+<p>装入之前链接</p>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200421203135471.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkxNDYwNA==,size_16,color_FFFFFF,t_70" /></p>
+<h5 id="2_2">②装入时动态链接</h5>
+<p>边装入边链接</p>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200421203248608.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkxNDYwNA==,size_16,color_FFFFFF,t_70" /></p>
+<h5 id="3_1">③运行时动态链接</h5>
+<p>运行的时候才链接</p>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200421203435485.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkxNDYwNA==,size_16,color_FFFFFF,t_70" /></p>
+<h2 id="_17">内存管理管些什么？</h2>
+<h3 id="_18">思维导图</h3>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200421204131495.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkxNDYwNA==,size_16,color_FFFFFF,t_70" /></p>
+<h3 id="1_3">1.<a href="https://so.csdn.net/so/search?q=内存&amp;spm=1001.2101.3001.7020">内存</a>空间的分配与回收</h3>
+<p>操作系统负责内存空间的分配与回收：给进程分配他们运行所需的内存空间，同时当进程完成之后回收这部分内存空间。</p>
+<p><strong>如何最高效地使用有限的内存空间？并且有效回收进程？</strong></p>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200421204343725.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkxNDYwNA==,size_16,color_FFFFFF,t_70" /></p>
+<h3 id="2_3">2.内存空间的扩展（实现虚拟性）</h3>
+<p><strong>一个程序如果大过我们的内存空间，我们该如何运行呢？</strong></p>
+<p>操作系统通过技术从逻辑上对内存空间进行扩容。（虚拟内存）</p>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200421204522537.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkxNDYwNA==,size_16,color_FFFFFF,t_70" /></p>
+<h3 id="3_2">3.地址转换（实现进程的运行）</h3>
+<p>这里说的便是我们之前说的三种重定位方式。绝对装入，静态以及动态。 </p>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200421204834534.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkxNDYwNA==,size_16,color_FFFFFF,t_70" /></p>
+<h4 id="_19">三种装入方式</h4>
+<p>绝对装入：用于单道程序运行空间</p>
+<p>静态重定位：早期操作系统</p>
+<p>动态重定位：现代操作系统，硬件支持下。</p>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200421204937503.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkxNDYwNA==,size_16,color_FFFFFF,t_70" /></p>
+<h3 id="4">4.内存保护</h3>
+<p>内存保护的意义：一个<strong>单独的进程应该只能访问自己占有的内存，而不能访问其他内存</strong>。</p>
+<p>如果访问其他内存，很有可能<strong>影响其他进程</strong>的运行，甚至<strong>影响操作系统</strong>。</p>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200421205035855.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkxNDYwNA==,size_16,color_FFFFFF,t_70" /></p>
+<h4 id="_20">内存保护的两种方式</h4>
+<p>方法一：设置<strong>上下限寄存器</strong>，需要寄存器的<strong>硬件支持</strong>。通过两个寄存器来限制进程能访问内存空间，由CPU来判断是否超过两个寄存器记录的范围，从而判断是否越界。==用寄存器a和b直接给一个上下限==</p>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200421205354626.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkxNDYwNA==,size_16,color_FFFFFF,t_70" /></p>
+<p>方法二：采用之前提及的<strong>重定位寄存器（基址寄存器）</strong>，和一个<strong>界地址寄存器（限长寄存器）</strong>。原理简单，类似于第一种方法。不过采用的是两个寄存器对进程的起始位置和占据内存的长度的记录，二者相加，CPU来判断进程访问的内存是否越界。==采用寄存器a+寄存器b的形式实现上下限==</p>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200421205641907.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkxNDYwNA==,size_16,color_FFFFFF,t_70" /></p>
+<h2 id="_21">覆盖技术与交换技术</h2>
+<h3 id="_22">思维导图</h3>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200423175639916.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkxNDYwNA==,size_16,color_FFFFFF,t_70" />
+<img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200423175532452.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkxNDYwNA==,size_16,color_FFFFFF,t_70" /></p>
+<h3 id="_23">覆盖技术</h3>
+<p>==前提：运行的进程大于我们内存空间的大小。==</p>
+<p>覆盖技术是用于<strong><u>解决程序内存大小超过内存空间总和</u></strong>的问题（<strong><u>运行的程序内存大小，超过了计算机内部的内存空间</u></strong>），内存自身的关联技术</p>
+<p><u><strong>是对于模块的操作</strong></u></p>
+<p>具体方法：</p>
+<p>①将程序<strong>分成多个模块</strong>。</p>
+<p>②<strong>常用模块</strong>在内存中<strong>保持常驻</strong>。</p>
+<p>③<strong>不常用的模块</strong>在需要时<strong>调入内存</strong>。</p>
+<p>将内存分为<strong>一个"固定区"</strong>以及<strong>若干个"覆盖区"</strong>。</p>
+<p><strong>常驻的模块放在固定区内</strong>，<strong>而不常用的模块放在覆盖区</strong>，<strong>随时调入和调出</strong>内存。</p>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/2020042318025985.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkxNDYwNA==,size_16,color_FFFFFF,t_70" /></p>
+<p>以此为例：</p>
+<p>A是主程序段需要一直调用，所以其在固定区一直调入而不调出</p>
+<p>而BC是两个不同的分区，意味着在使用时另一方停用，所以二者用覆盖区。余下同理。</p>
+<p>缺点看底下</p>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200423180820382.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkxNDYwNA==,size_16,color_FFFFFF,t_70" /></p>
+<h3 id="_24">交换技术</h3>
+<p>==前提：内存的空间紧张不够用。==</p>
+<p><strong><u>是对于进程的操作</u></strong></p>
+<p>是内存与外存之间的技术。（这种技术在进程较大时也可能耗费大量的时间）</p>
+<p><strong>内存空间紧张时</strong>，将某些进程暂时<strong>换出外存</strong>但是<strong>保留PCB(记录进程放于外存哪个位置可以直接取用）</strong>插入挂起队列，把外存的某些具备运行条件的进程<strong>换入内存</strong>（也就是<u>内存空间不紧张的时候将那些换出内存的进程重新换入</u>）。（进程在内存和磁盘间的动态调度）</p>
+<p>在<strong><u>交换的过程中产生碎片的间隙</u></strong>称之为：<strong>空洞（hole）</strong>。</p>
+<p>要想利用碎片化的区域就要尽可能将进程所在的地址向低地址移动——<strong>内存紧缩（ceremony compaction）</strong>，也就是后续我们会在内部碎片和外部碎片提及的一种技术——<strong>紧凑技术</strong>。</p>
+<p>这也正是<strong>中级调度（内存调度）：就是在交换技术当中选择一个处于外存的进程换入内存。</strong></p>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200423181112552.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkxNDYwNA==,size_16,color_FFFFFF,t_70" /></p>
+<ul>
+<li>回忆复习一下进程调度</li>
+</ul>
+<p>挂起状态：暂时换出外存等待的进程状态就做挂起状态。</p>
+<p>分为：就绪挂起，阻塞挂起。</p>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200423181400473.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkxNDYwNA==,size_16,color_FFFFFF,t_70" /></p>
+<h4 id="_25">第一个问题：进程放在外存的何种位置？</h4>
+<p><strong>磁盘空间</strong>会有<strong>对换区</strong>和<strong>文件区</strong>两部分。</p>
+<p>①<u>文件区是用来<strong>存储文件</strong>的，所以主要<strong>追求文件空间的利用率</strong>，因而采用<strong>离散分配方式</strong></u>；</p>
+<p>②对换区只占用很小的磁盘空间，被<u>换出的进程就在对换区。由于对换区的进程在使用时<strong>追求高效率的换入换出</strong>，因而采用<strong>连续分配方式</strong></u>。</p>
+<p>总之，<strong>对换区的I/O速度比文件区快</strong></p>
+<h4 id="_26">第二个问题：应该什么时候交换？</h4>
+<p>交换通常发生在<strong>多个进程运行</strong>且<strong>内存吃紧</strong>时进行，而<u>系统负荷降低就暂停交换</u>。</p>
+<h4 id="_27">第三个问题：应该换出哪些进程？</h4>
+<p>①优先换出<strong>阻塞进程</strong>；</p>
+<p>②<strong>优先级较低的进程</strong>；</p>
+<p>③为了防止优先级低的进程被调入后又很快调出，还会<strong>考虑进程的驻留时间</strong></p>
+<p><img alt="" src="https://img-blog.csdnimg.cn/20200423182501764.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkxNDYwNA==,size_16,color_FFFFFF,t_70" /></p>
+<h2 id="_28">内存的分配与回收</h2>
+<h3 id="_29">思维导图</h3>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200423183108555.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkxNDYwNA==,size_16,color_FFFFFF,t_70" /></p>
+<p>进程在使用内存的时候，操作系统应该根据进程的大小、内存空间的大小以及进程的优先度等问题进行考虑，在调度上充分利用内存空间大小，做到合理的分配与和对完成进程的及时回收。</p>
+<h3 id="_30">连续分配管理方式</h3>
+<p>一般所有的分配都会把内存被分为了<strong>系统区</strong>和<strong>用户区</strong>。</p>
+<p><u>系统区就是用于存放<strong>操作系统进程</strong>的相关数据</u>，而<u>用户区存放<strong>用户进程</strong>的相关数据</u>。</p>
+<h4 id="1_4">1.单一连续分配</h4>
+<p>在单一连续分配中内存中<strong>只能有一道用户程序</strong>，<strong><u>用户程序独占整个用户区空间</u></strong>，相当于分配了整个内存空间供给一个进程。</p>
+<p><strong>优点</strong>：易于实现；<strong>无外部碎片</strong>；可以<strong>采用覆盖技术扩充内存</strong>；<strong>不一定需要采用内存保护</strong>。</p>
+<p><strong>缺点</strong>：<strong>不支持多道任务并发运行</strong>；<strong>有内部碎片</strong>；<strong>存储器利用率极低</strong>。</p>
+<p>补充：</p>
+<p>内部碎片：分配给程序的内存空间中，有<strong>部分空间进程是没有使用（分配内存&gt;进程大小）</strong>的，造成了内存空间的浪费，这就是内部碎片。大白话：分配内存大于进程所需内存。</p>
+<p>外部碎片：内存中存在的一些<strong>不连续的、无法被利用的小块空闲内存</strong>。大白话：内存空间中没分配进程，且太小无法分配进程的内存。</p>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200423183833877.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkxNDYwNA==,size_16,color_FFFFFF,t_70" /></p>
+<h4 id="2_4">2.固定分区分配</h4>
+<p>在固定分区分配中其中用户区<strong>按照<u>一定的内存大小对内存进行划分（分区大小可以相等，也可以不相等）</u></strong>，<strong>划分成了若干个固定大小的分区</strong>，<u><strong>每个分区只能装入一个进程</strong></u>。</p>
+<p><u>对于分区大小<strong>相同</strong></u>的固定分区分配：</p>
+<p><strong>优点</strong>：可以控制多个相同对象</p>
+<p><strong>缺点</strong>：缺乏灵活性</p>
+<p><u>对于分区大小<strong>不等</strong></u>的固定分区分配</p>
+<p><strong>相较于分区大小相等</strong>，<strong>增加了灵活性</strong>，满足<strong>不同大小进程需求</strong>。</p>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200423184230246.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkxNDYwNA==,size_16,color_FFFFFF,t_70" /></p>
+<h5 id="1_5">（1）分区说明表</h5>
+<p>对于固定分区分配而言，内存中很有可能有大量的分区。我们的系统需要知道每个分区对应的进程、大小、地址。所以我们需要一个<strong>分区说明表</strong>的<strong>数据结构</strong>，来帮助我们进行管理。</p>
+<p>也有的采用<strong><u>位图</u>（一种数据结构）</strong>的方式进行管理，把内存分为单位小区域标注上0/1来表明是否空闲。扫描连续为0能满足进程大小的区域给进程分配内存，因为数量多比较耗时，不如链表或者说明表。</p>
+<p>每个表项：<u>包含对应<strong>分区</strong>的<strong>大小</strong>、<strong>起始地址</strong>、<strong>状态</strong></u></p>
+<p>操作系统可以通过分区说明表了解分区的使用情况，在有新进程的时候找到合适大小且未分配的分区给其分配内存。</p>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200423184627961.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkxNDYwNA==,size_16,color_FFFFFF,t_70" /></p>
+<p>对于固定分区分配：</p>
+<p>优点：实现简单；<strong>无外部碎片</strong></p>
+<p>缺点：<strong>会产生内部碎片</strong>；如果<strong>程序太大，大过了每个分区</strong>，会<strong>使用覆盖技术，而降低了计算机的性能</strong>。</p>
+<h4 id="3_3">3.动态分区分配（可变分区分配）</h4>
+<p><strong>为了解决上述两种分配都会产生内部碎片降低内存利用率的问题（分配内存&gt;进程内存）</strong>，进而衍生出了动态分区分配。</p>
+<p><strong><u>动态分区分配==可变分区分配</u></strong>。<u><strong>在进程装入内存时</strong></u>，<u><strong>根据进程的大小动态建立分区</strong></u>。</p>
+<p>因为是完全按照进程分配的内存，所以<strong>没有内部碎片</strong>，但也因此会<strong>导致内存空间的<u>内存分布出现不连续</u>^1^或者<u>内存空间很小</u>^2^的情况，即<u>出现外部碎片</u></strong>。</p>
+<p>^1^的情况出现在某个<u>进程运行完毕而其上下进程仍在运行，出现了内存分布不连续</u>。</p>
+<p>^2^的情况出现在内存空间<u>都按照进程分配后</u>，最后<u>剩余内存=内存空间-总进程占据空间</u>。导致会出现剩余空间出现内存空间很小的情况。</p>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200423185321400.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkxNDYwNA==,size_16,color_FFFFFF,t_70" /></p>
+<h5 id="_31">内存分区分配问题的重要性：</h5>
+<h6 id="_32"><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200423185404256.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkxNDYwNA==,size_16,color_FFFFFF,t_70" /><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200423185425770.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkxNDYwNA==,size_16,color_FFFFFF,t_70" />第一个问题：系统要用怎样的数据结构记录内存的使用情况呢？</h6>
+<p>采用两种数据结构：①空闲分区表 ②空闲分区链</p>
+<p>空闲分区表：每一个空闲分区对应一个空闲表项。包括分区号、分区大小、起始地址、状态等信息</p>
+<p>空闲分区链：每个分区的都起始部分以及末尾部分都设置指针（<strong>双向链表</strong>），分别指向前一个空闲分区和后一个空闲分区。关于<strong>分区的信息一般统一放在起始部分里</strong>。</p>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/2020042321042395.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkxNDYwNA==,size_16,color_FFFFFF,t_70" /></p>
+<h6 id="_33">第二个问题：当多个空闲分区都能满足要求时，应该选择哪个分区进行分配？</h6>
+<p>把一个新作业放入内存时，<u>按照一定的<strong>动态分区分配算法</strong>进行分配</u>。</p>
+<p><strong>动态分区分配算法</strong>：<u><strong>按照一定的规则（算法）从空闲分区表或者空闲分区链中选出一个合适的分区分配给该作业</strong></u>。</p>
+<p>因为动态分区分配算法对系统性能有很大的影响，因此进行了广泛的研究。见下一节。</p>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200423210641126.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkxNDYwNA==,size_16,color_FFFFFF,t_70" /></p>
+<h6 id="_34">第三个问题：如何进行分区的分配和回收操作？</h6>
+<h6 id="_35">如何分配？</h6>
+<p>以空闲分区表为例：</p>
+<p>若一个进程申请4MB的空间大小，而此时内存空间分的分布如下图：</p>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200423210951871.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkxNDYwNA==,size_16,color_FFFFFF,t_70" /></p>
+<p>第一种情况：假设我们采用某种算法算法，从这20MB里分配4MB给这个进程。则后续我们需要对这个空闲分区表进行相应的处理。</p>
+<p>将此例中为将表中的空闲分区大小-4MB，并更改其起始地址。因为我们分配的空间是远大于进程申请的，所以略作更改即可。</p>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200423211031656.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkxNDYwNA==,size_16,color_FFFFFF,t_70" /></p>
+<p>第二种情况：若按照某种算法，我们将恰为4MB的分区分给了他。</p>
+<p>显然，我们需要删除这个空闲分区表中的对应表项。如果是空闲分区链的话我们需要删除对应结点，并要更改前后结点的指针。</p>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200423211234282.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkxNDYwNA==,size_16,color_FFFFFF,t_70" /></p>
+<h6 id="_36">如何回收？</h6>
+<p>如果说一个进程运行结束了。那么我们有两种处理方式：</p>
+<p>①如果结束的进程有相邻的空闲内存分区，那么我们直接将他并入此空闲内存当中，仅需要<strong>①修改此分区的大小（在尾）</strong>或者<strong>②修改大小和起始地址（在首）</strong>。若<strong>③上下都有相邻的空闲分区，则三者皆合并（在中）</strong>。</p>
+<p>②若结束的进程为一个独立的空闲分区的话，那我们需要<strong>添加一个表项，而链则需要增添一个节点</strong>。</p>
+<p>②情况中的需要修改大小和起始位置的情况：</p>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200423211626193.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkxNDYwNA==,size_16,color_FFFFFF,t_70" /></p>
+<p>①情况中仅需要修改分区大小的情况：</p>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200423211751743.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkxNDYwNA==,size_16,color_FFFFFF,t_70" /></p>
+<p>③情况中上下都有空闲一并合并的情况：</p>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200423211954749.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkxNDYwNA==,size_16,color_FFFFFF,t_70" /></p>
+<p>第二类情况中新添一个表项的情况</p>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200423212108969.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkxNDYwNA==,size_16,color_FFFFFF,t_70" /></p>
+<h4 id="4_1">4.内部碎片与外部碎片</h4>
+<p>前面解释过了，这里再解释一遍</p>
+<p>内部碎片：分配给某些进程的内存超出了作业本身需要的内存，这部分多出来的内存即为外部碎片。</p>
+<p>外部碎片：内存空间中因为太小（宏观上说太零散，太小）无法利用的空闲内存分区</p>
+<p>可以依靠<strong><u>==紧凑技术（内存紧凑，ceremony compaction）==来解决==外部碎片==问题</u></strong>：也就是零碎的空闲内存分区是足够进程运行的，我们通过紧凑是零碎的内存拼凑起来分配给进程。也就是<strong><u>通过将已经分配内存的进程进行移位来达到内存空闲分区连续进而足够大可供使用的目的</u></strong>。</p>
+<p>（采用的是<strong>动态重定位</strong>，通过<strong>改变寄存器的存储的起始地址数据</strong>，轻松达到<strong>移动进程的目的</strong>）。</p>
+<p>注意：即使采用的是更改寄存器存储的方式，但是1G的进程移动仍需要5s并非最好的方式。</p>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200423212544902.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkxNDYwNA==,size_16,color_FFFFFF,t_70" /><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200423212650781.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkxNDYwNA==,size_16,color_FFFFFF,t_70" /></p>
+<h2 id="_37">动态内存分配四中算法</h2>
+<h3 id="_38">思维导图</h3>
+<ul>
+<li>本篇文章是对上一篇文章内存的分配与回收提到的<code>动态分区分配算法</code>的补充</li>
+</ul>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200423213918738.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkxNDYwNA==,size_16,color_FFFFFF,t_70" /></p>
+<h3 id="1_6">1.首次适应算法</h3>
+<p><strong><u>从低地址开始查找，找到第一个能够满足大小的空闲分区。</u></strong></p>
+<p>实现：<strong><u>空闲内存以地址为排序条件，进行递增次序排序</u></strong>。每次分配时<strong><u>按照顺序查找空闲分区表/链</u></strong>。找到第一个满足要求的空闲分区。</p>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/2020042321452336.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkxNDYwNA==,size_16,color_FFFFFF,t_70" />
+<img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200423214600818.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkxNDYwNA==,size_16,color_FFFFFF,t_70" />
+<img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/2020042321465411.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkxNDYwNA==,size_16,color_FFFFFF,t_70" /></p>
+<h3 id="2_5">2.最佳适应算法</h3>
+<p><strong><u>从按照容量大小由小到大排序的表/链中，找到第一个符合条件的空闲分区</u></strong></p>
+<p>实现：空闲分区按<strong><u>照容量递增次序链接</u></strong>。每次分配时<strong><u>顺序查找空闲分区链/表</u></strong>，找到<strong><u>第一个满足要求的分区</u></strong>。</p>
+<p><strong>缺点</strong>：每次都选最小的，但会留下很多难以利用的内存块。产生<strong>大量外部碎片</strong></p>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200423215641164.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkxNDYwNA==,size_16,color_FFFFFF,t_70" />
+<img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200423215758679.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkxNDYwNA==,size_16,color_FFFFFF,t_70" />
+<img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/2020042321590110.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkxNDYwNA==,size_16,color_FFFFFF,t_70" /></p>
+<h3 id="3_4">3.最坏（大）适应算法</h3>
+<p>为了解决<strong>最佳适应算法</strong>中产生大量外部碎片的问题。每次<strong>分配时优先使用最大的连续空闲分区</strong>，这样剩余空闲区不会太小，更方便使用。</p>
+<p>思想：<strong><u>从按照容量大小由大到小排序的表/链中，找到第一个符合条件的空闲分区</u></strong></p>
+<p>缺点：容易导致<strong>无法为大进程分配</strong>内存空间。</p>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200423220300386.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkxNDYwNA==,size_16,color_FFFFFF,t_70" />
+<img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200423220432246.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkxNDYwNA==,size_16,color_FFFFFF,t_70" />
+<img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200423220549394.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkxNDYwNA==,size_16,color_FFFFFF,t_70" />
+<img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200423220633433.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkxNDYwNA==,size_16,color_FFFFFF,t_70" /></p>
+<h3 id="4_2">4.邻近适应算法</h3>
+<p>使用首次适应算法的时候，每次都从链头查找。导致①低地址部分出现大量的很小的空闲分区。②每次遍历的开销成本大。因而使用邻近适应算法，均摊了这种外部碎片的集中，并且避免了遍历的开销。</p>
+<p>优点：算法开销小，空闲分区不会集中。缺点是高地址的大分区会被用完。</p>
+<p>思想：从上一次分配的地址之后开始找。</p>
+<p>实现：空闲分区<strong>按照地址递增排序</strong>。每次分配内存<strong>从上次查找结束的位置开始查找空闲分区</strong>，找到第一个满足要求的分区。</p>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200423220900503.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkxNDYwNA==,size_16,color_FFFFFF,t_70" />
+<img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200423220937204.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkxNDYwNA==,size_16,color_FFFFFF,t_70" />
+<img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200423221300749.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkxNDYwNA==,size_16,color_FFFFFF,t_70" />
+<img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200423221401765.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkxNDYwNA==,size_16,color_FFFFFF,t_70" />
+<img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200423221603115.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkxNDYwNA==,size_16,color_FFFFFF,t_70" /></p>
+<h3 id="5">5.四种算法归纳比较</h3>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200423221937764.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkxNDYwNA==,size_16,color_FFFFFF,t_70" /></p>
+<h2 id="-">分页存储-非连续分配管理</h2>
+<p>非连续分配管理方式：①基本分页存储管理 ②基本分段存储管理   ③段页式存储管理</p>
+<h3 id="_39">分页存储</h3>
+<p>将<strong>==内存空间==</strong>分为一个个相等的分区。<u>每一个分区</u>称之为<u><strong>页框（页框=页帧=内存块=物理块=物理页面）</strong></u>。每一个页框有一个编号，称之为<strong><u>”页框号“（页框号=页帧号=内存块号=物理块号=物理页号）</u></strong>，页框号如同数组，从0开始。</p>
+<p>将<strong>==进程的逻辑地址空间==</strong>也分为与页框大小相等的一个个部分。每个部分称之为“页”或“页面”。每个页面也有编号，“页号”，页号也是从0开始的。（也就是在程序运行那里提及的，<strong>将进程分为一个个指令，每个指令称为页/页面</strong>）</p>
+<p>区分：页框，是内存在物理上被划分一个一个的部分。</p>
+<p>​           页/页面是进程在逻辑上被划分的一个一个的部分。</p>
+<p>操作系统以页框为单位，为各个进程分配内存空间。进程的每一个页面分别放入一个内框中，意味着，<strong>内存的页框和进程页面有一一对应的关系</strong>。</p>
+<p>各个页面可以放在不相连的页框中，即可以离散存储。</p>
+<p><img alt="image-20231115182202936" src="C:\Users\LLLLL\AppData\Roaming\Typora\typora-user-images\image-20231115182202936.png" /></p>
+<h4 id="1_7">1.为什么学习分页存储？</h4>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200503191058819.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkxNDYwNA==,size_16,color_FFFFFF,t_70" /></p>
+<h4 id="2_6">2.基本分页存储管理的思想</h4>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200503191933864.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkxNDYwNA==,size_16,color_FFFFFF,t_70" /></p>
+<h4 id="3_5">3.分页存储管理的重要概念</h4>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200503192356252.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkxNDYwNA==,size_16,color_FFFFFF,t_70" /></p>
+<h4 id="4_3">4.如何实现地址的转换</h4>
+<p>在连续分配的时候，我们可以依托寄存器的<strong>偏移量</strong>来进行转换，而在离散的分页中如何转化呢？</p>
+<p>特点：虽然进程的各个页面时离散的，但是页面内部还是保持连续的。</p>
+<p>对于逻辑地址A：</p>
+<p>①确定逻辑地址A的对应页号 P</p>
+<p>②通过查页表找到P号页面的起始位置</p>
+<p>③确定逻辑地址A的<strong>页内偏移量W</strong></p>
+<p>逻辑地址A的物理地址=P页面中的起始地址+页内偏移量W</p>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200503192553130.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkxNDYwNA==,size_16,color_FFFFFF,t_70" /></p>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200503194743868.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkxNDYwNA==,size_16,color_FFFFFF,t_70" /></p>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200503215055931.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkxNDYwNA==,size_16,color_FFFFFF,t_70" /></p>
+<h5 id="_40">如何确定一个逻辑地址对应的页号，页内偏移量？</h5>
+<p>①题目会告诉我们，页面的大小（也就是长度），以及所要求的逻辑地址。</p>
+<p><u><strong>页号=逻辑地址/页面长度（向下取整数）</strong></u></p>
+<p><u><strong>页内偏移量=逻辑地址%页面长度（取余数部分）</strong></u></p>
+<p><strong>例如</strong>：</p>
+<p>页面大小为50，求逻辑地址40的页号以及页内偏移量</p>
+<p>页号=40/50 = 0</p>
+<p>页内偏移量=40%50=40    所以P=0，W=40</p>
+<p>②采用2进制方法计算：</p>
+<p>为了方便计算，页号和页内偏移量一般都为2的整数幂次</p>
+<p>这样是因为在计算的时候。</p>
+<p>页面大小为2^n^时，那对于一个用二进制表示的逻辑地址而言。<strong>后n位都为偏移量</strong>，而<strong>后n位前的数据表示的是页号</strong>。</p>
+<p>很好理解不做解释。</p>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200503215910111.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkxNDYwNA==,size_16,color_FFFFFF,t_70" /></p>
+<h5 id="2_7">为什么页面大小一般设为2的整数次幂？</h5>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200503215910111.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkxNDYwNA==,size_16,color_FFFFFF,t_70" /></p>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200503220214800.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkxNDYwNA==,size_16,color_FFFFFF,t_70" /></p>
+<h4 id="_41">分页存储的逻辑结构</h4>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200503220607170.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkxNDYwNA==,size_16,color_FFFFFF,t_70" /></p>
+<h3 id="_42">页表</h3>
+<p>如何知道页面在内存中的起始地址？</p>
+<p>这里<strong>引入一个新的数据结构</strong>：<strong>页表</strong></p>
+<p>之前所说，页和页框具有一一对应的关系。我们<strong>借助页表记录</strong>他们之间一一对应的关系。</p>
+<p>首先我们需要知道：<u>操作系统会给每个进程建立一张页表，页表通常存在于PCB（进程控制模块）中</u></p>
+<p>进程的逻辑地址空间被分为一个个页面，每一个页面会对应页表中的一个页表项</p>
+<h4 id="_43">页面和页表的关系：</h4>
+<p>一个<strong>进程</strong>对应一张<strong>页表</strong></p>
+<p>进程的<strong>每一个页面</strong>对用<strong>一个页表项</strong></p>
+<p>每个<u><strong>页表项</strong>由<strong>“页号”</strong>和<strong>“块号”</strong></u>组成</p>
+<p><strong>==页表==记录==进程页面==</strong>和实际存放的<strong>==内存块（页框）==</strong>之间的对应关系</p>
+<p>每个页表的长度实现相同的，页号是“隐含”的</p>
+<p>也就是进程有一张页表，进程中的逻辑地址空间被分为若干个页面，每一个==<strong>页面</strong>==都有一个一一对应<strong>==对应的页表项==</strong>。页面号=页号，==每一个页号又对应一个块号==，这个块号指向内存中的物理地址（也就是找到对应的内存块，页框）。从而帮助页面找到对应的页框。</p>
+<p>更简单点：<strong><u>页表中页号存储页面号，而块号存储页框号。从而帮助其一一对应</u></strong>。</p>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200503220952295.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkxNDYwNA==,size_16,color_FFFFFF,t_70" /></p>
+<p>隐含的解释：</p>
+<p>页号并不占据内存，那我们如何得到页号呢？或者如何通过页号找到对应的页表项呢？</p>
+<p>因为<strong><u>页表中，各页表项是按照顺序连续地放置于内存中</u></strong>。所以知道了页表存放的<strong>起始位置</strong>，以及<strong>页表项的长度（所占字节长度）</strong>，就可以知道对应的页号。</p>
+<p><strong><u>i号页表项的存放地址=X起始地址+页表项长度*i</u></strong></p>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200503221250554.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkxNDYwNA==,size_16,color_FFFFFF,t_70" /></p>
+<h2 id="_44">分页存储管理的基本地址变换结构</h2>
+<h3 id="1_8">1.<a href="https://so.csdn.net/so/search?q=页表&amp;spm=1001.2101.3001.7020">页表</a>寄存器</h3>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200503222207602.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkxNDYwNA==,size_16,color_FFFFFF,t_70" /></p>
+<h4 id="_45">地址变换过程</h4>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200503223729773.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkxNDYwNA==,size_16,color_FFFFFF,t_70" /></p>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200503223548369.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkxNDYwNA==,size_16,color_FFFFFF,t_70" />
+<img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200503224323607.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkxNDYwNA==,size_16,color_FFFFFF,t_70" />
+<strong>一道例题加深印象：</strong>
+<img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200503225214679.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkxNDYwNA==,size_16,color_FFFFFF,t_70" /></p>
+<h3 id="2_8">2.对页表项大小的进一步讨论</h3>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200503230227132.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkxNDYwNA==,size_16,color_FFFFFF,t_70" /></p>
+<h2 id="_46">块表地址变换结构</h2>
+<h3 id="1_9">1.局部性原理引入快表机制</h3>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200505111434415.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkxNDYwNA==,size_16,color_FFFFFF,t_70" /></p>
+<h3 id="2tlb">2.快表（TLB）</h3>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200505111455765.png" /></p>
+<h4 id="_47">一个例图了解基于快表的地址变换结构</h4>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200505112605873.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkxNDYwNA==,size_16,color_FFFFFF,t_70" />
+<strong>引入快表后，地址变换的过程的文字描述：</strong>
+<img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200505114142450.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkxNDYwNA==,size_16,color_FFFFFF,t_70" /></p>
+<h3 id="3_6">3.基本地址变换与快表地址变换的比较</h3>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/2020050511441885.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkxNDYwNA==,size_16,color_FFFFFF,t_70" /></p>
+<h2 id="_48">二级页表原理以及地址结构</h2>
+<h3 id="1_10">1.为什么引入二级页表？</h3>
+<p>因为单级页表存在一些问题，所以引入二级页表和多级页表，有两个问题：</p>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200505125243303.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkxNDYwNA==,size_16,color_FFFFFF,t_70" /></p>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200505125432184.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkxNDYwNA==,size_16,color_FFFFFF,t_70" /></p>
+<p>上面提到了这两个问题，那么总结一下，并提出解决思想，引入二级页表的概念。</p>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200505125857508.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkxNDYwNA==,size_16,color_FFFFFF,t_70" /></p>
+<h3 id="2_9">2.二级页表的原理和地址结构</h3>
+<h4 id="_49">对页表再次分组</h4>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200505131124485.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkxNDYwNA==,size_16,color_FFFFFF,t_70" /></p>
+<h4 id="_50">二级页表的地址结构及对应关系</h4>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200505131519939.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkxNDYwNA==,size_16,color_FFFFFF,t_70" /></p>
+<h3 id="3_7">3.如何实现二级页表的地址变换？</h3>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200505133306791.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkxNDYwNA==,size_16,color_FFFFFF,t_70" /></p>
+<p>上面的部分我们解决了问题一，接下来是问题二，这里简单叙述一下，后面的文章会继续深入剖析。</p>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200505134203409.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkxNDYwNA==,size_16,color_FFFFFF,t_70" /></p>
+<h3 id="4_4">4.几个小细节</h3>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200505144046207.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkxNDYwNA==,size_16,color_FFFFFF,t_70" /></p>
+<h2 id="_51">基本分段存储管理（段表、地址变换、信息共享）</h2>
+<h3 id="1_11">1.什么是分段？</h3>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200507142504777.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkxNDYwNA==,size_16,color_FFFFFF,t_70" /></p>
+<h4 id="_52">分段的<a href="https://so.csdn.net/so/search?q=逻辑地址&amp;spm=1001.2101.3001.7020">逻辑地址</a>结构</h4>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200507143112191.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkxNDYwNA==,size_16,color_FFFFFF,t_70" /></p>
+<h3 id="2_10">2.段表</h3>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200507143835462.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkxNDYwNA==,size_16,color_FFFFFF,t_70" /></p>
+<h3 id="3_8">3.地址变换</h3>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200507144037443.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkxNDYwNA==,size_16,color_FFFFFF,t_70" /></p>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200507144834316.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkxNDYwNA==,size_16,color_FFFFFF,t_70" /></p>
+<h3 id="4_5">4.分段、分页管理的对比</h3>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200507145814456.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkxNDYwNA==,size_16,color_FFFFFF,t_70" />
+<img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200507151524501.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkxNDYwNA==,size_16,color_FFFFFF,t_70" /></p>
+<h4 id="_53">分段实现信息共享共享</h4>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200507150216415.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkxNDYwNA==,size_16,color_FFFFFF,t_70" /></p>
+<h4 id="_54">为什么分页不方便实现信息共享和保护？</h4>
+<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200507151254763.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkxNDYwNA==,size_16,color_FFFFFF,t_70" /></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.07f07601.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.56dfad97.min.js"></script>
+      
+    
+  </body>
+</html>
