@@ -67,7 +67,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="grey" data-md-color-accent="blue">
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="grey" data-md-color-accent="cyan">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -125,15 +125,19 @@
     
     
     
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="grey" data-md-color-accent="blue"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="grey" data-md-color-accent="cyan"  aria-label="切换至夜间模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切换至夜间模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
     
   
     
     
     
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="cyan"  aria-label="日间模式"  type="radio" name="__palette" id="__palette_1">
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="cyan"  aria-label="切换至日间模式"  type="radio" name="__palette" id="__palette_1">
     
-      <label class="md-header__button md-icon" title="日间模式" for="__palette_0" hidden>
+      <label class="md-header__button md-icon" title="切换至日间模式" for="__palette_0" hidden>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
       </label>
     
@@ -2665,8 +2669,8 @@ S5层为远程二级存储(分布式文件系统、Web服务器)</p>
 <p><strong>内存</strong>又是<strong>主存储器</strong>的高速缓存，<u>内将经常用到的数据从Flash等主存储器中提取出来，放到内存中，从而加快了CPU的运行效率</u>。</p>
 <p>嵌入式系统的主存储器容量是有限的，磁盘、光盘或CF、SD卡等外部存储器用来保存大信息量的数据。在某些带有分布式文件系统的嵌入式网络系统中，外部存储器就作为其他系统中被存储数据的高速缓存。</p>
 <p>另一个图：</p>
-<p><img alt="img" src="https://img-blog.csdnimg.cn/20190814201531864.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQxNjMxMDUx,size_16,color_FFFFFF,t_70" /></p>
-<p>如上图所示，<strong><u>越往上，存储介质的访问速度越快，价格也越高</u></strong>。其中<strong>寄存器</strong>、<strong>高速缓存</strong>、<strong>主存储器</strong>和<strong>磁盘缓存</strong>均<u>属于存储管理的管辖范畴，<strong>掉电后它们存储的信息不再存在</strong>。</u></p>
+<p><img alt="alt text" src="../image-1.png" />
+如上图所示，<strong><u>越往上，存储介质的访问速度越快，价格也越高</u></strong>。其中<strong>寄存器</strong>、<strong>高速缓存</strong>、<strong>主存储器</strong>和<strong>磁盘缓存</strong>均<u>属于存储管理的管辖范畴，<strong>掉电后它们存储的信息不再存在</strong>。</u></p>
 <p><strong>固定磁盘</strong>和<strong>可移动存储介质</strong><u>属于设备管理的管辖范畴</u>，它们存储的信息将被长期保存。而<u>磁盘缓存本身并不是一种实际存在的存储介质，它依托于固定磁盘，提供对主存储空间的扩充。</u></p>
 <p><strong><u>可执行的程序必须被保存在计算机的主存储器（内存）中</u></strong>，与外围设备交换的信息一般也依托于主存储器地质空间。由于处理器在执行指令时主存访问时间远大于其他处理时间，寄存器会告诉缓存被引入来加快指令的执行。</p>
 <p><strong>寄存器</strong>是访问速度最快但最昂贵的存储器，它的容量小，一般以字（word）为单位。一个计算机系统可能包括几十个甚至上百个寄存器，用于加速存储访问速度，如：寄存器操作数的使用，或用地质寄存器加快转换速度。</p>
@@ -2683,7 +2687,7 @@ S5层为远程二级存储(分布式文件系统、Web服务器)</p>
 <p>另一种是在<strong>程序执行时</strong>实现地址转换，称为<strong>动态重定位</strong>。</p>
 <p>动态重定位必须借助于硬件的地址转换机构（<strong>定位寄存器</strong>）的实现。</p>
 <h3 id="_8">思维导图</h3>
-<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200421170005542.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkxNDYwNA==,size_16,color_FFFFFF,t_70" /></p>
+<p><img alt="alt text" src="../image-2.png" /></p>
 <h3 id="_9">什么是内存？有何作用？</h3>
 <p>内存可存放数据。</p>
 <p>程序执行前，<u>需要将程序放入内存中才能被CPU所处理</u>----缓和CPU和硬盘之间速度的矛盾。</p>
