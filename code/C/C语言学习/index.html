@@ -1,0 +1,2287 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="idonlikename">
+      
+      
+        <link rel="canonical" href="https://idonlikename.github.io/mynote/code/C/C%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/">
+      
+      
+        <link rel="prev" href="../../..">
+      
+      
+        <link rel="next" href="../../python/Python%E5%9F%BA%E7%A1%80/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.34">
+    
+    
+      
+        <title>C - TheLang's Note</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.35f28582.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="grey" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ccpp" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="TheLang&#39;s Note" class="md-header__button md-logo" aria-label="TheLang's Note" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            TheLang's Note
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              C
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="grey" data-md-color-accent="cyan"  aria-label="切换至夜间模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切换至夜间模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="cyan"  aria-label="切换至日间模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换至日间模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="TheLang&#39;s Note" class="md-nav__button md-logo" aria-label="TheLang's Note" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    TheLang's Note
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Code
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Code
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    C
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    C
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      基础部分：
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="基础部分：">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      基本数据类型
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      输入与输出
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="输入与输出">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cincout" class="md-nav__link">
+    <span class="md-ellipsis">
+      输入cin与输出cout：
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#endl" class="md-nav__link">
+    <span class="md-ellipsis">
+      换行endl：
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      宏定义
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="宏定义">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#const" class="md-nav__link">
+    <span class="md-ellipsis">
+      const :
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      流程控制语句
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="流程控制语句">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      三元
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      分支
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="分支">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#if" class="md-nav__link">
+    <span class="md-ellipsis">
+      if语句
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#switch" class="md-nav__link">
+    <span class="md-ellipsis">
+      switch
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      循环
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="循环">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#for" class="md-nav__link">
+    <span class="md-ellipsis">
+      for
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#while" class="md-nav__link">
+    <span class="md-ellipsis">
+      while
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#continuebreak" class="md-nav__link">
+    <span class="md-ellipsis">
+      continue和break
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      结构体
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="结构体">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      如何声明结构体类型
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="如何声明结构体类型">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      空结构体
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      匿名结构体
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#typedef" class="md-nav__link">
+    <span class="md-ellipsis">
+      Typedef
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      结构体的嵌套定义
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      结构体变量
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="结构体变量">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      声明结构体变量
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="声明结构体变量">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      方法一
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      方法二
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      结构体变量的赋值以及访问结构体成员
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      结构体作为函数参数
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      结构体指针
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="结构体指针">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      声明结构体指针以及用结构体指针访问结构体成员
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    <span class="md-ellipsis">
+      结构体内存计算
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="结构体内存计算">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    <span class="md-ellipsis">
+      内存对齐
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    <span class="md-ellipsis">
+      位域使用
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    <span class="md-ellipsis">
+      结构体数组
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_26" class="md-nav__link">
+    <span class="md-ellipsis">
+      函数
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="函数">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#malloc" class="md-nav__link">
+    <span class="md-ellipsis">
+      malloc()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chatgpt" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chatgpt解释
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/Python%E5%9F%BA%E7%A1%80/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java/Java%E5%9F%BA%E7%A1%80%E7%BC%96%E7%A8%8B/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Java
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Computer
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Computer
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    OS
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            OS
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Computer/OS/%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    进程管理
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Computer/OS/%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    内存管理
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Computer/OS/%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86/%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    文件管理
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    计算机通识
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            计算机通识
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Computer/%E9%80%9A%E8%AF%86%E8%AF%BE/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%B8%B8%E8%AF%86/%E6%96%87%E4%BB%B6%E7%9B%B8%E5%85%B3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    文件通识
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Missing Semester
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            Missing Semester
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Computer/通识课/Missing Semester/'Lec01Missing Semester.md'" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lec01
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Computer/%E9%80%9A%E8%AF%86%E8%AF%BE/Missing%20Semester/Lec02shell%E5%B7%A5%E5%85%B7%E4%B8%8E%E8%84%9A%E6%9C%AC/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lec02
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    base
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            base
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Base/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    线性代数
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      基础部分：
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="基础部分：">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      基本数据类型
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      输入与输出
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="输入与输出">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cincout" class="md-nav__link">
+    <span class="md-ellipsis">
+      输入cin与输出cout：
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#endl" class="md-nav__link">
+    <span class="md-ellipsis">
+      换行endl：
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      宏定义
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="宏定义">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#const" class="md-nav__link">
+    <span class="md-ellipsis">
+      const :
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      流程控制语句
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="流程控制语句">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      三元
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      分支
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="分支">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#if" class="md-nav__link">
+    <span class="md-ellipsis">
+      if语句
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#switch" class="md-nav__link">
+    <span class="md-ellipsis">
+      switch
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      循环
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="循环">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#for" class="md-nav__link">
+    <span class="md-ellipsis">
+      for
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#while" class="md-nav__link">
+    <span class="md-ellipsis">
+      while
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#continuebreak" class="md-nav__link">
+    <span class="md-ellipsis">
+      continue和break
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      结构体
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="结构体">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      如何声明结构体类型
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="如何声明结构体类型">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      空结构体
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      匿名结构体
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#typedef" class="md-nav__link">
+    <span class="md-ellipsis">
+      Typedef
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      结构体的嵌套定义
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      结构体变量
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="结构体变量">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      声明结构体变量
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="声明结构体变量">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      方法一
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      方法二
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      结构体变量的赋值以及访问结构体成员
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      结构体作为函数参数
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      结构体指针
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="结构体指针">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      声明结构体指针以及用结构体指针访问结构体成员
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    <span class="md-ellipsis">
+      结构体内存计算
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="结构体内存计算">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    <span class="md-ellipsis">
+      内存对齐
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    <span class="md-ellipsis">
+      位域使用
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    <span class="md-ellipsis">
+      结构体数组
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_26" class="md-nav__link">
+    <span class="md-ellipsis">
+      函数
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="函数">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#malloc" class="md-nav__link">
+    <span class="md-ellipsis">
+      malloc()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chatgpt" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chatgpt解释
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="ccpp">C/Cpp语言学习</h1>
+<h2 id="_1">基础部分：</h2>
+<h3 id="_2">基本数据类型</h3>
+<p>可能感觉<code>int</code>，<code>float</code>，<code>char</code>在绝大多数场景已经可以应付自如了。但是长时间的学习之后（一定要注重代码的不断练习）还是发现略有不足，所以在此补充。</p>
+<p>同时要注意内存的分配是在定义的时候就已经完成的。</p>
+<p><strong>基本数据类型是 CPU 可以直接进行运算的类型</strong>，在算法中直接被使用，主要包括以下几种。</p>
+<ul>
+<li>整数类型 <code>byte</code>、<code>short</code>、<code>int</code>、<code>long</code> 。</li>
+<li>浮点数类型 <code>float</code>、<code>double</code> ，用于表示小数。</li>
+<li>字符类型 <code>char</code> ，用于表示各种语言的字母、标点符号甚至表情符号等。</li>
+<li>布尔类型 <code>bool</code> ，用于表示“是”与“否”判断。</li>
+</ul>
+<p><strong>基本数据类型以二进制的形式存储在计算机中</strong>。一个二进制位即为 1 比特。在绝大多数现代操作系统中，1 字节（byte）由 8 比特（bit）组成。</p>
+<p>1 Byte = 8 bit。要注意大小写的分别，在计算机中是存在GB和Gb的，所代表的实际含义是不同的</p>
+<p>注意在计算机中，或者考虑符号位的二进制中，首位当作符号位考虑正负，所以会出现如下的占用空间和最大最小值的关系.</p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>符号</th>
+<th>占用空间</th>
+<th>最小值</th>
+<th>最大值</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>整数</td>
+<td><code>byte</code></td>
+<td>1 byte</td>
+<td>-2^7^</td>
+<td>2^7^-1</td>
+<td>0</td>
+</tr>
+<tr>
+<td></td>
+<td><code>short</code></td>
+<td>2 byte</td>
+<td>-2^15^</td>
+<td>2^15^-1</td>
+<td>0</td>
+</tr>
+<tr>
+<td></td>
+<td><code>int</code></td>
+<td>4 byte</td>
+<td>-2^31^</td>
+<td>2^31^-1</td>
+<td>0</td>
+</tr>
+<tr>
+<td></td>
+<td><code>long</code></td>
+<td>8 byte</td>
+<td>-2^63^</td>
+<td>2^63^-1</td>
+<td>0</td>
+</tr>
+<tr>
+<td></td>
+<td><code>long long</code></td>
+<td>16 byte</td>
+<td>-2^127^</td>
+<td>2^127^-1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>浮点数</td>
+<td><code>float</code></td>
+<td>4 byte</td>
+<td>尚未找到关系</td>
+<td></td>
+<td>0.0f</td>
+</tr>
+<tr>
+<td></td>
+<td><code>double</code></td>
+<td>8 byte</td>
+<td></td>
+<td></td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>字符</td>
+<td><code>char</code></td>
+<td>2 byte</td>
+<td>0</td>
+<td>2^16^-1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>布尔</td>
+<td><code>bool</code></td>
+<td>1 byte</td>
+<td>false</td>
+<td>true</td>
+<td>false</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_3"><strong>输入与输出</strong></h3>
+<pre><code class="language-c++">#include &lt;iostream&gt;
+
+int main() {
+
+​    int x, y;                          // 声明变量  
+
+​    std::cin &gt;&gt; x &gt;&gt; y;                // 读入 x 和 y  
+
+​    std::cout &lt;&lt; y &lt;&lt; std::endl &lt;&lt; x;  // 输出 y，换行，再输出 x  
+
+​    return 0;                          // 结束主函数 
+
+}
+</code></pre>
+<p><code>std</code>：<code>std</code>是一种标准 <strong>命名空间</strong>  ，即C++中可以定义与函数同名的变量，而通过 <code>std::function</code> 来使用函数。</p>
+<h4 id="cincout">输入<code>cin</code>与输出<code>cout</code>：</h4>
+<p><code>cout</code> 是C++中的 <u><strong>标准输出流</strong></u>  用于将数据输出到标准输出设备；</p>
+<p><code>cin</code>是C++中的<u><strong>标准输入流</strong></u>  用于从标准输入设备接收用户输入的数据。</p>
+<p><u><strong>插入运算符</strong></u> <code>&lt;&lt;</code> 用于将变量、内容 <strong>插入到输出流</strong>中；而<strong><u>提取运算符</u></strong> <code>&gt;&gt;</code> 用于<strong>从输入流中提取</strong>内容。 </p>
+<p>便于理解可以这么想： <code>&gt;&gt;</code> 意味着赋值的方向。代码通过 <code>cin</code> 获得了输入的数据，又通过 <code>&gt;&gt;</code> 将其赋值到变量上；又通过变量 <code>x</code>  ， <code>y</code> 把数据的值赋值到 <code>cout</code> 上由其输出。</p>
+<h4 id="endl">换行<code>endl</code>：</h4>
+<p><code>endl</code> 是C++中的一个特殊控制符，用于在输出流中<strong>插入</strong>一个换行符并<strong>刷新输出缓冲区</strong>。</p>
+<p><strong>tips</strong>: <code>scanf</code> 和<code>printf</code> 的运行速度比上述的输出流和输入流<strong>更快</strong>，且方便控制输入输出格式。                </p>
+<h3 id="_4"><strong>宏定义</strong></h3>
+<pre><code class="language-c++">#include &lt;iostream&gt; 
+
+#define n 233 
+
+// n 不是变量，而是编译器会将代码中所有 n 文本替换为 233，但是作为标识符一部分的 
+
+// n 的就不会被替换，如 fn 不会被替换成 f233，同样，字符串内的也不会被替换
+
+int main() {  
+
+​    std::cout &lt;&lt; n;  // 输出 233  
+
+​    return 0; 
+
+}
+</code></pre>
+<p><code>#define</code> 是一种<strong>预处理命令</strong>，用于定义宏，本质上是文本替换。恰当使用可以提升程序的运行速度。</p>
+<p><code>#undef</code> :用于取消预定义的宏定义。它用于移除宏的定义，使其在代码中不再可用。</p>
+<p><strong>预处理命令</strong>：就是预处理器所接受的命令，用于对代码进行初步的文本变换，比如 文件包含操作 <code>#include</code> 和 处理宏 <code>#define</code> 等，对 GCC 而言，默认不会保留预处理阶段的输出 <code>.i</code> 文件。可以用 <code>-E</code> 选项保留输出文件。</p>
+<p><strong>宏定义定义3函数</strong></p>
+<pre><code class="language-c++">#include &lt;iostream&gt; 
+
+#define sum(x, y) ((x) + (y)) //类似于lambda函数，前面是函数名后面是具体操作方法。
+
+#define square(x) ((x) * (x)) 
+
+int main() {  
+
+​    std::cout &lt;&lt; sum(1, 2) &lt;&lt; ' ' &lt;&lt; 2 * sum(3, 5) &lt;&lt; std::endl;  // 输出 3 16 
+
+}
+</code></pre>
+<p>可见宏定义还可以定义函数。</p>
+<p><code>#define</code> 也有优点，比如结合 <code>#ifdef</code> 等预处理指令有奇效，比如：</p>
+<pre><code class="language-c++">#ifdef LINUX 
+
+// code for linux 
+
+#else
+
+// code for other OS 
+
+#endif
+</code></pre>
+<p>可以在编译的时候通过 <code>-DLINUX</code> 来控制编译出的代码，而无需修改源文件。这还有一个优点：通过 <code>-DLINUX</code> 编译出的可执行文件里并没有其他操作系统的代码，那些代码在预处理的时候就已经被删除了。</p>
+<p><code>#define</code> 还能使用 <code>#</code>、<code>##</code> 运算符，极大地方便调试。</p>
+<p><strong>注意</strong>：因为 <code>#define</code> 的本质是文本替换。所以使用 <code>#define</code> 是有风险的（由于 <code>#define</code> 作用域是整个程序，因此可能导致文本被意外地替换，需要使用 <code>#undef</code> 及时取消定义），因此应谨慎使用。较为推荐的做法是：使用 <code>const</code> 限定符声明常量，使用函数代替宏。</p>
+<h4 id="const"><code>const</code> :</h4>
+<p><code>const</code>是一个<strong>关键字</strong>，用于<strong>将某个变量定义成常量</strong>。</p>
+<p><code>const</code>定义的变量或对象的值在程序执行期间不能被修改。它可以用于定义常量，函数参数，函数返回值等。</p>
+<p>定义常量示例：</p>
+<pre><code class="language-c++">const int MAX = 100;
+</code></pre>
+<p>这里<code>MAX</code><strong>被定义为一个常量，它的值不能被修改，否则程序会报错</strong>。对于整个程序而言<code>MAX</code>就是100。</p>
+<p>另外，<code>const</code><strong>还可以用于函数的参数和返回值</strong>。</p>
+<p>例如：</p>
+<pre><code class="language-c++">int add(const int x, const int y) {
+    return x + y;
+}
+</code></pre>
+<p>在这个例子中，<code>add</code>函数的参数<code>x</code>和<code>y</code>被声明为<code>const</code>，这意味着函数内部不能修改它们的值。</p>
+<p>同样地，如果函数返回值被声明为<code>const</code>，则它的值也不能被修改。</p>
+<h3 id="_5">流程控制语句</h3>
+<h4 id="_6">三元</h4>
+<p>C语言的三元（三目）可以归为如下的写法：</p>
+<pre><code class="language-c">condition ? result_1 : result_2;
+</code></pre>
+<p>判断 <code>codition</code>中的值是否正确，如果<code>condition</code>为真，则整体表达式会返回 <code>result_1</code>的值，反之则返回<code>result_2</code>的值。</p>
+<h4 id="_7">分支</h4>
+<h5 id="if">if语句</h5>
+<pre><code class="language-c++">if(condition1){
+    code;
+}else if(condition2){
+    code;
+}else{
+    code;
+}
+</code></pre>
+<h5 id="switch">switch</h5>
+<pre><code class="language-c++">switch(object){
+    case condition1:
+        code;
+        break; //没有break会全部执行
+    case condition2:
+        code;
+        break;
+    default：//其余情况
+        code;
+}
+</code></pre>
+<h4 id="_8">循环</h4>
+<h5 id="for">for</h5>
+<pre><code class="language-c++">for (initial;condition;update){
+    code;
+}
+</code></pre>
+<h5 id="while">while</h5>
+<pre><code class="language-c++">while(condition){
+    code;
+}
+</code></pre>
+<pre><code class="language-c++">do{
+    code;
+}while(condition)
+//相较于while。do···while是先执行一次再判断
+</code></pre>
+<h5 id="continuebreak">continue和break</h5>
+<p><code>continue</code>:跳过此次，进入下一次循环。</p>
+<p><code>break</code>:结束此循环</p>
+<h2 id="_9">结构体</h2>
+<p>结构体可以对基本属性变量进行封装，包装多个数据类型的数据类型。</p>
+<p><code>结构体（struct）</code>是由一系列具有相同类型或不同类型的数据构成的数据集合，也叫结构。</p>
+<p><strong>本身是一种待声明定义的数据类型。</strong></p>
+<p>例：</p>
+<pre><code class="language-c++">#inculde&lt;stdio.h&gt;
+struct    Structname{  //结构体声明 结构体的名字(结构体命名建议首字母大写)
+    int digit;
+    char alpha[100]; //或者char *name（指针更节省内存）
+    float score;
+    //.....  
+};    //这里需要一个分号表示结构体声明结束
+</code></pre>
+<p>在此我们定义了一个名为<code>Structname</code>的结构体，类似于<code>int</code>。</p>
+<p>注意：我们声明结构体不是在声明变量，而是在声明一种结构体类型：这个结构体由什么数据组成，其中数据的变量名是什么。</p>
+<h3 id="_10">如何声明结构体类型</h3>
+<h4 id="_11">空结构体</h4>
+<pre><code class="language-c++">struct EmptyStruct {
+    //TODO
+};
+</code></pre>
+<p>空结构体的内容需要后续去定义</p>
+<h4 id="_12">匿名结构体</h4>
+<pre><code class="language-c++">struct {
+    int id;
+    char *name;
+    float score;
+};
+</code></pre>
+<p>定义一个匿名结构体。但在后续没办法使用，所以一般匿名结构体使用在只使用一次的位置。</p>
+<p>但是：</p>
+<pre><code class="language-c++">struct {
+    int id;
+    char *name;
+    float score;
+}stu1, stu2;
+</code></pre>
+<p>可以在后续补充声明为此结构体定义的变量名。</p>
+<p>意味着<code>stu1</code>与<code>stu2</code>二者声明为此匿名结构体的结构的<strong>结构体变量</strong>。</p>
+<p>而并非把这个结构体类型命名为<code>stu1</code>或者<code>stu2</code>。</p>
+<h4 id="typedef">Typedef</h4>
+<p>此节我们学习，如何用<code>typedef</code>（类型声明）**方便我们进行结构体变量的简单定义。</p>
+<p>我们知道我们可以通过<code>typedef int i</code>将<code>int</code>类型改名为<code>i</code>类型。对于声明这个代码的程序而言，<code>int</code>和<code>i</code>都代表着<strong>整型</strong>。</p>
+<p>而对变量进行结构体定义时会出现：</p>
+<pre><code class="language-c++">#include&lt;stdio.h&gt;
+struct Structname{  
+    int digit;
+    char alpha[100]; 
+    float score;  
+};
+int main(){
+    int a;//对变量a进行了整型定义
+    Structname stu;//对变量stu进行了错误的结构体定义
+    struct Structname stu;//正确的定义，但十分繁琐，所以我们学习typedef来方便我们进行定义。
+    return 0;
+}
+</code></pre>
+<p><strong>使用typedef：</strong></p>
+<pre><code class="language-c++">#include&lt;stdio.h&gt;
+//示例一：
+struct Structname{  
+    int digit;
+    char alpha[100]; 
+    float score;  
+};
+typedef struct Structname Structname;//typedef在此处的作用为，声明了前面的struct Structname类型改名为Structname
+
+//实例二：
+typedef struct Structname{  //在声明结构体时进行类型声明。改变结构体的类型名。
+    int digit;
+    char alpha[100]; 
+    float score;  
+}Strctname;//在末尾补上声明后的类型名，可以理解为前一个示例中对中间原来的结构体声明进行了全写，当然结构体原先在struct后的命名可以省略。
+
+int main(){
+    int a;
+    Structname stu;
+    return 0;
+}
+</code></pre>
+<h4 id="_13">结构体的嵌套定义</h4>
+<p>结构体嵌套很好理解，就是结构体里嵌套一个结构体。</p>
+<p>先声明一个结构体类型的结构，在后续的结构体中使用这个先前的结构体。</p>
+<p>即为结构体的嵌套定义。</p>
+<pre><code class="language-c++">#include&lt;stdio.h&gt;
+typedef struct Birthday{ 
+    int yaer;
+    int month; 
+    int day;
+}Birthday;
+
+typedef struct Student{ 
+    int digit;
+    char alpha[100]; 
+    float score;
+    Birthday birthday; 
+}Student;
+
+int main(){
+    int year;
+    Student stu;//对变量stu进行结构体定义
+    year = stu.birthday.year;//访问类型为Student的stu变量当中的类型为Birthday的birthday变量当中的类型为int的year变量的数据。
+    return 0;
+}
+</code></pre>
+<h3 id="_14">结构体变量</h3>
+<h4 id="_15">声明结构体变量</h4>
+<p>要注意<strong>我们在声明定义一个结构体类型的结构的时候并不占用内存</strong>，因为声明一个结构体类型的结构时我们<strong>相当于在制造一个<code>int</code> <code>float</code></strong><u>他们本身都是并不占用程序的内存的</u>。</p>
+<p>所以自然而然声明定义结构体的时候也并不占用程序的内存。</p>
+<p>只有当真正声明一个变量的类型为结构体时才会占用内存。</p>
+<p>下面是几种声明结构体变量的方法</p>
+<h5 id="_16">方法一</h5>
+<p>在主代码段用<code>Strucname name</code>的格式进行声明</p>
+<pre><code class="language-c++">#include&lt;stdio.h&gt;
+
+typedef struct Student{ 
+    int digit;
+    char alpha[100]; 
+    float score;
+}Student;
+
+int main(){
+    Student stu;//对变量stu进行结构体变量声明
+    return 0;
+}
+</code></pre>
+<h5 id="_17">方法二</h5>
+<p>在声明结构体类型时对变量进行声明</p>
+<pre><code class="language-c++">#include&lt;stdio.h&gt;
+
+typedef struct Student{ 
+    int digit;
+    char alpha[100]; 
+    float score;
+}Student,stu;//对变量stu进行结构体变量声明
+
+int main(){
+
+    return 0;
+}
+</code></pre>
+<h4 id="_18">结构体变量的赋值以及访问结构体成员</h4>
+<pre><code class="language-c++">#include &lt;stdio.h&gt;
+
+typedef struct Birthday{ 
+    int yaer;
+    int month; 
+    int day;
+}Birthday;
+
+typedef struct Student{ 
+    int digit;
+    char alpha[100]; 
+    float score;
+    Birthday birthday; 
+}Student;
+
+int main(){
+    Student stu={45,&quot;yxl&quot;,78.65,{2000,12,31}};//这里既展示了单一的结构体变量的赋值，也展示了嵌套时结构体的赋值。
+    printf(&quot;digit:%d\t alpha:%s\t score:%.2f\t %d %d %d&quot;, 
+           stu.digit, stu.alpha, stu.score, stu.birthday.year, stu.birthday.month, stu.birthday.day);//输出方法
+    return 0;
+}
+</code></pre>
+<h4 id="_19">结构体作为函数参数</h4>
+<pre><code class="language-c++">#include&lt;stdio.h&gt;
+
+typedef struct Student{ 
+    int digit;
+    char alpha[100]; 
+    float score;
+}Student;
+
+void printfstruct(Student stu){   //声明一个输出结构体的函数
+    printf(&quot;digit:%d\t alpha:%s\t score:%.2f\t %d %d %d&quot;,
+           stu.digit, stu.alpha, stu.score, stu.birthday.year, stu.birthday.month, stu.birthday.day);
+}
+int main(){
+    Student stu={45,&quot;yxl&quot;,78.65,{2000,12,31}};
+    printfstruct(stu);
+    return 0;
+}
+</code></pre>
+<h3 id="_20">结构体指针</h3>
+<h4 id="_21">声明结构体指针以及用结构体指针访问结构体成员</h4>
+<p>在上一个案例中，我们声明了<strong>一个函数用于输出结构体变量的各个数据</strong>。</p>
+<p>但采用的方法是<strong>复制结构体再进行打印输出</strong>，<strong><u>这样会拷贝一份结构体的内存</u></strong>。</p>
+<p>对于我们而言当这样拷贝的次数变多，或者结构体的内部结构的变量的数量增加，会极其<strong>影响我们运行的效率</strong>。所以我们这里学习声明结构体指针用指针（也就是结构体的地址），我们用一个指针来完成传递，来提升我们的运行效率以及减少我们运行时程序占据的空间。</p>
+<p>而且<strong>使用指针更加规范</strong>。</p>
+<pre><code class="language-c++">#include&lt;stdio.h&gt;
+typedef struct Student{ 
+    int digit;
+    char alpha[100]; 
+    float score;
+}Student,stu;   //对变量stu进行结构体变量声明
+
+void printfstruct(Student stu){   //声明一个输出结构体的函数，但是再拷贝一份影响效率以及空间
+    printf(&quot;digit:%d\t alpha:%s\t score:%.2f\t %d %d %d&quot;,
+           stu.digit, stu.alpha, stu.score, stu.birthday.year, stu.birthday.month, stu.birthday.day);
+}
+
+void printfpoint(Student *p){     //同样声明一个输出结构体的函数，但是采用的是指针作为参数。
+    printf(&quot;digit:%d\t alpha:%s\t score:%.2f\t %d %d %d&quot;,
+           p-&gt;digit, p-&gt;alpha, p-&gt;score, p-&gt;birthday.year, p-&gt;birthday.month, p-&gt;birthday.day);
+}   //在这里我们用指针访问结构体内各个数据的时候不再使用“.”方法也就是p.digit，访问，而是使用-&gt;来使指针访问结构体中的成员。 
+
+int main(){
+    stu = {45,&quot;yxl&quot;,78.65,{2000,12,31}};
+    Student *pstu = &amp;stu;   //声明一个结构体指针pstu作为指针指向stu（也就是获取了stu的地址）
+     printfpoint(*pstu);
+    return 0;
+}
+</code></pre>
+<h3 id="_22">结构体内存计算</h3>
+<p>直接用<code>siezeof()</code></p>
+<pre><code class="language-c++">#include&lt;stdio.h&gt;
+typedef struct Student{ 
+    int digit;
+    char alpha[100]; 
+    float score;
+}Student,stu;//对变量stu进行结构体变量声明
+
+int main(){
+    stu = {45,&quot;yxl&quot;,78.65,{2000,12,31}};
+    printf(&quot;结构体Student所占字节数:%d&quot;,sizeof(Student));
+    return 0;
+}
+</code></pre>
+<p>对于内部声明变量类型完全相同的结构体，我们可以用声明时结构体内所声明的几个同类变量的内存来计算结构体所占的字节数。
+$$
+struct\space byte=n*def\space size
+$$
+但是要注意声明内部变量类型不同的结构体。</p>
+<p>因为其内部会发生<strong>内存对齐</strong>。</p>
+<h4 id="_23">内存对齐</h4>
+<p>内存对齐是什么呢？</p>
+<p><strong>内存对齐（Memory Alignment）</strong>是指在计算机中，数据在内存中存储时按照特定规则对齐的过程。计算机内存是按照字节来寻址的，每个数据类型在内存中占用的字节数是固定的。</p>
+<p><u><strong>内存对齐的目的是为了提高内存访问的效率和性能</strong></u>。</p>
+<p>在内存中，每个数据类型都有一个对齐要求，<u><strong>即它在内存中存储时的起始地址必须是某个特定值的倍数</strong></u>。这个特定值称为对齐单位或对齐边界。常见的对齐单位有1字节、2字节、4字节、8字节等。</p>
+<p>内存对齐的原因有两个主要方面：</p>
+<ol>
+<li>访问效率：当数据按照对齐要求存储时，处理器可以更快地读取和写入这些数据。如果数据没有对齐，处理器可能需要进行多次内存访问，从而降低了效率。</li>
+<li>缓存一致性：现代计算机通常具有多级缓存，缓存的数据是按照对齐要求存储的。如果数据没有对齐，可能会导致缓存不一致的问题，从而影响程序的正确性和性能。</li>
+</ol>
+<p>对于数据结构中的内存对齐十分好理解：</p>
+<p>在构造一个数据结构类型的时候，它的内部有若干个基础数据类型。我们以这些基础类型中<strong>占据内存字节最大的类型为基本存储大小</strong>，在分配的内存的时候我们都<strong>以此基本存储单元来分配内存</strong>。对于<strong>小于基本存储大小的</strong>，<u>我们可以将这些小于的拼凑在一起，来尽可能减少空内存的浪费</u>。而<strong>对于实在没有办法拼凑的</strong>，<u>我们直接给它分配基本存储大小的内存空间</u>。</p>
+<pre><code class="language-c++">typedef struct shiyan{
+    int a;//4
+    int b;//4
+    int c;//4
+    char d;//1  4为最大的内存大小，因而每个元素应该按照4分配，不足4的也要给它分配4。
+}shiyan;//16
+
+typedef struct sy{
+    int a;//4
+    float b;//4
+    double d;//8   8为最大的内存大小，因而每个按照8分配，因恰好可以拼接，发现可以凑成4个8，一个char在外，独立分配8字节内存
+    int e;//4
+    shiyan c;//12   可以视作将这个结构体的3个int和一个char都放在里面区考虑 
+}oo;//40
+</code></pre>
+<p>在出现结构体中定义一个外部结构体时，在计算内存的时候我们<strong>可以视作：将这个外部结构体的内部结构引入这个结构体内</strong>，从而去计算结构体所占的大小。</p>
+<p><strong>提醒：char即使采用数组格式，可以存储多个单元，我们仍然视作定义了若干个char，每个分配字节为1的内存给每个char，所以其最大内存大小仍被视作1</strong></p>
+<h3 id="_24">位域使用</h3>
+<p>没学，先空着</p>
+<h3 id="_25">结构体数组</h3>
+<p>我们经常在实际中，会出现需要声明多个结构体变量的情况，如果单一地一个一个来会很浪费时间。所以我们使用结构体数组来帮助我们，批量地对一堆相同结构的结构体进行操作。</p>
+<pre><code class="language-c++">#include&lt;stdio.h&gt;
+typedef struct Student{ 
+    int digit;
+    char alpha[100]; 
+    float score;
+}Student,stu;//对变量stu进行结构体变量声明
+
+void printfstus(Student *p, int len){    //这里将指针改成Student p[]
+    for(int i = 0; i&lt;len; i++){
+    printf(&quot;digit:%d\t alpha:%s\t score:%.2f\t&quot;,
+           (p+i)-&gt;digit, (p+i)-&gt;alpha, (p+i)-&gt;score);//此处输出的话就可以将(p+i)改为p[i]
+    }
+}
+int main(){
+    stu = {45,&quot;yxl&quot;,78.65,{2000,12,31}};
+    Student stus = {
+                    {45,&quot;yxl&quot;,78.65,{2000,12,31}},//第一个学生信息
+                    {45,&quot;yxl&quot;,78.65,{2000,12,31}},//第二个
+                    {45,&quot;yxl&quot;,78.65,{2000,12,31}},//第三个
+                    //......同样的方法。
+    };
+    printfstus(stus,sizeof(stus)/sizeof(stus[0]));//如果指针和数组学的较好可以知道，数组就是一类指针。数组指向数组中的第一个元素，也就是数组无下标的时候就是第一个元素的地址。
+    return 0;
+}
+</code></pre>
+<h2 id="_26">函数</h2>
+<table>
+<thead>
+<tr>
+<th>function</th>
+<th>usage</th>
+<th>effects</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>size()</td>
+<td>array.size()</td>
+<td>获取数组的长度</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="malloc"><code>malloc()</code></h3>
+<p><code>malloc()</code> 是<strong>动态内存分配函数</strong>之一，它的作用是在程序运行时在<strong>堆（heap）</strong>中分配一块指定大小的内存空间，并返回该内存空间的首地址。</p>
+<p>需要先引入头文件</p>
+<p><code>#include &lt;malloc.h&gt;</code> 或 <code>#include &lt;alloc.h&gt;</code>或者<code>#include&lt;stdlib.h&gt;</code></p>
+<pre><code class="language-c++">#include&lt;stdio.h&gt;
+#include&lt;malloc.h&gt;
+int main(){
+    char *p;
+    p=(char *)malloc(100);
+    if(p)
+        printf(&quot;Memory Allocated at:%x\n&quot;,p);
+    else
+        printf(&quot;Not Enough Memory\n&quot;);
+    free(p);
+    return 0;
+}
+</code></pre>
+<pre><code class="language-c++">void *malloc(size_t size);
+</code></pre>
+<p>其中，<code>size_t</code>表示要<strong>分配的内存空间大小</strong>，<strong>单位是字节（byte）</strong></p>
+<p>函数返回一个指向已分配内存的指针，分配失败则返回NULL</p>
+<p>使用<code>malloc</code>函数可以动态地为变量、数组等数据结构分配内存，避免了在程序编译时限制了内存大小。但是需要注意的是，在使用完毕后，需要通过调用<code>free</code>函数来释放已分配的内存，以避免内存泄漏的问题。</p>
+<p><code>void</code>表示类型，例如给char、int类型的指针进行分配内存，则把<code>void</code>改为<code>char</code>、<code>int</code>如：<code>（char*）malloc（）</code>    <code>(int*)malloc()</code></p>
+<h3 id="chatgpt"><code>Chatgpt</code>解释</h3>
+<p>C语言中的 <code>malloc</code> 函数用于动态分配内存空间。它的主要作用是在运行时（程序执行过程中）从堆（heap）中分配一块指定大小的内存区域，并返回一个指向该内存区域的指针。这个分配的内存区域在程序不再需要时可以手动释放，以防止内存泄漏。</p>
+<p><code>malloc</code> 函数的原型如下：</p>
+<p>复制代码</p>
+<pre><code class="language-c">void* malloc(size_t size);
+</code></pre>
+<p>其中：</p>
+<ul>
+<li>
+<p><code>size</code> 参数表示要分配的内存空间的字节数。通常，你需要提供一个整数值，表示你希望分配的内存大小。</p>
+</li>
+<li>
+<p><code>malloc</code> 返回一个 <code>void</code> 指针，因此你需要将其显式地转换为适当的类型，以便在分配的内存空间中存储特定类型的数据。</p>
+</li>
+</ul>
+<p>下面是一个示例，演示了如何使用 <code>malloc</code> 来动态分配内存以存储整数数组：</p>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+int main() {
+    int *arr;
+    int size = 5;
+    // 使用 malloc 分配一个包含 5 个整数的数组空间
+    arr = (int*)malloc(size * sizeof(int));
+
+    if (arr == NULL) {
+        printf(&quot;内存分配失败\n&quot;);
+        return 1;
+    }
+
+    // 对分配的内存进行操作
+    for (int i = 0; i &lt; size; i++) {
+        arr[i] = i * 10;
+    }
+
+    // 使用完内存后，记得释放
+    free(arr);
+
+    return 0;
+}
+</code></pre>
+<p>在使用 <code>malloc</code> 后，你可以在分配的内存中存储数据，并在不再需要时使用 <code>free</code> 函数释放内存，以避免内存泄漏。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.07f07601.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.56dfad97.min.js"></script>
+      
+    
+  </body>
+</html>

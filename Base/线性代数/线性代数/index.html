@@ -1,0 +1,1590 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="idonlikename">
+      
+      
+        <link rel="canonical" href="https://idonlikename.github.io/mynote/Base/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/">
+      
+      
+        <link rel="prev" href="../../../Computer/%E9%80%9A%E8%AF%86%E8%AF%BE/Missing%20Semester/Lec02shell%E5%B7%A5%E5%85%B7%E4%B8%8E%E8%84%9A%E6%9C%AC/">
+      
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.34">
+    
+    
+      
+        <title>线性代数 - TheLang's Note</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.35f28582.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="grey" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="TheLang&#39;s Note" class="md-header__button md-logo" aria-label="TheLang's Note" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            TheLang's Note
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              线性代数
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="grey" data-md-color-accent="cyan"  aria-label="切换至夜间模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切换至夜间模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="cyan"  aria-label="切换至日间模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换至日间模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="TheLang&#39;s Note" class="md-nav__button md-logo" aria-label="TheLang's Note" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    TheLang's Note
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Code
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Code
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../code/C/C%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../code/python/Python%E5%9F%BA%E7%A1%80/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../code/java/Java%E5%9F%BA%E7%A1%80%E7%BC%96%E7%A8%8B/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Java
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Computer
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Computer
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    OS
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            OS
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Computer/OS/%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    进程管理
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Computer/OS/%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    内存管理
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Computer/OS/%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86/%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    文件管理
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    计算机通识
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            计算机通识
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Computer/%E9%80%9A%E8%AF%86%E8%AF%BE/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%B8%B8%E8%AF%86/%E6%96%87%E4%BB%B6%E7%9B%B8%E5%85%B3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    文件通识
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Missing Semester
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            Missing Semester
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Computer/通识课/Missing Semester/'Lec01Missing Semester.md'" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lec01
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Computer/%E9%80%9A%E8%AF%86%E8%AF%BE/Missing%20Semester/Lec02shell%E5%B7%A5%E5%85%B7%E4%B8%8E%E8%84%9A%E6%9C%AC/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lec02
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    base
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            base
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    线性代数
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    线性代数
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      向量
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="向量">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      线性组合
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="线性组合">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      线性相关
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      基
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      矩阵乘法
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="矩阵乘法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      线性变换
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      矩阵和向量的乘法
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      矩阵与矩阵的乘法
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="矩阵与矩阵的乘法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      旋转
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      剪切
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      逆变换
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      行列式
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="行列式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      不满秩的情况
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      关于秩
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      线性方程组
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      点积与叉积
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="点积与叉积">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      点积
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      叉积
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      基变换
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      特征值与特征向量
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      向量
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="向量">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      线性组合
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="线性组合">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      线性相关
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      基
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      矩阵乘法
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="矩阵乘法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      线性变换
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      矩阵和向量的乘法
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      矩阵与矩阵的乘法
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="矩阵与矩阵的乘法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      旋转
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      剪切
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      逆变换
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      行列式
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="行列式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      不满秩的情况
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      关于秩
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      线性方程组
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      点积与叉积
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="点积与叉积">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      点积
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      叉积
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      基变换
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      特征值与特征向量
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="_1">线性代数</h1>
+<p>在这里也说一句题外话，对于一个矩阵而言，我们最好用<strong>列向量组</strong>来帮助我们理解。</p>
+<p>矩阵的<strong>纵向扩展增加是增加维度</strong>，向右扩展也就是<strong>横向扩展</strong>实际只是<strong>增加此列向量组中的向量数量</strong>。</p>
+<p>由此我们也可以理解为什么我们不能计算3×4的行列式了，或者简单点说，我们为什么不能计算2×3的行列式。</p>
+<p>因为一个平面需要一组最大无关组也就是2个向量，而这里有竟然有3个，那会起冲突(第三个向量，极大可能不在我们所定义的的前两个平面中，即并不能构成一个合理的几何模型)。定维少向量同样导致无法计算的问题。</p>
+<h2 id="_2">向量</h2>
+<p>方向加数值，也可以看作一组有序数列
+$$
+三维向量：\left[\begin {array}{c}
+1  \
+2  \
+-5  \
+\end{array}\right]=(1,2,-5)
+$$
+一组向量求加减
+$$
+\left[\begin {array}{c}
+x_1\
+y_1\
+z_1\
+\end{array}\right]+
+\left[\begin {array}{c}
+x_2\
+y_2\
+z_2\
+\end{array}\right]=
+\left[\begin {array}{c}
+x_1+x_2\
+y_1+y_2\
+z_1+z_2\
+\end{array}\right]
+$$</p>
+<h3 id="_3">线性组合</h3>
+<p>即<strong>Linear Combination</strong></p>
+<p>指的是<strong>两组向量分别进行各自的缩放后，共同组合成一组新向量</strong>。</p>
+<p>怎么样理解其中的线性呢？</p>
+<p>因为当我们<strong>固定一个向量</strong>，另一个向量无论怎样缩放，其最终向量指向的点的坐标<strong>必然在同一条直线上</strong>。
+$$
+\vec c=a\vec v +b\vec w=
+a\left[\begin {array}{c}
+x_1\
+y_1\
+\end{array}\right]+
+b\left[\begin {array}{c}
+x_2\
+y_2\
+\end{array}\right]
+$$
+当然，你要是<strong>二者都不固定</strong>，随意的缩放组合会张出一个平面，对于一组三维向量，则会张出一个空间。（前提是他们都是最大无关组）</p>
+<h4 id="_4">线性相关</h4>
+<p>在此之上，易于理解的</p>
+<p><strong>线性相关</strong>：可以通过两个向量进行<strong>线性组合</strong>而得到的新向量。则称这个<strong>新向量</strong>与<strong>原先的两个向量线性相关</strong>
+$$
+\vec u与 \vec v、\vec w线性相关\\vec u = a\vec v+b\vec w
+$$</p>
+<h4 id="_5">基</h4>
+<p>只要二者是一组线性无关组，那他们就可以表示出二者<strong>所在平面的原点到任意一点的向量</strong>。</p>
+<p>我们则可以称由这两个向量<strong>线性组合构成的全部向量的集合</strong>为“<u>张成的空间</u>”（张量，tensor）</p>
+<p>向量空间的<strong>一组基</strong>是张成该空间的<strong>一个线性无关向量集</strong>。即张成该空间的<strong>一个线性无关的集合</strong></p>
+<h2 id="_6">矩阵乘法</h2>
+<h3 id="_7">线性变换</h3>
+<p>满足以下两种性质的变换可以看作线性变换</p>
+<ul>
+<li>直线仍旧是直线</li>
+<li>原点的位置不变</li>
+</ul>
+<p>用数值表达线性变换，可以看作是对于基向量进行旋转缩放。</p>
+<p>严格线性限制
+$$
+L(\vec v + \vec w) = L(\vec v)+L(\vec w)\
+L(c\vec v)=cL(\vec v)
+$$</p>
+<h3 id="_8">矩阵和向量的乘法</h3>
+<p>我们知道向量可以看作一个有序数列，我们可以将矩阵看作多个向量组成的一个向量组。</p>
+<p>譬如
+$$
+\left[\begin {array}{c}
+1 &amp;-2 \
+4 &amp;3\
+\end{array}\right]=
+\left[\begin{array}{c}
+1\
+4\
+\end{array}\right]
+\left[\begin{array}{c}
+-2\
+3\
+\end{array}\right]
+$$
+我们可以将这个2*2的矩阵，看作两个二维向量，即(1,-2)和(4,3)。</p>
+<p>而在矩阵和向量的乘法中：</p>
+<p>以上述矩阵为例，其与一个向量相乘
+$$
+\left[\begin {array}{c}
+1 &amp;-2 \
+4 &amp;3\
+\end{array}\right]
+\left[\begin {array}{c}
+1 \
+2 \
+\end{array}\right]=
+1\left[\begin {array}{c}
+1 \
+4 \
+\end{array}\right]+
+2\left[\begin {array}{c}
+-2 \
+3\
+\end{array}\right]=
+\left[\begin {array}{c}
+-3 \
+10 \
+\end{array}\right]
+$$
+可以看作对于向量（及其所在平面的）的旋转伸缩。</p>
+<p>具体来说：</p>
+<p>在原先的向量中，向量与x轴、y轴上的单位向量（也就是x y坐标系中的一组<strong>基向量</strong>）具有如下的关系
+$$
+\left[\begin {array}{c}
+1 \
+2 \
+\end{array}\right]=
+1\left[\begin {array}{c}
+1 \
+0 \
+\end{array}\right]+
+2\left[\begin {array}{c}
+0\
+1\
+\end{array}\right]
+$$
+显而易见的，向量本身就是对<strong>基向量</strong>的旋转缩放，或者说线性组合后产生的结果。</p>
+<p>而与向量相乘的矩阵作为<strong>转换矩阵</strong>改变了原先的基向量(对<strong>基向量</strong>本身进行了旋转缩放，也就是进行了<strong>线性变换</strong>)。对于基向量进行了线性变换，即对整个平面进行了缩放变换。</p>
+<p>或者更易于理解地说，其通过重新定义了单位向量（基）原先的值，进而对整个坐标系进行了<strong>线性变换</strong>实现了对原先向量的改变。</p>
+<h3 id="_9">矩阵与矩阵的乘法</h3>
+<p>在上一节中我们提及，矩阵对于向量，是对于其基向量的旋转缩放，进而对于整个平面和向量的<strong>旋转缩放</strong>。我们可以称这个矩阵为<strong>转换矩阵</strong></p>
+<p>而矩阵与矩阵的乘法，则可以看作对平面坐标系的多次旋转缩放。但是我们知道
+$$
+AB \neq BA
+$$
+所以变换的顺序是影响变换的最终结果的，当然带上括号并不影响结果。因为本质上来说，都是前者对于后者的旋转变换。</p>
+<p>整个式子需要<strong>从右至左去读</strong>。</p>
+<h4 id="_10">旋转</h4>
+<h4 id="_11">剪切</h4>
+<p>旋转矩阵和剪切矩阵共同组成的复合矩阵，满足了一切需要的变换。</p>
+<h3 id="_12">逆变换</h3>
+<p>我们这个时候也好理解逆矩阵究竟在做什么工作了</p>
+<p>本质上逆矩阵的矩阵变换应当是对于矩阵变换的逆操作。举个例子，对于旋转再剪切的一个空间我们对它进行逆剪切和逆旋转恢复到原来的平面中。</p>
+<p><strong>为什么行列式为0阵不具备逆矩阵？</strong></p>
+<p>同时一个行列式为0的矩阵同样不具备逆矩阵，从计算上理解，我们认为除数不可以为0，因此不能计算出此矩阵的逆，因而其不具有逆矩阵。</p>
+<p>从几何上理解我们认为一个矩阵空间，在出现行列值为0的情况时（后续我们会讲解行列式的含义，在这里我们可以认为行列式值为0的方阵，对整个坐标系做了一个<strong>降维操作</strong>），其在2<em>2的空间被视作</em><em>压缩（矩阵变换）成一条直线</em><em>，而直线的</em><em>解压缩的结果具有多解</em><em>（无穷解空间）因而其</em><em><u>不具备一个准确的逆矩阵</u></em>*。</p>
+<h2 id="_13">行列式</h2>
+<p>对于行列式，我们可以看作，矩阵空间(2<em>2的空间为例)在计算由这个平蛮至少两个向量组成的</em><em>平行四边形的面积</em>*。</p>
+<p>对于3<em>3的立体空间，则是计算一个</em><em>六面体的体积</em>*</p>
+<p>顺带说一句，<strong>转置不影响行列式的值</strong>。</p>
+<p><strong>但是如何理解其中的负值呢？</strong></p>
+<p>对于标准基，我们同样以x y坐标系中的i j为例，当i 始终保持在j的右下侧相对位置，即j的x小于i，y大于i。若不满足任意一条即为负值。</p>
+<p>或者可自行想象平面的翻转。</p>
+<p>其实也是好理解的，当 i j垂直时为面积的最大值（仅仅考虑角度）而当二者重合即为0。这恰好是一个<strong>sin的图像</strong>。而二者之间的角度与面积之间的关系也正符合一个sin函数的关系，所以当角度超过了Π或者是小于0（定义原先的角度为Π/2）</p>
+<p>这个时候我们也能理解为什么行列式交换行列会异号了，明显的，交换了某两个基的值相当于对于整个空间进行了一次翻转。</p>
+<h4 id="_14">不满秩的情况</h4>
+<p>我们单独讨论一下不满秩的情况，前面我们说行列式的计算实际就是在计算张成空间的图形面积/体积。但这是对于一个满秩的矩阵来说的，对于一个非满秩的矩阵，我们知道其行列式值为0.</p>
+<p><strong>为什么非满秩阵的行列式为0呢？</strong></p>
+<p>同样好理解的，相当于在一个平面空间这个矩阵所表示的空间实际仅为一条线，在一个立体空间表示为一个平面。而在相应的空间中我们需要对应的维度的几何模型来表达行列式的值，所以对于一个立体空间一个平面的<strong>面积尽管无限大，体积那也是0</strong>；<strong>直线无限长对于一个平面而言其面积仍为0</strong>。</p>
+<h4 id="_15">关于秩</h4>
+<p>秩我们可以看作这个矩阵的准确维度，也就是这个矩阵(列向量组)能张成空间的维度。</p>
+<h2 id="_16">线性方程组</h2>
+<p>线性方程组
+$$
+线性方程组：\
+\left[\begin {array}{c}
+A &amp;B\
+C &amp;D\
+\end{array}\right]
+\left[\begin {array}{c}
+x\
+y\
+\end{array}\right]=
+\left[\begin {array}{c}
+a\
+b\
+\end{array}\right]
+$$
+对于代数上的理解可以理解为
+$$
+Ax+By =a\
+Cx+Dy =b
+$$
+而在几何上去理解，可以看作某个向量，在经过<strong>矩阵变换</strong>后得到了<strong>结果向量</strong>，求这个<strong>原始向量</strong>。之前提及的<strong>逆变换</strong>在这里起到了相应的作用，对于结果向量进行逆变换我们就可以得到我们所求的向量。</p>
+<p>tips：前面我们提及了行列式为0的矩阵其不具备逆矩阵，<u>但这并不意味着其线性方程组并不存在解</u>。若其结果向量，在这个降维空间内，那我们仍认为这个方程组有解。其实就是结果向量本身也可以进行降维。</p>
+<p>一般行列式为0的线性方程组，其解空间要么多解，要么无解。</p>
+<p>若结果向量均为0，一般我们讨论非零解</p>
+<h2 id="_17">点积与叉积</h2>
+<h3 id="_18">点积</h3>
+<p>首先我们要确定以下点积的计算形式为
+$$
+\left[\begin {array}{c}
+a\
+b\
+c\
+\end{array}\right]\cdot
+\left[\begin{array}{c}
+d\
+e\
+f\
+\end{array}\right]=
+ad+be+cf
+$$
+即对应位置的数值相乘再整体求和。很显然，在高中的时候我们学过其几何概念，即一个向量在另一个向量方向的投影，将投影的模和此方向向量的模相乘。所以我们有一个更好的计算形式为
+$$
+\vec a \cdot \vec b=|\vec a||\vec b|\cos(\theta)
+$$
+那问题是，我们如何理解这两类计算方式是计算同一种结果的方法呢？</p>
+<p>这是易于可见的
+$$
+\left[\begin{array}{c}
+a &amp;b &amp;c
+\end{array}\right]
+\left[\begin{array}{c}
+d\
+e\
+f\
+\end{array}\right]=ad+be+cf
+$$
+也就是我们可以认为，点积的作用是将前一个向量由一个向量变为了1×3的矩阵对空间进行了<strong>线性变换</strong>，将我们原先的三维空间矩阵线性变换为一维（数轴）。其结果为，基向量在对应的转换后所表示，向量在数轴上的长度。或者更为直观的说，整个平面进行了线性转换，整体被压缩在一个向量同方向的直线上（如果这个向量是<strong>单位向量</strong>我们仅考虑方向，也就是单纯的投影，如果其<strong>非单位向量</strong>，则需要额外考虑这个向量对另一个向量在数轴上的<strong>缩放效果</strong>），而我们的计算结果无非是在计算在整个空间被压缩后，另外一个向量在这个向量的<strong>数轴上的长度</strong>。</p>
+<p>注意我这里所说的是<strong>压缩</strong>而<strong>不是投影</strong>，这个向量在数轴上的长度是其n维基向量在进行转换定义后，决定了各自在这条数轴上的长度后，压缩后的值与原先向量的值相乘再求和而得到的。或者说，是整个空间进行了压缩，而这个原先向量在这个<strong>压缩后数轴上的长度</strong>。</p>
+<p>这体现了向量与矩阵之间的<strong>对偶性</strong>，<u>n维向量都可以认为是n维空间向1维空间的线性变换</u>，而这个n维向量我们可以叫做其<strong>对偶向量</strong></p>
+<h3 id="_19">叉积</h3>
+<p>首先我们需要明确一件事，叉积是三维空间中的概念，也就是说除了三维空间，我们无法在二维上求解出两个向量的之间的叉积。</p>
+<p>先给一个正确的三维空间中的叉积计算方法
+$$
+\vec a\times \vec b=\left[\begin{array}{c}
+i &amp;j &amp;k\
+a &amp;b &amp;c\
+d &amp;e &amp;f\
+\end{array}\right]=
+\vec c
+$$
+难以言说的，再给一个十分不严谨的在二维平面中的计算叉积的计算方法：
+$$
+\left[\begin{array}{c}
+a\
+b\
+\end{array}\right]\times
+\left[\begin{array}{c}
+c\
+d\
+\end{array}\right]=
+\det(\left[\begin{array}{c}
+a &amp;b\
+c &amp;d\
+\end{array}\right])\
+我们可以给予这个算法一个证明\
+\left[\begin{array}{c}
+i &amp;j &amp;k\
+a &amp;b &amp;0\
+c &amp;d &amp;0\
+\end{array}\right]=k(ad-cb)=
+k\cdot\det(\left[\begin{array}{c}
+a &amp;b\
+c &amp;d\
+\end{array}\right])=
+\det(\left[\begin{array}{c}
+a &amp;b\
+c &amp;d\
+\end{array}\right])\
+$$
+也就是说，从数值上来看或者说二维上去看，叉积实际上做的：<strong>将两个向量合并为行列式再计算行列式的值</strong>，即其在计算两个向量所组成的平行四边形的面积。可以通过转置帮助自己理解一下。</p>
+<p>但是实际上，我们知道根据叉积的真正几何定义，实际上它是计算与这两个向量正交的向量。</p>
+<p>其中此向量的正交方向遵循右手定则。单纯遵循右手定则似乎是一个很不负责任的讲解，所以我们增添说明
+$$
+若式子为形如\vec a \times \vec b的多项式，则我们从\vec a到\vec b为旋转方向判断\vec c的正负值\如果\vec a到\vec b为左旋方向，则\vec c 为正；反之则\vec c 为负值。
+$$
+数值也就是<strong>此向量的模长是两个向量组合后的行列式的值（平行四边形的面积）</strong>。</p>
+<p>而向量的具体值，无非就是再给一个基向量，用计算行列式的方法计算各个坐标的值从而得到所求向量。</p>
+<p>补充：
+$$
+\vec c \cdot \left[\begin{array}{c}
+x \
+y \
+z \
+\end{array}\right]
+=
+\det(\left[\begin{array}{c}
+x &amp;a &amp;b\
+y &amp;c &amp;d\
+z &amp;e &amp;f\
+\end{array}\right])\
+$$
+ 结合之前所学的点积内容，单位向量在c向量上的线性变换。而右侧计算出了两个向量与此单位向量的六面体体积。</p>
+<p>这也就是为什么，我们所求的向量c的值就是底面积了。 </p>
+<p>底面 × 斜边在底面法向量的投影 = 体积 = 行列式的值 = [x y z] · c</p>
+<p><img alt="image-20240707114614676" src="C:\Users\LLLLL\AppData\Roaming\Typora\typora-user-images\image-20240707114614676.png" /></p>
+<h2 id="_20">基变换</h2>
+<p>欸，其实就是之前说的线性变换对一组基向量重新定义，改变了整个坐标系。用不同的向量基，即使系数相同，所表示出来的同个向量在不同的基向量空间中的描述完全不同。</p>
+<p>相当于更换了描述空间的语言。</p>
+<p>具体方法是，将基转为我们的描述方式，比如在某个空间中 i 是[1,2] j是[-2,1]，然后它用它的语言（基向量描述了一个向量），我们需要先将此向量由这个语言变为我们通常认为的那种（用我们的语言描述），再进行矩阵的变换也就是线性变换，再通过逆矩阵（我们翻译的逆矩阵，也就是从我们的语言描述的变换翻译成它所描述的）变成原先的语言（实际也不原先了，但是要给他变回去）。
+$$
+A^{-1}MA
+$$</p>
+<h2 id="_21">特征值与特征向量</h2>
+<p>在这个部分我们并不会引导进行理解特征值和特征向量，当然我们前面也貌似没有进行引导。我们直接确定特征值和特征向量的几何模型。</p>
+<p><strong>特征向量</strong>意味着矩阵A，作为一个变换矩阵，其处理的坐标系中<strong>不曾改变方向的向量</strong>。即这个向量在线性变换中<strong>仅仅发生了缩放</strong>。</p>
+<p>而<strong>特征值</strong>恰是这个缩放的大小。
+$$
+A\vec v=\lambda \vec v\
+A\vec v = (\lambda E) \vec v\
+(A-\lambda E)\vec v = \vec 0
+$$
+可以感受一下一整个式子，式子①②所表达的皆是一个向量经过矩阵A的转换后其<strong>仍在原来的直线上</strong>，只是进行了 λ 的缩放。而我们经过推导，得到的式子则表明我们所求的向量与(A-λE)存在一个积为0的关系，考虑到这是一个向量与矩阵的乘法，我们认为它相当于是一个<strong>转换矩阵</strong>对向量 v 进行了转换后，得到了一个<strong>零向量</strong>。</p>
+<p>因为我们想要求得特征向量应当是一个非零向量，所以我们仅考虑括号内的内容为0。</p>
+<p>而我们又知道，<strong>当且仅当矩阵代表的变换将空间压缩到更低的维度时，才会存在一个非零向量使得矩阵和它的乘积为0</strong></p>
+<p>对应的矩阵行列式为0，可知道的也就是我们在<strong>行列式</strong>专题中所提及的。总结一句话就是，<code>det(A-λE)=0</code>才可以降维，相当于体变成了面，面变成了线。具体可以看点积部分的内容。计算出如何把这个A经过  λ 的变换处理之后得到一个合理的变换阵，使得存在特征向量被这个变换阵转换（压缩）后在数轴上的长度等于0。（不要认为行列式值等于0，任意的向量与其相乘都可以得到0，这是混淆了变换与值的计算）。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.07f07601.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.56dfad97.min.js"></script>
+      
+    
+  </body>
+</html>

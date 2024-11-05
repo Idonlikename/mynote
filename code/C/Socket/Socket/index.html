@@ -10,26 +10,24 @@
         <meta name="author" content="idonlikename">
       
       
-        <link rel="canonical" href="https://idonlikename.github.io/mynote/">
+        <link rel="canonical" href="https://idonlikename.github.io/mynote/code/C/Socket/Socket/">
       
       
       
-        <link rel="next" href="code/C/C%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/">
       
-      
-      <link rel="icon" href="assets/images/favicon.png">
+      <link rel="icon" href="../../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.34">
     
     
       
-        <title>TheLang's Note</title>
+        <title>Socket - TheLang's Note</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.35f28582.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.35f28582.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -48,7 +46,7 @@
       
     
     
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -74,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#welcome-to-mynote" class="md-skip">
+        <a href="#socket" class="md-skip">
           Skip to content
         </a>
       
@@ -90,7 +88,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="TheLang&#39;s Note" class="md-header__button md-logo" aria-label="TheLang's Note" data-md-component="logo">
+    <a href="../../../.." title="TheLang&#39;s Note" class="md-header__button md-logo" aria-label="TheLang's Note" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -110,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Home
+              Socket
             
           </span>
         </div>
@@ -211,7 +209,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="TheLang&#39;s Note" class="md-nav__button md-logo" aria-label="TheLang's Note" data-md-component="logo">
+    <a href="../../../.." title="TheLang&#39;s Note" class="md-nav__button md-logo" aria-label="TheLang's Note" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -226,30 +224,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Home
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="." class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -258,44 +236,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      项目介绍
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      结语
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -342,7 +282,7 @@
   
   
     <li class="md-nav__item">
-      <a href="code/C/C%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/" class="md-nav__link">
+      <a href="../../C%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -363,7 +303,7 @@
   
   
     <li class="md-nav__item">
-      <a href="code/python/Python%E5%9F%BA%E7%A1%80/" class="md-nav__link">
+      <a href="../../../python/Python%E5%9F%BA%E7%A1%80/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -384,7 +324,7 @@
   
   
     <li class="md-nav__item">
-      <a href="code/java/Java%E5%9F%BA%E7%A1%80%E7%BC%96%E7%A8%8B/" class="md-nav__link">
+      <a href="../../../java/Java%E5%9F%BA%E7%A1%80%E7%BC%96%E7%A8%8B/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -482,7 +422,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Computer/OS/%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/" class="md-nav__link">
+      <a href="../../../../Computer/OS/%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -503,7 +443,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Computer/OS/%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/" class="md-nav__link">
+      <a href="../../../../Computer/OS/%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -524,7 +464,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Computer/OS/%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86/%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86/" class="md-nav__link">
+      <a href="../../../../Computer/OS/%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86/%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -595,7 +535,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Computer/%E9%80%9A%E8%AF%86%E8%AF%BE/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%B8%B8%E8%AF%86/%E6%96%87%E4%BB%B6%E7%9B%B8%E5%85%B3/" class="md-nav__link">
+      <a href="../../../../Computer/%E9%80%9A%E8%AF%86%E8%AF%BE/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%B8%B8%E8%AF%86/%E6%96%87%E4%BB%B6%E7%9B%B8%E5%85%B3/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -651,7 +591,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Computer/通识课/Missing Semester/'Lec01Missing Semester.md'" class="md-nav__link">
+      <a href="../../../../Computer/通识课/Missing Semester/'Lec01Missing Semester.md'" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -672,7 +612,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Computer/%E9%80%9A%E8%AF%86%E8%AF%BE/Missing%20Semester/Lec02shell%E5%B7%A5%E5%85%B7%E4%B8%8E%E8%84%9A%E6%9C%AC/" class="md-nav__link">
+      <a href="../../../../Computer/%E9%80%9A%E8%AF%86%E8%AF%BE/Missing%20Semester/Lec02shell%E5%B7%A5%E5%85%B7%E4%B8%8E%E8%84%9A%E6%9C%AC/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -743,7 +683,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Base/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" class="md-nav__link">
+      <a href="../../../../Base/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -793,18 +733,132 @@
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      项目介绍
+      函数
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="函数">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#strstr" class="md-nav__link">
+    <span class="md-ellipsis">
+      strstr
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      fputs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sprintf" class="md-nav__link">
+    <span class="md-ellipsis">
+      sprintf
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#meset" class="md-nav__link">
+    <span class="md-ellipsis">
+      meset
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      结语
+      结构体
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="结构体">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#file" class="md-nav__link">
+    <span class="md-ellipsis">
+      FILE
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      类型
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="类型">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#size_t" class="md-nav__link">
+    <span class="md-ellipsis">
+      size_t
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ssize_t" class="md-nav__link">
+    <span class="md-ellipsis">
+      ssize_t
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      转义符
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="转义符">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#r" class="md-nav__link">
+    <span class="md-ellipsis">
+      \r
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -823,13 +877,130 @@
                   
 
 
-<h1 id="welcome-to-mynote">Welcome to MYnote</h1>
-<h2 id="_1">项目介绍</h2>
-<p>本笔记基于mkdocs搭建，方便自己学习和存储更新笔记。同时也希望能帮助到其他需要的人。</p>
-<p>当前，笔记内容组成主要由计算机基础课(computer)和代码(code)组成。后续会更新其他内容。现在展示内容尚未完善，请期待后续更新~</p>
-<h2 id="_2">结语</h2>
-<p>如果你喜欢这个项目，请给我一颗star吧！
-<a href="https://github.com/Idonlikename/mynote">链接</a></p>
+<h1 id="socket">Socket</h1>
+<p>本文件中的内容主要用于记录学习Socket实验过程中一些不常见的标准库函数，可以看作是一个函数的集合。</p>
+<h3 id="_1">函数</h3>
+<h4 id="strstr"><code>strstr</code></h4>
+<p><code>strstr(char1,char2)</code>，<code>strstr</code>用于在字符串中查询子串，查询<code>char2</code>在<code>char1</code>中的指针位置。</p>
+<pre><code class="language-Cpp">char *strstr(const char *haystack, const char *needle); //原型
+
+char *char1 = &quot;Hello, world!&quot;;
+char *char2 = &quot;world&quot;;
+
+char *found = strstr(char1, char2);
+if (found != NULL) {
+    printf(&quot;Found '%s' at position %ld\n&quot;, char2, found - char1);
+} else {
+    printf(&quot;Sub-string not found.\n&quot;);
+}
+//output：Found 'world' at position 7     
+</code></pre>
+<h4 id="fputs"><code>fputs</code></h4>
+<p><code>fputs</code>是C语言标准库中的一个函数，用于将字符串写入到指定的输出流中。这个函数的名称来源于 "file put string"，即向文件中放置字符串。</p>
+<pre><code class="language-cpp">int fputs(const char *str, FILE *stream);  //str是要写入的字符, stream是指向FILE结构的指针，表示写入数据的目标流。
+
+FILE *fp = fopen(&quot;example.txt&quot;, &quot;w&quot;);
+if (fp != NULL) {
+    fputs(&quot;Hello, world!\n&quot;, fp); // 写入字符串并添加换行符
+    fclose(fp); // 关闭文件
+}
+//output：fputs 将字符串 &quot;Hello, world!\n&quot; 写入到文件 example.txt 中。
+
+</code></pre>
+<p>如果文件写入成功，<code>fputs</code> 返回一个非负值，然后使用 <code>fclose</code> 函数关闭文件。如果 <code>fputs</code> 失败，它将返回 <code>EOF</code></p>
+<h4 id="sprintf"><code>sprintf</code></h4>
+<p><code>sprintf</code> 函数在C语言中是一个用于<strong>格式化输出的函数</strong>，它与 <code>printf</code> 函数类似，但是 <code>sprintf</code> 将格式化后的字符串写入到一个字符数组（通常是字符数组或字符指针）中，<strong>而不是直接输出到标准输出</strong>（通常是屏幕）。</p>
+<p>函数原型如下：</p>
+<pre><code class="language-c++">int sprintf(char *str, const char *format, ...);
+</code></pre>
+<ul>
+<li><code>str</code>：这是指向字符数组的指针，<code>sprintf</code> 将把格式化后的字符串存储在这个数组中。</li>
+<li><code>format</code>：这是格式化字符串，它指定了如何解释后续参数，以及如何格式化它们。它与 <code>printf</code> 函数中的格式化字符串相同。</li>
+<li><code>...</code>：这是函数参数的列表，可以是任意数量和类型的参数，它们将按照 <code>format</code> 字符串中的指示被格式化。</li>
+</ul>
+<p><code>sprintf</code> 函数返回写入到 <code>str</code> 中的字符数量，但不包括结尾的空字符 <code>\0</code>。</p>
+<p>例如：</p>
+<pre><code class="language-c++">char buffer[100];
+sprintf(buffer, &quot;The value is: %d&quot;, 42);
+//将格式化字符串 &quot;The value is: 42&quot; 并存储在 `buffer` 数组中。
+</code></pre>
+<p>使用 <code>sprintf</code> 时需要特别注意的是，如果格式化后的字符串长度超过了 <code>str</code> 数组的大小，将会导致缓冲区溢出，这是一个常见的安全问题。因此，在使用 <code>sprintf</code> 时，应该总是<strong>确保目标数组足够大以容纳结果字符串</strong>。</p>
+<h4 id="meset"><code>meset</code></h4>
+<p><code>memset</code> 是C语言中的一个标准库函数，用于将一块<strong>内存中的所有字节设置为特定的值</strong>。这个函数定义在 <code>&lt;string.h&gt;</code> 头文件中。</p>
+<p>函数原型如下：</p>
+<pre><code class="language-c">void *memset(void *s, int c, size_t n);
+</code></pre>
+<ul>
+<li><code>s</code>：指向要填充的内存块的指针。</li>
+<li><code>c</code>：要设置的值，对每个字节进行类型转换（通常转换为 <code>unsigned char</code>）。</li>
+<li><code>n</code>：要设置的字节数。</li>
+</ul>
+<p><code>memset</code> 函数的作用是将 <code>n</code> 个字节的内存区域，从地址 <code>s</code> 开始，全部设置为值 <code>c</code>。如果 <code>c</code> 是 <code>0</code>，<code>memset</code> 就可以用来将内存区域清零。</p>
+<p>例如：</p>
+<pre><code class="language-cpp">char buffer[100];
+memset(buffer, 0, sizeof(buffer)); // 将buffer数组的所有字节清零
+</code></pre>
+<p>在这个例子中，<code>memset</code> 将 <code>buffer</code> 数组的前 100 个字节全部设置为 <code>0</code>。这通常用于初始化数组或结构体，确保它们在使用前没有未定义的数据。</p>
+<p><code>memset</code> 函数返回一个 <code>void*</code> 类型的指针，指向被设置内存的起始地址，这通常与传入的 <code>s</code> 相同。</p>
+<h3 id="_2">结构体</h3>
+<h4 id="file">FILE</h4>
+<p><code>FILE</code> 结构是标准输入输出库（stdio）定义的一个<strong>结构体</strong>，用于<strong>表示输入输出流</strong>。这个结构体定义在 <code>&lt;stdio.h&gt;</code> 头文件中，是实现文件操作和标准I/O的基础。尽管 <code>FILE</code> 结构的具体实现细节依赖于编译器和操作系统，但它通常包含以下类型的成员：</p>
+<ol>
+<li>指向缓冲区的指针：用于存储从文件读取的数据或待写入文件的数据。</li>
+<li>缓冲区的大小：表示缓冲区可以存储多少字节的数据。</li>
+<li>文件位置指示器：一个用于跟踪当前文件读写位置的值。</li>
+<li>错误指示器：用于指示流中是否发生了错误。</li>
+<li>EOF（文件结束）指示器：用于标记是否已到达文件的末尾。</li>
+<li>文件模式：指示文件是以读、写或追加模式打开的。</li>
+<li>操作系统文件描述符：一个整数值，用于在操作系统层面标识打开的文件。</li>
+</ol>
+<pre><code class="language-cpp">typedef struct {
+    char *buffer;          // 指向缓冲区的指针
+    size_t buffer_size;    // 缓冲区大小
+    long position;         // 文件位置指示器
+    int error_flag;        // 错误指示器
+    int eof_flag;          // EOF指示器
+    const char *mode;      // 文件模式（如 &quot;r&quot;, &quot;w&quot;, &quot;a&quot; 等）
+    int fd;                // 操作系统文件描述符
+    // ... 可能还有其他成员 ...
+} FILE;
+</code></pre>
+<h3 id="_3">类型</h3>
+<h4 id="size_t"><code>size_t</code></h4>
+<p><code>size_t</code> 是C语言中定义的一个无符号整数类型，通常在 <code>&lt;stddef.h&gt;</code> 或 <code>&lt;sys/types.h&gt;</code> 等头文件中定义。这个类型用于表示大小和长度，其大小足以存储任何数据类型的大小，包括数组的最大可能大小。</p>
+<p><code>size_t</code> 主要用于以下几个方面：</p>
+<ol>
+<li>作为函数参数，表示数据的大小或长度。例如，<code>sizeof</code> 运算符返回类型就是 <code>size_t</code>。</li>
+<li>作为返回类型，表示函数返回的大小或长度。例如，<code>strlen</code> 函数返回字符串的长度，类型为 <code>size_t</code>。</li>
+<li>用于循环和数组索引，尤其是在处理缓冲区和内存分配时。</li>
+</ol>
+<p>由于 <code>size_t</code> 是无符号类型，它可以表示非常大的数值，但不允许表示负数。在不同的平台上，<code>size_t</code> 的具体大小可能会有所不同，但至少是 16 位。在32位系统中，<code>size_t</code> 通常是 32 位宽；在64位系统中，<code>size_t</code> 通常是 64 位宽。</p>
+<p>以下是一些使用 <code>size_t</code> 的示例：</p>
+<pre><code class="language-cpp">#include &lt;stddef.h&gt;
+
+size_t arraySize = sizeof(array) / sizeof(array[0]); // 计算数组元素数量
+size_t strLen = strlen(&quot;Hello, world!&quot;); // 获取字符串长度
+</code></pre>
+<p>在这个例子中，<code>arraySize</code> 用来存储数组中元素的数量，<code>strLen</code> 用来存储字符串 "Hello, world!" 的长度。两者都使用 <code>size_t</code> 类型，因为它们表示的是大小或长度。</p>
+<h4 id="ssize_t"><code>ssize_t</code></h4>
+<p><code>ssize_t</code> 是C语言中的一个类型定义，通常在 <code>&lt;sys/types.h&gt;</code> 或其他类似的头文件中定义。</p>
+<p>它代表“signed size type”，即“有符号的大小类型”。<code>ssize_t</code> 是用<strong>来存储可能为负的整数的类型</strong>，其大小足以容纳系统上任何数据类型的大小，包括 <code>size_t</code>。</p>
+<p><code>ssize_t</code> 主要用于系统调用和库函数，这些函数需要返回一个<strong>可能超出标准 <code>int</code> 类型范围的大小值</strong>，或者<strong>需要表示错误情况</strong>。例如，当一个函数需要返回从文件中读取或写入的字节数时，如果操作成功，它可能会返回一个正值；如果发生错误，它可能会返回 <code>-1</code> 或其他负值来指示特定的错误。</p>
+<p>在64位系统上，<code>ssize_t</code> 通常是 <code>int64_t</code> 的别名，而在32位系统上，它可能是 <code>int32_t</code> 的别名。这意味着 <code>ssize_t</code> 能够存储至少 32 位的整数，足以表示大多数系统上的文件大小和缓冲区大小。</p>
+<p>例如，<code>read</code> 和 <code>write</code> 系统调用都使用 <code>ssize_t</code> 类型作为返回值：</p>
+<pre><code class="language-cpp">ssize_t read(int fd, void *buf, size_t count);
+ssize_t write(int fd, const void *buf, size_t count);
+</code></pre>
+<p>这里，<code>read</code> 函数尝试从文件描述符 <code>fd</code> 读取 <code>count</code> 字节到缓冲区 <code>buf</code> 中，并返回实际读取的字节数。如果成功，返回值是0到 <code>count</code> 之间的一个正值；如果到达文件末尾，返回0；如果发生错误，返回 <code>-1</code>。</p>
+<p>使用 <code>ssize_t</code> 而不是 <code>size_t</code> 可以确保函数调用者能够区分正常返回值和错误情况，因为 <code>size_t</code> 是一个无符号类型，它不能表示负数。</p>
+<h3 id="_4">转义符</h3>
+<h4 id="r"><code>\r</code></h4>
+<p>在 C++（以及 C 和其他许多编程语言中）<code>\r</code> 是一个特殊的转义序列，代表回车（Carriage Return，简称 CR）字符。在不同的操作系统和环境中，<code>\r</code> 的作用可能有所不同</p>
+<p><strong>Mac OS 系统中</strong>：<code>\r</code> 被用作行结束符。</p>
+<p><strong>Windows 系统中</strong>：行结束符是 <code>\r\n</code>，其中 <code>\r</code> 表示回车，<code>\n</code> 表示换行（Line Feed，简称 LF）。这个组合表示光标先回到行首，然后移动到下一行的开始位置。</p>
+<p><strong>Unix和Linux 系统中</strong>：行结束符仅仅是 <code>\n</code>，表示换行，光标移动到下一行的开始位置，而不会回到行首。</p>
+<p>在网络协议和数据交换格式中，如 HTTP 协议，<code>\r\n</code> 经常用来表示<strong>头部字段的结束</strong>。</p>
+<p>例如，在 HTTP 请求或响应中，请求头和正文之间用 <strong><code>\r\n\r\n</code></strong> 来分隔。</p>
 
 
 
@@ -876,10 +1047,10 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": ".", "features": [], "search": "assets/javascripts/workers/search.07f07601.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../../..", "features": [], "search": "../../../../assets/javascripts/workers/search.07f07601.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="assets/javascripts/bundle.56dfad97.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.56dfad97.min.js"></script>
       
     
   </body>
