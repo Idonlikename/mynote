@@ -148,6 +148,12 @@
     <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-hidden="true"  type="radio" name="__palette" id="__palette_2">
     
   
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-hidden="true"  type="radio" name="__palette" id="__palette_3">
+    
+  
 </form>
       
     
@@ -1122,30 +1128,30 @@
 
   <h1>进程管理</h1>
 
-<h2 id="process">进程(Process)<a class="headerlink" href="#process" title="Permanent link">&para;</a></h2>
-<h3 id="_1">进程的模型<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
-<h4 id="_2">进程的概念<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h4>
-<h4 id="_3">并发执行<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h4>
-<h4 id="_4">进程与程序<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h4>
-<h3 id="_5">进程的组织<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
-<h3 id="_6">进程的状态<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
-<h4 id="_7">三状态<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h4>
+<h2 id="process">进程(Process)</h2>
+<h3 id="_1">进程的模型</h3>
+<h4 id="_2">进程的概念</h4>
+<h4 id="_3">并发执行</h4>
+<h4 id="_4">进程与程序</h4>
+<h3 id="_5">进程的组织</h3>
+<h3 id="_6">进程的状态</h3>
+<h4 id="_7">三状态</h4>
 <p>阻塞，运行，</p>
-<h4 id="fork">fork()<a class="headerlink" href="#fork" title="Permanent link">&para;</a></h4>
+<h4 id="fork">fork()</h4>
 <p><code>fork()</code>是一个系统调用，其作用是创建进程。<code>fork()</code>用于创建一个与当前进程相同的子进程，即父进程的副本。父子进程二者共享内存、变量。</p>
 <p>如果<code>fork()</code>调用成功，会在父进程当中返回子进程的<code>PID</code>；在子进程当中返回0。如果调用失败，则会返回 -1 </p>
-<h5 id="_8">僵尸进程<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h5>
+<h5 id="_8">僵尸进程</h5>
 <p>僵尸进程（Zombie Process）是一种特殊进程状态。没有释放占用资源而退出的进程。</p>
-<p>当一个**子进程结束运行并退出时**，它会发送一个退出信号给它的父进程。父进程应该通过调用<code>wait()</code>或<code>waitpid()</code>函数来响应这个信号，从而<u>获取子进程的退出状态，并释放子进程占用的资源</u>。</p>
+<p>当一个<strong>子进程结束运行并退出时</strong>，它会发送一个退出信号给它的父进程。父进程应该通过调用<code>wait()</code>或<code>waitpid()</code>函数来响应这个信号，从而<u>获取子进程的退出状态，并释放子进程占用的资源</u>。</p>
 <p>但如果父进程因为一些原因没有调用这些函数来处理子进程的退出状态，那么尽管子进程已经停止运行，但它的进程描述符（包括<code>PID</code>和退出状态等信息）仍然保留在系统中，即其所占用的资源并未得到释放。这种状态的进程就被称为僵尸进程。</p>
-<h3 id="init">init<a class="headerlink" href="#init" title="Permanent link">&para;</a></h3>
+<h3 id="init">init</h3>
 <p><code>init</code> 是 Unix 和类 Unix 系统中的第一个进程，它的进程 ID（PID）通常是 1。<code>init</code> 进程是在系统启动时由内核启动的，它是所有其他用户空间进程的祖先。<code>init</code> 负责启动系统的其他部分，包括用户会话、服务和守护进程。</p>
 <ul>
 <li>如果一个进程的父进程已经退出，该进程将成为孤儿进程。<code>init</code> 进程会收养这些孤儿进程，并在它们结束时进行清理。</li>
 </ul>
-<h2 id="thread">线程(Thread)<a class="headerlink" href="#thread" title="Permanent link">&para;</a></h2>
-<h2 id="_9">进程间通信<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
-<h2 id="_10">调度<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
+<h2 id="thread">线程(Thread)</h2>
+<h2 id="_9">进程间通信</h2>
+<h2 id="_10">调度</h2>
 
 
 

@@ -144,6 +144,12 @@
     <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-hidden="true"  type="radio" name="__palette" id="__palette_2">
     
   
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-hidden="true"  type="radio" name="__palette" id="__palette_3">
+    
+  
 </form>
       
     
@@ -1063,41 +1069,41 @@
 
   <h1>Java理论</h1>
 
-<h2 id="java">Java的特性<a class="headerlink" href="#java" title="Permanent link">&para;</a></h2>
-<h4 id="1">1.简单<a class="headerlink" href="#1" title="Permanent link">&para;</a></h4>
-<p>Java比C++简单，你只需要意识到C比Java难就行，因为Java中并没有C中的指针变量、多重继承、头文件、运算符重载等复杂的知识点。采用<code>引用</code>代替了C语言中的指针，且有**<u>自动垃圾回收机制</u>**避免了C语言的内存容易溢出问题。同时Java也比C运行的速度更慢。</p>
-<h4 id="2">2.平台无关性<a class="headerlink" href="#2" title="Permanent link">&para;</a></h4>
-<p>Java的一个显著优点就是提供了**平台无关性**：即你可以在任意操作系统上使用完全一样的代码。也就是**一次编写，随处运行**。因为Java的运行都会先编译成一个<code>.class</code>文件（一个二进制文件）。再用其自带的一个虚拟机，即<code>JVM</code>，来运行代码。因为在任何操作系统上，其所做的工作均为——编译，用虚拟机运行。因而在不同的操作系统上，都可以运行Java程序，其整体的运行仅仅与编译后的<code>.class</code>文件和<code>JVM</code>相关</p>
-<h4 id="3">3.面向对象<a class="headerlink" href="#3" title="Permanent link">&para;</a></h4>
-<p>Java是一门面向对象（Object Oriented，简称OO）的语言，<strong>面向对象**与**面向过程**是两种有代表性的编程思想；面向对象思想有三大特征：**封装</strong>、<strong>继承</strong>、<strong>多态</strong>。</p>
-<h4 id="4">4.交互式特性，多线程机制<a class="headerlink" href="#4" title="Permanent link">&para;</a></h4>
+<h2 id="java">Java的特性</h2>
+<h4 id="1">1.简单</h4>
+<p>Java比C++简单，你只需要意识到C比Java难就行，因为Java中并没有C中的指针变量、多重继承、头文件、运算符重载等复杂的知识点。采用<code>引用</code>代替了C语言中的指针，且有<strong><u>自动垃圾回收机制</u></strong>避免了C语言的内存容易溢出问题。同时Java也比C运行的速度更慢。</p>
+<h4 id="2">2.平台无关性</h4>
+<p>Java的一个显著优点就是提供了<strong>平台无关性</strong>：即你可以在任意操作系统上使用完全一样的代码。也就是<strong>一次编写，随处运行</strong>。因为Java的运行都会先编译成一个<code>.class</code>文件（一个二进制文件）。再用其自带的一个虚拟机，即<code>JVM</code>，来运行代码。因为在任何操作系统上，其所做的工作均为——编译，用虚拟机运行。因而在不同的操作系统上，都可以运行Java程序，其整体的运行仅仅与编译后的<code>.class</code>文件和<code>JVM</code>相关</p>
+<h4 id="3">3.面向对象</h4>
+<p>Java是一门面向对象（Object Oriented，简称OO）的语言，<strong>面向对象</strong>与<strong>面向过程</strong>是两种有代表性的编程思想；面向对象思想有三大特征：<strong>封装</strong>、<strong>继承</strong>、<strong>多态</strong>。</p>
+<h4 id="4">4.交互式特性，多线程机制</h4>
 <p>由于Java支持<code>TCP/IP</code>协议（计算机网络中的协议），使得用户可以通过浏览器访问到Internet上的各种动态对象。并且在网络上用户可以交互式地进行各种动作，而多线程技术的引入使得这种交互式操作更为容易。同时可以多个任务并发执行。</p>
-<h4 id="5">5.鲁棒性<a class="headerlink" href="#5" title="Permanent link">&para;</a></h4>
+<h4 id="5">5.鲁棒性</h4>
 <p>鲁棒性又称作健壮性，指的是Java作为强类型语言必须要求有明确的变量类型，在发生异常时，Java能够统一处理异常事件。这也是Java被选作作用于开发IDE的重要原因。Java本身十分严谨。</p>
-<h4 id="6">6.分布式<a class="headerlink" href="#6" title="Permanent link">&para;</a></h4>
+<h4 id="6">6.分布式</h4>
 <p>提供了用于网络应用编程的类库，Java的RMI(远程方法调用)机制是开发分布式应用的重要手段。支持各种层次的网络连接。</p>
-<h4 id="7">7.动态内存管理机制<a class="headerlink" href="#7" title="Permanent link">&para;</a></h4>
+<h4 id="7">7.动态内存管理机制</h4>
 <p>C++最大的问题是因为其语言自身难度问题，易发生内存溢出。Java针对这一问题设置有一个垃圾回收器，可以对程序中产生的对象进行跟踪，而对无用的对象释放其内存进而避免了内存溢出的问题。</p>
-<h4 id="8">8.安全性<a class="headerlink" href="#8" title="Permanent link">&para;</a></h4>
+<h4 id="8">8.安全性</h4>
 <p>Java语言在安全性方面引入了实时内存分配及布局来防止程序员直接修改物理内存布局;通过字节代码验证器对字节代码的检验，以防止网络病毒及其它非法代码侵入。</p>
-<h3 id="_1">面向对象<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<h3 id="_1">面向对象</h3>
 <p>面向对象（Object-Oriented，OO）是一种编程范式，它将现实世界中的实体抽象为对象，通过对象之间的交互来设计和构建软件系统。</p>
-<p>面向对象的**核心概念**包括：</p>
+<p>面向对象的<strong>核心概念</strong>包括：</p>
 <ul>
-<li><strong>对象（Object）</strong>： 对象是现实世界中事物的抽象，它包含**属性（数据）<strong>和**方法（行为）</strong>。例如，一个银行账户（BankAccount）可以是一个对象，它有属性（如账户余额）和方法（如存款、取款）。</li>
+<li><strong>对象（Object）</strong>： 对象是现实世界中事物的抽象，它包含<strong>属性（数据）</strong>和<strong>方法（行为）</strong>。例如，一个银行账户（BankAccount）可以是一个对象，它有属性（如账户余额）和方法（如存款、取款）。</li>
 <li><strong>类（Class）</strong>： <strong>类是对象的蓝图或模板</strong>，定义了对象的属性和方法。<u>类可以被用来创建多个对象实例</u>，这些实例共享相同的属性和方法，但各自拥有独立的属性值。</li>
 </ul>
-<p>面向对象的**特性**：</p>
+<p>面向对象的<strong>特性</strong>：</p>
 <ul>
 <li><strong>封装（Encapsulation）</strong>： 封装是将数据（属性）和操作这些数据的方法组合在一起，并隐藏内部细节，只<u>提供必要的接口</u>。这样，对象的内部实现可以独立于外部变化，提高了代码的安全性和可维护性。</li>
 <li>Java 的三个访问权限关键字：<code>public</code>（公开的，）， <code>private</code>（）, <code>protected</code>（）。</li>
 <li><code>default</code> （包访问）：该权限下的资源可以被同一包（库组件）中其他类的成员访问。</li>
-<li><strong>继承（Inheritance）</strong>： 继承是一种机制，允许一个**类（子类或派生类）**继承另一个**类（父类或基类）**的属性和方法。这支持了代码的重用，并可以建立类之间的层次结构。“是一个”与“像是一个”</li>
-<li><strong>多态（Polymorphism）</strong>： 多态是<u>指对象可以有多种形式，允许不同类的对象对同一消息做出不同的响应</u>。在面向对象编程中，这通常通过**方法重载（同名方法在不同类中有不同的实现）**和**方法覆盖（子类重写父类的方法）**来实现。</li>
-<li>我们在处理类的层次结构时，通常把一个对象看成是它所属的**基类**，而不是把它当成具体类。通过这种方式，我们可以编写出不局限于特定类型的代码。</li>
-<li>这样的代码不会受**添加的新类型影响**，并且添加新类型是扩展面向对象程序以处理新情况的常用方法。</li>
-<li>面向对象语言使用**后期绑定**的概念。当向对象发送信息时，被调用的代码直到运行时才确定。</li>
-<li>在 Java 中，动态绑定是**默认行为**，不需要额外的关键字来实现多态性。</li>
+<li><strong>继承（Inheritance）</strong>： 继承是一种机制，允许一个<strong>类（子类或派生类）</strong>继承另一个<strong>类（父类或基类）</strong>的属性和方法。这支持了代码的重用，并可以建立类之间的层次结构。“是一个”与“像是一个”</li>
+<li><strong>多态（Polymorphism）</strong>： 多态是<u>指对象可以有多种形式，允许不同类的对象对同一消息做出不同的响应</u>。在面向对象编程中，这通常通过<strong>方法重载（同名方法在不同类中有不同的实现）</strong>和<strong>方法覆盖（子类重写父类的方法）</strong>来实现。</li>
+<li>我们在处理类的层次结构时，通常把一个对象看成是它所属的<strong>基类</strong>，而不是把它当成具体类。通过这种方式，我们可以编写出不局限于特定类型的代码。</li>
+<li>这样的代码不会受<strong>添加的新类型影响</strong>，并且添加新类型是扩展面向对象程序以处理新情况的常用方法。</li>
+<li>面向对象语言使用<strong>后期绑定</strong>的概念。当向对象发送信息时，被调用的代码直到运行时才确定。</li>
+<li>在 Java 中，动态绑定是<strong>默认行为</strong>，不需要额外的关键字来实现多态性。</li>
 <li>把子类当成其基类来处理的过程叫做“<strong>向上转型</strong>”（<strong>upcasting</strong>）。</li>
 </ul>
 <p>面向对象编程的优点包括：</p>
@@ -1107,13 +1113,13 @@
 <li><strong>提高可扩展性</strong>：新的功能可以通过添加新的类或修改现有类来轻松添加，而不影响现有系统的其他部分。</li>
 <li><strong>提高代码的可读性</strong>：面向对象的代码通常更接近自然语言，因为它模仿了现实世界的实体和它们之间的关系。</li>
 </ul>
-<h3 id="_2">对象<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
-<h4 id="_3">对象操作<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h4>
+<h3 id="_2">对象</h3>
+<h4 id="_3">对象操作</h4>
 <ul>
-<li>我们所操纵的标识符实际上只是对对象的**“引用”**。</li>
+<li>我们所操纵的标识符实际上只是对对象的<strong>“引用”</strong>。</li>
 </ul>
 <p>举例：我们可以用遥控器（引用）去操纵电视（对象）。只要拥有对象的“引用”，就可以操纵该“对象”。</p>
-<h4 id="_4">对象清理<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h4>
+<h4 id="_4">对象清理</h4>
 <p>作用域：</p>
 <ul>
 <li>作用域是由大括号 <code>{}</code> 的位置决定的。</li>
@@ -1121,14 +1127,14 @@
 </ul>
 <p>对象作用域：</p>
 <ul>
-<li>当我们使用 <code>new</code> 关键字来创建 Java 对象时，它的**生命周期**将会<u>超出作用域</u>。</li>
+<li>当我们使用 <code>new</code> 关键字来创建 Java 对象时，它的<strong>生命周期</strong>将会<u>超出作用域</u>。</li>
 <li>Java 的垃圾收集器会检查所有 <code>new</code> 出来的对象并<u>判断哪些不再可达，继而释放那些被占用的内存，供其他新的对象使用</u>。</li>
 </ul>
-<h4 id="_5">数据存储<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
+<h4 id="_5">数据存储</h4>
 <ul>
 <li><strong>寄存器</strong></li>
 <li><strong>栈内存</strong></li>
-<li>Java 系统**必须**知道**栈内保存**的<u>所有项的生命周期</u>。这种约束限制了程序的灵活性。</li>
+<li>Java 系统<strong>必须</strong>知道<strong>栈内保存</strong>的<u>所有项的生命周期</u>。这种约束限制了程序的灵活性。</li>
 <li>在栈内存上存在一些 <strong>Java 数据（如对象引用）</strong>，但<u>Java 对象本身的数据却是保存在堆内存的</u>。</li>
 <li><strong>堆内存</strong></li>
 <li>通用的内存池（也在 RAM 区域），<u>所有 Java 对象都存在于其中</u>。</li>
@@ -1141,53 +1147,53 @@
 <li><strong>序列化对象</strong>：对象被转换为字节流，通常被发送到另一台机器。</li>
 <li><strong>持久化对象</strong>：对象被放置在磁盘上，即使程序终止，数据依然存在。</li>
 </ul>
-<h3 id="_6">其他概念<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
-<h4 id="_7"><strong>集合</strong><a class="headerlink" href="#_7" title="Permanent link">&para;</a></h4>
+<h3 id="_6">其他概念</h3>
+<h4 id="_7"><strong>集合</strong></h4>
 <ul>
-<li>在 Java 中**“集合”（Collection）**的使用率比数组更高。（也可称之为“容器”，但“集合”这个称呼更通用。）</li>
+<li>在 Java 中<strong>“集合”（Collection）</strong>的使用率比数组更高。（也可称之为“容器”，但“集合”这个称呼更通用。）</li>
 <li>集合的选择：</li>
 <li>集合可以提供不同类型的接口和外部行为。</li>
 <li>不同的集合对某些操作有不同的效率。</li>
 <li>例如，List 的两种基本类型：ArrayList 和 LinkedList。虽然两者具有相同接口和外部行为，但是在某些操作中它们的效率差别很大。</li>
 <li>参数化类型机制（Parameterized Type Mechanism）称之为“泛型”（Generic）</li>
 </ul>
-<h4 id="_8"><strong>生命周期</strong><a class="headerlink" href="#_8" title="Permanent link">&para;</a></h4>
+<h4 id="_8"><strong>生命周期</strong></h4>
 <ul>
-<li>Java 使用**动态内存分配**。</li>
+<li>Java 使用<strong>动态内存分配</strong>。</li>
 <li>在堆内存（Heap）中动态地创建对象，直到程序运行我们才能确定需要创建的对象数量、生存时间和类型。什么时候需要，什么时候在堆内存中创建。 因为内存的占用是动态管理的，所以在运行时，在堆内存上开辟空间所需的时间可能比在栈内存上要长（但也不一定）。在栈内存开辟和释放空间通常是一条将栈指针向下移动和一条将栈指针向上移动的汇编指令。开辟堆内存空间的时间取决于内存机制的设计。</li>
 <li>合理假设：对象通常是复杂的，相比于对象创建的整体开销，寻找和释放内存空间的开销微不足道。</li>
 <li>在堆内存创建对象的话，编译器是不知道它的生命周期的。</li>
-<li>Java 的内存管理是建立在**垃圾收集器**上的，它能自动发现对象不再被使用并释放内存。</li>
+<li>Java 的内存管理是建立在<strong>垃圾收集器</strong>上的，它能自动发现对象不再被使用并释放内存。</li>
 </ul>
-<h4 id="_9"><strong>异常处理</strong><a class="headerlink" href="#_9" title="Permanent link">&para;</a></h4>
+<h4 id="_9"><strong>异常处理</strong></h4>
 <ul>
 <li>异常处理机制将程序错误直接交给编程语言甚至是操作系统。</li>
 <li>“异常”（Exception）是一个从出错点“抛出”（thrown）后能被特定类型的异常处理程序捕获(catch)的一个对象。它不会干扰程序的正常运行，仅当程序出错的时候才被执行。</li>
 </ul>
-<h2 id="java_1">Java的加载与执行<a class="headerlink" href="#java_1" title="Permanent link">&para;</a></h2>
-<h3 id="java_2">Java文件的运行<a class="headerlink" href="#java_2" title="Permanent link">&para;</a></h3>
+<h2 id="java_1">Java的加载与执行</h2>
+<h3 id="java_2">Java文件的运行</h3>
 <p>假设我们有一个待执行的文件 <code>helloworld.java</code>其在计算机中运行时需要经历什么工序呢？</p>
-<p>首先我们的<code>helloworld.java</code>文件会被<code>Javac</code>编译成一个**二进制文件**，这个<code>Javac</code>的含义不言而喻即为<code>Java compile</code>的缩写<code>helloworld.class</code>，也就是**字节码文件**。字节码文件会通过**类加载器**被搬运到<code>JVM</code>中，然后在<code>JVM</code>中运行。</p>
-<h3 id="jvm-java"><code>JVM</code> - Java虚拟机<a class="headerlink" href="#jvm-java" title="Permanent link">&para;</a></h3>
-<p>虚拟机主要的 5 大块，可以分为两个区域，分别为**线程共享区域**和**线程独享区域**。其中线程共享区存在着线程安全问题，因为线程独享区的每个线程独享内存因而没有线程安全问题。</p>
-<p><strong>方法区</strong>，<strong>堆**都为**线程共享区域</strong></p>
-<p><strong>栈</strong>、<strong>本地方法栈**和**计数器**都是**线程独享区域</strong>，其不存在线程安全问题。</p>
-<p>而 <code>JVM</code> 的调优主要就是围绕**堆，栈**两大块进行</p>
-<h4 id="_10">线程共享区域<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h4>
+<p>首先我们的<code>helloworld.java</code>文件会被<code>Javac</code>编译成一个<strong>二进制文件</strong>，这个<code>Javac</code>的含义不言而喻即为<code>Java compile</code>的缩写<code>helloworld.class</code>，也就是<strong>字节码文件</strong>。字节码文件会通过<strong>类加载器</strong>被搬运到<code>JVM</code>中，然后在<code>JVM</code>中运行。</p>
+<h3 id="jvm-java"><code>JVM</code> - Java虚拟机</h3>
+<p>虚拟机主要的 5 大块，可以分为两个区域，分别为<strong>线程共享区域</strong>和<strong>线程独享区域</strong>。其中线程共享区存在着线程安全问题，因为线程独享区的每个线程独享内存因而没有线程安全问题。</p>
+<p><strong>方法区</strong>，<strong>堆</strong>都为<strong>线程共享区域</strong></p>
+<p><strong>栈</strong>、<strong>本地方法栈</strong>和<strong>计数器</strong>都是<strong>线程独享区域</strong>，其不存在线程安全问题。</p>
+<p>而 <code>JVM</code> 的调优主要就是围绕<strong>堆，栈</strong>两大块进行</p>
+<h4 id="_10">线程共享区域</h4>
 <p>线程共享区是指多个线程可以访问和修改的内存区域。在共享区内，数据和资源是共用的，一个线程的修改可以被其他线程看到。包括方法区和堆区。</p>
-<h5 id="_11">方法区<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h5>
+<h5 id="_11">方法区</h5>
 <p>方法区用于存储已被虚拟机加载的类信息、常量、静态变量、即时编译器编译后的代码等数据。与堆一样，方法区也是由所有线程共享的。在Java 8之前，方法区通常被称为永久代（PermGen），用于存储类的元数据。从Java 8开始，永久代被元空间（Metaspace）所取代，元空间不再处于虚拟机内存中，而是使用本地内存。</p>
 <p>方法区用于存放类似于元数据信息方面的数据的，比如类信息，常量，静态变量，编译后代码···等。</p>
 <p>类加载器将 <code>.class</code> 文件搬过来都先丢到这一块上。</p>
-<h5 id="_12">堆<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h5>
+<h5 id="_12">堆</h5>
 <p>堆是Java虚拟机所管理的内存中最大的一块区域，用于存储对象实例和数组。它是所有线程共享的，几乎所有的对象实例和数组都在堆上分配内存。堆是垃圾回收器管理的主要区域，因此常被称为GC堆。堆可以进一步细分为新生代和老年代，新生代又可细分为Eden区、Survivor区等。</p>
 <p>主要放了一些存储的数据，比如对象实例，数组等。它和方法区都同属于 <strong>线程共享区域</strong> 。也就是说它们都是 <strong>线程不安全</strong> 的</p>
-<h4 id="_13">线程独享区<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h4>
+<h4 id="_13">线程独享区</h4>
 <p>线程独享区是指每个线程拥有的独立内存区域，其他线程无法访问。每个线程的独享区是隔离的，数据和资源是私有的。包括程序计数器和栈区。</p>
-<h5 id="_14">栈<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h5>
+<h5 id="_14">栈</h5>
 <p>这是我们的代码运行空间。每个线程在创建时都会分配一个私有的栈空间，用于存储局部变量、操作数栈、动态链接和方法出口等信息。每个方法执行时，都会创建一个栈帧（Stack Frame），我们编写的每一个方法都会放到 <strong>栈</strong> 里面运行。用于存储局部变量表、操作数栈、动态链接、方法出口等信息。方法执行完毕后，栈帧会被弹出栈，释放相应的内存空间。</p>
 <p>我们会听说过 <strong>本地方法栈</strong> 或者 <strong>本地方法接口</strong> 这两个名词，与虚拟机栈类似，本地方法栈用于存储执行本地（native）方法的数据。本地方法栈是Java虚拟机（JVM）内存模型中的一部分，用于支持本地方法的调用。不过我们基本不会涉及这两块的内容，它俩底层是使用 C 来进行工作的，和 Java 没有太大的关系。</p>
-<h5 id="_15">程序计数器<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h5>
+<h5 id="_15">程序计数器</h5>
 <p>这是一块较小的内存空间，用于存储当前线程正在执行的字节码的地址。它是线程私有的，每个线程都有一个独立的程序计数器，用于记录当前执行的指令位置。当线程执行Java方法时，计数器记录的是正在执行的虚拟机字节码指令地址；如果执行的是Native方法，则计数器的值为空。这是唯一一个不会出现<code>OutOfMemoryError</code>的区域。</p>
 <p>主要就是完成一个加载工作，类似于一个指针一样的，指向下一行我们需要执行的代码。</p>
 <p>和栈一样，都是 <strong>线程独享</strong> 的，就是说每一个线程都会有自己对应的一块区域而不会存在并发和多线程的问题。</p>
