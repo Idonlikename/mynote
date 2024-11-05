@@ -1175,69 +1175,68 @@
 <p><strong>访问变量中存储的数值</strong>，其语法为 <code>$foo</code>。</p>
 <p>需要注意的是，<code>foo = bar</code> （将各个字符用空格隔开）是不能正确工作的。在shell中空格是用于<strong>分隔参数的字符</strong>。</p>
 <p>因此，如果各个字符用空格隔开的话，解释器会调用程序<code>foo</code> 并将 <code>=</code> 和 <code>bar</code>作为参数传入<code>foo</code>。</p>
-<pre><code class="language-bash">user:~$ foo=bar
-user:~$ echo $foo
+<div class="highlight"><pre><span></span><code>user:~$<span class="w"> </span><span class="nv">foo</span><span class="o">=</span>bar
+user:~$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$foo</span>
 bar
 
-user:~$ foo = bar
-bash:command not found:foo  #脚本并没有找到foo这个程序
-</code></pre>
+user:~$<span class="w"> </span><span class="nv">foo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>bar
+bash:command<span class="w"> </span>not<span class="w"> </span>found:foo<span class="w">  </span><span class="c1">#脚本并没有找到foo这个程序</span>
+</code></pre></div>
 <p>在shell脚本中使用空格会起到分割参数的作用。</p>
 <h4 id="_2">字符串</h4>
 <p>Bash中的字符串通过<code>'</code> 和 <code>"</code>分隔符来定义，二者在定义字符串的时候并没有任何的不同。但是实际上，它们的含义并不相同。</p>
-<pre><code class="language-shell">user:~$ echo &quot;Hello&quot;
+<div class="highlight"><pre><span></span><code>user:~$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Hello&quot;</span>
 Hello
 
-user:~$ echo 'Hello'
+user:~$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;Hello&#39;</span>
 Hello
 
-#这里补充一下数组的输出
-echo ${#string} #字符串长度
-${string:1:3} #从第二个字符开始输出三位字符
-var=(1 2 3 4)
-echo ${var[@]} #数组全部内容，只是$var仅仅输出1 
-echo ${var[1]} #第二个数
-echo ${var[@]:1:3} #输出从第2个开始的3个
-</code></pre>
+<span class="c1">#这里补充一下数组的输出</span>
+<span class="nb">echo</span><span class="w"> </span><span class="si">${#</span><span class="nv">string</span><span class="si">}</span><span class="w"> </span><span class="c1">#字符串长度</span>
+<span class="si">${</span><span class="nv">string</span><span class="p">:</span><span class="nv">1</span><span class="p">:</span><span class="nv">3</span><span class="si">}</span><span class="w"> </span><span class="c1">#从第二个字符开始输出三位字符</span>
+<span class="nv">var</span><span class="o">=(</span><span class="m">1</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="m">4</span><span class="o">)</span>
+<span class="nb">echo</span><span class="w"> </span><span class="si">${</span><span class="nv">var</span><span class="p">[@]</span><span class="si">}</span><span class="w"> </span><span class="c1">#数组全部内容，只是$var仅仅输出1 </span>
+<span class="nb">echo</span><span class="w"> </span><span class="si">${</span><span class="nv">var</span><span class="p">[1]</span><span class="si">}</span><span class="w"> </span><span class="c1">#第二个数</span>
+<span class="nb">echo</span><span class="w"> </span><span class="si">${</span><span class="nv">var</span><span class="p">[@]:</span><span class="nv">1</span><span class="p">:</span><span class="nv">3</span><span class="si">}</span><span class="w"> </span><span class="c1">#输出从第2个开始的3个</span>
+</code></pre></div>
 <p><code>''</code>定义的字符串为<strong>原义字符串</strong>，其中的变量不会被转义</p>
 <p><code>""</code>定义的字符串会<strong>将变量值进行替换</strong>。</p>
-<pre><code class="language-bash">user:~$ foo=bar #定义变量foo
+<div class="highlight"><pre><span></span><code>user:~$<span class="w"> </span><span class="nv">foo</span><span class="o">=</span>bar<span class="w"> </span><span class="c1">#定义变量foo</span>
 
-user:~$ echo &quot;Value is $foo&quot;
-Value is bar  #&quot;&quot;对于其中的字符串内容进行了转译，将其中的变量值进行了替换
+user:~$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Value is </span><span class="nv">$foo</span><span class="s2">&quot;</span>
+Value<span class="w"> </span>is<span class="w"> </span>bar<span class="w">  </span><span class="c1">#&quot;&quot;对于其中的字符串内容进行了转译，将其中的变量值进行了替换</span>
 
-user:~$ echo 'Value is $foo' 
-Value is $foo   #''对于其中的字符串内容没有进行任何替换，而是按照原内容进行了输出
-</code></pre>
+user:~$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;Value is $foo&#39;</span><span class="w"> </span>
+Value<span class="w"> </span>is<span class="w"> </span><span class="nv">$foo</span><span class="w">   </span><span class="c1">#&#39;&#39;对于其中的字符串内容没有进行任何替换，而是按照原内容进行了输出</span>
+</code></pre></div>
 <h4 id="_3">控制流</h4>
 <p>即<code>for</code> <code>while</code> <code>if</code> <code>case</code>四大语句。</p>
 <p>和其他大多数的编程语言一样，<code>bash</code>也支持<code>if</code>, <code>case</code>, <code>while</code> 和 <code>for</code> 这些控制流关键字。</p>
-<pre><code class="language-bash">if [ $a -gt $b ];then #演示一个判断变量a是否大于变量b的语句
-    code....
-fi
+<div class="highlight"><pre><span></span><code><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="nv">$a</span><span class="w"> </span>-gt<span class="w"> </span><span class="nv">$b</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="k">then</span><span class="w"> </span><span class="c1">#演示一个判断变量a是否大于变量b的语句</span>
+<span class="w">    </span>code....
+<span class="k">fi</span>
 
-for num in 1 2 3 4 5;do
-    code...
-done
+<span class="k">for</span><span class="w"> </span>num<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="m">5</span><span class="p">;</span><span class="k">do</span>
+<span class="w">    </span>code...
+<span class="k">done</span>
 
-whie(condition);do #但是得注意一件事，在while中最外围的括号需要填充的内容为F/T，所以我们的条件需要一个()先转为布尔值
-    code    
-done
-</code></pre>
+whie<span class="o">(</span>condition<span class="o">)</span><span class="p">;</span><span class="k">do</span><span class="w"> </span><span class="c1">#但是得注意一件事，在while中最外围的括号需要填充的内容为F/T，所以我们的条件需要一个()先转为布尔值</span>
+<span class="w">    </span>code<span class="w">    </span>
+<span class="k">done</span>
+</code></pre></div>
 <p>同样地， <code>bash</code> 也支持<strong>定义函数</strong>，它可以接受参数并基于参数进行操作。</p>
 <p>下面这个函数是一个例子，它会创建一个文件夹并使用<code>cd</code>进入该文件夹。</p>
-<pre><code class="language-shell">user:~$ vim mcd.sh
+<div class="highlight"><pre><span></span><code>user:~$<span class="w"> </span>vim<span class="w"> </span>mcd.sh
 
-#以下是mcd.sh文件中的内容
-mcd () {
-    mkdir -p &quot;$1&quot;  # 以传入的第一个参数作为目录名，创建一个目录（文件夹）。第一个在mkdir中参数-p的含义是创建多级目录
-    cd &quot;$1&quot;   # 进入刚刚创建的文件夹当中
-}
+<span class="c1">#以下是mcd.sh文件中的内容</span>
+mcd<span class="w"> </span><span class="o">()</span><span class="w"> </span><span class="o">{</span>
+<span class="w">    </span>mkdir<span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span><span class="w">  </span><span class="c1"># 以传入的第一个参数作为目录名，创建一个目录（文件夹）。第一个在mkdir中参数-p的含义是创建多级目录</span>
+<span class="w">    </span><span class="nb">cd</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span><span class="w">   </span><span class="c1"># 进入刚刚创建的文件夹当中</span>
+<span class="o">}</span>
 
-./mcd.sh # 可以直接执行脚本，参数在文件名后直接跟住就行。
-source mcd.sh #  将mcd变为我们可以直接执行的shell程序
-
-</code></pre>
+./mcd.sh<span class="w"> </span><span class="c1"># 可以直接执行脚本，参数在文件名后直接跟住就行。</span>
+<span class="nb">source</span><span class="w"> </span>mcd.sh<span class="w"> </span><span class="c1">#  将mcd变为我们可以直接执行的shell程序</span>
+</code></pre></div>
 <p>这里 <code>$1</code> 是一种特殊变量，类似于其他脚本语言中的<code>argv</code>。</p>
 <p>与其他脚本语言不同的是，bash使用了很多特殊的变量来表示<strong>参数</strong>、<strong>错误代码</strong>和<strong>相关变量</strong>。也就是<strong>保留关键字</strong>。</p>
 <p>下面列举了其中一些<strong>保留关键字</strong>，更完整的列表可以参考 <a href="https://www.tldp.org/LDP/abs/html/special-chars.html">这里</a>。</p>
@@ -1256,95 +1255,94 @@ source mcd.sh #  将mcd变为我们可以直接执行的shell程序
 <p>退出码可以搭配 <code>&amp;&amp;</code>（与操作符）和 <code>||</code>（或操作符）使用，用来进行条件判断，决定是否执行其他程序。它们都属于短路<a href="https://en.wikipedia.org/wiki/Short-circuit_evaluation">运算符</a>（[*] short-circuiting） </p>
 <p>同一行的多个命令可以用<code>;</code>分隔，也就是<strong>一行当中执行多个命令</strong>。</p>
 <p>程序 <code>true</code> 的返回码永远是<code>0</code>，<code>false</code> 的返回码永远是<code>1</code>。让我们看几个例子</p>
-<pre><code class="language-shell">#条件判断
-user:~$ false || echo &quot;Oops, fail&quot;  
-Oops, fail
+<div class="highlight"><pre><span></span><code><span class="c1">#条件判断</span>
+user:~$<span class="w"> </span><span class="nb">false</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Oops, fail&quot;</span><span class="w">  </span>
+Oops,<span class="w"> </span>fail
 
-user:~$ true || echo &quot;Will not be printed&quot;
+user:~$<span class="w"> </span><span class="nb">true</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Will not be printed&quot;</span>
 
-#解释一下发生了什么，||的操作逻辑是会将两个命令按照先后顺序都运行一遍。如果都是为假，才能认定整个命令是错误的，而且也不会有输出。与C语言一样，当发现左侧为真时并不会再运行右侧的命令了（一个为真，则为真）。专业的说法应该时此处发生了短路[*]。
-
-
-user:~$ true &amp;&amp; echo &quot;Things went well&quot;
-Things went well
-
-user:~$ false &amp;&amp; echo &quot;Will not be printed&quot;
-#同理也是会按序运行，来看其是否正确，如果第二个命令执行则说明两个命令均为真。但是一旦出现错误，就会断定整个命令为错不会有输出。
+<span class="c1">#解释一下发生了什么，||的操作逻辑是会将两个命令按照先后顺序都运行一遍。如果都是为假，才能认定整个命令是错误的，而且也不会有输出。与C语言一样，当发现左侧为真时并不会再运行右侧的命令了（一个为真，则为真）。专业的说法应该时此处发生了短路[*]。</span>
 
 
-user:~$ false ; echo &quot;This will always run&quot;
-This will always run
-#用&quot;;&quot;符号可以将两个命令在同一行中执行。
-</code></pre>
+user:~$<span class="w"> </span><span class="nb">true</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Things went well&quot;</span>
+Things<span class="w"> </span>went<span class="w"> </span>well
+
+user:~$<span class="w"> </span><span class="nb">false</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Will not be printed&quot;</span>
+<span class="c1">#同理也是会按序运行，来看其是否正确，如果第二个命令执行则说明两个命令均为真。但是一旦出现错误，就会断定整个命令为错不会有输出。</span>
+
+
+user:~$<span class="w"> </span><span class="nb">false</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;This will always run&quot;</span>
+This<span class="w"> </span>will<span class="w"> </span>always<span class="w"> </span>run
+<span class="c1">#用&quot;;&quot;符号可以将两个命令在同一行中执行。</span>
+</code></pre></div>
 <h4 id="_4">$操作</h4>
 <p>如何将一个命令的输出存储到一个变量中</p>
-<pre><code class="language-shell">user:~$ foo=$(pwd) #变量foo会获取pwd的输出作为其变量值
-</code></pre>
+<div class="highlight"><pre><span></span><code>user:~$<span class="w"> </span><span class="nv">foo</span><span class="o">=</span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span><span class="w"> </span><span class="c1">#变量foo会获取pwd的输出作为其变量值</span>
+</code></pre></div>
 <p>我们可以通过这种方式将它放入字符串中实现   <em>命令替换</em>（<em>command substitution</em>）。命令替换是一种在Linux，Unix以及类Unix操作系统中常见的技术，用于在一个命令中嵌套另一个命令</p>
-<pre><code class="language-shell">user:~$ echo &quot;We are in $(pwd)&quot;
-We are in /home/documents/test
-#在linux中，其实没有&quot;&quot;也可以实现
-</code></pre>
+<div class="highlight"><pre><span></span><code>user:~$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;We are in </span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span><span class="s2">&quot;</span>
+We<span class="w"> </span>are<span class="w"> </span><span class="k">in</span><span class="w"> </span>/home/documents/test
+<span class="c1">#在linux中，其实没有&quot;&quot;也可以实现</span>
+</code></pre></div>
 <p>当我们通过 <code>$(CMD)</code> 这样的方式来执行<code>CMD</code> 这个命令时，它的<strong>输出结果</strong>会替换掉 <code>$(CMD)</code> 。</p>
-<pre><code class="language-shell">user:~$ ls
-missing hello.txt
+<div class="highlight"><pre><span></span><code>user:~$<span class="w"> </span>ls
+missing<span class="w"> </span>hello.txt
 
-user:~$ ls -1 #man ls对于此参数作用的描述 list one file per line.
-missing 
+user:~$<span class="w"> </span>ls<span class="w"> </span>-1<span class="w"> </span><span class="c1">#man ls对于此参数作用的描述 list one file per line.</span>
+missing<span class="w"> </span>
 hello.txt
 
-user:~$ echo for file in $(ls)
-for file in missing hello.txt
+user:~$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="k">for</span><span class="w"> </span>file<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="k">$(</span>ls<span class="k">)</span>
+<span class="k">for</span><span class="w"> </span>file<span class="w"> </span><span class="k">in</span><span class="w"> </span>missing<span class="w"> </span>hello.txt
 
-user:~$ echo for file in &quot;$(ls)&quot;
-for file in missing 
-hello.txt  
+user:~$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="k">for</span><span class="w"> </span>file<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>ls<span class="k">)</span><span class="s2">&quot;</span>
+<span class="k">for</span><span class="w"> </span>file<span class="w"> </span><span class="k">in</span><span class="w"> </span>missing<span class="w"> </span>
+hello.txt<span class="w">  </span>
 
-#我有必要解释一下这些代码为什么发生了完全不同的事情。先说明一下，在UNIX中你应该会看见ls应该发生的是换行的情况。但我们这里是在Linux中，所以并没有出现换行的情况，需要给入一个参数-1才能实现每行一个文件的输出。但是你要是尝试将ls&gt;file.txt 查看file.txt你会发现，file.txt中的内容也是每行一个文件名。
-</code></pre>
+<span class="c1">#我有必要解释一下这些代码为什么发生了完全不同的事情。先说明一下，在UNIX中你应该会看见ls应该发生的是换行的情况。但我们这里是在Linux中，所以并没有出现换行的情况，需要给入一个参数-1才能实现每行一个文件的输出。但是你要是尝试将ls&gt;file.txt 查看file.txt你会发现，file.txt中的内容也是每行一个文件名。</span>
+</code></pre></div>
 <h5 id="echo">两种echo的不同</h5>
 <p>如果我们使用<code>echo $(ls)</code>的话，<code>shell</code>捕获<code>echo</code>的输出并对其进行<em>字拆分</em>(<code>word splitting</code>)  这也就是说，所有的空格序列（包括换行符）都将被替换成单个空格，所以使用<code>echo $(ls)</code>的话就会出现输出都在一行的情况。</p>
 <p>而我们使用<code>echo "$(ls)"</code>的时候则是 <code>shell</code>在捕获输出的时候因为<code>""</code>的纯在，进而被禁止了<em>字拆分</em>，也就是说其保留了原先默认的换行（在后续我们会解释，为什么说是默认的换行）。</p>
 <p>总结：在shell获取<code>echo</code>程序的输出的时候会进行 <em>字拆分</em> 的默认操作，将空格序列（包括换行）变为单个空格。而使用<code>""</code>时候的时候则会禁用这种操作。</p>
 <h5 id="ls">ls的细节</h5>
 <p>而我们单个使用<code>ls</code>为什么会出现单行输出多个文件，而进行<code>ls&gt;file.txt</code>时，发现<code>file.txt</code>中的内容是多行输出呢？而使用<code>-1</code>参数的时候又是换行的呢？我们可以通过<code>man ls</code>查阅在<code>1</code>参数传入的时候发生了什么</p>
-<pre><code class="language-shell"> -1      (The numeric digit &quot;one&quot;.) Force output to be one entry per line.
-            This is the default when output is not to a terminal.
+<div class="highlight"><pre><span></span><code><span class="w"> </span>-1<span class="w">      </span><span class="o">(</span>The<span class="w"> </span>numeric<span class="w"> </span>digit<span class="w"> </span><span class="s2">&quot;one&quot;</span>.<span class="o">)</span><span class="w"> </span>Force<span class="w"> </span>output<span class="w"> </span>to<span class="w"> </span>be<span class="w"> </span>one<span class="w"> </span>entry<span class="w"> </span>per<span class="w"> </span>line.
+<span class="w">            </span>This<span class="w"> </span>is<span class="w"> </span>the<span class="w"> </span>default<span class="w"> </span>when<span class="w"> </span>output<span class="w"> </span>is<span class="w"> </span>not<span class="w"> </span>to<span class="w"> </span>a<span class="w"> </span>terminal.
 
- #tips,虽然man cmd是一个很好的习惯，但是上述的内容在GNU coreutils是找不见的。
-</code></pre>
+<span class="w"> </span><span class="c1">#tips,虽然man cmd是一个很好的习惯，但是上述的内容在GNU coreutils是找不见的。</span>
+</code></pre></div>
 <p>也就是说在<em>终端</em>（Terminal）上展示<code>ls</code>指令的输出的时候<code>1</code>是默认不启用的，而当<code>ls</code>在非终端上使用的时候，<code>1</code>又默认启用而发生了输出换行。在<code>echo</code>程序调用<code>ls</code>的输出的时候，其实<code>ls</code>已经认为自己是在非终端的情况了，所以会默认启用参数<code>1</code>。</p>
 <h4 id="_5">进程替换</h4>
 <p>还有一个冷门的类似特性是 <em>进程替换</em>（<em>process substitution</em>）， 在使用输出重定向<code>&lt;</code>的时候再套一个括号<code>()</code>，如<code>&lt;(CMD)</code> 。其会执行 <code>CMD</code> 并将结果输出到一个临时文件中，并将 <code>&lt;(CMD)</code> 替换成临时文件名。这在我们希望返回值通过文件而不是STDIN传递时很有用。</p>
 <p>例如， <code>diff &lt;(ls foo) &lt;(ls bar)</code> 会显示文件夹 <code>foo</code> 和 <code>bar</code> 中文件的<strong>区别</strong>。<code>cat &lt;(ls) &lt;(ls..)</code>会显示当前文件夹和上级目录中的所有文件</p>
-<pre><code class="language-shell">user:~/missing$ cat &lt;(ls) &lt;(ls ..)
+<div class="highlight"><pre><span></span><code>user:~/missing$<span class="w"> </span>cat<span class="w"> </span>&lt;<span class="o">(</span>ls<span class="o">)</span><span class="w"> </span>&lt;<span class="o">(</span>ls<span class="w"> </span>..<span class="o">)</span>
 last-modified.txt
 semester
 file.txt
 hello.txt
 las-modied.txt
 missing
-</code></pre>
+</code></pre></div>
 <p>我们以一个具体的脚本范例来演示我们所提及的特性。这段脚本会遍历我们提供的参数，使用<code>grep</code> 搜索子字符串 <code>foobar</code>，如果没有找到，则将其作为注释追加到文件中。</p>
 <p>打开<code>example.sh</code>文件</p>
-<pre><code class="language-shell">#!/bin/bash
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
 
-echo &quot;Starting program at $(date)&quot; # date会被替换成日期和时间
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Starting program at </span><span class="k">$(</span>date<span class="k">)</span><span class="s2">&quot;</span><span class="w"> </span><span class="c1"># date会被替换成日期和时间</span>
 
-echo &quot;Running program $0 with $# arguments with pid $$&quot; #$0是我们当前运行的脚本名，$#是我们给这个脚本的参数量，$$就是PID
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Running program </span><span class="nv">$0</span><span class="s2"> with </span><span class="nv">$#</span><span class="s2"> arguments with pid </span><span class="nv">$$</span><span class="s2">&quot;</span><span class="w"> </span><span class="c1">#$0是我们当前运行的脚本名，$#是我们给这个脚本的参数量，$$就是PID</span>
 
-for file in &quot;$@&quot;; do   # $@会展开为所有的参数
-    grep foobar &quot;$file&quot; &gt; /dev/null 2&gt; /dev/null  #&quot;/dev/null&quot;被称作黑洞文件，顾名思义。而2&gt;是用于重定向标准错误流的
-    # 如果模式没有找到，则grep退出状态为 1
-    # 我们将标准输出流和标准错误流重定向到Null，因为我们并不关心这些信息
+<span class="k">for</span><span class="w"> </span>file<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$@</span><span class="s2">&quot;</span><span class="p">;</span><span class="w"> </span><span class="k">do</span><span class="w">   </span><span class="c1"># $@会展开为所有的参数</span>
+<span class="w">    </span>grep<span class="w"> </span>foobar<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$file</span><span class="s2">&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>/dev/null<span class="w"> </span><span class="m">2</span>&gt;<span class="w"> </span>/dev/null<span class="w">  </span><span class="c1">#&quot;/dev/null&quot;被称作黑洞文件，顾名思义。而2&gt;是用于重定向标准错误流的</span>
+<span class="w">    </span><span class="c1"># 如果模式没有找到，则grep退出状态为 1</span>
+<span class="w">    </span><span class="c1"># 我们将标准输出流和标准错误流重定向到Null，因为我们并不关心这些信息</span>
 
-    if [[ $? -ne 0 ]]; then  #-ne 即not equal不相等
-        echo &quot;File $file does not have any foobar, adding one&quot; 
-        echo &quot;# foobar&quot; &gt;&gt; &quot;$file&quot;  #在文件中追加一个#foobar的注释，如果单用&gt;会覆盖写。
-    fi
-done
-
-</code></pre>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span><span class="nv">$?</span><span class="w"> </span>-ne<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="o">]]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span><span class="w">  </span><span class="c1">#-ne 即not equal不相等</span>
+<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;File </span><span class="nv">$file</span><span class="s2"> does not have any foobar, adding one&quot;</span><span class="w"> </span>
+<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;# foobar&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$file</span><span class="s2">&quot;</span><span class="w">  </span><span class="c1">#在文件中追加一个#foobar的注释，如果单用&gt;会覆盖写。</span>
+<span class="w">    </span><span class="k">fi</span>
+<span class="k">done</span>
+</code></pre></div>
 <p>在条件语句中，我们比较 <code>$?</code> 是否是不等于0，也就是否是错的。如果是错的，即判断为真就会执行语句。 在bash中进行比较时，尽量使用双方括号 <code>[[ ]]</code> 而不是单方括号 <code>[ ]</code>，这样会降低犯错的几率，尽管这样并不能兼容 <code>sh</code>。</p>
 <p>当执行脚本时，我们经常需要提供<strong>形式类似的参数</strong>。bash使我们可以轻松的实现这一操作，它可以基于文件扩展名展开表达式。这一技术被称为<code>shell</code>的 <em>通配</em>（<em>globbing</em>）</p>
 <ul>
@@ -1352,57 +1350,58 @@ done
 </ul>
 <p>例如</p>
 <p>我们有文件<code>foo</code>, <code>foo1</code>, <code>foo2</code>, <code>foo10</code> 和 <code>bar</code></p>
-<p>```shell
-  user:~$ rm foo?
-  #会删除foo1 和 foo2。也就是?会限制多出的字符数量必须等于?的个数 </p>
-<p>user:~$ rm foo<em> 
-  #则会删除除了bar之外的所有文件。</em>不会限制字符数量 0~∞</p>
-<p>#通配同样可以用于文件的情况，比如删除所有的.sh文件：
-  user:~$ rm <em>.sh
-  user:~$ ls </em>.sh #展示此目录下的所有的.sh文件
-  ```</p>
+<div class="highlight"><pre><span></span><code>user:~$<span class="w"> </span>rm<span class="w"> </span>foo?
+<span class="c1">#会删除foo1 和 foo2。也就是?会限制多出的字符数量必须等于?的个数 </span>
+
+user:~$<span class="w"> </span>rm<span class="w"> </span>foo*<span class="w"> </span>
+<span class="c1">#则会删除除了bar之外的所有文件。*不会限制字符数量 0~∞</span>
+
+<span class="c1">#通配同样可以用于文件的情况，比如删除所有的.sh文件：</span>
+user:~$<span class="w"> </span>rm<span class="w"> </span>*.sh
+user:~$<span class="w"> </span>ls<span class="w"> </span>*.sh<span class="w"> </span><span class="c1">#展示此目录下的所有的.sh文件</span>
+</code></pre></div>
 <ul>
 <li>花括号<code>{}</code> - 当你有一系列的指令，其中包含一段公共子串时，可以用花括号来自动展开这些命令。这在批量移动或转换文件时非常方便。</li>
 </ul>
-<pre><code class="language-shell">user:~$ convert image.{png,jpg}
-# 会展开为
-user:~$ convert image.png image.jpg
+<div class="highlight"><pre><span></span><code>user:~$<span class="w"> </span>convert<span class="w"> </span>image.<span class="o">{</span>png,jpg<span class="o">}</span>
+<span class="c1"># 会展开为</span>
+user:~$<span class="w"> </span>convert<span class="w"> </span>image.png<span class="w"> </span>image.jpg
 
-user:~$ cp /path/to/project/{foo,bar,baz}.sh /newpath
-# 会展开为
-user:~$ cp /path/to/project/foo.sh /path/to/project/bar.sh /path/to/project/baz.sh /newpath
+user:~$<span class="w"> </span>cp<span class="w"> </span>/path/to/project/<span class="o">{</span>foo,bar,baz<span class="o">}</span>.sh<span class="w"> </span>/newpath
+<span class="c1"># 会展开为</span>
+user:~$<span class="w"> </span>cp<span class="w"> </span>/path/to/project/foo.sh<span class="w"> </span>/path/to/project/bar.sh<span class="w"> </span>/path/to/project/baz.sh<span class="w"> </span>/newpath
 
-# 也可以结合通配使用
-user:~$ mv *{.py,.sh} folder
-# 会移动所有 *.py 和 *.sh 文件
+<span class="c1"># 也可以结合通配使用</span>
+user:~$<span class="w"> </span>mv<span class="w"> </span>*<span class="o">{</span>.py,.sh<span class="o">}</span><span class="w"> </span>folder
+<span class="c1"># 会移动所有 *.py 和 *.sh 文件</span>
 
-user:~$ mkdir foo bar
+user:~$<span class="w"> </span>mkdir<span class="w"> </span>foo<span class="w"> </span>bar
 
-# 下面命令会创建foo/a, foo/b, ... foo/h, bar/a, bar/b, ... bar/h这些文件
-user:~$ touch {foo,bar}/{a..h}
-user:~$ touch foo/x bar/y
-# 比较文件夹 foo 和 bar 中包含文件的不同
-user:~$ diff &lt;(ls foo) &lt;(ls bar)
-# 输出
-# &lt; x
-# ---
-# &gt; y  #说明y文件仅存于bar文件夹中
-</code></pre>
+<span class="c1"># 下面命令会创建foo/a, foo/b, ... foo/h, bar/a, bar/b, ... bar/h这些文件</span>
+user:~$<span class="w"> </span>touch<span class="w"> </span><span class="o">{</span>foo,bar<span class="o">}</span>/<span class="o">{</span>a..h<span class="o">}</span>
+user:~$<span class="w"> </span>touch<span class="w"> </span>foo/x<span class="w"> </span>bar/y
+<span class="c1"># 比较文件夹 foo 和 bar 中包含文件的不同</span>
+user:~$<span class="w"> </span>diff<span class="w"> </span>&lt;<span class="o">(</span>ls<span class="w"> </span>foo<span class="o">)</span><span class="w"> </span>&lt;<span class="o">(</span>ls<span class="w"> </span>bar<span class="o">)</span>
+<span class="c1"># 输出</span>
+<span class="c1"># &lt; x</span>
+<span class="c1"># ---</span>
+<span class="c1"># &gt; y  #说明y文件仅存于bar文件夹中</span>
+</code></pre></div>
 <h4 id="_6">其他语言的脚本</h4>
 <p>编写 <code>bash</code> 脚本有时候会很别扭和反直觉。我们可以使用 <a href="https://github.com/koalaman/shellcheck">shellcheck</a> 这样的工具可以帮助你定位sh/bash脚本中的错误。</p>
 <p>终端中不仅仅可以使用bash写的脚本，同样可以使用其他语言。</p>
 <p>比如说，这是一段 Python 脚本，作用是将输入的参数倒序输出：</p>
-<pre><code class="language-python">#!/usr/local/bin/python
-import sys  #python在默认情况下不与shell交互，所以我们需要导入sys库
-for arg in reversed(sys.argv[1:]):
-    print(arg)
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/usr/local/bin/python</span>
+<span class="kn">import</span> <span class="nn">sys</span>  <span class="c1">#python在默认情况下不与shell交互，所以我们需要导入sys库</span>
+<span class="k">for</span> <span class="n">arg</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">:]):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">arg</span><span class="p">)</span>
+</code></pre></div>
 <p>开头这行叫做<code>shebang</code>让<em>内核</em>（kernel）知道如何运行这个脚本。如果没有这一行的话，我们需要<code>python script.py</code>来运行脚本，但是我们有了这一行，所以我们直接用<code>./ script.py</code>就可以运行这个脚本。开头的路径同时告知了运行这个脚本所需要的解释器在哪儿。</p>
 <p>内核知道去用 python 解释器而不是 shell 命令来运行这段脚本，是因为脚本的开头第一行的 <a href="https://en.wikipedia.org/wiki/Shebang_(Unix)">shebang</a>。</p>
 <p>但是我们会出现不知道需要解释器所在的位置在哪儿？（不同的系统中可能同个解释器位置不同）</p>
 <p>为了解决这个问题，我们可以在 <code>shebang</code> 行中使用 <code>env</code> 命令，</p>
-<pre><code class="language-python">#!/usr/bin/env python
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/usr/bin/env python</span>
+</code></pre></div>
 <p>它会利用环境变量中的程序来解析该脚本，这样就提高了您的脚本的可移植性。<code>env</code> 会利用我们第一节讲座中介绍过的<code>PATH</code> 环境变量来进行定位。 </p>
 <p>shell函数和脚本有如下一些不同点：</p>
 <ul>
@@ -1421,25 +1420,25 @@ for arg in reversed(sys.argv[1:]):
 <h4 id="_8">查找文件</h4>
 <p>程序员们面对的最常见的重复任务就是查找文件或目录。</p>
 <p>所有的类UNIX系统都包含一个名为 <a href="https://man7.org/linux/man-pages/man1/find.1.html"><code>find</code></a> 的工具，它是 shell 上用于查找文件的绝佳工具。<code>find</code>命令会递归地搜索符合条件的文件，例如：</p>
-<pre><code class="language-shell"># 查找所有名称为src的文件夹
-find . -name src -type d
+<div class="highlight"><pre><span></span><code><span class="c1"># 查找所有名称为src的文件夹</span>
+find<span class="w"> </span>.<span class="w"> </span>-name<span class="w"> </span>src<span class="w"> </span>-type<span class="w"> </span>d
 
-# 查找所有文件夹路径中包含test的python文件
-find . -path '*/test/*.py' -type f
+<span class="c1"># 查找所有文件夹路径中包含test的python文件</span>
+find<span class="w"> </span>.<span class="w"> </span>-path<span class="w"> </span><span class="s1">&#39;*/test/*.py&#39;</span><span class="w"> </span>-type<span class="w"> </span>f
 
-# 查找前一天修改的所有文件
-find . -mtime -1
+<span class="c1"># 查找前一天修改的所有文件</span>
+find<span class="w"> </span>.<span class="w"> </span>-mtime<span class="w"> </span>-1
 
-# 查找所有大小在500k至10M的tar.gz文件
-find . -size +500k -size -10M -name '*.tar.gz'
-</code></pre>
+<span class="c1"># 查找所有大小在500k至10M的tar.gz文件</span>
+find<span class="w"> </span>.<span class="w"> </span>-size<span class="w"> </span>+500k<span class="w"> </span>-size<span class="w"> </span>-10M<span class="w"> </span>-name<span class="w"> </span><span class="s1">&#39;*.tar.gz&#39;</span>
+</code></pre></div>
 <p>除了列出所寻找的文件之外，find 还能对所有查找到的文件进行操作。</p>
 <p>这能极大地简化一些单调的任务。</p>
-<pre><code class="language-shell"># 删除全部扩展名为.tmp 的文件
-find . -name '*.tmp' -exec rm {} \;
-# 查找全部的 PNG 文件并将其转换为 JPG
-find . -name '*.png' -exec convert {} {}.jpg \;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="c1"># 删除全部扩展名为.tmp 的文件</span>
+find<span class="w"> </span>.<span class="w"> </span>-name<span class="w"> </span><span class="s1">&#39;*.tmp&#39;</span><span class="w"> </span>-exec<span class="w"> </span>rm<span class="w"> </span><span class="o">{}</span><span class="w"> </span><span class="se">\;</span>
+<span class="c1"># 查找全部的 PNG 文件并将其转换为 JPG</span>
+find<span class="w"> </span>.<span class="w"> </span>-name<span class="w"> </span><span class="s1">&#39;*.png&#39;</span><span class="w"> </span>-exec<span class="w"> </span>convert<span class="w"> </span><span class="o">{}</span><span class="w"> </span><span class="o">{}</span>.jpg<span class="w"> </span><span class="se">\;</span>
+</code></pre></div>
 <p>尽管 <code>find</code> 用途广泛，它的语法却比较难以记忆。例如，为了查找满足模式 <code>PATTERN</code> 的文件，您需要执行 <code>find -name '*PATTERN*'</code> (如果您希望模式匹配时是不区分大小写，可以使用<code>-iname</code>选项）</p>
 <p>您当然可以使用 alias 设置别名来简化上述操作，但 shell 的哲学之一便是寻找（更好用的）替代方案。 记住，shell 最好的特性就是您只是在调用程序，因此您只要找到合适的替代程序即可（甚至自己编写）。</p>
 <p>例如，<a href="https://github.com/sharkdp/fd"><code>fd</code></a> 就是一个更简单、更快速、更友好的程序，它可以用来作为<code>find</code>的替代品。它有很多不错的默认设置，例如输出着色、默认支持正则匹配、支持unicode并且我认为它的语法更符合直觉。以模式<code>PATTERN</code> 搜索的语法是 <code>fd PATTERN</code>。</p>
@@ -1454,18 +1453,18 @@ find . -name '*.png' -exec convert {} {}.jpg \;
 <p>举例来说， <code>grep -C 5</code> 会输出匹配结果前后五行。当需要搜索大量文件的时候，使用 <code>-R</code> 会递归地进入子目录并搜索所有的文本文件。</p>
 <p>但是，我们有很多办法可以对 <code>grep -R</code> 进行改进，例如使其忽略<code>.git</code> 文件夹，使用多CPU等等。</p>
 <p>因此也出现了很多它的替代品，包括 <a href="https://beyondgrep.com/">ack</a>, <a href="https://github.com/ggreer/the_silver_searcher">ag</a> 和 <a href="https://github.com/BurntSushi/ripgrep">rg</a>。它们都特别好用，但是功能也都差不多，我比较常用的是 ripgrep (<code>rg</code>) ，因为它速度快，而且用法非常符合直觉。例子如下：</p>
-<pre><code class="language-shell"># 查找所有使用了 requests 库的文件
-rg -t py 'import requests'
+<div class="highlight"><pre><span></span><code><span class="c1"># 查找所有使用了 requests 库的文件</span>
+rg<span class="w"> </span>-t<span class="w"> </span>py<span class="w"> </span><span class="s1">&#39;import requests&#39;</span>
 
-# 查找所有没有写 shebang 的文件（包含隐藏文件）
-rg -u --files-without-match &quot;^#!&quot;
+<span class="c1"># 查找所有没有写 shebang 的文件（包含隐藏文件）</span>
+rg<span class="w"> </span>-u<span class="w"> </span>--files-without-match<span class="w"> </span><span class="s2">&quot;^#!&quot;</span>
 
-# 查找所有的foo字符串，并打印其之后的5行
-rg foo -A 5
+<span class="c1"># 查找所有的foo字符串，并打印其之后的5行</span>
+rg<span class="w"> </span>foo<span class="w"> </span>-A<span class="w"> </span><span class="m">5</span>
 
-# 打印匹配的统计信息（匹配的行和文件的数量）
-rg --stats PATTERN
-</code></pre>
+<span class="c1"># 打印匹配的统计信息（匹配的行和文件的数量）</span>
+rg<span class="w"> </span>--stats<span class="w"> </span>PATTERN
+</code></pre></div>
 <p>与 <code>find</code>/<code>fd</code> 一样，重要的是你要知道有些问题使用合适的工具就会迎刃而解，而具体选择哪个工具则不是那么重要。</p>
 <h4 id="shell_3">查找 shell 命令</h4>
 <p>一个简单的方法是按向上的方向键会显示你使用过的上一条命令，继续按上键则会遍历整个历史记录。</p>

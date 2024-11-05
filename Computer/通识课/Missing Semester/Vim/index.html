@@ -1160,18 +1160,18 @@
 </ul>
 <h2 id="_11">演示</h2>
 <p>这里是一个有问题的 <a href="https://en.wikipedia.org/wiki/Fizz_buzz">fizz buzz</a> 实现：</p>
-<pre><code class="language-python">def fizz_buzz(limit):
-    for i in range(limit):
-        if i % 3 == 0:
-            print('fizz')
-        if i % 5 == 0:
-            print('fizz')
-        if i % 3 and i % 5:
-            print(i)
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">fizz_buzz</span><span class="p">(</span><span class="n">limit</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">limit</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">3</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;fizz&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">5</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;fizz&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">3</span> <span class="ow">and</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">5</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
 
-def main():
-    fizz_buzz(10)
-</code></pre>
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="n">fizz_buzz</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</code></pre></div>
 <p>我们会修复以下问题：</p>
 <ul>
 <li>主函数没有被调用</li>
@@ -1223,8 +1223,8 @@ def main():
 <p>如果你是一个 Bash 用户，用 <code>set -o vi</code>。如果你用 Zsh：<code>bindkey -v</code>。Fish 用 <code>fish_vi_key_bindings</code>。另外，不管利用什么 shell，你可以 <code>export EDITOR=vim</code>。 这是一个用来决定当一个程序需要启动编辑时启动哪个的环境变量。 例如，<code>git</code> 会使用这个编辑器来编辑 commit 信息。</p>
 <h3 id="readline">Readline</h3>
 <p>很多程序使用 <a href="https://tiswww.case.edu/php/chet/readline/rltop.html">GNU Readline</a> 库来作为 它们的命令控制行界面。Readline 也支持基本的 Vim 模式， 可以通过在 <code>~/.inputrc</code> 添加如下行开启：</p>
-<pre><code>set editing-mode vi
-</code></pre>
+<div class="highlight"><pre><span></span><code>set editing-mode vi
+</code></pre></div>
 <p>比如，在这个设置下，Python REPL 会支持 Vim 快捷键。</p>
 <h3 id="_12">其他</h3>
 <p>甚至有 Vim 的网页浏览快捷键 <a href="http://vim.wikia.com/wiki/Vim_key_bindings_for_web_browsers">browsers</a>, 受欢迎的有 用于 Google Chrome 的 <a href="https://chrome.google.com/webstore/detail/vimium/dbepggeogbaibhgnhhndojpepiihcmeb?hl=en">Vimium</a> 和用于 Firefox 的 <a href="https://github.com/tridactyl/tridactyl">Tridactyl</a>。 你甚至可以在 <a href="https://github.com/lambdalisue/jupyter-vim-binding">Jupyter notebooks</a> 中用 Vim 快捷键。 <a href="https://reversed.top/2016-08-13/big-list-of-vim-like-software">这个列表</a> 中列举了支持类 vim 键位绑定的软件。</p>
