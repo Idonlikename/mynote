@@ -916,40 +916,40 @@
   
 
 
-<h1 id="socket">Socket</h1>
+<h1 id="socket">Socket<a class="headerlink" href="#socket" title="Permanent link">&para;</a></h1>
 <p>本文件中的内容主要用于记录学习Socket实验过程中一些不常见的标准库函数，可以看作是一个函数的集合。</p>
-<h3 id="_1">函数</h3>
-<h4 id="strstr"><code>strstr</code></h4>
+<h3 id="_1">函数<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<h4 id="strstr"><code>strstr</code><a class="headerlink" href="#strstr" title="Permanent link">&para;</a></h4>
 <p><code>strstr(char1,char2)</code>，<code>strstr</code>用于在字符串中查询子串，查询<code>char2</code>在<code>char1</code>中的指针位置。</p>
-<div class="highlight"><pre><span></span><code><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="nf">strstr</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">haystack</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">needle</span><span class="p">);</span><span class="w"> </span><span class="c1">//原型</span>
-
-<span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">char1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Hello, world!&quot;</span><span class="p">;</span>
-<span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">char2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;world&quot;</span><span class="p">;</span>
-
-<span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">found</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">strstr</span><span class="p">(</span><span class="n">char1</span><span class="p">,</span><span class="w"> </span><span class="n">char2</span><span class="p">);</span>
-<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">found</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Found &#39;%s&#39; at position %ld</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">char2</span><span class="p">,</span><span class="w"> </span><span class="n">found</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">char1</span><span class="p">);</span>
-<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Sub-string not found.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
-<span class="p">}</span>
-<span class="c1">//output：Found &#39;world&#39; at position 7     </span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="nf">strstr</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">haystack</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">needle</span><span class="p">);</span><span class="w"> </span><span class="c1">//原型</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">char1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Hello, world!&quot;</span><span class="p">;</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">char2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;world&quot;</span><span class="p">;</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">found</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">strstr</span><span class="p">(</span><span class="n">char1</span><span class="p">,</span><span class="w"> </span><span class="n">char2</span><span class="p">);</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">found</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Found &#39;%s&#39; at position %ld</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">char2</span><span class="p">,</span><span class="w"> </span><span class="n">found</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">char1</span><span class="p">);</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Sub-string not found.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="p">}</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="c1">//output：Found &#39;world&#39; at position 7     </span>
 </code></pre></div>
-<h4 id="fputs"><code>fputs</code></h4>
+<h4 id="fputs"><code>fputs</code><a class="headerlink" href="#fputs" title="Permanent link">&para;</a></h4>
 <p><code>fputs</code>是C语言标准库中的一个函数，用于将字符串写入到指定的输出流中。这个函数的名称来源于 "file put string"，即向文件中放置字符串。</p>
-<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">fputs</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">str</span><span class="p">,</span><span class="w"> </span><span class="kt">FILE</span><span class="w"> </span><span class="o">*</span><span class="n">stream</span><span class="p">);</span><span class="w">  </span><span class="c1">//str是要写入的字符, stream是指向FILE结构的指针，表示写入数据的目标流。</span>
-
-<span class="kt">FILE</span><span class="w"> </span><span class="o">*</span><span class="n">fp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fopen</span><span class="p">(</span><span class="s">&quot;example.txt&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;w&quot;</span><span class="p">);</span>
-<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">fp</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">fputs</span><span class="p">(</span><span class="s">&quot;Hello, world!</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">fp</span><span class="p">);</span><span class="w"> </span><span class="c1">// 写入字符串并添加换行符</span>
-<span class="w">    </span><span class="n">fclose</span><span class="p">(</span><span class="n">fp</span><span class="p">);</span><span class="w"> </span><span class="c1">// 关闭文件</span>
-<span class="p">}</span>
-<span class="c1">//output：fputs 将字符串 &quot;Hello, world!\n&quot; 写入到文件 example.txt 中。</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kt">int</span><span class="w"> </span><span class="nf">fputs</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">str</span><span class="p">,</span><span class="w"> </span><span class="kt">FILE</span><span class="w"> </span><span class="o">*</span><span class="n">stream</span><span class="p">);</span><span class="w">  </span><span class="c1">//str是要写入的字符, stream是指向FILE结构的指针，表示写入数据的目标流。</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="kt">FILE</span><span class="w"> </span><span class="o">*</span><span class="n">fp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fopen</span><span class="p">(</span><span class="s">&quot;example.txt&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;w&quot;</span><span class="p">);</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">fp</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">    </span><span class="n">fputs</span><span class="p">(</span><span class="s">&quot;Hello, world!</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">fp</span><span class="p">);</span><span class="w"> </span><span class="c1">// 写入字符串并添加换行符</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">    </span><span class="n">fclose</span><span class="p">(</span><span class="n">fp</span><span class="p">);</span><span class="w"> </span><span class="c1">// 关闭文件</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="p">}</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="c1">//output：fputs 将字符串 &quot;Hello, world!\n&quot; 写入到文件 example.txt 中。</span>
 </code></pre></div>
 <p>如果文件写入成功，<code>fputs</code> 返回一个非负值，然后使用 <code>fclose</code> 函数关闭文件。如果 <code>fputs</code> 失败，它将返回 <code>EOF</code></p>
-<h4 id="sprintf"><code>sprintf</code></h4>
+<h4 id="sprintf"><code>sprintf</code><a class="headerlink" href="#sprintf" title="Permanent link">&para;</a></h4>
 <p><code>sprintf</code> 函数在C语言中是一个用于<strong>格式化输出的函数</strong>，它与 <code>printf</code> 函数类似，但是 <code>sprintf</code> 将格式化后的字符串写入到一个字符数组（通常是字符数组或字符指针）中，<strong>而不是直接输出到标准输出</strong>（通常是屏幕）。</p>
 <p>函数原型如下：</p>
-<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">sprintf</span><span class="p">(</span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">str</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">format</span><span class="p">,</span><span class="w"> </span><span class="p">...);</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kt">int</span><span class="w"> </span><span class="nf">sprintf</span><span class="p">(</span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">str</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">format</span><span class="p">,</span><span class="w"> </span><span class="p">...);</span>
 </code></pre></div>
 <ul>
 <li><code>str</code>：这是指向字符数组的指针，<code>sprintf</code> 将把格式化后的字符串存储在这个数组中。</li>
@@ -958,15 +958,15 @@
 </ul>
 <p><code>sprintf</code> 函数返回写入到 <code>str</code> 中的字符数量，但不包括结尾的空字符 <code>\0</code>。</p>
 <p>例如：</p>
-<div class="highlight"><pre><span></span><code><span class="kt">char</span><span class="w"> </span><span class="n">buffer</span><span class="p">[</span><span class="mi">100</span><span class="p">];</span>
-<span class="n">sprintf</span><span class="p">(</span><span class="n">buffer</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;The value is: %d&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">42</span><span class="p">);</span>
-<span class="c1">//将格式化字符串 &quot;The value is: 42&quot; 并存储在 `buffer` 数组中。</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kt">char</span><span class="w"> </span><span class="n">buffer</span><span class="p">[</span><span class="mi">100</span><span class="p">];</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">sprintf</span><span class="p">(</span><span class="n">buffer</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;The value is: %d&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">42</span><span class="p">);</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="c1">//将格式化字符串 &quot;The value is: 42&quot; 并存储在 `buffer` 数组中。</span>
 </code></pre></div>
 <p>使用 <code>sprintf</code> 时需要特别注意的是，如果格式化后的字符串长度超过了 <code>str</code> 数组的大小，将会导致缓冲区溢出，这是一个常见的安全问题。因此，在使用 <code>sprintf</code> 时，应该总是<strong>确保目标数组足够大以容纳结果字符串</strong>。</p>
-<h4 id="meset"><code>meset</code></h4>
+<h4 id="meset"><code>meset</code><a class="headerlink" href="#meset" title="Permanent link">&para;</a></h4>
 <p><code>memset</code> 是C语言中的一个标准库函数，用于将一块<strong>内存中的所有字节设置为特定的值</strong>。这个函数定义在 <code>&lt;string.h&gt;</code> 头文件中。</p>
 <p>函数原型如下：
-<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="nf">memset</span><span class="p">(</span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">s</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">c</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">n</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="nf">memset</span><span class="p">(</span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">s</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">c</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">n</span><span class="p">);</span>
 </code></pre></div></p>
 <ul>
 <li><code>s</code>：指向要填充的内存块的指针。</li>
@@ -975,13 +975,13 @@
 </ul>
 <p><code>memset</code> 函数的作用是将 <code>n</code> 个字节的内存区域，从地址 <code>s</code> 开始，全部设置为值 <code>c</code>。如果 <code>c</code> 是 <code>0</code>，<code>memset</code> 就可以用来将内存区域清零。</p>
 <p>例如：
-<div class="highlight"><pre><span></span><code><span class="kt">char</span><span class="w"> </span><span class="n">buffer</span><span class="p">[</span><span class="mi">100</span><span class="p">];</span>
-<span class="n">memset</span><span class="p">(</span><span class="n">buffer</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">buffer</span><span class="p">));</span><span class="w"> </span><span class="c1">// 将buffer数组的所有字节清零</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kt">char</span><span class="w"> </span><span class="n">buffer</span><span class="p">[</span><span class="mi">100</span><span class="p">];</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="n">memset</span><span class="p">(</span><span class="n">buffer</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">buffer</span><span class="p">));</span><span class="w"> </span><span class="c1">// 将buffer数组的所有字节清零</span>
 </code></pre></div></p>
 <p>在这个例子中，<code>memset</code> 将 <code>buffer</code> 数组的前 100 个字节全部设置为 <code>0</code>。这通常用于初始化数组或结构体，确保它们在使用前没有未定义的数据。</p>
 <p><code>memset</code> 函数返回一个 <code>void*</code> 类型的指针，指向被设置内存的起始地址，这通常与传入的 <code>s</code> 相同。</p>
-<h3 id="_2">结构体</h3>
-<h4 id="file">FILE</h4>
+<h3 id="_2">结构体<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<h4 id="file">FILE<a class="headerlink" href="#file" title="Permanent link">&para;</a></h4>
 <p><code>FILE</code> 结构是标准输入输出库（stdio）定义的一个<strong>结构体</strong>，用于<strong>表示输入输出流</strong>。这个结构体定义在 <code>&lt;stdio.h&gt;</code> 头文件中，是实现文件操作和标准I/O的基础。尽管 <code>FILE</code> 结构的具体实现细节依赖于编译器和操作系统，但它通常包含以下类型的成员：</p>
 <ol>
 <li>指向缓冲区的指针：用于存储从文件读取的数据或待写入文件的数据。</li>
@@ -992,19 +992,19 @@
 <li>文件模式：指示文件是以读、写或追加模式打开的。</li>
 <li>操作系统文件描述符：一个整数值，用于在操作系统层面标识打开的文件。</li>
 </ol>
-<div class="highlight"><pre><span></span><code><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">buffer</span><span class="p">;</span><span class="w">          </span><span class="c1">// 指向缓冲区的指针</span>
-<span class="w">    </span><span class="kt">size_t</span><span class="w"> </span><span class="n">buffer_size</span><span class="p">;</span><span class="w">    </span><span class="c1">// 缓冲区大小</span>
-<span class="w">    </span><span class="kt">long</span><span class="w"> </span><span class="n">position</span><span class="p">;</span><span class="w">         </span><span class="c1">// 文件位置指示器</span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">error_flag</span><span class="p">;</span><span class="w">        </span><span class="c1">// 错误指示器</span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">eof_flag</span><span class="p">;</span><span class="w">          </span><span class="c1">// EOF指示器</span>
-<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">mode</span><span class="p">;</span><span class="w">      </span><span class="c1">// 文件模式（如 &quot;r&quot;, &quot;w&quot;, &quot;a&quot; 等）</span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">fd</span><span class="p">;</span><span class="w">                </span><span class="c1">// 操作系统文件描述符</span>
-<span class="w">    </span><span class="c1">// ... 可能还有其他成员 ...</span>
-<span class="p">}</span><span class="w"> </span><span class="kt">FILE</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">buffer</span><span class="p">;</span><span class="w">          </span><span class="c1">// 指向缓冲区的指针</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">    </span><span class="kt">size_t</span><span class="w"> </span><span class="n">buffer_size</span><span class="p">;</span><span class="w">    </span><span class="c1">// 缓冲区大小</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">    </span><span class="kt">long</span><span class="w"> </span><span class="n">position</span><span class="p">;</span><span class="w">         </span><span class="c1">// 文件位置指示器</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">error_flag</span><span class="p">;</span><span class="w">        </span><span class="c1">// 错误指示器</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">eof_flag</span><span class="p">;</span><span class="w">          </span><span class="c1">// EOF指示器</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">mode</span><span class="p">;</span><span class="w">      </span><span class="c1">// 文件模式（如 &quot;r&quot;, &quot;w&quot;, &quot;a&quot; 等）</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">fd</span><span class="p">;</span><span class="w">                </span><span class="c1">// 操作系统文件描述符</span>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="w">    </span><span class="c1">// ... 可能还有其他成员 ...</span>
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="p">}</span><span class="w"> </span><span class="kt">FILE</span><span class="p">;</span>
 </code></pre></div>
-<h3 id="_3">类型</h3>
-<h4 id="size_t"><code>size_t</code></h4>
+<h3 id="_3">类型<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<h4 id="size_t"><code>size_t</code><a class="headerlink" href="#size_t" title="Permanent link">&para;</a></h4>
 <p><code>size_t</code> 是C语言中定义的一个无符号整数类型，通常在 <code>&lt;stddef.h&gt;</code> 或 <code>&lt;sys/types.h&gt;</code> 等头文件中定义。这个类型用于表示大小和长度，其大小足以存储任何数据类型的大小，包括数组的最大可能大小。</p>
 <p><code>size_t</code> 主要用于以下几个方面：</p>
 <ol>
@@ -1014,25 +1014,25 @@
 </ol>
 <p>由于 <code>size_t</code> 是无符号类型，它可以表示非常大的数值，但不允许表示负数。在不同的平台上，<code>size_t</code> 的具体大小可能会有所不同，但至少是 16 位。在32位系统中，<code>size_t</code> 通常是 32 位宽；在64位系统中，<code>size_t</code> 通常是 64 位宽。</p>
 <p>以下是一些使用 <code>size_t</code> 的示例：</p>
-<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stddef.h&gt;</span>
-
-<span class="kt">size_t</span><span class="w"> </span><span class="n">arraySize</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">array</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">array</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span><span class="w"> </span><span class="c1">// 计算数组元素数量</span>
-<span class="kt">size_t</span><span class="w"> </span><span class="n">strLen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">strlen</span><span class="p">(</span><span class="s">&quot;Hello, world!&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// 获取字符串长度</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stddef.h&gt;</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="kt">size_t</span><span class="w"> </span><span class="n">arraySize</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">array</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">array</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span><span class="w"> </span><span class="c1">// 计算数组元素数量</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="kt">size_t</span><span class="w"> </span><span class="n">strLen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">strlen</span><span class="p">(</span><span class="s">&quot;Hello, world!&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// 获取字符串长度</span>
 </code></pre></div>
 <p>在这个例子中，<code>arraySize</code> 用来存储数组中元素的数量，<code>strLen</code> 用来存储字符串 "Hello, world!" 的长度。两者都使用 <code>size_t</code> 类型，因为它们表示的是大小或长度。</p>
-<h4 id="ssize_t"><code>ssize_t</code></h4>
+<h4 id="ssize_t"><code>ssize_t</code><a class="headerlink" href="#ssize_t" title="Permanent link">&para;</a></h4>
 <p><code>ssize_t</code> 是C语言中的一个类型定义，通常在 <code>&lt;sys/types.h&gt;</code> 或其他类似的头文件中定义。</p>
 <p>它代表“signed size type”，即“有符号的大小类型”。<code>ssize_t</code> 是用<strong>来存储可能为负的整数的类型</strong>，其大小足以容纳系统上任何数据类型的大小，包括 <code>size_t</code>。</p>
 <p><code>ssize_t</code> 主要用于系统调用和库函数，这些函数需要返回一个<strong>可能超出标准 <code>int</code> 类型范围的大小值</strong>，或者<strong>需要表示错误情况</strong>。例如，当一个函数需要返回从文件中读取或写入的字节数时，如果操作成功，它可能会返回一个正值；如果发生错误，它可能会返回 <code>-1</code> 或其他负值来指示特定的错误。</p>
 <p>在64位系统上，<code>ssize_t</code> 通常是 <code>int64_t</code> 的别名，而在32位系统上，它可能是 <code>int32_t</code> 的别名。这意味着 <code>ssize_t</code> 能够存储至少 32 位的整数，足以表示大多数系统上的文件大小和缓冲区大小。</p>
 <p>例如，<code>read</code> 和 <code>write</code> 系统调用都使用 <code>ssize_t</code> 类型作为返回值：
-<div class="highlight"><pre><span></span><code><span class="kt">ssize_t</span><span class="w"> </span><span class="nf">read</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">fd</span><span class="p">,</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">buf</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">count</span><span class="p">);</span>
-<span class="kt">ssize_t</span><span class="w"> </span><span class="nf">write</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">fd</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">buf</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">count</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kt">ssize_t</span><span class="w"> </span><span class="nf">read</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">fd</span><span class="p">,</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">buf</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">count</span><span class="p">);</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="kt">ssize_t</span><span class="w"> </span><span class="nf">write</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">fd</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">buf</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">count</span><span class="p">);</span>
 </code></pre></div>
 这里，<code>read</code> 函数尝试从文件描述符 <code>fd</code> 读取 <code>count</code> 字节到缓冲区 <code>buf</code> 中，并返回实际读取的字节数。如果成功，返回值是0到 <code>count</code> 之间的一个正值；如果到达文件末尾，返回0；如果发生错误，返回 <code>-1</code>。</p>
 <p>使用 <code>ssize_t</code> 而不是 <code>size_t</code> 可以确保函数调用者能够区分正常返回值和错误情况，因为 <code>size_t</code> 是一个无符号类型，它不能表示负数。</p>
-<h3 id="_4">转义符</h3>
-<h4 id="r"><code>\r</code></h4>
+<h3 id="_4">转义符<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<h4 id="r"><code>\r</code><a class="headerlink" href="#r" title="Permanent link">&para;</a></h4>
 <p>在 C++（以及 C 和其他许多编程语言中）<code>\r</code> 是一个特殊的转义序列，代表回车（Carriage Return，简称 CR）字符。在不同的操作系统和环境中，<code>\r</code> 的作用可能有所不同</p>
 <p><strong>Mac OS 系统中</strong>：<code>\r</code> 被用作行结束符。</p>
 <p><strong>Windows 系统中</strong>：行结束符是 <code>\r\n</code>，其中 <code>\r</code> 表示回车，<code>\n</code> 表示换行（Line Feed，简称 LF）。这个组合表示光标先回到行首，然后移动到下一行的开始位置。</p>
