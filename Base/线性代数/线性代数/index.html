@@ -1268,28 +1268,24 @@
 <h2 id="_2">向量<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>方向加数值，也可以看作一组有序数列
 $$
-三维向量：\left[\begin {array}{c}
-1  \
-2  \
--5  \
-\end{array}\right]=(1,2,-5)
+三维向量：\left[\begin {array}{c}1\newline2\newline-5\end{array}\right]=(1,2,-5)
 $$
 一组向量求加减
 $$
 \left[\begin {array}{c}
-x_1\
-y_1\
-z_1\
+x_1\newline
+y_1\newline
+z_1\newline
 \end{array}\right]+
 \left[\begin {array}{c}
-x_2\
-y_2\
-z_2\
+x_2\newline
+y_2\newline
+z_2\newline
 \end{array}\right]=
 \left[\begin {array}{c}
-x_1+x_2\
-y_1+y_2\
-z_1+z_2\
+x_1+x_2\newline
+y_1+y_2\newline
+z_1+z_2\newline
 \end{array}\right]
 $$</p>
 <h3 id="_3">线性组合<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
@@ -1300,12 +1296,12 @@ $$</p>
 $$
 \vec c=a\vec v +b\vec w=
 a\left[\begin {array}{c}
-x_1\
-y_1\
+x_1\newline
+y_1\newline
 \end{array}\right]+
 b\left[\begin {array}{c}
-x_2\
-y_2\
+x_2\newline
+y_2\newline
 \end{array}\right]
 $$
 当然，你要是<strong>二者都不固定</strong>，随意的缩放组合会张出一个平面，对于一组三维向量，则会张出一个空间。（前提是他们都是最大无关组）</p>
@@ -1337,16 +1333,16 @@ $$</p>
 <p>譬如
 $$
 \left[\begin {array}{c}
-1 &amp;-2 \
-4 &amp;3\
+1 &amp;-2 \newline
+4 &amp;3\newline
 \end{array}\right]=
 \left[\begin{array}{c}
-1\
-4\
+1\newline
+4\newline
 \end{array}\right]
 \left[\begin{array}{c}
--2\
-3\
+-2\newline
+3\newline
 \end{array}\right]
 $$
 我们可以将这个2*2的矩阵，看作两个二维向量，即(1,-2)和(4,3)。</p>
@@ -1354,24 +1350,24 @@ $$
 <p>以上述矩阵为例，其与一个向量相乘
 $$
 \left[\begin {array}{c}
-1 &amp;-2 \
-4 &amp;3\
+1 &amp;-2 \newline
+4 &amp;3\newline
 \end{array}\right]
 \left[\begin {array}{c}
-1 \
-2 \
+1 \newline
+2 \newline
 \end{array}\right]=
 1\left[\begin {array}{c}
-1 \
-4 \
+1 \newline
+4 \newline
 \end{array}\right]+
 2\left[\begin {array}{c}
--2 \
-3\
+-2 \newline
+3\newline
 \end{array}\right]=
 \left[\begin {array}{c}
--3 \
-10 \
+-3 \newline
+10 \newline
 \end{array}\right]
 $$
 可以看作对于向量（及其所在平面的）的旋转伸缩。</p>
@@ -1379,16 +1375,16 @@ $$
 <p>在原先的向量中，向量与x轴、y轴上的单位向量（也就是x y坐标系中的一组<strong>基向量</strong>）具有如下的关系
 $$
 \left[\begin {array}{c}
-1 \
-2 \
+1 \newline
+2 \newline
 \end{array}\right]=
 1\left[\begin {array}{c}
-1 \
-0 \
+1 \newline
+0 \newline
 \end{array}\right]+
 2\left[\begin {array}{c}
-0\
-1\
+0\newline
+1\newline
 \end{array}\right]
 $$
 显而易见的，向量本身就是对<strong>基向量</strong>的旋转缩放，或者说线性组合后产生的结果。</p>
@@ -1431,16 +1427,16 @@ $$
 $$
 线性方程组：\
 \left[\begin {array}{c}
-A &amp;B\
-C &amp;D\
+A &amp;B\newline
+C &amp;D\newline
 \end{array}\right]
 \left[\begin {array}{c}
-x\
-y\
+x\newline
+y\newline
 \end{array}\right]=
 \left[\begin {array}{c}
-a\
-b\
+a\newline
+b\newline
 \end{array}\right]
 $$
 对于代数上的理解可以理解为
@@ -1457,14 +1453,14 @@ $$
 <p>首先我们要确定以下点积的计算形式为
 $$
 \left[\begin {array}{c}
-a\
-b\
-c\
+a\newline
+b\newline
+c\newline
 \end{array}\right]\cdot
 \left[\begin{array}{c}
-d\
-e\
-f\
+d\newline
+e\newline
+f\newline
 \end{array}\right]=
 ad+be+cf
 $$
@@ -1479,9 +1475,9 @@ $$
 a &amp;b &amp;c
 \end{array}\right]
 \left[\begin{array}{c}
-d\
-e\
-f\
+d\newline
+e\newline
+f\newline
 \end{array}\right]=ad+be+cf
 $$
 也就是我们可以认为，点积的作用是将前一个向量由一个向量变为了1×3的矩阵对空间进行了<strong>线性变换</strong>，将我们原先的三维空间矩阵线性变换为一维（数轴）。其结果为，基向量在对应的转换后所表示，向量在数轴上的长度。或者更为直观的说，整个平面进行了线性转换，整体被压缩在一个向量同方向的直线上（如果这个向量是<strong>单位向量</strong>我们仅考虑方向，也就是单纯的投影，如果其<strong>非单位向量</strong>，则需要额外考虑这个向量对另一个向量在数轴上的<strong>缩放效果</strong>），而我们的计算结果无非是在计算在整个空间被压缩后，另外一个向量在这个向量的<strong>数轴上的长度</strong>。</p>
@@ -1492,41 +1488,41 @@ $$
 <p>先给一个正确的三维空间中的叉积计算方法
 $$
 \vec a\times \vec b=\left[\begin{array}{c}
-i &amp;j &amp;k\
-a &amp;b &amp;c\
-d &amp;e &amp;f\
+i &amp;j &amp;k\newline
+a &amp;b &amp;c\newline
+d &amp;e &amp;f\newline
 \end{array}\right]=
 \vec c
 $$
 难以言说的，再给一个十分不严谨的在二维平面中的计算叉积的计算方法：
 $$
 \left[\begin{array}{c}
-a\
-b\
+a\newline
+b\newline
 \end{array}\right]\times
 \left[\begin{array}{c}
-c\
-d\
+c\newline
+d\newline
 \end{array}\right]=
 \det(\left[\begin{array}{c}
-a &amp;b\
-c &amp;d\
+a &amp;b\newline
+c &amp;d\newline
 \end{array}\right])\
 $$
 我们可以给予这个算法一个<strong>证明</strong>：
 $$
 \left[\begin{array}{c}
-i &amp;j &amp;k\
-a &amp;b &amp;0\
-c &amp;d &amp;0\
+i &amp;j &amp;k\newline
+a &amp;b &amp;0\newline
+c &amp;d &amp;0\newline
 \end{array}\right]=k(ad-cb)=
 k\cdot\det(\left[\begin{array}{c}
-a &amp;b\
-c &amp;d\
+a &amp;b\newline
+c &amp;d\newline
 \end{array}\right])=
 \det(\left[\begin{array}{c}
-a &amp;b\
-c &amp;d\
+a &amp;b\newline
+c &amp;d\newline
 \end{array}\right])\
 $$
 也就是说，从数值上来看或者说二维上去看，叉积实际上做的：<strong>将两个向量合并为行列式再计算行列式的值</strong>，即其在计算两个向量所组成的平行四边形的面积。可以通过转置帮助自己理解一下。</p>
@@ -1539,15 +1535,15 @@ $$
 <p>补充：
 $$
 \vec c \cdot \left[\begin{array}{c}
-x \
-y \
-z \
+x \newline
+y \newline
+z \newline
 \end{array}\right]
 =
 \det(\left[\begin{array}{c}
-x &amp;a &amp;b\
-y &amp;c &amp;d\
-z &amp;e &amp;f\
+x &amp;a &amp;b\newline
+y &amp;c &amp;d\newline
+z &amp;e &amp;f\newline
 \end{array}\right])\
 $$
  结合之前所学的点积内容，单位向量在c向量上的线性变换。而右侧计算出了两个向量与此单位向量的六面体体积。</p>
