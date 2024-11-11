@@ -1512,7 +1512,9 @@ d\
 a &amp;b\
 c &amp;d\
 \end{array}\right])\
-我们可以给予这个算法一个证明\
+$$
+我们可以给予这个算法一个<strong>证明</strong>：
+$$
 \left[\begin{array}{c}
 i &amp;j &amp;k\
 a &amp;b &amp;0\
@@ -1529,12 +1531,10 @@ c &amp;d\
 $$
 也就是说，从数值上来看或者说二维上去看，叉积实际上做的：<strong>将两个向量合并为行列式再计算行列式的值</strong>，即其在计算两个向量所组成的平行四边形的面积。可以通过转置帮助自己理解一下。</p>
 <p>但是实际上，我们知道根据叉积的真正几何定义，实际上它是计算与这两个向量正交的向量。</p>
-<p>其中此向量的正交方向遵循右手定则。单纯遵循右手定则似乎是一个很不负责任的讲解，所以我们增添说明
-$$
-若式子为形如\vec a \times \vec b的多项式，则我们从\vec a到\vec b为旋转方向判断\vec c的正负值
-\如果\vec a到\vec b为左旋方向，则\vec c 为正；反之则\vec c 为负值。
-$$
-数值也就是<strong>此向量的模长是两个向量组合后的行列式的值（平行四边形的面积）</strong>。</p>
+<p>其中此向量的正交方向遵循右手定则。单纯遵循右手定则似乎是一个很不负责任的讲解，所以我们增添说明</p>
+<p>若式子为形如 <span class="arithmatex">\(\vec a \times \vec b\)</span> 的多项式，则我们从 <span class="arithmatex">\(\vec a\)</span> 到 <span class="arithmatex">\(\vec b\)</span> 为旋转方向判断 <span class="arithmatex">\(\vec c\)</span> 的正负值
+\如果 <span class="arithmatex">\(\vec a\)</span> 到 <span class="arithmatex">\(\vec b\)</span> 为左旋方向，则  <span class="arithmatex">\(\vec c\)</span>  为正；反之则 <span class="arithmatex">\(\vec c\)</span>  为负值。</p>
+<p>数值也就是<strong>此向量的模长是两个向量组合后的行列式的值（平行四边形的面积）</strong>。</p>
 <p>而向量的具体值，无非就是再给一个基向量，用计算行列式的方法计算各个坐标的值从而得到所求向量。</p>
 <p>补充：
 $$
