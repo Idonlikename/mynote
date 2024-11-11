@@ -1026,36 +1026,26 @@
 <p>傅里叶变换是一种数学变换，它将一个信号或函数分解为不同频率的正弦波或复指数函数的和。这个概念最初由法国数学家约瑟夫·傅里叶在19世纪提出，用于解决热传导问题。傅里叶变换在许多科学和工程领域都有应用，包括信号处理、图像处理、量子物理和声学等。</p>
 <p>傅里叶变换的基本思想是，任何周期性的波形都可以表示为不同频率的正弦波的叠加。对于非周期信号，傅里叶变换可以将其表示为连续频率的正弦波的积分。</p>
 <h4 id="continuous-fourier-transform-cft">连续傅里叶变换（Continuous Fourier Transform, CFT）</h4>
-<p>对于一个连续时间信号 <span class="arithmatex"><span class="MathJax_Preview"> f(t) </span><script type="math/tex"> f(t) </script></span>，其傅里叶变换定义为：
+<p>对于一个连续时间信号 <span class="arithmatex">\( f(t) \)</span>，其傅里叶变换定义为：
 $$
 F(\omega) = \int_{-\infty}^{\infty} f(t) e^{-j\omega t} dt
 $$</p>
-<div class="arithmatex">
-<div class="MathJax_Preview">
+<div class="arithmatex">\[
 其中，F(\omega)  是频域表示， \omega  是角频率， j  是虚数单位。
-</div>
-<script type="math/tex; mode=display">
-其中，F(\omega)  是频域表示， \omega  是角频率， j  是虚数单位。
-</script>
-</div>
+\]</div>
 <h4 id="inverse-fourier-transform-ift">逆傅里叶变换（Inverse Fourier Transform, IFT）</h4>
 <p>从频域回到时域，逆傅里叶变换定义为：
 $$
 f(t) = \frac{1}{2\pi} \int_{-\infty}^{\infty} F(\omega) e^{j\omega t} d\omega
 $$</p>
 <h4 id="discrete-fourier-transform-dft">离散傅里叶变换（Discrete Fourier Transform, DFT）</h4>
-<p>在数字信号处理中，我们通常处理的是离散信号。离散傅里叶变换是连续傅里叶变换的离散版本，用于处理离散时间信号 <span class="arithmatex"><span class="MathJax_Preview"> f[n] </span><script type="math/tex"> f[n] </script></span>：
+<p>在数字信号处理中，我们通常处理的是离散信号。离散傅里叶变换是连续傅里叶变换的离散版本，用于处理离散时间信号 <span class="arithmatex">\( f[n] \)</span>：
 $$
 F[k] = \sum_{n=0}^{N-1} f[n] e^{-j\frac{2\pi}{N}kn}
 $$</p>
-<div class="arithmatex">
-<div class="MathJax_Preview">
+<div class="arithmatex">\[
 其中， F[k]  是离散频率域的表示， N  是信号的长度， k  是频率索引。
-</div>
-<script type="math/tex; mode=display">
-其中， F[k]  是离散频率域的表示， N  是信号的长度， k  是频率索引。
-</script>
-</div>
+\]</div>
 <h4 id="fast-fourier-transform-fft">快速傅里叶变换（Fast Fourier Transform, FFT）</h4>
 <p>快速傅里叶变换是DFT的一种高效算法，可以快速计算DFT，其计算复杂度从  O(N^2^)  降低到 O(N log N)。</p>
 <p>FFT在数字信号处理中非常重要，因为它允许实时或近实时的频域分析。</p>
@@ -1137,6 +1127,10 @@ $$</p>
     
     
       <script src="../../../../assets/javascripts/bundle.56dfad97.min.js"></script>
+      
+        <script src="../../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>
