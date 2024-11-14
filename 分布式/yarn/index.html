@@ -10,28 +10,28 @@
         <meta name="author" content="idonlikename">
       
       
-        <link rel="canonical" href="https://idonlikename.github.io/mynote/Computer/OS/%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86/%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86/">
+        <link rel="canonical" href="https://idonlikename.github.io/mynote/%E5%88%86%E5%B8%83%E5%BC%8F/yarn/">
       
       
-        <link rel="prev" href="../../%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/">
+        <link rel="prev" href="../hdfs/">
       
       
-        <link rel="next" href="../../../%E9%80%9A%E8%AF%86%E8%AF%BE/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%B8%B8%E8%AF%86/%E6%96%87%E4%BB%B6%E7%9B%B8%E5%85%B3/">
+        <link rel="next" href="../mapreduce/">
       
       
-      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.44">
     
     
       
-        <title>文件管理 - TheLang's Note</title>
+        <title>yarn - TheLang's Note</title>
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.0253249f.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
       
         
-        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -50,7 +50,7 @@
       
     
     
-    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#yarn-" class="md-skip">
           Skip to content
         </a>
       
@@ -92,7 +92,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../../.." title="TheLang&#39;s Note" class="md-header__button md-logo" aria-label="TheLang's Note" data-md-component="logo">
+    <a href="../.." title="TheLang&#39;s Note" class="md-header__button md-logo" aria-label="TheLang's Note" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -112,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              文件管理
+              yarn
             
           </span>
         </div>
@@ -237,7 +237,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../../.." title="TheLang&#39;s Note" class="md-nav__button md-logo" aria-label="TheLang's Note" data-md-component="logo">
+    <a href="../.." title="TheLang&#39;s Note" class="md-nav__button md-logo" aria-label="TheLang's Note" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -267,7 +267,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../.." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -322,7 +322,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../code/C/C%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/" class="md-nav__link">
+      <a href="../../code/C/C%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -343,7 +343,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../code/python/Python%E5%9F%BA%E7%A1%80/" class="md-nav__link">
+      <a href="../../code/python/Python%E5%9F%BA%E7%A1%80/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -364,7 +364,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../code/java/Java%E5%9F%BA%E7%A1%80%E7%BC%96%E7%A8%8B/" class="md-nav__link">
+      <a href="../../code/java/Java%E5%9F%BA%E7%A1%80%E7%BC%96%E7%A8%8B/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -389,19 +389,17 @@
       
   
   
-    
   
   
-  
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
@@ -415,7 +413,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             Computer
@@ -426,19 +424,17 @@
                 
   
   
-    
   
   
-  
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
         
           
           <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
@@ -452,7 +448,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_1">
             <span class="md-nav__icon md-icon"></span>
             OS
@@ -466,7 +462,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/" class="md-nav__link">
+      <a href="../../Computer/OS/%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -487,7 +483,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/" class="md-nav__link">
+      <a href="../../Computer/OS/%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -505,30 +501,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    文件管理
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../Computer/OS/%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86/%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -537,119 +513,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#raid" class="md-nav__link">
-    <span class="md-ellipsis">
-      RAID—磁盘阵列
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="RAID—磁盘阵列">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#raid0" class="md-nav__link">
-    <span class="md-ellipsis">
-      RAID0
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#raid1" class="md-nav__link">
-    <span class="md-ellipsis">
-      RAID1
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#raid10" class="md-nav__link">
-    <span class="md-ellipsis">
-      RAID10
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#raid_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      不常用RAID
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#raid_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      常用RAID
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="常用RAID">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#raid5" class="md-nav__link">
-    <span class="md-ellipsis">
-      RAID5
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#raid6" class="md-nav__link">
-    <span class="md-ellipsis">
-      RAID6
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ure" class="md-nav__link">
-    <span class="md-ellipsis">
-      URE
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -712,7 +575,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E9%80%9A%E8%AF%86%E8%AF%BE/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%B8%B8%E8%AF%86/%E6%96%87%E4%BB%B6%E7%9B%B8%E5%85%B3/" class="md-nav__link">
+      <a href="../../Computer/%E9%80%9A%E8%AF%86%E8%AF%BE/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%B8%B8%E8%AF%86/%E6%96%87%E4%BB%B6%E7%9B%B8%E5%85%B3/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -768,7 +631,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../通识课/Missing Semester/'Lec01Missing Semester.md'" class="md-nav__link">
+      <a href="../../Computer/通识课/Missing Semester/'Lec01Missing Semester.md'" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -789,7 +652,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E9%80%9A%E8%AF%86%E8%AF%BE/Missing%20Semester/Lec02shell%E5%B7%A5%E5%85%B7%E4%B8%8E%E8%84%9A%E6%9C%AC/" class="md-nav__link">
+      <a href="../../Computer/%E9%80%9A%E8%AF%86%E8%AF%BE/Missing%20Semester/Lec02shell%E5%B7%A5%E5%85%B7%E4%B8%8E%E8%84%9A%E6%9C%AC/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -860,7 +723,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Base/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" class="md-nav__link">
+      <a href="../../Base/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -885,17 +748,19 @@
       
   
   
+    
   
   
+  
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
         
           
           <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
@@ -909,7 +774,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             dfs
@@ -923,7 +788,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../%E5%88%86%E5%B8%83%E5%BC%8F/hadoop/" class="md-nav__link">
+      <a href="../hadoop/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -944,7 +809,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../%E5%88%86%E5%B8%83%E5%BC%8F/hdfs/" class="md-nav__link">
+      <a href="../hdfs/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -962,10 +827,28 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../../../%E5%88%86%E5%B8%83%E5%BC%8F/yarn/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    yarn
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -974,6 +857,150 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#yarn-" class="md-nav__link">
+    <span class="md-ellipsis">
+      Yarn-资源调度
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Yarn-资源调度">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#word-count" class="md-nav__link">
+    <span class="md-ellipsis">
+      word count
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      架构
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="架构">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#resourcemanagerrm" class="md-nav__link">
+    <span class="md-ellipsis">
+      ResourceManager（RM）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nodemanagernm" class="md-nav__link">
+    <span class="md-ellipsis">
+      NodeManager（NM）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#applicationmasteram" class="md-nav__link">
+    <span class="md-ellipsis">
+      ApplicationMaster（AM）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#container" class="md-nav__link">
+    <span class="md-ellipsis">
+      Container
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      调度策略
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="调度策略">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      容量调度器
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      公平调度器
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      资源分配算法
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      自动故障转移
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -986,7 +1013,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../%E5%88%86%E5%B8%83%E5%BC%8F/mapreduce/" class="md-nav__link">
+      <a href="../mapreduce/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1024,8 +1051,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -1034,46 +1059,65 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#raid" class="md-nav__link">
+  <a href="#yarn-" class="md-nav__link">
     <span class="md-ellipsis">
-      RAID—磁盘阵列
+      Yarn-资源调度
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="RAID—磁盘阵列">
+    <nav class="md-nav" aria-label="Yarn-资源调度">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#raid0" class="md-nav__link">
+  <a href="#word-count" class="md-nav__link">
     <span class="md-ellipsis">
-      RAID0
+      word count
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#raid1" class="md-nav__link">
+  <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      RAID1
+      架构
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="架构">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#resourcemanagerrm" class="md-nav__link">
+    <span class="md-ellipsis">
+      ResourceManager（RM）
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#raid10" class="md-nav__link">
+  <a href="#nodemanagernm" class="md-nav__link">
     <span class="md-ellipsis">
-      RAID10
+      NodeManager（NM）
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#raid_1" class="md-nav__link">
+  <a href="#applicationmasteram" class="md-nav__link">
     <span class="md-ellipsis">
-      不常用RAID
+      ApplicationMaster（AM）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#container" class="md-nav__link">
+    <span class="md-ellipsis">
+      Container
     </span>
   </a>
   
@@ -1083,30 +1127,39 @@
     </nav>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#raid_2" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      常用RAID
+      调度策略
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="常用RAID">
+    <nav class="md-nav" aria-label="调度策略">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#raid5" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
-      RAID5
+      容量调度器
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#raid6" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
-      RAID6
+      公平调度器
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      资源分配算法
     </span>
   </a>
   
@@ -1116,13 +1169,18 @@
     </nav>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#ure" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
     <span class="md-ellipsis">
-      URE
+      自动故障转移
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1144,40 +1202,81 @@
   
 
 
-<h1 id="_1">文件管理系统<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<h3 id="raid">RAID—磁盘阵列<a class="headerlink" href="#raid" title="Permanent link">&para;</a></h3>
-<p>RAID全称为<strong><code>Redundant Array of Independent Disks</code></strong>，中文为<strong>独立磁盘冗余阵列</strong>。</p>
-<p>其为一种将多个硬盘驱动器组成一个逻辑单元的数据存储虚拟化技术，以提高容量，读写速度以及数据可靠性。</p>
-<h4 id="raid0">RAID0<a class="headerlink" href="#raid0" title="Permanent link">&para;</a></h4>
-<p>RAID0 是一种追求<strong>极致容量和读写速度</strong>的磁盘阵列。其的实现原理是将<strong>多个磁盘均用于读写和存储</strong>，一个数据被拆分成多个数据写入磁盘阵列当中。</p>
-<p>优势：n个磁盘均用于读写，所以<strong>读写速度为单个硬盘的n倍</strong>；同时因为数据被拆分n份写入，<strong>容量也达到单个硬盘的n倍</strong>。</p>
-<p>弊端：因为一个数据的某个bit位都只存于一个盘中，所以只要一个盘损坏数据将无法复原。<strong>数据可靠性极低</strong></p>
-<h4 id="raid1">RAID1<a class="headerlink" href="#raid1" title="Permanent link">&para;</a></h4>
-<p>RAID1 是一种追求<strong>极致的可靠性</strong>的阵列。其原理是<strong>多个硬盘用于读取同一个文件</strong>，起到多重备份的作用。</p>
-<p>优势：多个文件读取同一个文件（完整读取），所以尽管有多个磁盘损坏，仍能恢复数据，<strong>可靠性高</strong></p>
-<p>弊端：多个文件都读取同样的数据，所以<strong>容量和读写速度仍是一个磁盘的规格</strong></p>
-<h4 id="raid10">RAID10<a class="headerlink" href="#raid10" title="Permanent link">&para;</a></h4>
-<p>RAID10并非一个全新的独立阵列，而是<strong>基于RAID1和RAID0的的阵列方式</strong>。其实现原理是<strong>先RAID1再RAID0</strong>（所以实际是存在RAID01的，也就是先0再1）。其实现的原理是将n个磁盘拆分个m份，用于实现RAID1阵列，这m个阵列中都至少有2磁盘；再将这m个阵列，又再一次组成一个RAID0阵列。</p>
-<p>优劣：并没有很明显的优劣，相较于RAID0，对于每一个拆分后的数据都有备份。相较于RAID1每一个数据都已经进行拆分，所以存储数据的容量和速度均有m倍的提升</p>
-<blockquote>
-<p>Q：为什么不使用RAID01呢？</p>
-<p>A：因为RAID01是先使用RAID0组成阵列，再用这些阵列组成RAID1阵列。这样的话，当我们想对设备进行升级的时候即对于容量和读写速度提升。就需要对每个RAID0阵列都添加至少一个盘（而且每个阵列添加的盘应该相同），而不能像RAID10一样只需要添加一个阵列（甚至这个阵列中仅有两个磁盘）。</p>
-</blockquote>
-<h4 id="raid_1">不常用RAID<a class="headerlink" href="#raid_1" title="Permanent link">&para;</a></h4>
-<p>RAID2/3/4 均是针对不同的场景设计的阵列方案，因而在实际使用时会具有很大的缺陷。所以很少使用</p>
-<h5 id="raid2">RAID2<a class="headerlink" href="#raid2" title="Permanent link">&para;</a></h5>
-<p>最少需要3个磁盘。读写的时候需要对数据进行实时编码，分段写入不同的硬盘。得到的数据比原始数据大，RAID2模式在读写时需要实时校验数据。使用的校验算法比较复杂，硬件开销大。</p>
-<h5 id="raid3">RAID3<a class="headerlink" href="#raid3" title="Permanent link">&para;</a></h5>
-<p>RAID3是在RAID2的基础上发展而来的，采用的算法更为简单。RAID3也需要三个磁盘，两个用于分段写入数据，而一个盘用于存储校验数据。（由于进行读写操作的时候都会访问校验盘，这使得校验盘极易长时间高负载工作），校验盘如果损坏所有数据丢失。</p>
-<h5 id="raid4">RAID4<a class="headerlink" href="#raid4" title="Permanent link">&para;</a></h5>
-<p>RAID4同样采用，一个盘用于校验盘用，不同的是RAID3采用<code>bit</code>分割存储数据，而RAID4则用<strong>数据块（数据块大小由系统决定）</strong>分割存储数据。因为数据块比bit位大的缘故，小文件的写入RAID4更快。RAID4相较于RAID3非校验盘损坏恢复的概率更低。</p>
-<h3 id="raid_2">常用RAID<a class="headerlink" href="#raid_2" title="Permanent link">&para;</a></h3>
-<h4 id="raid5">RAID5<a class="headerlink" href="#raid5" title="Permanent link">&para;</a></h4>
-<p>多硬盘并联，其中一个盘的容量用于存储校验数据。RAID5的原理和RAID3原理类似，同样至少需要3个磁盘，但是RAID5将校验的数据分散在每一个盘中，如果一个盘的数据损坏，可依靠其他盘中的数据配合校验信息恢复。RAID5读写速度与RAID0相近，但不及RAID0；因为各个盘中会占据一个盘的校验数据，所以可用容量=总容量-单个磁盘的容量（每个盘大小一致）。</p>
-<h4 id="raid6">RAID6<a class="headerlink" href="#raid6" title="Permanent link">&para;</a></h4>
-<p>多硬盘并联，其中两个盘的容量存储校验数据。因为需要两个盘的容量存放存储校验信息，RAID6则至少需要4块硬盘。原理上和RAID5类似。RAID6会使用两种不同的校验算法，任意坏两个盘都能够实现数据恢复，所以RAID6数据安全性非常高。相较于RAID5，因为比RAID5多使用一种校验算法，校验数据量比RAID5大，计算量也比RAID5大，所以读写速度不如RAID5。</p>
-<h3 id="ure">URE<a class="headerlink" href="#ure" title="Permanent link">&para;</a></h3>
-<p>URE指的是硬盘先天缺陷，机械硬盘无法避免不可恢复性读取错误。也就是在读取一定量的数据时，盘可能出现一个无法读取的错误。（大概是每12T可能读取1个）。因为这个缺陷，所以RAID6比RAID5更安全一点。解释：当RAID5出现这个错误，RAID5就需要重新建立阵列，导致所有的盘都在长期高负荷工作，很容易出现恢复过程中其他盘损坏进而导致数据无法恢复。RAID6还有错一个的容错</p>
+  <h1>yarn</h1>
+
+<h2 id="yarn-">Yarn-资源调度<a class="headerlink" href="#yarn-" title="Permanent link">&para;</a></h2>
+<p><code>yarn</code>结构是<code>Hadoop 2.x</code>版本中的一个关键特性，取代了旧版本中的<code>JobTracker</code>和<code>TaskTracker</code>。</p>
+<p>YARN的设计目标是：</p>
+<ul>
+<li>使<code>Hadoop</code>能够处理更广泛的<strong>工作负载</strong>，包括<strong>批处理</strong>、<strong>流处理</strong>、<strong>交互式查询</strong>、以及其他类型的工作负载；</li>
+<li>多计算框架之间利用率低(多个计算框架之间的资源无法实现公用，高效率使用)；</li>
+<li>且早期的MRv1仅仅支持MR计算框架且容易发生单点故障。</li>
+</ul>
+<p>三类计算框架：</p>
+<ul>
+<li><code>MR</code>：离线计算框架，离线处理</li>
+<li><code>Storm</code>：实时计算框架，实时计算</li>
+<li><code>Spark</code>：内存计算框架，迭代计算</li>
+</ul>
+<p><code>YARN</code> 仅仅<strong>负责分配资源</strong>，调用资源至于资源用于作业怎么运行，其不用关心。其为上层应用提供了统一的资源管理和调度，它为引入集群在<strong>利用率</strong>、<strong>资源统一管理</strong>和<strong>数据共享</strong>有很大的作用。</p>
+<p>我们把Client向yarn发送执行的应用程序称作作业（<code>job</code>）也称作任务</p>
+<p>下图是yarn的架构</p>
+<p><img alt="在这里插入图片描述" src="https://i-blog.csdnimg.cn/blog_migrate/9c54901d916d98893493ec527aeba791.png" /></p>
+<h3 id="word-count">word count<a class="headerlink" href="#word-count" title="Permanent link">&para;</a></h3>
+<h3 id="_1">架构<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<h4 id="resourcemanagerrm"><code>ResourceManager</code>（RM）<a class="headerlink" href="#resourcemanagerrm" title="Permanent link">&para;</a></h4>
+<p>RM进行统筹规划。可以把<code>RM</code>看作<code>NN</code>，它是<code>yarn</code>上的主节点。</p>
+<p>RM是一个全局的资源管理器，管理整个集群的计算资源。RM<strong>管理和分配</strong>整个YARN集群的计算资源，即<strong>内存</strong>、<strong>CPU</strong>和<strong>磁盘空间</strong>。并且<strong>通过其他组件获取每个节点的资源使用情况</strong>，根据资源使用情况做出<strong>调度决策</strong>。</p>
+<p>RM与<code>NodeManager</code>通信（以此来了解每一个节点的资源使用情况）其管理<code>NodeManager</code> ，<strong>接收来自<code>NodeManager</code> 的资源汇报信息</strong>，并向<code>NodeManager</code><strong>下达管理指令</strong>。由<code>NodeManager</code>分配Container给各个应用程序的AM（RM为每个应用程序分配一个唯一的<strong>Application ID</strong>。并管理AM的生命周期，在它运行失败时重新启动它，可以理解为AM帮助RM获取作业的情况）。调度资源确保Container的资源需求（如内存和CPU）<strong>得到尽可能100%使用</strong>。</p>
+<p>RM同样定期接收来自NM的<strong>心跳信号</strong>，以跟踪节点的健康状况和资源使用情况。RM也接收来自AM的心跳信号，以监控应用程序的状态。</p>
+<p>如果RM失败，YARN提供了<strong>自动故障转移机制</strong>，以确保集群的高可用性。RM的状态信息被<strong>持久化存储</strong>，以便在故障转移时恢复状态。</p>
+<h4 id="nodemanagernm"><code>NodeManager</code>（NM）<a class="headerlink" href="#nodemanagernm" title="Permanent link">&para;</a></h4>
+<p>资源管理，RM下达管理指令由<strong>NM执行指令</strong>，对所在节点的资源进行管理和分配。</p>
+<p><code>NodeManager（NM）</code>是 <code>YARN</code>架构中的一个核心组件，它在<code>Hadoop</code>集群中的每个计算节点上运行，<u><strong>负责管理该节点上的资源和任务容器</strong></u>（Containers）。NM负责在节点级别<strong>实施RM的资源分配决策</strong>。当RM决定在某个节点上为特定作业分配资源时，它会通知该节点的NM启动一个或多个容器。NM管理着容器的生命周期，包括<strong>启动容器</strong>、<strong>监控容器</strong>资源使用情况、<strong>处理容器</strong>的停止和清理工作。NM监控容器的实际资源使用情况，确保容器<strong>使用不超过申请的资源量，并汇报给RM</strong>。</p>
+<p>也就是管理container的情况，同时按照RM的指令分配。从资源的角度。AM则从作业的角度。二者的视角帮助RM对整个资源、作业协调管理。</p>
+<h4 id="applicationmasteram"><code>ApplicationMaster</code>（AM）<a class="headerlink" href="#applicationmasteram" title="Permanent link">&para;</a></h4>
+<p>AM用于作业管理。主要负责<strong>执行作业的流程</strong>和<strong>调度作业</strong>的任务</p>
+<p><code>ApplicationMaster</code>是大数据计算框架中的核心组件，负责向<code>ResourceManager</code>申请任务所需要的资源，是<code>RM</code>的<strong>作业管理组件</strong>。并在作业的期间，由<code>AM</code>获取每个作业的状况（<strong>周期性汇报给RM</strong>）。其帮助存在着依赖关系的作业之间维持依赖关系，还可以帮助失败的任务，重新换一个节点启动。实际上<code>AM</code>是<strong>作业自己提供的组件</strong>。AM本身就是运行在<code>container</code>中的，<u>当AM向RM申请资源，RM会为AM分配一个Container并让其在这个Container中运行。</u></p>
+<ul>
+<li><strong>资源协商</strong>：与RM进行协商，获取执行任务所需的资源，这些资源以Container的形式表示。</li>
+<li><strong>任务分配</strong>：将获得的资源进一步分配给内部的任务，如<code>MapReduce</code>作业中的Map任务和Reduce任务。</li>
+<li><strong>任务监控</strong>：与<code>NodeManager</code>（NM）通信，启动和停止任务，并监控所有任务的运行状态。</li>
+<li><strong>容错处理</strong>：如果任务运行失败，AM会重新为任务申请资源以重启任务。</li>
+<li><strong>状态报告</strong>：AM向RM报告应用程序的进度和状态，以便于客户端可以查询应用程序的执行情况。</li>
+</ul>
+<h4 id="container"><code>Container</code><a class="headerlink" href="#container" title="Permanent link">&para;</a></h4>
+<p>Container 是 Yarn 中的<strong>资源抽象</strong>，它<strong>封装了某个节点上的多维度资源</strong>，包括内存、CPU、磁盘、网络等。可以看作是任务执行的一个小环境。为了使得yarn的资源管理达到更为细小的粒度，<code>container</code>是一种对于资源的划分，所以<code>container</code>是资源分配和调度的<strong>最小单位</strong>。</p>
+<p>yarn</p>
+<h3 id="_2">调度策略<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p>相比较yarn的架构当中的组件，更为重要的是yarn的调度策略。在分布式系统中，调度器大多都是<strong>多用户调度器</strong>。</p>
+<h4 id="_3">容量调度器<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h4>
+<p>容量调度器基于“<strong>队列</strong>”的概念来实现调度策略。管理员会定义好<strong>队列的数量</strong>以及每个<strong>队列的资源量（也就是容量，资源最低保证和使用上限）</strong>，只需要保证总体的最小资源量为100%就行。其<u>从逻辑上定义了一个资源范围</u>，这个范围叫做队列的容量。作业会被分配到不同的队列上排队，保证同一时间有多个作业运行，而每一个队列当中又按照<code>FIFO</code>进行调度作业。</p>
+<p>支持<u>队列的层次结构</u>，<strong>允许在组织的子队列之间共享资源</strong>。在一个队列中运行的<code>Job</code>不允许使用超过范围的资源，也就是不能<strong>超过队列的容量</strong>，否则该作业会被<strong>立刻杀死</strong>。但如果存在别的<strong>空闲队列</strong>，则可以<strong>临时共享给其他需要资源的队列（共享资源上限是获得资源队列所配置的资源使用上限）</strong>。</p>
+<p>容量调度器是一种<strong>多租户调度器</strong>，它允许<strong>多个组织共享</strong>整个集群资源，同时会<strong>防止</strong>单个应用程序、用户或队列<strong>独占</strong>集群资源，确保每个组织都能获得一定的资源容量保证。容量调度器当中每个队列都有严格的访问控制列表（<code>ACL</code>，access control list），以确保只有授权的用户可以向队列提交应用程序（<strong>安全性</strong>）。且可以在运行时修改其配置，是任何配置。</p>
+<p>队列资源分配，按照深度优先算法，<strong>优先选择资源占用率最低的队列开始分配资源</strong>。作业资源分配，则默认按照作业的<strong>优先级</strong>和<strong>提交时间顺序</strong>分配资源。容量资源分配按照容量优先级，优先级相同按照<strong>数据本地性原则</strong>。</p>
+<h4 id="_4">公平调度器<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h4>
+<p>公平调度器也是按照<strong>队列</strong>概念实现了资源调度，其目标是公平地在所有运行的作业之间分配集群资源，确保所有作业都能获得合理的资源份额（<strong>同队列所有任务共享资源</strong>，时间尺度上获取公平的资源）。所以与容量调度器有很大的不同，管理员还需要定义好最多运行的<code>job</code>数量。公平调度器不仅可以定义一个资源范围，也可以通过定义队列的权重。从理论上来说公平调度器是想<strong>让所有job立即运行不必等待</strong>，而容量调度器<strong>只是想运行和队列数量相同的job</strong>。</p>
+<p>分配队列的时候公平调度器按照<strong>缺额分配</strong>，优先为<strong>缺额大的作业分配作业</strong>。缺额的计算为
+$$
+缺额 = 公平份额 - 实际份额 \ (队列权重/所有队列权重总和)<em>集群总资源 - (队列权重/所有活跃队列权重总和)</em>集群总资源
+$$
+当缺额为正，说明着队列还没有获得足够的资源，因此调度器会尝试分配更多资源（应该理解为这个队列的资源没有被充分调用）。</p>
+<p>一般最少为零，说明队列已经获得了公平的份额。</p>
+<h5 id="fair">Fair策略<a class="headerlink" href="#fair" title="Permanent link">&para;</a></h5>
+<p><img alt="在这里插入图片描述" src="https://i-blog.csdnimg.cn/blog_migrate/04f5ea99818c612f70d71f13f0396f90.png" /></p>
+<h5 id="drf">DRF策略<a class="headerlink" href="#drf" title="Permanent link">&para;</a></h5>
+<p>上述说的资源都是单一标准，例如只考虑内存(Yarn默认情况)。但很多时候我们资源有很多种，例如内存、CPU、网络带宽等，这样就很难衡量两个应用应该分配的资源比例。</p>
+<p>所以在Yarn中，我们使用DRF来决定如何调度：</p>
+<p>DRF(Dominant Resource Fairness)主导资源公平调度算法，是一种通用的多资源最大-最小公平分配策略(Max-Min Fairness Strategy),核心思想是在多环境下一个用户的资源分配应该由用户的主导份额资源决定。用户所有份额中的最大值称为该用户的主导份额，与主导份额相对应的资源称为主导资源。</p>
+<p>假设集群一共有100 CPU和10T 内存，而应用A需要(2 CPU, 300GB)，应用B需要(6 CPU，100GB)。 则两个应用分别需要A(2%CPU, 3%内存)和B(6%CPU, 1%内存)的资源，这就意味着A是内存主导的, B是 CPU主导的。</p>
+<h4 id="_5">资源分配算法<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
+<h5 id="_6">队列资源分配<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h5>
+<p>先根据队列数分，再根据需求和多余量，进行整合与重新分配</p>
+<p><img alt="在这里插入图片描述" src="https://i-blog.csdnimg.cn/blog_migrate/dfae1fddee9dc18414dc97b3675e1554.png" /></p>
+<h5 id="_7">作业资源分配<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h5>
+<p>也同样先根据总数分，再根据需求和多余量，进行整合与重新分配直到没有空闲资源，或者<code>job</code>的资源被分配完全。</p>
+<p><img alt="请添加图片描述" src="https://i-blog.csdnimg.cn/blog_migrate/73a7ea41771564dc96be99bc2d47b3b6.png" /></p>
+<h3 id="_8">自动故障转移<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
 
 
 
@@ -1228,12 +1327,12 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../../..", "features": [], "search": "../../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
       
-        <script src="../../../../javascripts/mathjax.js"></script>
+        <script src="../../javascripts/mathjax.js"></script>
       
         <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
