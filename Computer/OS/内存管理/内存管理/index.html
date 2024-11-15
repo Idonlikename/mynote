@@ -2660,7 +2660,7 @@
 <h2 id="_2">内存的基础知识<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <h3 id="_3">计算机内部存储层次<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <p>计算机系统的存储器被组织成一个6个层次的金字塔形的层次结构， 如下图：
-<img alt="alt text" src="../image.png" /></p>
+<img alt="alt text" src="/image/image.png" /></p>
 <h4 id="_4">芯片内<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h4>
 <p>S0层为CPU内部<strong>寄存器</strong>——<u>速度最快但是存储量最小</u>，只有KB级别
 S1层为芯片内部的<strong>高速缓存(cache)</strong>内存——L1、L2缓存，速度的分别。</p>
@@ -2682,7 +2682,7 @@ S5层为远程二级存储(分布式文件系统、Web服务器)</p>
 <p><strong>内存</strong>又是<strong>主存储器</strong>的高速缓存，<u>内将经常用到的数据从Flash等主存储器中提取出来，放到内存中，从而加快了CPU的运行效率</u>。</p>
 <p>嵌入式系统的主存储器容量是有限的，磁盘、光盘或CF、SD卡等外部存储器用来保存大信息量的数据。在某些带有分布式文件系统的嵌入式网络系统中，外部存储器就作为其他系统中被存储数据的高速缓存。</p>
 <p>另一个图：</p>
-<p><img alt="alt text" src="../image-1.png" />
+<p><img alt="alt text" src="/image/image-1.png" />
 如上图所示，<strong><u>越往上，存储介质的访问速度越快，价格也越高</u></strong>。其中<strong>寄存器</strong>、<strong>高速缓存</strong>、<strong>主存储器</strong>和<strong>磁盘缓存</strong>均<u>属于存储管理的管辖范畴，<strong>掉电后它们存储的信息不再存在</strong>。</u></p>
 <p><strong>固定磁盘</strong>和<strong>可移动存储介质</strong><u>属于设备管理的管辖范畴</u>，它们存储的信息将被长期保存。而<u>磁盘缓存本身并不是一种实际存在的存储介质，它依托于固定磁盘，提供对主存储空间的扩充。</u></p>
 <p><strong><u>可执行的程序必须被保存在计算机的主存储器（内存）中</u></strong>，与外围设备交换的信息一般也依托于主存储器地质空间。由于处理器在执行指令时主存访问时间远大于其他处理时间，寄存器会告诉缓存被引入来加快指令的执行。</p>
@@ -2700,7 +2700,7 @@ S5层为远程二级存储(分布式文件系统、Web服务器)</p>
 <p>另一种是在<strong>程序执行时</strong>实现地址转换，称为<strong>动态重定位</strong>。</p>
 <p>动态重定位必须借助于硬件的地址转换机构（<strong>定位寄存器</strong>）的实现。</p>
 <h3 id="_8">思维导图<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
-<p><img alt="alt text" src="../image-2.png" /></p>
+<p><img alt="alt text" src="/image/image-2.png" /></p>
 <h3 id="_9">什么是内存？有何作用？<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
 <p>内存可存放数据。</p>
 <p>程序执行前，<u>需要将程序放入内存中才能被CPU所处理</u>----缓和CPU和硬盘之间速度的矛盾。</p>
