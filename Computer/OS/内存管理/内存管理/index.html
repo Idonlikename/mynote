@@ -2680,8 +2680,7 @@
 <h1 id="_1">第三章内存管理<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <h2 id="_2">内存的基础知识<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <h3 id="_3">计算机内部存储层次<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
-<p>计算机系统的存储器被组织成一个6个层次的金字塔形的层次结构， 如下图：
-<img alt="alt text" src="/image/image.png" /></p>
+<p>计算机系统的存储器被组织成一个6个层次的金字塔形的层次结构， 如下图：</p>
 <h4 id="_4">芯片内<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h4>
 <p>S0层为CPU内部<strong>寄存器</strong>——<u>速度最快但是存储量最小</u>，只有KB级别
 S1层为芯片内部的<strong>高速缓存(cache)</strong>内存——L1、L2缓存，速度的分别。</p>
@@ -2692,6 +2691,7 @@ S1层为芯片内部的<strong>高速缓存(cache)</strong>内存——L1、L2�
 <h4 id="_7">外存<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h4>
 <p>S4层为外部存储器(磁盘、光盘、CF、SD卡)——存储量大可以上至TB但是相应的读取速度慢。
 S5层为远程二级存储(分布式文件系统、Web服务器)</p>
+<p><img alt="alt text" src="/image/figure1.png" /></p>
 <p>在这种存储器分层结构中，<strong><u>上面一层的存储器作为下一层存储器的高速缓存</u></strong>。</p>
 <p>理解这里的高速缓存：</p>
 <p>下一层可以存储更多更大的数据但慢，而上一层的存储器速度更快但小</p>
@@ -2703,8 +2703,8 @@ S5层为远程二级存储(分布式文件系统、Web服务器)</p>
 <p><strong>内存</strong>又是<strong>主存储器</strong>的高速缓存，<u>内将经常用到的数据从Flash等主存储器中提取出来，放到内存中，从而加快了CPU的运行效率</u>。</p>
 <p>嵌入式系统的主存储器容量是有限的，磁盘、光盘或CF、SD卡等外部存储器用来保存大信息量的数据。在某些带有分布式文件系统的嵌入式网络系统中，外部存储器就作为其他系统中被存储数据的高速缓存。</p>
 <p>另一个图：</p>
-<p><img alt="alt text" src="/image/image-1.png" />
-如上图所示，<strong><u>越往上，存储介质的访问速度越快，价格也越高</u></strong>。其中<strong>寄存器</strong>、<strong>高速缓存</strong>、<strong>主存储器</strong>和<strong>磁盘缓存</strong>均<u>属于存储管理的管辖范畴，<strong>掉电后它们存储的信息不再存在</strong>。</u></p>
+<p><img alt="img" src="E:\site\note\docs\Computer\OS\内存管理\image\figure1.png" /></p>
+<p>如上图所示，<strong><u>越往上，存储介质的访问速度越快，价格也越高</u></strong>。其中<strong>寄存器</strong>、<strong>高速缓存</strong>、<strong>主存储器</strong>和<strong>磁盘缓存</strong>均<u>属于存储管理的管辖范畴，<strong>掉电后它们存储的信息不再存在</strong>。</u></p>
 <p><strong>固定磁盘</strong>和<strong>可移动存储介质</strong><u>属于设备管理的管辖范畴</u>，它们存储的信息将被长期保存。而<u>磁盘缓存本身并不是一种实际存在的存储介质，它依托于固定磁盘，提供对主存储空间的扩充。</u></p>
 <p><strong><u>可执行的程序必须被保存在计算机的主存储器（内存）中</u></strong>，与外围设备交换的信息一般也依托于主存储器地质空间。由于处理器在执行指令时主存访问时间远大于其他处理时间，寄存器会告诉缓存被引入来加快指令的执行。</p>
 <p><strong>寄存器</strong>是访问速度最快但最昂贵的存储器，它的容量小，一般以字（word）为单位。一个计算机系统可能包括几十个甚至上百个寄存器，用于加速存储访问速度，如：寄存器操作数的使用，或用地质寄存器加快转换速度。</p>
@@ -2721,7 +2721,7 @@ S5层为远程二级存储(分布式文件系统、Web服务器)</p>
 <p>另一种是在<strong>程序执行时</strong>实现地址转换，称为<strong>动态重定位</strong>。</p>
 <p>动态重定位必须借助于硬件的地址转换机构（<strong>定位寄存器</strong>）的实现。</p>
 <h3 id="_8">思维导图<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
-<p><img alt="alt text" src="/image/image-2.png" /></p>
+<p><img alt="在这里插入图片描述" src="E:\site\note\docs\Computer\OS\内存管理\image\figure2.png" /></p>
 <h3 id="_9">什么是内存？有何作用？<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
 <p>内存可存放数据。</p>
 <p>程序执行前，<u>需要将程序放入内存中才能被CPU所处理</u>----缓和CPU和硬盘之间速度的矛盾。</p>
@@ -2733,23 +2733,23 @@ S5层为远程二级存储(分布式文件系统、Web服务器)</p>
 <p>主要功能：</p>
 <p>存放<strong>程序</strong>和<strong>数据</strong></p>
 <p>两个分类：<strong>主存储器</strong>（主存也就是<strong>内存</strong>，<u><strong>CPU能够直接访问</strong></u>）和<strong>辅助存储器</strong>（<strong>外存</strong>，<strong>磁盘硬盘</strong>）</p>
-<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200128214649133.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkxNDYwNA==,size_16,color_FFFFFF,t_70" /></p>
+<p><img alt="在这里插入图片描述" src="E:\site\note\docs\Computer\OS\内存管理\image\figure3.png" /></p>
 <p>主存储器组成：</p>
 <ul>
 <li>每个<strong>存储元件</strong>存储一位二进制代码0/1</li>
 <li><strong>存储单元</strong>可存储一串二进制代码，称这串<strong>代码为存储字</strong>。称这串代码的<strong>位数为存储字长</strong>，比如我图中所画每个存储单元存储8位的二进制数，存储字长为8。</li>
 <li>存储字长可以是1B或是字节（byte）的偶数倍，1（<strong>字节，B，byte</strong>）=8bit(<strong>bit</strong>就是<strong>位</strong>，也叫<strong>比特位</strong>)</li>
 </ul>
-<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200128222556742.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkxNDYwNA==,size_16,color_FFFFFF,t_70" /></p>
+<p><img alt="在这里插入图片描述" src="E:\site\note\docs\Computer\OS\内存管理\image\figure4.png" /></p>
 <p><strong>主存储器的工作方式</strong>
 系统中有多个程序并发执行，多个程序的数据同时放到内存中。而我们的主存（内存）按照数据<strong>按存储单元的地址进行存取</strong>，以对大量的数据进行区分。这种存取方式称为<strong>按地址存取方式</strong>（<strong>相联存储器按内容访问</strong>）</p>
-<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200421170913619.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkxNDYwNA==,size_16,color_FFFFFF,t_70" /></p>
+<p><img alt="在这里插入图片描述" src="E:\site\note\docs\Computer\OS\内存管理\image\figure5.png" /></p>
 <h4 id="2">（2）几个常用数量单位&amp;内存地址<a class="headerlink" href="#2" title="Permanent link">&para;</a></h4>
 <p>1byte=1B=8bit</p>
 <p>2^10^=1024B=1KB</p>
 <p>2^20^=1024KB=1MB</p>
 <p>2^30^=1024MB=1GB</p>
-<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200421171510336.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkxNDYwNA==,size_16,color_FFFFFF,t_70" /></p>
+<p><img alt="在这里插入图片描述" src="E:\site\note\docs\Computer\OS\内存管理\image\figure6.png" /></p>
 <h3 id="_11">进程运行的基本原理<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
 <h4 id="_12">指令的工作原理<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h4>
 <p>从x=x+1大致看一下指令的执行过程：</p>
@@ -2763,8 +2763,8 @@ S5层为远程二级存储(分布式文件系统、Web服务器)</p>
 <p>​   具体他的指令是：（<strong>操作码</strong>（+），<strong>目标地址</strong>（寄存器的地址），<strong>具体加的数是多少</strong>）</p>
 <p>③我们读取第三条指令，即最后的"x="指令。在前面的指令中我们的计算机已经计算完了x的值，现在要采取<strong>赋值操作</strong>。</p>
 <p>​   那对于这个指令：（<strong>赋值操作码（"="），目标地址（"="的左边），原地址（"=的右边"）</strong>），将右边的值从寄存器中取出，将其放在"=的左边"的变量上。也就是x原来的位置上。</p>
-<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200421172536502.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkxNDYwNA==,size_16,color_FFFFFF,t_70" /></p>
-<p><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200421172647125.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkxNDYwNA==,size_16,color_FFFFFF,t_70" /><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/20200421172713286.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkxNDYwNA==,size_16,color_FFFFFF,t_70" /></p>
+<p><img alt="在这里插入图片描述" src="E:\site\note\docs\Computer\OS\内存管理\image\figure7.png" /></p>
+<p><img alt="在这里插入图片描述" src="E:\site\note\docs\Computer\OS\内存管理\image\figure8.png" /><img alt="在这里插入图片描述" src="E:\site\note\docs\Computer\OS\内存管理\image\figure9.png" /></p>
 <h4 id="vs">逻辑地址（相对地址）vs物理地址（绝对地址）<a class="headerlink" href="#vs" title="Permanent link">&para;</a></h4>
 <p>同样指向地址为179的位置。</p>
 <p>对于地址为100的位置而言，其<strong>相对位置</strong>为79。</p>
