@@ -1,0 +1,1606 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="idonlikename">
+      
+      
+        <link rel="canonical" href="https://idonlikename.github.io/mynote/%E5%88%86%E5%B8%83%E5%BC%8F/hdfs/hdfs/">
+      
+      
+        <link rel="prev" href="../../hadoop/">
+      
+      
+        <link rel="next" href="../../yarn/yarn/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.44">
+    
+    
+      
+        <title>hdfs - TheLang's Note</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="grey" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#hdfs-" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../.." title="TheLang&#39;s Note" class="md-header__button md-logo" aria-label="TheLang's Note" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 4v6l-2-2-2 2V4H9v16h10V4zM3 7V5h2V4a2 2 0 0 1 2-2h12c1.05 0 2 .95 2 2v16c0 1.05-.95 2-2 2H7c-1.05 0-2-.95-2-2v-1H3v-2h2v-4H3v-2h2V7zm2-2v2h2V5zm0 14h2v-2H5zm0-6h2v-2H5z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            TheLang's Note
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              hdfs
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="grey" data-md-color-accent="cyan"  aria-label="切换至夜间模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切换至夜间模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="cyan"  aria-label="切换至日间模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换至日间模式" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-hidden="true"  type="radio" name="__palette" id="__palette_2">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Idonlikename/mynote" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="TheLang&#39;s Note" class="md-nav__button md-logo" aria-label="TheLang's Note" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 4v6l-2-2-2 2V4H9v16h10V4zM3 7V5h2V4a2 2 0 0 1 2-2h12c1.05 0 2 .95 2 2v16c0 1.05-.95 2-2 2H7c-1.05 0-2-.95-2-2v-1H3v-2h2v-4H3v-2h2V7zm2-2v2h2V5zm0 14h2v-2H5zm0-6h2v-2H5z"/></svg>
+
+    </a>
+    TheLang's Note
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Idonlikename/mynote" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Code
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Code
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../code/C/C%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../code/python/Python%E5%9F%BA%E7%A1%80/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../code/java/Java%E5%9F%BA%E7%A1%80%E7%BC%96%E7%A8%8B/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Java
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Computer
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Computer
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    OS
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            OS
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Computer/OS/%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    进程管理
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Computer/OS/%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    内存管理
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Computer/OS/%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86/%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    文件管理
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    计算机通识
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            计算机通识
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Computer/%E9%80%9A%E8%AF%86%E8%AF%BE/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%B8%B8%E8%AF%86/%E6%96%87%E4%BB%B6%E7%9B%B8%E5%85%B3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    文件通识
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Computer/%E9%80%9A%E8%AF%86%E8%AF%BE/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%B8%B8%E8%AF%86/%E9%80%9A%E8%AF%86/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    通识课
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Missing Semester
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            Missing Semester
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Computer/%E9%80%9A%E8%AF%86%E8%AF%BE/Missing%20Semester/Lec01Missing%20Semester/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lec01
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Computer/%E9%80%9A%E8%AF%86%E8%AF%BE/Missing%20Semester/Lec02shell%E5%B7%A5%E5%85%B7%E4%B8%8E%E8%84%9A%E6%9C%AC/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lec02
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    base
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            base
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Base/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    线性代数
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    分布式
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            分布式
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hadoop/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    hadoop
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    hdfs
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    hdfs
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#hdfs-" class="md-nav__link">
+    <span class="md-ellipsis">
+      HDFS-数据存储
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="HDFS-数据存储">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hdfs" class="md-nav__link">
+    <span class="md-ellipsis">
+      HDFS基本结构
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="HDFS基本结构">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      元数据
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#block" class="md-nav__link">
+    <span class="md-ellipsis">
+      Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#namenodenn" class="md-nav__link">
+    <span class="md-ellipsis">
+      NameNode（nn）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datanodedn" class="md-nav__link">
+    <span class="md-ellipsis">
+      DataNode（dn）
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      数据备份
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="数据备份">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#edits" class="md-nav__link">
+    <span class="md-ellipsis">
+      edits
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#secondarynamenode2nn" class="md-nav__link">
+    <span class="md-ellipsis">
+      SecondaryNameNode（2nn）
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hahigh-available" class="md-nav__link">
+    <span class="md-ellipsis">
+      HA（High Available）架构
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="HA（High Available）架构">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#standbynamenode" class="md-nav__link">
+    <span class="md-ellipsis">
+      StandbyNameNode
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zookeeper" class="md-nav__link">
+    <span class="md-ellipsis">
+      Zookeeper
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      脑裂
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      数据副本机制
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="数据副本机制">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      副本距离
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      副本放置策略
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../yarn/yarn/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    yarn
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mapreduce/mapreduce/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    mapreduce
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    pythonWeb
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            pythonWeb
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../pythonWeb/%E7%AB%A0%E8%8A%82/chapter%201%20http/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    flask
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../pythonWeb/%E7%AB%A0%E8%8A%82/chapter%202%20%E5%89%8D%E7%AB%AF/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    前端
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../pythonWeb/%E7%AB%A0%E8%8A%82/chapter%203%20%E6%A1%86%E6%9E%B6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    框架
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../pythonWeb/%E7%AB%A0%E8%8A%82/chapter%204%20%E8%A1%A8%E5%8D%95/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    交互
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../pythonWeb/%E7%AB%A0%E8%8A%82/chapter%205%20%E6%95%B0%E6%8D%AE%E5%BA%93/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    数据库
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#hdfs-" class="md-nav__link">
+    <span class="md-ellipsis">
+      HDFS-数据存储
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="HDFS-数据存储">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hdfs" class="md-nav__link">
+    <span class="md-ellipsis">
+      HDFS基本结构
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="HDFS基本结构">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      元数据
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#block" class="md-nav__link">
+    <span class="md-ellipsis">
+      Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#namenodenn" class="md-nav__link">
+    <span class="md-ellipsis">
+      NameNode（nn）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datanodedn" class="md-nav__link">
+    <span class="md-ellipsis">
+      DataNode（dn）
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      数据备份
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="数据备份">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#edits" class="md-nav__link">
+    <span class="md-ellipsis">
+      edits
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#secondarynamenode2nn" class="md-nav__link">
+    <span class="md-ellipsis">
+      SecondaryNameNode（2nn）
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hahigh-available" class="md-nav__link">
+    <span class="md-ellipsis">
+      HA（High Available）架构
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="HA（High Available）架构">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#standbynamenode" class="md-nav__link">
+    <span class="md-ellipsis">
+      StandbyNameNode
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zookeeper" class="md-nav__link">
+    <span class="md-ellipsis">
+      Zookeeper
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      脑裂
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      数据副本机制
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="数据副本机制">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      副本距离
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      副本放置策略
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+  <h1>hdfs</h1>
+
+<h2 id="hdfs-"><code>HDFS</code>-数据存储<a class="headerlink" href="#hdfs-" title="Permanent link">&para;</a></h2>
+<p><code>HDFS</code> 集群是建立在 <code>Hadoop</code> 集群之上的，由于 <code>HDFS</code> 是 <code>Hadoop</code> 最主要的<strong>守护进程</strong>基本可以认为是整个<code>Hadoop</code>的base。<code>HDFS</code> 和数据库相似。使用 <code>HDFS</code> 需要用 <code>HDFS</code> 客户端通过<code>Socket</code>连接到 <code>HDFS</code> 服务器实现文件系统的使用。</p>
+<p>不支持随机写，但支持追加写。（因为是顺序写入）适合一次写入，多次读取。</p>
+<h3 id="hdfs">HDFS基本结构<a class="headerlink" href="#hdfs" title="Permanent link">&para;</a></h3>
+<p>其最基本的构成是一台主节点（<code>NameNode</code>）与多台数据节点（<code>DataNode</code>）</p>
+<p><img alt="img" src="E:\Desktop\File\大三上\分布式计算\hdfs\image\img1.png" /></p>
+<h4 id="_1">元数据<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h4>
+<p>元数据管理是<code>HDFS</code>运行中的一个重要组成部分，它涉及到文件系统的<strong>命名空间</strong>、<strong>文件</strong>和<strong>目录的组织</strong>、<strong>权限控制</strong>等方面。其大小通常为<code>128B</code> </p>
+<h4 id="block"><code>Block</code><a class="headerlink" href="#block" title="Permanent link">&para;</a></h4>
+<p>物理磁盘中有块 <code>Block</code> 的概念，磁盘的物理Block是磁盘操作最小的单元，<strong>读写操作均以Block作为最小单元</strong>，一般为<code>512 Byte</code>。</p>
+<p>文件系统在物理磁盘的Block之上抽象了另一层概念，文件系统Block物理磁盘Block的<strong>整数倍</strong>。通常为几KB。<code>Hadoop</code>提供的<code>df</code>、<code>fsck</code>这类运维工具都是在<strong>文件系统的Block级别上进行操作</strong>。</p>
+<p>块越小，读写速度就越快（当然是磁盘自身传输速度固定的前提下），但是寻址的速度也就越慢。</p>
+<p><code>HDFS</code>的Block块比一般单机文件系统大得多，默认为<code>128M</code>。设置的如此之大是为了<strong>最小化查找（seek）时间</strong>，<u>控制定位文件与传输文件所用的时间比例</u>。</p>
+<p>比如定位到Block所需的时间为<code>10ms</code>，磁盘传输速度为<code>100M/s</code>。如果要将定位到Block所用时间占传输时间的比例控制1%，前面两个数据是一定的，我们需要 <strong>定位时间 = 0.01*block_size / 传输速度</strong>，则Block大小需要约<code>100M</code>。</p>
+<p>但是如果Block设置过大，在<code>MapReduce</code>任务中，Map或者Reduce任务的个数就会变少。如果任务的个数小于集群机器数量，会使得作业运行效率很低。</p>
+<p><code>HDFS</code>的文件被拆分成block-sized的<code>chunk</code>，<code>chunk</code>作为<strong>独立单元存储</strong>。<strong>比Block小的文件不会占用整个Block</strong>，只会占据实际大小。</p>
+<p>例如， 如果一个文件大小为<code>1M</code>，则在<code>HDFS</code>中只会占用<code>1M</code>的空间，而不是<code>128M</code>。<strong>Block块只是一个逻辑概念</strong>，实际占用的物理存储空间是以文件大小为准的。</p>
+<p>以一种情况帮忙理解，从客户端上传一个大小为130MB的文件。根据块大小，此时应该有2个block块，其中1个块大小是128MB，1个块大小是2MB，再上传一个大小为 24MB 的文件，这个24MB 的文件上传后是一个独立的文件块，占用物理存储空间大小为24MB，而不会与之前的block块合并。</p>
+<p>这里要注意两个数据，<code>hdfs</code>中有两个128分别为：</p>
+<ul>
+<li><code>128MB</code> <code>hdfs</code>默认切分块的大小。</li>
+<li><code>128B</code>   <code>hdfs</code>默认元数据的大小。</li>
+</ul>
+<h4 id="namenodenn"><strong><code>NameNode</code>（nn）</strong><a class="headerlink" href="#namenodenn" title="Permanent link">&para;</a></h4>
+<p><strong>主节点</strong>或称<strong>命名节点</strong>，用于管理整个文件目录树（目录树在内存当中）。</p>
+<p><code>NameNode</code>如何进行文件目录管理呢？</p>
+<p>可以理解为，<code>NameNode</code>存储着所有在<code>DataNode</code>所存储的文件的<strong>元数据</strong>，如其文件名，文件目录结构，文件属性（生成时间、副本数、文件权限），以及每个文件的块所在的 <code>DataNode</code> 等。</p>
+<p>与此同时，为了管理各个<code>DataNode</code>，协调各个<code>dn</code>，<code>nn</code>会监控每一个<code>dn</code>。为了让<code>nn</code>能够判断，<code>dn</code>有心跳机制每过一段时间发送心跳信号给<code>nn</code>，对于长时间无反应的<code>dn</code> <code>nn</code>便不再访问（说明网络问题或者<code>dn</code>宕机其他不可用问题）。这种机制很好地保证了，在使用时<code>dn</code>写入的<strong>数据的完整可用</strong>，对于数据节点的<strong>故障检测</strong>，<strong>防止脑裂（脑裂也就是出现两个<code>NameNode</code>的情况，准确说是两个<code>NameNode</code>认为自己是Active的情况）</strong>。在<code>dn</code>写入上来说，<code>nn</code>会将写入的数据<strong>均匀负载</strong>，避免集中在某个节点导致过度访问。</p>
+<p>命名节点 (<code>NameNode</code>) 是用于指挥其它节点存储的节点。任何一个"文件系统"(File System, FS) 都需要具备根据文件路径映射到文件的功能，命名节点就是用于<strong>储存这些映射信息并提供映射服务的计算机</strong>，在整个 <code>HDFS</code> 系统中扮演"管理员"的角色，因此一个 <code>HDFS</code> 集群中只有一个命名节点。client想要读写哪一个data都是由<code>nn</code>分配创建或查找<code>dn</code>实现。</p>
+<h4 id="datanodedn"><strong><code>DataNode</code>（dn）</strong><a class="headerlink" href="#datanodedn" title="Permanent link">&para;</a></h4>
+<p><strong>数据节点</strong>，用于存储数据，以及对Client提供数据的读写服务。</p>
+<p>数据节点 (<code>DataNode</code>) 使用来储存数据块的节点。当一个文件被命名节点承认并分块之后将会被储存到被分配的数据节点中去。数据节点具有储存数据、读写数据的功能，其中存储的数据块比较类似于硬盘中的"扇区"概念，是 <code>HDFS</code> <strong>存储的基本单位</strong>。</p>
+<p><code>dn</code>支持热扩展，即在整个<code>HDFS</code>使用过程中添加新的<code>dn</code> ，而无需重启。</p>
+<p>为了保证我们的数据的安全，会进行数据Replication，也就是备份又称数据冗余来保护我们的数据。<code>FSDataOutputStream</code>(文件系统输出流)在写入数据在某一个数据节点时，这个节点会借助计算机网络实现在多个节点的备份。在完成备份之后<code>DataNode</code>才会告诉<code>nn</code>写入完成。</p>
+<p>读写</p>
+<p><img alt="这里写图片描述" src="https://i-blog.csdnimg.cn/blog_migrate/086f55e2b446b9f68e99cd73ddaa24fd.png" /></p>
+<p>写数据</p>
+<p><img alt="这里写图片描述" src="E:\Desktop\File\大三上\分布式计算\hdfs\image\img2.png" /></p>
+<h3 id="_2">数据备份<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p>因为Client访问文件必须经由<code>NN</code>，这使得<code>NN</code>在整个结构中都很重要。甚至<code>NN</code>是整个<code>HDFS</code>的主要性能瓶颈，提高<code>NN</code>的性能就能提高整个系统的响应速度。为了保证系统的响应速度，其实整个文件系统的<strong>目录树都在内存中</strong>。这反而导致了一个问题，一旦<code>NN</code>突然崩溃内存中的文件就会失去，那就会失去整个目录树，导致我们找不到<code>DataNode</code>中的文件了。</p>
+<p>所以我们利用如下的两个结构帮助我们解决<code>NN</code>挂掉的问题。（在整个分布式系统中必须要考虑我们的任何节点会挂的可能）</p>
+<p>默认情况数据持久化的触发条件为：<strong>64MB</strong>或者<strong>1h</strong></p>
+<h4 id="edits">edits<a class="headerlink" href="#edits" title="Permanent link">&para;</a></h4>
+<p>我们使用<strong>日志</strong>来帮助我们回复目录树，在任何引起<code>HDFS</code>改变的操作执行时，我们便会把操作写入<strong>日志文件——edits</strong>。当我们重启<code>NN</code>时，<u>edits会像一个脚本，读取那些操作执行</u>，将<code>NN</code>的目录树恢复到挂掉之前。</p>
+<p>这引起了另一个问题，<u>如果我们的目录树更新的十分多，单单使用edits会导致恢复的时间异常漫长。</u></p>
+<p>为了解决这个问题我们引入<code>fsimage</code>——file system image <strong>文件系统镜像</strong>。也就是采用批处理的方法，当edits积累到一定程度我们则会把edits的操作并入<code>fsimage</code>中，保证我们的<code>fsimage</code>足够接近我们最新的目录树，当我们的<code>NN</code>挂掉之后，我们只需要直接将<code>fsimage</code>读入内存，再把<code>edits</code>执行，就可以恢复目录树。<code>fsimage</code>+<code>edits</code> = 内存元数据，保证了元数据持久化。</p>
+<h4 id="secondarynamenode2nn"><strong><code>SecondaryNameNode</code>（2nn）</strong><a class="headerlink" href="#secondarynamenode2nn" title="Permanent link">&para;</a></h4>
+<p>用来监控 <code>HDFS</code> 状态的辅助后台程序，每隔一段时间获取 <code>HDFS</code> 元数据的快照（<code>fsimage</code>+<code>edits</code>）。也就是备份节点。也就是负责更新<code>fsimage</code>的节点，启动时其会获取<code>NN</code>的<code>fsimage</code>再<strong>定期（也就是每隔一段时间）</strong>从<code>NN</code>获取<code>edits</code>来更新<code>2nn</code>当中的<code>fsimage</code>，<code>fsimage</code>与<code>edits</code>会合并出一个<code>fsimage.ckpt</code>返回给<code>NN</code>。</p>
+<p><code>2nn</code>仅保证了<code>nn</code>当中的镜像足够新，<u>具体用来重启的镜像实际仍存在在<code>NN</code>中</u>。</p>
+<p>副命名节点 (<code>SecondaryNameNode</code>) 别名"次命名节点"，是命名节点的"秘书"。这个形容很贴切，因为它并<strong>不能代替命名节点的工作</strong>，无论命名节点是否有能力继续工作，因为在整个架构设计之初，<code>2nn</code>仅与<code>nn</code>通信，而不与<code>DN</code>由任何的关系。它主要负责分摊命名节点的压力、备份命名节点的状态并执行一些管理工作，如果命名节点要求它这样做的话。如果命名节点坏掉了，它也可以提供备份数据以恢复命名节点。<strong>副命名节点可以有多个。</strong></p>
+<h3 id="hahigh-available">HA（High Available）架构<a class="headerlink" href="#hahigh-available" title="Permanent link">&para;</a></h3>
+<p>高度可用，消除单点故障问题，使得整个系统可用度变高。也就是使得系统变得强健。</p>
+<h4 id="standbynamenode"><code>StandbyNameNode</code><a class="headerlink" href="#standbynamenode" title="Permanent link">&para;</a></h4>
+<p>在<code>2nn</code>的基础上将<code>2nn</code>变为<code>Standby NameNode</code>，且我们<strong>设置多个 <code>Standby NameNode</code></strong> （在<code>Hadoop3</code>当中）。或者说我们设置了多个<code>NameNode</code>而对于起作用的<code>NameNode</code>我们叫做 <code>Active NameNode</code> ，而用于备份的<code>NameNode</code> 叫做<code>Standby NameNode</code>。当<code>Active</code>挂了，<code>Standby</code>就会起作用变为<code>Active</code>，同时原先的<code>Active</code>变为<code>Standby</code>。在一般情况下，<code>Standby</code>做的都是<code>2nn</code>的作用。有所不同的是<code>Standby</code><strong>也有心跳机制</strong>，也需要不断发送心跳信号给<code>Active</code><u>以保证在启用备用节点能够快速代替。</u></p>
+<p>与<code>2nn</code>不同，<code>standby</code><strong>不再是定期地获取<code>edits</code></strong>而是<u>通过与<code>Active</code>共享的形式来获取<code>edits</code></u>，一旦<code>edits</code>发生了更改，<code>Standby</code>都能立即获取，具体采用文件共享（采用局域网文件共享的协议）或日志共享。</p>
+<h4 id="zookeeper"><code>Zookeeper</code><a class="headerlink" href="#zookeeper" title="Permanent link">&para;</a></h4>
+<p>在有多个<code>stnn</code>的情况下，我们的系统会出现难以抉择出<code>New Active</code>的情形，此刻我们需要引入另外一个分布式软件——<code>zookeeper</code>，其提供<strong>辅助协调工具</strong>以帮助各个节点可以相互配合。甚至提供小数据存储。</p>
+<p>在我们所提出的问题中，我们利用的特性进行解决：节点监视——会监视每一个节点，当节点被删除的时候会收到信息。以此帮助我们<strong>判断<code>Active</code>挂了没</strong>。不仅能够帮助我们判断<code>Active</code>挂了没，同时，它还可以<strong>抉择出哪一个<code>Standby</code>作为下一个<code>Active</code></strong>，当获取<code>Active</code>挂了的信息之后，我们会让从<code>zookeeper</code>处<strong>获得到一个同步锁的节点成为下一个“大哥”节点</strong>。</p>
+<p><code>zookeeper</code>监控并选举<code>NN</code></p>
+<p><code>zookeeper</code>本身也有<code>leader</code>和<code>follower</code> 由leader执行写操作，其他功能权限一致。当follower收到了写操作它会转发给leader，再允许follower执行写。</p>
+<h4 id="_3">脑裂<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h4>
+<p>在之前我们已经提及了，脑裂就是两个<code>NN</code>认为自己都是AC的情况。客户端只会连接一个<code>ACNN</code>这个<code>ACNN</code>在<code>edits</code>所做的任何改变，另外一个<code>ACNN</code>都不会去读取进而导致了一个系统存在了多个目录树，导致了数据错乱等一系列问题。</p>
+<p>还可以通过编写fencing来避免脑裂。</p>
+<p><code>NFS</code>与<code>QJM</code>两种不同的共享edits方式，使得后者不需要担心脑裂。前者依靠网络，后者是共享文件。</p>
+<h3 id="_4">数据副本机制<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>我们提及过，对于一个分布式系统而言，我们是极不放心硬件的稳定性的。而<code>Hadoop</code>在设计时考虑到数据的安全与高效，数据文件默认在<code>HDFS</code>上存放三份，存储策略为<strong>本地一份</strong>，<strong>同机架内其它某一节点</strong>上一份，<strong>不同机架的某一节点</strong>上一份。这样如果本地数据损坏，节点可以从同一机架内的相邻节点拿到数据，速度肯定比从跨机架节点上拿数据要快；同时，如果整个机架的网络出现异常，也能保证在其它机架的节点上找到数据。确保了数据获取的高效。</p>
+<p>而对于一个服务器集群而言我们有同台服务器的概念（在同一台主机的硬件上），同一个机架（rack，共用很多资源，包括但不限于网络、电源）。</p>
+<p>对于同一个机架和不同机架的两个服务器，同一个机架的服务器可能因为使用同样的子网网络连接更直接，或使用同一根光缆，或者有更近的物理距离。因而交互的速度更快。</p>
+<h4 id="_5">副本距离<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
+<p><strong>同一台服务器</strong>的距离为0
+$$
+Distance(Rack1/D1, Rack1/D1)=0
+$$
+<strong>同一机架不同的服务器</strong>距离为2
+$$
+Distance(Rack1/D1, Rack1/D3)=2
+$$
+<strong>不同机架的服务器</strong>距离为4
+$$
+Distance(Rack1/D1, Rack2/D1)=4
+$$</p>
+<h4 id="_6">副本放置策略<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h4>
+<p>第一个副本（也就是原件）在本地机器</p>
+<p>第二个副本在远端机架的节点（也不一定是不同机架）</p>
+<p>第三个副本看之前的两个副本是否在同一机架，如果是则选择其他机架，否则选择和第一个副本相同机架的不同节点（确保前二、三副本在不同的机架上，使得在获取副本的时候有取舍）</p>
+<p>第四个及以上的副本，随机选择副本存放位置。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright © 2024 idonlikename
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

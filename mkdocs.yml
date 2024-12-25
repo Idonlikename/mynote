@@ -1,0 +1,107 @@
+#[info]
+site_name: TheLang's Note
+site_url: https://idonlikename.github.io/mynote
+site_author: idonlikename
+repo_url: https://github.com/Idonlikename/mynote
+copyright: Copyright © 2024 idonlikename
+
+#[UI]
+theme:
+  name: material
+  language: 'zh'
+  icon:
+    logo: material/notebook-outline
+
+  custom_dir: overrides
+  font: false
+  palette:
+    #primary: blue grey
+    - scheme: default # 日间模式
+      primary: grey # 主要颜色
+      accent: cyan # 链接等可交互元件的高亮色
+      toggle:
+        icon: material/weather-night # 图标
+        name: 切换至夜间模式 # 鼠标悬浮提示
+
+    - scheme: slate # 夜间模式
+      primary: black
+      accent: cyan
+      toggle:
+        icon: material/weather-sunny
+        name: 切换至日间模式
+    - features:  
+      - navigation.tabs #横向导航栏
+      - navigation.tabs.sticky  # 保证滚动时导航栏始终位于顶部
+
+
+#[navigtion]
+nav:
+  - Home: index.md
+  - Code:
+      - C: code/C/C语言学习.md
+      - Python: code/python/Python基础.md
+      - Java: code/java/Java基础编程.md
+
+  - Computer:
+      - OS:
+          进程管理: Computer/OS/进程管理/进程管理.md
+          内存管理: Computer/OS/内存管理/内存管理.md
+          文件管理: Computer/OS/文件管理/文件管理.md
+
+  - 计算机通识:
+      - 文件通识: Computer/通识课/计算机常识/文件相关.md
+      - 通识课: Computer/通识课/计算机常识/通识.md
+      - Missing Semester:
+          - Lec01: Computer/通识课/Missing Semester/Lec01Missing Semester.md
+          - Lec02: Computer/通识课/Missing Semester/Lec02shell工具与脚本.md
+
+  - base:
+      - 线性代数: Base/线性代数/线性代数.md
+  
+  - 分布式:
+      - hadoop: 分布式/hadoop.md
+      - hdfs: 分布式/hdfs/hdfs.md
+      - yarn: 分布式/yarn/yarn.md
+      - mapreduce: 分布式/mapreduce/mapreduce.md
+  
+  - pythonWeb:
+      - flask: pythonWeb/章节/chapter 1 http.md
+      - 前端: pythonWeb/章节/chapter 2 前端.md
+      - 框架: pythonWeb/章节/chapter 3 框架.md
+      - 交互: pythonWeb/章节/chapter 4 表单.md
+      - 数据库: pythonWeb/章节/chapter 5 数据库.md
+
+# markdown extension
+markdown_extensions:
+  - toc:
+      permalink: true
+      toc_depth: 4
+  - meta
+  - def_list
+  - attr_list
+  - md_in_html
+  - sane_lists
+  - admonition
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.snippets
+  - pymdownx.magiclink
+  - pymdownx.superfences
+  - pymdownx.inlinehilite
+
+  - pymdownx.tabbed:
+      alternate_style: true 
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.arithmatex:
+      generic: true
+      
+extra_javascript:
+
+  - javascripts/mathjax.js
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
