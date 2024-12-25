@@ -13,6 +13,10 @@
         <link rel="canonical" href="https://idonlikename.github.io/mynote/pythonWeb/%E7%AB%A0%E8%8A%82/chapter%203%20%E6%A1%86%E6%9E%B6/">
       
       
+        <link rel="prev" href="../chapter%202%20%E5%89%8D%E7%AB%AF/">
+      
+      
+        <link rel="next" href="../chapter%204%20%E8%A1%A8%E5%8D%95/">
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
@@ -20,7 +24,7 @@
     
     
       
-        <title>第三章 - TheLang's Note</title>
+        <title>框架 - TheLang's Note</title>
       
     
     
@@ -102,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              第三章
+              框架
             
           </span>
         </div>
@@ -636,7 +640,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Computer/通识课/Missing Semester/'Lec01Missing Semester.md'" class="md-nav__link">
+      <a href="../../../Computer/%E9%80%9A%E8%AF%86%E8%AF%BE/Missing%20Semester/Lec01Missing%20Semester/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -879,17 +883,19 @@
       
   
   
+    
   
   
+  
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
         
           
           <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
@@ -903,7 +909,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
             pythonWeb
@@ -938,7 +944,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../章节/'chapter 2 前端.md'" class="md-nav__link">
+      <a href="../chapter%202%20%E5%89%8D%E7%AB%AF/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -956,10 +962,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../章节/'chapter 3 框架.md'" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    框架
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -968,6 +994,137 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      模板
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="模板">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#jinja2" class="md-nav__link">
+    <span class="md-ellipsis">
+      jinja2
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="jinja2">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      基本语法
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      注入变量
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      生成链接
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      控制结构
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      模板的包含与继承
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      宏指令
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      全局对象
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      变量过滤器
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flask-bootstrap" class="md-nav__link">
+    <span class="md-ellipsis">
+      Flask-Bootstrap
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -980,7 +1137,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../章节/'chapter 4 表单.md'" class="md-nav__link">
+      <a href="../chapter%204%20%E8%A1%A8%E5%8D%95/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1001,7 +1158,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../章节/'chapter 5 数据库.md'" class="md-nav__link">
+      <a href="../chapter%205%20%E6%95%B0%E6%8D%AE%E5%BA%93/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
