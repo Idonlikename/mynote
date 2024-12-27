@@ -423,101 +423,16 @@
   
   
   
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
+    <li class="md-nav__item">
+      <a href="../../../Computer/OS/" class="md-nav__link">
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
-        
-          
-          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
-            
   
   <span class="md-ellipsis">
     OS
   </span>
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_1">
-            <span class="md-nav__icon md-icon"></span>
-            OS
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../Computer/OS/%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    进程管理
-  </span>
-  
-
       </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../Computer/OS/%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    内存管理
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../Computer/OS/%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86/%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    文件管理
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
     </li>
   
 
@@ -1439,10 +1354,12 @@
 <p>Flask对用户所访问的URL进行<strong>解析</strong>，找到<strong>相应的响应内容</strong>，将其<strong>返回到浏览器</strong>。</p>
 <p><strong>路由</strong>的作用是帮助Flask知晓URL对应的内容在哪儿。</p>
 <p>Flask运行的代码是由多个被<strong>装饰器</strong><code>app.route</code> 装饰的<strong>函数</strong>所组成。这个装饰器用于<strong>定义路由</strong>，由此确定URL和python函数之间的映射。</p>
-<div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><a href="#__codelineno-0-1"><span class="linenos" data-linenos="1 "></span></a><span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2"></a><a href="#__codelineno-0-2"><span class="linenos" data-linenos="2 "></span></a><span class="k">def</span> <span class="nf">hello</span><span class="p">():</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3"></a><a href="#__codelineno-0-3"><span class="linenos" data-linenos="3 "></span></a>    <span class="k">return</span> <span class="s1">&#39;hello world&#39;</span>
-</code></pre></div>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<span class="normal"><a href="#__codelineno-0-2">2</a></span>
+<span class="normal"><a href="#__codelineno-0-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="k">def</span> <span class="nf">hello</span><span class="p">():</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a>    <span class="k">return</span> <span class="s1">&#39;hello world&#39;</span>
+</code></pre></div></td></tr></table></div>
 <p>被路由装饰器装饰的函数我们称作：<strong>视图函数</strong></p>
 <p>用于返回URL请求的相应响应内容。</p>
 <h2 id="http">HTTP<a class="headerlink" href="#http" title="Permanent link">&para;</a></h2>
@@ -1537,11 +1454,11 @@
 <p>Flask默认以第2种种方式存储Session。即所有Session数据<strong>在服务器端加密</strong>，<strong>存储在浏览器的Cookie中</strong>。</p>
 <p><code>tips</code></p>
 <p>删除cookie操作</p>
-<div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><a href="#__codelineno-1-1"><span class="linenos" data-linenos="1 "></span></a><span class="n">resp</span><span class="o">.</span><span class="n">delete_cookie</span><span class="p">(</span><span class="s1">&#39;last_access_time&#39;</span><span class="p">)</span>
-</code></pre></div>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="n">resp</span><span class="o">.</span><span class="n">delete_cookie</span><span class="p">(</span><span class="s1">&#39;last_access_time&#39;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
 <p>删除session操作</p>
-<div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><a href="#__codelineno-2-1"><span class="linenos" data-linenos="1 "></span></a><span class="n">session</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;sign_in_time_prev&#39;</span><span class="p">)</span> <span class="c1">#删除特定的Session</span>
-</code></pre></div>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="n">session</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;sign_in_time_prev&#39;</span><span class="p">)</span> <span class="c1">#删除特定的Session</span>
+</code></pre></div></td></tr></table></div>
 <h1 id="_9">扩展补充<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h1>
 <h3 id="django">Django<a class="headerlink" href="#django" title="Permanent link">&para;</a></h3>
 <p>Django是一个开源的<strong>全栈Web框架</strong>，由Python语言编写。提供了许多内置功能和工具，适用于构建大型、复杂的 Web 应用。Django遵循MVC设计模式，即模型（Model）、视图（View）和控制器（Controller）</p>
