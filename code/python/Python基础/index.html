@@ -2337,18 +2337,18 @@
 <p><strong>返回值</strong>
  返回整型数据。</p>
 <p><strong>int()</strong> <strong>方法的实例：</strong></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">int</span><span class="p">()</span>        <span class="c1"># 不传入参数时，得到结果0</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="mi">0</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="nb">int</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>   <span class="c1"># 输入整数的时候，默认10进制</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="mi">3</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="nb">int</span><span class="p">(</span><span class="mf">3.6</span><span class="p">)</span>   <span class="c1">#  浮点数向下取值</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="mi">3</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="nb">int</span><span class="p">(</span><span class="s1">&#39;12&#39;</span><span class="p">,</span><span class="mi">16</span><span class="p">)</span>    <span class="c1"># 如果是带参数base的话，12要以字符串的形式进行输入，12 为 16进制</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="mi">18</span>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="nb">int</span><span class="p">(</span><span class="s1">&#39;0xa&#39;</span><span class="p">,</span><span class="mi">16</span><span class="p">)</span>   <span class="c1">#  16进制 转10进制</span>
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="mi">10</span> 
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="nb">int</span><span class="p">(</span><span class="s1">&#39;10&#39;</span><span class="p">,</span><span class="mi">8</span><span class="p">)</span>   <span class="c1"># 8进制转10进制</span>
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="mi">8</span>
+<div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><a href="#__codelineno-0-1"><span class="linenos" data-linenos=" 1 "></span></a><span class="nb">int</span><span class="p">()</span>        <span class="c1"># 不传入参数时，得到结果0</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a><a href="#__codelineno-0-2"><span class="linenos" data-linenos=" 2 "></span></a><span class="mi">0</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a><a href="#__codelineno-0-3"><span class="linenos" data-linenos=" 3 "></span></a><span class="nb">int</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>   <span class="c1"># 输入整数的时候，默认10进制</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a><a href="#__codelineno-0-4"><span class="linenos" data-linenos=" 4 "></span></a><span class="mi">3</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a><a href="#__codelineno-0-5"><span class="linenos" data-linenos=" 5 "></span></a><span class="nb">int</span><span class="p">(</span><span class="mf">3.6</span><span class="p">)</span>   <span class="c1">#  浮点数向下取值</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a><a href="#__codelineno-0-6"><span class="linenos" data-linenos=" 6 "></span></a><span class="mi">3</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7"></a><a href="#__codelineno-0-7"><span class="linenos" data-linenos=" 7 "></span></a><span class="nb">int</span><span class="p">(</span><span class="s1">&#39;12&#39;</span><span class="p">,</span><span class="mi">16</span><span class="p">)</span>    <span class="c1"># 如果是带参数base的话，12要以字符串的形式进行输入，12 为 16进制</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8"></a><a href="#__codelineno-0-8"><span class="linenos" data-linenos=" 8 "></span></a><span class="mi">18</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9"></a><a href="#__codelineno-0-9"><span class="linenos" data-linenos=" 9 "></span></a><span class="nb">int</span><span class="p">(</span><span class="s1">&#39;0xa&#39;</span><span class="p">,</span><span class="mi">16</span><span class="p">)</span>   <span class="c1">#  16进制 转10进制</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10"></a><a href="#__codelineno-0-10"><span class="linenos" data-linenos="10 "></span></a><span class="mi">10</span> 
+<a id="__codelineno-0-11" name="__codelineno-0-11"></a><a href="#__codelineno-0-11"><span class="linenos" data-linenos="11 "></span></a><span class="nb">int</span><span class="p">(</span><span class="s1">&#39;10&#39;</span><span class="p">,</span><span class="mi">8</span><span class="p">)</span>   <span class="c1"># 8进制转10进制</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12"></a><a href="#__codelineno-0-12"><span class="linenos" data-linenos="12 "></span></a><span class="mi">8</span>
 </code></pre></div>
 <p>可以通过Int(),float(),str(),chr()……<strong>强制改变字符的类型</strong>，但<strong>不会改变原先变量</strong>的类型，会<strong>创建一个新对象</strong>。</p>
 <p>bin()</p>
@@ -2408,50 +2408,50 @@
 <p><code>pow(x,p,y)</code>意味着x^p^ mod y可以直接计算</p>
 <h4 id="_8">短路<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h4>
 <p>判断时因为不符合唯一特殊输出的情况而中途停止的情况</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>print(num or num) / print(num and num)
+<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><a href="#__codelineno-1-1"><span class="linenos" data-linenos="1 "></span></a>print(num or num) / print(num and num)
 </code></pre></div>
 <p>在判断的时候，注意or/and的或与门。0为0，其他均看作1</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">Print</span><span class="p">(</span><span class="mi">0</span> <span class="ow">or</span> <span class="mi">3</span><span class="p">)</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="o">&gt;</span><span class="mi">3</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="n">Print</span><span class="p">(</span><span class="mi">2</span> <span class="ow">or</span> <span class="mi">4</span><span class="p">)</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="o">&gt;</span><span class="mi">2</span>
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="n">Print</span><span class="p">(</span><span class="mi">0</span> <span class="ow">and</span> <span class="mi">3</span><span class="p">)</span>
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="o">&gt;</span><span class="mi">0</span>
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="n">Print</span><span class="p">(</span><span class="mi">5</span> <span class="ow">and</span> <span class="mi">4</span><span class="p">)</span>
-<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="o">&gt;</span><span class="mi">4</span>
+<div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><a href="#__codelineno-2-1"><span class="linenos" data-linenos="1 "></span></a><span class="n">Print</span><span class="p">(</span><span class="mi">0</span> <span class="ow">or</span> <span class="mi">3</span><span class="p">)</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a><a href="#__codelineno-2-2"><span class="linenos" data-linenos="2 "></span></a><span class="o">&gt;</span><span class="mi">3</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a><a href="#__codelineno-2-3"><span class="linenos" data-linenos="3 "></span></a><span class="n">Print</span><span class="p">(</span><span class="mi">2</span> <span class="ow">or</span> <span class="mi">4</span><span class="p">)</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a><a href="#__codelineno-2-4"><span class="linenos" data-linenos="4 "></span></a><span class="o">&gt;</span><span class="mi">2</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5"></a><a href="#__codelineno-2-5"><span class="linenos" data-linenos="5 "></span></a><span class="n">Print</span><span class="p">(</span><span class="mi">0</span> <span class="ow">and</span> <span class="mi">3</span><span class="p">)</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6"></a><a href="#__codelineno-2-6"><span class="linenos" data-linenos="6 "></span></a><span class="o">&gt;</span><span class="mi">0</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7"></a><a href="#__codelineno-2-7"><span class="linenos" data-linenos="7 "></span></a><span class="n">Print</span><span class="p">(</span><span class="mi">5</span> <span class="ow">and</span> <span class="mi">4</span><span class="p">)</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8"></a><a href="#__codelineno-2-8"><span class="linenos" data-linenos="8 "></span></a><span class="o">&gt;</span><span class="mi">4</span>
 </code></pre></div>
 <p>因为<code>and</code>会在前后件都为1的时候输出1，而前件为0的情况会让直接停止判断输出0。其他情况均输出后面的值</p>
 <p><code>or</code>同理，在都为0的时候才会输出1，而前件为非0时会直接停止判断输出前件。前件为0则输出后件。</p>
 <p>Python 中判断对错的输出为 Ture和False(<strong>bool</strong>),可以用in（成员运算符）的方法来判断某个值是否在一个序列（列表，元组，字符串）之内</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">A</span><span class="o">=</span><span class="s1">&#39;156487&#39;</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="n">B</span><span class="o">=</span><span class="s1">&#39;1&#39;</span><span class="ow">in</span> <span class="n">A</span>
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="nb">print</span><span class="p">(</span><span class="n">B</span><span class="p">)</span>
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
-<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="o">&gt;</span><span class="kc">True</span>
+<div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><a href="#__codelineno-3-1"><span class="linenos" data-linenos="1 "></span></a><span class="n">A</span><span class="o">=</span><span class="s1">&#39;156487&#39;</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2"></a><a href="#__codelineno-3-2"><span class="linenos" data-linenos="2 "></span></a>
+<a id="__codelineno-3-3" name="__codelineno-3-3"></a><a href="#__codelineno-3-3"><span class="linenos" data-linenos="3 "></span></a><span class="n">B</span><span class="o">=</span><span class="s1">&#39;1&#39;</span><span class="ow">in</span> <span class="n">A</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4"></a><a href="#__codelineno-3-4"><span class="linenos" data-linenos="4 "></span></a>
+<a id="__codelineno-3-5" name="__codelineno-3-5"></a><a href="#__codelineno-3-5"><span class="linenos" data-linenos="5 "></span></a><span class="nb">print</span><span class="p">(</span><span class="n">B</span><span class="p">)</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6"></a><a href="#__codelineno-3-6"><span class="linenos" data-linenos="6 "></span></a>
+<a id="__codelineno-3-7" name="__codelineno-3-7"></a><a href="#__codelineno-3-7"><span class="linenos" data-linenos="7 "></span></a><span class="o">&gt;</span><span class="kc">True</span>
 </code></pre></div>
 <h4 id="_9"><strong>身份运算符</strong>以及内存位置<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h4>
 <p><strong>is  is not</strong></p>
 <p>身份运算符所判断的是两个变量的内存是不是相同。可以用 <code>id()</code>来查看变量的内存位置。</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">A</span><span class="o">=</span><span class="mi">5</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="n">B</span><span class="o">=</span><span class="mi">5</span>
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="n">Print</span><span class="p">(</span><span class="n">A</span> <span class="ow">is</span> <span class="n">B</span><span class="p">)</span> 
+<div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><a href="#__codelineno-4-1"><span class="linenos" data-linenos="1 "></span></a><span class="n">A</span><span class="o">=</span><span class="mi">5</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2"></a><a href="#__codelineno-4-2"><span class="linenos" data-linenos="2 "></span></a>
+<a id="__codelineno-4-3" name="__codelineno-4-3"></a><a href="#__codelineno-4-3"><span class="linenos" data-linenos="3 "></span></a><span class="n">B</span><span class="o">=</span><span class="mi">5</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4"></a><a href="#__codelineno-4-4"><span class="linenos" data-linenos="4 "></span></a>
+<a id="__codelineno-4-5" name="__codelineno-4-5"></a><a href="#__codelineno-4-5"><span class="linenos" data-linenos="5 "></span></a><span class="n">Print</span><span class="p">(</span><span class="n">A</span> <span class="ow">is</span> <span class="n">B</span><span class="p">)</span> 
 </code></pre></div>
 <p>输出<code>True</code></p>
 <p>说明指向的内存相同，也就是ID相同可以用<strong><code>id()</code></strong>来看A,B的内存位置。</p>
 <p><strong><u>在int，string，turple 三种变量类型的情况下地址相同</u></strong></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">A</span><span class="o">=</span><span class="p">{</span><span class="mi">1</span><span class="err">，</span><span class="mi">3</span><span class="err">，</span><span class="mi">2</span><span class="p">}</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="n">B</span><span class="o">=</span><span class="p">{</span><span class="mi">1</span><span class="err">，</span><span class="mi">2</span><span class="err">，</span><span class="mi">3</span><span class="p">}</span>
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="n">Print</span><span class="p">(</span><span class="n">A</span><span class="o">==</span><span class="n">B</span><span class="p">)</span> 
-<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="c1">#输出True</span>
-<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>
-<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="n">Print</span><span class="p">(</span><span class="n">A</span> <span class="ow">is</span> <span class="n">B</span><span class="p">)</span>
-<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="c1">#输出False，说明虽然值相同，但指向内存不同。其他如列表，字典，集合内存指向不同。</span>
+<div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><a href="#__codelineno-5-1"><span class="linenos" data-linenos="1 "></span></a><span class="n">A</span><span class="o">=</span><span class="p">{</span><span class="mi">1</span><span class="err">，</span><span class="mi">3</span><span class="err">，</span><span class="mi">2</span><span class="p">}</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2"></a><a href="#__codelineno-5-2"><span class="linenos" data-linenos="2 "></span></a>
+<a id="__codelineno-5-3" name="__codelineno-5-3"></a><a href="#__codelineno-5-3"><span class="linenos" data-linenos="3 "></span></a><span class="n">B</span><span class="o">=</span><span class="p">{</span><span class="mi">1</span><span class="err">，</span><span class="mi">2</span><span class="err">，</span><span class="mi">3</span><span class="p">}</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4"></a><a href="#__codelineno-5-4"><span class="linenos" data-linenos="4 "></span></a>
+<a id="__codelineno-5-5" name="__codelineno-5-5"></a><a href="#__codelineno-5-5"><span class="linenos" data-linenos="5 "></span></a><span class="n">Print</span><span class="p">(</span><span class="n">A</span><span class="o">==</span><span class="n">B</span><span class="p">)</span> 
+<a id="__codelineno-5-6" name="__codelineno-5-6"></a><a href="#__codelineno-5-6"><span class="linenos" data-linenos="6 "></span></a><span class="c1">#输出True</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7"></a><a href="#__codelineno-5-7"><span class="linenos" data-linenos="7 "></span></a>
+<a id="__codelineno-5-8" name="__codelineno-5-8"></a><a href="#__codelineno-5-8"><span class="linenos" data-linenos="8 "></span></a><span class="n">Print</span><span class="p">(</span><span class="n">A</span> <span class="ow">is</span> <span class="n">B</span><span class="p">)</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9"></a><a href="#__codelineno-5-9"><span class="linenos" data-linenos="9 "></span></a><span class="c1">#输出False，说明虽然值相同，但指向内存不同。其他如列表，字典，集合内存指向不同。</span>
 </code></pre></div>
 <h3 id="_10">深浅拷贝<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
 <p><strong>浅拷贝</strong>和<strong>深拷贝</strong>，浅拷贝只复制指向某个对象的指针，而不复制对象本身，新旧对象共享一块内存</p>
@@ -2465,11 +2465,11 @@
 <p><code>max()</code>和<code>min()</code>是Python内置函数，用于求取一个<strong>可迭代对象</strong>中的最大值和最小值。</p>
 <p><code>()</code>内需要传入一个<strong>可迭代对象</strong>作为参数</p>
 <p>其中max()返回可迭代对象中数值最大的元素，而min()则返回可迭代对象中数值最小的元素。</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">num</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="nb">max</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="nb">min</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="nb">print</span><span class="p">(</span><span class="nb">max</span><span class="p">,</span><span class="nb">min</span><span class="p">)</span>
-<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="o">&gt;</span><span class="mi">9</span> <span class="mi">0</span>
+<div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><a href="#__codelineno-6-1"><span class="linenos" data-linenos="1 "></span></a><span class="n">num</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2"></a><a href="#__codelineno-6-2"><span class="linenos" data-linenos="2 "></span></a><span class="nb">max</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3"></a><a href="#__codelineno-6-3"><span class="linenos" data-linenos="3 "></span></a><span class="nb">min</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4"></a><a href="#__codelineno-6-4"><span class="linenos" data-linenos="4 "></span></a><span class="nb">print</span><span class="p">(</span><span class="nb">max</span><span class="p">,</span><span class="nb">min</span><span class="p">)</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5"></a><a href="#__codelineno-6-5"><span class="linenos" data-linenos="5 "></span></a><span class="o">&gt;</span><span class="mi">9</span> <span class="mi">0</span>
 </code></pre></div>
 <p>这两个函数可以接受任何可迭代对象作为参数，包括列表、元组、集合等等。在使用时，需要注意<strong>参数类型必须是一致的</strong>。</p>
 <p>也可以用于求多个数字间最大值和最小值</p>
@@ -2524,31 +2524,31 @@ a=1 if x&gt;5 <strong>else</strong> **b</p>
 <p><code>list1 = list(map(int ,input().split()))</code>#读入一行由空格分隔的整数，将其存入list1列表中</p>
 <p>map() 函数会根据 function 的要求，对iterable 中的每个元素进行计算，返回由函数计算出来的新数据所组成的新迭代对象，其中每个元素都是计算后的结果。（所以对于判断类型的会返回True和False，需要靠filter来过滤）</p>
 <p>举个例子：假设我们有一个列表 a = [1, 2, 3, 4, 5]，现在需要将其中的每个元素都加上 1，可以使用 map() 函数来实现：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
-<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="n">b</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">a</span><span class="p">))</span>
-<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>
-<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
-<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="o">&gt;</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+<div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a><a href="#__codelineno-7-1"><span class="linenos" data-linenos="1 "></span></a><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2"></a><a href="#__codelineno-7-2"><span class="linenos" data-linenos="2 "></span></a>
+<a id="__codelineno-7-3" name="__codelineno-7-3"></a><a href="#__codelineno-7-3"><span class="linenos" data-linenos="3 "></span></a><span class="n">b</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">a</span><span class="p">))</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4"></a><a href="#__codelineno-7-4"><span class="linenos" data-linenos="4 "></span></a>
+<a id="__codelineno-7-5" name="__codelineno-7-5"></a><a href="#__codelineno-7-5"><span class="linenos" data-linenos="5 "></span></a><span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6"></a><a href="#__codelineno-7-6"><span class="linenos" data-linenos="6 "></span></a><span class="o">&gt;</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
 </code></pre></div>
 <p>在这个例子中，我们首先定义了一个匿名函数 lambda x: x+1，该函数的作用是将传入的参数加 1，然后  通过 map() 函数将这个函数应用到列表 a 中的每个元素上，并将结果存放在列表 b 中。最后，我们使用 list() 将返回的迭代器对象转换为列表类型并打印输出。</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="err">“</span><span class="mi">1</span><span class="err">”</span><span class="p">,</span><span class="err">“</span><span class="mi">2</span><span class="err">”</span><span class="p">,</span><span class="err">“</span><span class="mi">3</span><span class="err">”</span><span class="p">,</span><span class="err">“</span><span class="mi">4</span><span class="err">”</span><span class="p">]</span>
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
-<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="n">b</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="n">a</span><span class="p">))</span>
-<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>
-<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
-<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>
-<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="o">&gt;</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
+<div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a><a href="#__codelineno-8-1"><span class="linenos" data-linenos="1 "></span></a><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="err">“</span><span class="mi">1</span><span class="err">”</span><span class="p">,</span><span class="err">“</span><span class="mi">2</span><span class="err">”</span><span class="p">,</span><span class="err">“</span><span class="mi">3</span><span class="err">”</span><span class="p">,</span><span class="err">“</span><span class="mi">4</span><span class="err">”</span><span class="p">]</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2"></a><a href="#__codelineno-8-2"><span class="linenos" data-linenos="2 "></span></a>
+<a id="__codelineno-8-3" name="__codelineno-8-3"></a><a href="#__codelineno-8-3"><span class="linenos" data-linenos="3 "></span></a><span class="n">b</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="n">a</span><span class="p">))</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4"></a><a href="#__codelineno-8-4"><span class="linenos" data-linenos="4 "></span></a>
+<a id="__codelineno-8-5" name="__codelineno-8-5"></a><a href="#__codelineno-8-5"><span class="linenos" data-linenos="5 "></span></a><span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6"></a><a href="#__codelineno-8-6"><span class="linenos" data-linenos="6 "></span></a>
+<a id="__codelineno-8-7" name="__codelineno-8-7"></a><a href="#__codelineno-8-7"><span class="linenos" data-linenos="7 "></span></a><span class="o">&gt;</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
 </code></pre></div>
 <p>需要注意的是，map() 函数返回的是一个迭代器对象，如果需要得到列表类型的结果，则需要list()将其转换为列表类型。</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="n">lst1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
-<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
-<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="n">lst2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
-<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>
-<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="n">result</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">,</span> <span class="n">lst1</span><span class="p">,</span> <span class="n">lst2</span><span class="p">))</span>
-<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>
-<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>  
-<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="o">&gt;</span><span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
+<div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a><a href="#__codelineno-9-1"><span class="linenos" data-linenos="1 "></span></a><span class="n">lst1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2"></a><a href="#__codelineno-9-2"><span class="linenos" data-linenos="2 "></span></a>
+<a id="__codelineno-9-3" name="__codelineno-9-3"></a><a href="#__codelineno-9-3"><span class="linenos" data-linenos="3 "></span></a><span class="n">lst2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4"></a><a href="#__codelineno-9-4"><span class="linenos" data-linenos="4 "></span></a>
+<a id="__codelineno-9-5" name="__codelineno-9-5"></a><a href="#__codelineno-9-5"><span class="linenos" data-linenos="5 "></span></a><span class="n">result</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">,</span> <span class="n">lst1</span><span class="p">,</span> <span class="n">lst2</span><span class="p">))</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6"></a><a href="#__codelineno-9-6"><span class="linenos" data-linenos="6 "></span></a>
+<a id="__codelineno-9-7" name="__codelineno-9-7"></a><a href="#__codelineno-9-7"><span class="linenos" data-linenos="7 "></span></a><span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>  
+<a id="__codelineno-9-8" name="__codelineno-9-8"></a><a href="#__codelineno-9-8"><span class="linenos" data-linenos="8 "></span></a><span class="o">&gt;</span><span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
 </code></pre></div>
 <p><code>Filter():</code></p>
 <p>filter过滤函数，和map()类似，也接收一个函数和一个序列，但是和map()不同的是，filter()对于引入的判断函数会依次作用于每个元素，判断函数会返回序列中True的数据（map对于判断函数只会返回Ture和False），处理类型的函数会直接对序列进行处理（可以理解处理完的数据本身还是True的）。接收序列，返回符合函数的序列，需要用序列的类型方法改变序列的类型。</p>
@@ -2559,59 +2559,59 @@ a=1 if x&gt;5 <strong>else</strong> **b</p>
 <p>把一个函数作用在一个序列上，这个函数必须接收两个参数，reduce把结果继续和序列的下一个元素做累积计算:</p>
 <p>reduce(f, [x1,x2,x3,x4,x5]) = f(f(f(x1,x2),x3),x4) ---作用形象表达</p>
 <p>python3中不是内置函数，需要导入：<strong><code>from functools import reduce</code></strong></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">reduce</span>
-<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="k">def</span> <span class="nf">multi</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
-<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>
-<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>  <span class="k">return</span> <span class="n">x</span><span class="o">*</span><span class="n">y</span>
-<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>
-<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
-<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>
-<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>  <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
-<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>
-<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a><span class="nb">print</span><span class="p">(</span><span class="n">reduce</span><span class="p">(</span><span class="n">multi</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">)))</span>    <span class="c1"># 累乘</span>
-<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a>
-<a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a><span class="nb">print</span><span class="p">(</span><span class="n">reduce</span><span class="p">(</span><span class="n">add</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]))</span>    <span class="c1"># 累加</span>
-<a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a>
-<a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a><span class="o">&gt;&gt;</span><span class="mi">6</span> <span class="mi">15</span>
+<div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1"></a><a href="#__codelineno-10-1"><span class="linenos" data-linenos=" 1 "></span></a><span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">reduce</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2"></a><a href="#__codelineno-10-2"><span class="linenos" data-linenos=" 2 "></span></a><span class="k">def</span> <span class="nf">multi</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3"></a><a href="#__codelineno-10-3"><span class="linenos" data-linenos=" 3 "></span></a>
+<a id="__codelineno-10-4" name="__codelineno-10-4"></a><a href="#__codelineno-10-4"><span class="linenos" data-linenos=" 4 "></span></a>  <span class="k">return</span> <span class="n">x</span><span class="o">*</span><span class="n">y</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5"></a><a href="#__codelineno-10-5"><span class="linenos" data-linenos=" 5 "></span></a>
+<a id="__codelineno-10-6" name="__codelineno-10-6"></a><a href="#__codelineno-10-6"><span class="linenos" data-linenos=" 6 "></span></a><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+<a id="__codelineno-10-7" name="__codelineno-10-7"></a><a href="#__codelineno-10-7"><span class="linenos" data-linenos=" 7 "></span></a>
+<a id="__codelineno-10-8" name="__codelineno-10-8"></a><a href="#__codelineno-10-8"><span class="linenos" data-linenos=" 8 "></span></a>  <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
+<a id="__codelineno-10-9" name="__codelineno-10-9"></a><a href="#__codelineno-10-9"><span class="linenos" data-linenos=" 9 "></span></a>
+<a id="__codelineno-10-10" name="__codelineno-10-10"></a><a href="#__codelineno-10-10"><span class="linenos" data-linenos="10 "></span></a><span class="nb">print</span><span class="p">(</span><span class="n">reduce</span><span class="p">(</span><span class="n">multi</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">)))</span>    <span class="c1"># 累乘</span>
+<a id="__codelineno-10-11" name="__codelineno-10-11"></a><a href="#__codelineno-10-11"><span class="linenos" data-linenos="11 "></span></a>
+<a id="__codelineno-10-12" name="__codelineno-10-12"></a><a href="#__codelineno-10-12"><span class="linenos" data-linenos="12 "></span></a><span class="nb">print</span><span class="p">(</span><span class="n">reduce</span><span class="p">(</span><span class="n">add</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]))</span>    <span class="c1"># 累加</span>
+<a id="__codelineno-10-13" name="__codelineno-10-13"></a><a href="#__codelineno-10-13"><span class="linenos" data-linenos="13 "></span></a>
+<a id="__codelineno-10-14" name="__codelineno-10-14"></a><a href="#__codelineno-10-14"><span class="linenos" data-linenos="14 "></span></a><span class="o">&gt;&gt;</span><span class="mi">6</span> <span class="mi">15</span>
 </code></pre></div>
 <p><strong>.split()</strong></p>
 <p>在Python中，split()函数是字符串类型的内置函数，用于将一个字符串分割成多个子字符串，并将结果存储在一个列表中(返回一个列表)。</p>
 <p>按照空格分割字符串，默认情况下，函数会按照空格来分割字符串，返回值为分割后的列表。例如：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;Hello World!&quot;</span>
-<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>
-<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
-<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>
-<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="o">&gt;&gt;</span><span class="p">[</span><span class="s1">&#39;Hello&#39;</span><span class="p">,</span> <span class="s1">&#39;World!&#39;</span><span class="p">]</span>
+<div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1"></a><a href="#__codelineno-11-1"><span class="linenos" data-linenos="1 "></span></a><span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;Hello World!&quot;</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2"></a><a href="#__codelineno-11-2"><span class="linenos" data-linenos="2 "></span></a>
+<a id="__codelineno-11-3" name="__codelineno-11-3"></a><a href="#__codelineno-11-3"><span class="linenos" data-linenos="3 "></span></a><span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+<a id="__codelineno-11-4" name="__codelineno-11-4"></a><a href="#__codelineno-11-4"><span class="linenos" data-linenos="4 "></span></a>
+<a id="__codelineno-11-5" name="__codelineno-11-5"></a><a href="#__codelineno-11-5"><span class="linenos" data-linenos="5 "></span></a><span class="o">&gt;&gt;</span><span class="p">[</span><span class="s1">&#39;Hello&#39;</span><span class="p">,</span> <span class="s1">&#39;World!&#39;</span><span class="p">]</span>
 </code></pre></div>
 <p>按照指定的分隔符分割字符串，函数可以根据用户指定的分隔符来分割字符串，返回值也是分割后的列表。例如：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;apple,banana,orange&quot;</span>
-<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>
-<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">))</span>
-<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>
-<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="o">&gt;&gt;</span><span class="p">[</span><span class="s1">&#39;apple&#39;</span><span class="p">,</span> <span class="s1">&#39;banana&#39;</span><span class="p">,</span> <span class="s1">&#39;orange&#39;</span><span class="p">]</span>
+<div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1"></a><a href="#__codelineno-12-1"><span class="linenos" data-linenos="1 "></span></a><span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;apple,banana,orange&quot;</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2"></a><a href="#__codelineno-12-2"><span class="linenos" data-linenos="2 "></span></a>
+<a id="__codelineno-12-3" name="__codelineno-12-3"></a><a href="#__codelineno-12-3"><span class="linenos" data-linenos="3 "></span></a><span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">))</span>
+<a id="__codelineno-12-4" name="__codelineno-12-4"></a><a href="#__codelineno-12-4"><span class="linenos" data-linenos="4 "></span></a>
+<a id="__codelineno-12-5" name="__codelineno-12-5"></a><a href="#__codelineno-12-5"><span class="linenos" data-linenos="5 "></span></a><span class="o">&gt;&gt;</span><span class="p">[</span><span class="s1">&#39;apple&#39;</span><span class="p">,</span> <span class="s1">&#39;banana&#39;</span><span class="p">,</span> <span class="s1">&#39;orange&#39;</span><span class="p">]</span>
 </code></pre></div>
 <p>按照指定的分隔符分割字符串，并限制分割次数，如果希望只分割一部分字符串，则可以使用可选参数maxsplit来指定最大分割次数。例如：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;apple,banana,orange,pear&quot;</span>
-<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>
-<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
-<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>
-<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="o">&gt;</span><span class="p">[</span><span class="s1">&#39;apple&#39;</span><span class="p">,</span> <span class="s1">&#39;banana&#39;</span><span class="p">,</span> <span class="s1">&#39;orange,pear&#39;</span><span class="p">]</span>
+<div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1"></a><a href="#__codelineno-13-1"><span class="linenos" data-linenos="1 "></span></a><span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;apple,banana,orange,pear&quot;</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2"></a><a href="#__codelineno-13-2"><span class="linenos" data-linenos="2 "></span></a>
+<a id="__codelineno-13-3" name="__codelineno-13-3"></a><a href="#__codelineno-13-3"><span class="linenos" data-linenos="3 "></span></a><span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+<a id="__codelineno-13-4" name="__codelineno-13-4"></a><a href="#__codelineno-13-4"><span class="linenos" data-linenos="4 "></span></a>
+<a id="__codelineno-13-5" name="__codelineno-13-5"></a><a href="#__codelineno-13-5"><span class="linenos" data-linenos="5 "></span></a><span class="o">&gt;</span><span class="p">[</span><span class="s1">&#39;apple&#39;</span><span class="p">,</span> <span class="s1">&#39;banana&#39;</span><span class="p">,</span> <span class="s1">&#39;orange,pear&#39;</span><span class="p">]</span>
 </code></pre></div>
 <p>按照换行符分割字符串，如果需要按照行来分割字符串，则可以使用换行符（\n）作为分隔符。例如：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;Hello</span><span class="se">\n</span><span class="s2">World!</span><span class="se">\n</span><span class="s2">Welcome to Python!&quot;</span>
-<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>
-<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">))</span>
-<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>
-<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="o">&gt;</span><span class="p">[</span><span class="s1">&#39;Hello&#39;</span><span class="p">,</span> <span class="s1">&#39;World!&#39;</span><span class="p">,</span> <span class="s1">&#39;Welcome to Python!&#39;</span><span class="p">]</span>
+<div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1"></a><a href="#__codelineno-14-1"><span class="linenos" data-linenos="1 "></span></a><span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;Hello</span><span class="se">\n</span><span class="s2">World!</span><span class="se">\n</span><span class="s2">Welcome to Python!&quot;</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2"></a><a href="#__codelineno-14-2"><span class="linenos" data-linenos="2 "></span></a>
+<a id="__codelineno-14-3" name="__codelineno-14-3"></a><a href="#__codelineno-14-3"><span class="linenos" data-linenos="3 "></span></a><span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">))</span>
+<a id="__codelineno-14-4" name="__codelineno-14-4"></a><a href="#__codelineno-14-4"><span class="linenos" data-linenos="4 "></span></a>
+<a id="__codelineno-14-5" name="__codelineno-14-5"></a><a href="#__codelineno-14-5"><span class="linenos" data-linenos="5 "></span></a><span class="o">&gt;</span><span class="p">[</span><span class="s1">&#39;Hello&#39;</span><span class="p">,</span> <span class="s1">&#39;World!&#39;</span><span class="p">,</span> <span class="s1">&#39;Welcome to Python!&#39;</span><span class="p">]</span>
 </code></pre></div>
 <p>总结：以上就是 python 中 split() 函数的几种用法，通过不同的分隔符和参数，可以实现不同的字符串分割操作。</p>
 <p><strong>进制转换</strong></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="n">a</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">))</span>
-<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;输入的十进制数: </span><span class="si">%d</span><span class="s2">&quot;</span><span class="o">%</span><span class="n">a</span><span class="p">)</span>
-<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="n">b</span><span class="o">=</span><span class="nb">bin</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="n">c</span><span class="o">=</span><span class="nb">oct</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="n">d</span><span class="o">=</span><span class="nb">hex</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;二进制: </span><span class="si">{}</span><span class="s2">八进制: </span><span class="si">{}</span><span class="s2">十六进制: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">,</span><span class="n">d</span><span class="p">))</span>
+<div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1"></a><a href="#__codelineno-15-1"><span class="linenos" data-linenos="1 "></span></a><span class="n">a</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">))</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2"></a><a href="#__codelineno-15-2"><span class="linenos" data-linenos="2 "></span></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;输入的十进制数: </span><span class="si">%d</span><span class="s2">&quot;</span><span class="o">%</span><span class="n">a</span><span class="p">)</span>
+<a id="__codelineno-15-3" name="__codelineno-15-3"></a><a href="#__codelineno-15-3"><span class="linenos" data-linenos="3 "></span></a><span class="n">b</span><span class="o">=</span><span class="nb">bin</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<a id="__codelineno-15-4" name="__codelineno-15-4"></a><a href="#__codelineno-15-4"><span class="linenos" data-linenos="4 "></span></a><span class="n">c</span><span class="o">=</span><span class="nb">oct</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<a id="__codelineno-15-5" name="__codelineno-15-5"></a><a href="#__codelineno-15-5"><span class="linenos" data-linenos="5 "></span></a><span class="n">d</span><span class="o">=</span><span class="nb">hex</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<a id="__codelineno-15-6" name="__codelineno-15-6"></a><a href="#__codelineno-15-6"><span class="linenos" data-linenos="6 "></span></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;二进制: </span><span class="si">{}</span><span class="s2">八进制: </span><span class="si">{}</span><span class="s2">十六进制: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">,</span><span class="n">d</span><span class="p">))</span>
 </code></pre></div>
 <p>bin()#十进制转化为二进制%b</p>
 <p>oct()#十进制转化为八进制%o</p>
@@ -2674,9 +2674,9 @@ a=1 if x&gt;5 <strong>else</strong> **b</p>
 </table>
 <h3 id="_15">范围<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h3>
 <p><strong>range(start,end,step)</strong>#  range可以从start所在位置开始取一直取到end-1的位置，他是由，做分隔符号的，与切片操作中的：做分隔符号要区分开</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">2</span><span class="p">):</span>
-<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">end</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
-<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="mi">1</span> <span class="mi">3</span> <span class="mi">5</span> <span class="mi">7</span> <span class="mi">9</span>
+<div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1"></a><a href="#__codelineno-16-1"><span class="linenos" data-linenos="1 "></span></a><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">2</span><span class="p">):</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2"></a><a href="#__codelineno-16-2"><span class="linenos" data-linenos="2 "></span></a>    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">end</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
+<a id="__codelineno-16-3" name="__codelineno-16-3"></a><a href="#__codelineno-16-3"><span class="linenos" data-linenos="3 "></span></a><span class="mi">1</span> <span class="mi">3</span> <span class="mi">5</span> <span class="mi">7</span> <span class="mi">9</span>
 </code></pre></div>
 <h2 id="_16">位运算：二进制运算<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h2>
 <p>逻辑运算符: and or not </p>
@@ -2689,28 +2689,28 @@ a=1 if x&gt;5 <strong>else</strong> **b</p>
 <p>对于能转换为正数相加的情况，得到的补码答案即为原码</p>
 <p>其中超过八位的部分，直接去除，但要注意是否会超出计算范围。</p>
 <p>&amp;与运算  |或运算  ^异或运算  ~反码 </p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="n">a</span> <span class="o">=</span> <span class="mi">2</span>  <span class="c1"># 0000 0010 第一位是判断正负值的</span>
-<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="n">b</span> <span class="o">=</span> <span class="mi">3</span>  <span class="c1"># 0000 0011</span>
-<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">&amp;</span> <span class="n">b</span><span class="p">)</span>  <span class="c1"># 0010</span>
-<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">|</span> <span class="n">b</span><span class="p">)</span>  <span class="c1"># 0011</span>
-<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">^</span> <span class="n">b</span><span class="p">)</span>  <span class="c1"># 0001</span>
-<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="nb">print</span><span class="p">(</span><span class="o">~</span><span class="n">a</span><span class="p">)</span>  <span class="c1"># 按位取反运算符：对数据的每个二进制位取反,即把1变为0,把0变为1 。~x 类似于 -x-1</span>
+<div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1"></a><a href="#__codelineno-17-1"><span class="linenos" data-linenos="1 "></span></a><span class="n">a</span> <span class="o">=</span> <span class="mi">2</span>  <span class="c1"># 0000 0010 第一位是判断正负值的</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2"></a><a href="#__codelineno-17-2"><span class="linenos" data-linenos="2 "></span></a><span class="n">b</span> <span class="o">=</span> <span class="mi">3</span>  <span class="c1"># 0000 0011</span>
+<a id="__codelineno-17-3" name="__codelineno-17-3"></a><a href="#__codelineno-17-3"><span class="linenos" data-linenos="3 "></span></a><span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">&amp;</span> <span class="n">b</span><span class="p">)</span>  <span class="c1"># 0010</span>
+<a id="__codelineno-17-4" name="__codelineno-17-4"></a><a href="#__codelineno-17-4"><span class="linenos" data-linenos="4 "></span></a><span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">|</span> <span class="n">b</span><span class="p">)</span>  <span class="c1"># 0011</span>
+<a id="__codelineno-17-5" name="__codelineno-17-5"></a><a href="#__codelineno-17-5"><span class="linenos" data-linenos="5 "></span></a><span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">^</span> <span class="n">b</span><span class="p">)</span>  <span class="c1"># 0001</span>
+<a id="__codelineno-17-6" name="__codelineno-17-6"></a><a href="#__codelineno-17-6"><span class="linenos" data-linenos="6 "></span></a><span class="nb">print</span><span class="p">(</span><span class="o">~</span><span class="n">a</span><span class="p">)</span>  <span class="c1"># 按位取反运算符：对数据的每个二进制位取反,即把1变为0,把0变为1 。~x 类似于 -x-1</span>
 </code></pre></div>
 <p>与运算就是每位与门计算（有0为0）</p>
 <p>或运算就是每位或门计算（有1为1）</p>
 <p>异或运算就是⊕（“异或”运算符）（不同取1相同取0）</p>
 <p>&lt;&lt;左位移，&gt;&gt;右位移，前件为处理的二进制数，后件为位移数</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="nb">print</span><span class="p">(</span><span class="mi">2</span><span class="o">&lt;&lt;</span><span class="mi">2</span><span class="p">)</span>  <span class="c1"># 0010左移两位成1000得出8</span>
+<div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1"></a><a href="#__codelineno-18-1"><span class="linenos" data-linenos="1 "></span></a><span class="nb">print</span><span class="p">(</span><span class="mi">2</span><span class="o">&lt;&lt;</span><span class="mi">2</span><span class="p">)</span>  <span class="c1"># 0010左移两位成1000得出8</span>
 </code></pre></div>
 <p>快速计算就是，原本2^(原先+后件）</p>
 <p>计算的优先级：计算&gt;比较&gt;逻辑&gt;赋值</p>
 <h3 id="_17">进制转化<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="n">a</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">))</span>
-<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;输入的十进制数: </span><span class="si">%d</span><span class="s2">&quot;</span><span class="o">%</span><span class="n">a</span><span class="p">)</span>
-<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="n">b</span><span class="o">=</span><span class="nb">bin</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-<a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="n">c</span><span class="o">=</span><span class="nb">oct</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-<a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a><span class="n">d</span><span class="o">=</span><span class="nb">hex</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-<a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;二进制: </span><span class="si">{}</span><span class="s2">八进制: </span><span class="si">{}</span><span class="s2">十六进制: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">,</span><span class="n">d</span><span class="p">))</span>
+<div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1"></a><a href="#__codelineno-19-1"><span class="linenos" data-linenos="1 "></span></a><span class="n">a</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">))</span>
+<a id="__codelineno-19-2" name="__codelineno-19-2"></a><a href="#__codelineno-19-2"><span class="linenos" data-linenos="2 "></span></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;输入的十进制数: </span><span class="si">%d</span><span class="s2">&quot;</span><span class="o">%</span><span class="n">a</span><span class="p">)</span>
+<a id="__codelineno-19-3" name="__codelineno-19-3"></a><a href="#__codelineno-19-3"><span class="linenos" data-linenos="3 "></span></a><span class="n">b</span><span class="o">=</span><span class="nb">bin</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<a id="__codelineno-19-4" name="__codelineno-19-4"></a><a href="#__codelineno-19-4"><span class="linenos" data-linenos="4 "></span></a><span class="n">c</span><span class="o">=</span><span class="nb">oct</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<a id="__codelineno-19-5" name="__codelineno-19-5"></a><a href="#__codelineno-19-5"><span class="linenos" data-linenos="5 "></span></a><span class="n">d</span><span class="o">=</span><span class="nb">hex</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<a id="__codelineno-19-6" name="__codelineno-19-6"></a><a href="#__codelineno-19-6"><span class="linenos" data-linenos="6 "></span></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;二进制: </span><span class="si">{}</span><span class="s2">八进制: </span><span class="si">{}</span><span class="s2">十六进制: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">,</span><span class="n">d</span><span class="p">))</span>
 </code></pre></div>
 <p><code>bin()</code> #十进制转化为二进制 格式采用<code>%b</code></p>
 <p><code>oct()</code> #十进制转化为八进制 格式采用<code>%o</code></p>
@@ -2734,23 +2734,23 @@ a=1 if x&gt;5 <strong>else</strong> **b</p>
 <p><code>break</code> 跳出循环，<code>continue</code>跳过当前循环</p>
 <h3 id="_19">三目<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h3>
 <p>个人认为在python中是否重要的一个写法，帮助减少行数，增加代码的易读性（在熟练之后）</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="n">eg</span><span class="p">:</span> <span class="n">m</span> <span class="o">=</span> <span class="n">a</span> <span class="k">if</span> <span class="n">a</span><span class="o">&gt;</span><span class="n">b</span> <span class="k">else</span> <span class="n">b</span>
+<div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1"></a><a href="#__codelineno-20-1"><span class="linenos" data-linenos="1 "></span></a><span class="n">eg</span><span class="p">:</span> <span class="n">m</span> <span class="o">=</span> <span class="n">a</span> <span class="k">if</span> <span class="n">a</span><span class="o">&gt;</span><span class="n">b</span> <span class="k">else</span> <span class="n">b</span>
 </code></pre></div>
 <p>格式可以归为：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="n">result_1</span> <span class="k">if</span> <span class="n">conditon</span> <span class="k">else</span> <span class="n">result_2</span>
+<div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1"></a><a href="#__codelineno-21-1"><span class="linenos" data-linenos="1 "></span></a><span class="n">result_1</span> <span class="k">if</span> <span class="n">conditon</span> <span class="k">else</span> <span class="n">result_2</span>
 </code></pre></div>
 <h3 id="match">Match<a class="headerlink" href="#match" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="k">match</span> <span class="n">status</span><span class="p">:</span>
-<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>        <span class="k">case</span> <span class="mi">400</span><span class="p">:</span>
-<a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a>            <span class="k">return</span> <span class="s1">&#39;Bad request&#39;</span>
-<a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a>        <span class="k">case</span> <span class="mi">401</span><span class="p">:</span>
-<a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a>            <span class="k">return</span> <span class="s1">&#39;Unauthorized&#39;</span>
-<a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a>        <span class="k">case</span> <span class="mi">403</span><span class="p">:</span>
-<a id="__codelineno-22-7" name="__codelineno-22-7" href="#__codelineno-22-7"></a>            <span class="k">return</span> <span class="s1">&#39;Forbidden&#39;</span>
-<a id="__codelineno-22-8" name="__codelineno-22-8" href="#__codelineno-22-8"></a>        <span class="k">case</span> <span class="mi">404</span><span class="p">:</span>
-<a id="__codelineno-22-9" name="__codelineno-22-9" href="#__codelineno-22-9"></a>            <span class="k">return</span> <span class="s1">&#39;Not found&#39;</span>
-<a id="__codelineno-22-10" name="__codelineno-22-10" href="#__codelineno-22-10"></a>        <span class="k">case</span><span class="w"> </span><span class="k">_</span><span class="p">:</span>
-<a id="__codelineno-22-11" name="__codelineno-22-11" href="#__codelineno-22-11"></a>            <span class="k">return</span> <span class="s1">&#39;Unknown status code&#39;</span>
+<div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1"></a><a href="#__codelineno-22-1"><span class="linenos" data-linenos=" 1 "></span></a><span class="k">match</span> <span class="n">status</span><span class="p">:</span>
+<a id="__codelineno-22-2" name="__codelineno-22-2"></a><a href="#__codelineno-22-2"><span class="linenos" data-linenos=" 2 "></span></a>        <span class="k">case</span> <span class="mi">400</span><span class="p">:</span>
+<a id="__codelineno-22-3" name="__codelineno-22-3"></a><a href="#__codelineno-22-3"><span class="linenos" data-linenos=" 3 "></span></a>            <span class="k">return</span> <span class="s1">&#39;Bad request&#39;</span>
+<a id="__codelineno-22-4" name="__codelineno-22-4"></a><a href="#__codelineno-22-4"><span class="linenos" data-linenos=" 4 "></span></a>        <span class="k">case</span> <span class="mi">401</span><span class="p">:</span>
+<a id="__codelineno-22-5" name="__codelineno-22-5"></a><a href="#__codelineno-22-5"><span class="linenos" data-linenos=" 5 "></span></a>            <span class="k">return</span> <span class="s1">&#39;Unauthorized&#39;</span>
+<a id="__codelineno-22-6" name="__codelineno-22-6"></a><a href="#__codelineno-22-6"><span class="linenos" data-linenos=" 6 "></span></a>        <span class="k">case</span> <span class="mi">403</span><span class="p">:</span>
+<a id="__codelineno-22-7" name="__codelineno-22-7"></a><a href="#__codelineno-22-7"><span class="linenos" data-linenos=" 7 "></span></a>            <span class="k">return</span> <span class="s1">&#39;Forbidden&#39;</span>
+<a id="__codelineno-22-8" name="__codelineno-22-8"></a><a href="#__codelineno-22-8"><span class="linenos" data-linenos=" 8 "></span></a>        <span class="k">case</span> <span class="mi">404</span><span class="p">:</span>
+<a id="__codelineno-22-9" name="__codelineno-22-9"></a><a href="#__codelineno-22-9"><span class="linenos" data-linenos=" 9 "></span></a>            <span class="k">return</span> <span class="s1">&#39;Not found&#39;</span>
+<a id="__codelineno-22-10" name="__codelineno-22-10"></a><a href="#__codelineno-22-10"><span class="linenos" data-linenos="10 "></span></a>        <span class="k">case</span><span class="w"> </span><span class="k">_</span><span class="p">:</span>
+<a id="__codelineno-22-11" name="__codelineno-22-11"></a><a href="#__codelineno-22-11"><span class="linenos" data-linenos="11 "></span></a>            <span class="k">return</span> <span class="s1">&#39;Unknown status code&#39;</span>
 </code></pre></div>
 <p>语句格式，类似于C语言，<strong>区别在于不会成功后全输出</strong>    <mark>仅支持3.10以上版本</mark></p>
 <p>Python 语言的循环结构包括两种：</p>
@@ -2802,33 +2802,33 @@ a=1 if x&gt;5 <strong>else</strong> **b</p>
 <p><code>join()</code>同样适用于方法适用于在字符串之间插入分隔符的情况，可以用于<strong>任何可迭代对象</strong>（如列表、元组、集合等）要保证其中的内容仍为<strong>str类型</strong></p>
 <h2 id="def">Def<a class="headerlink" href="#def" title="Permanent link">&para;</a></h2>
 <p><code>def</code>格式</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="k">def</span>  <span class="nf">函数名称</span>
-<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>
-<a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a>  <span class="c1">#函数体</span>
-<a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a>
-<a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a>  <span class="c1">#return返回值</span>
+<div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1"></a><a href="#__codelineno-23-1"><span class="linenos" data-linenos="1 "></span></a><span class="k">def</span>  <span class="nf">函数名称</span>
+<a id="__codelineno-23-2" name="__codelineno-23-2"></a><a href="#__codelineno-23-2"><span class="linenos" data-linenos="2 "></span></a>
+<a id="__codelineno-23-3" name="__codelineno-23-3"></a><a href="#__codelineno-23-3"><span class="linenos" data-linenos="3 "></span></a>  <span class="c1">#函数体</span>
+<a id="__codelineno-23-4" name="__codelineno-23-4"></a><a href="#__codelineno-23-4"><span class="linenos" data-linenos="4 "></span></a>
+<a id="__codelineno-23-5" name="__codelineno-23-5"></a><a href="#__codelineno-23-5"><span class="linenos" data-linenos="5 "></span></a>  <span class="c1">#return返回值</span>
 </code></pre></div>
 <p>在Python中，当<strong>参数是可变对象</strong>（如列表、字典、集合等）时，会出现这种<strong>参数会随着def自建函数内部进行的操作而发生变化</strong>。需要注意的是，如果参数是<strong>不可变对象</strong>（如数字、字符串、元组等），则函数<strong>无法修改原始对象</strong>，也就不存在参数随之改变的情况。在函数<strong>内部声明的变量只在函数内部有效</strong>，不会改变函数外部已经定义的同名变量的值。因此，即使在自建函数中声明了同名的列表，也不会影响外部列表的值。</p>
 <p>需要注意的是，如果<strong><u>在函数内部对于可变类型的参数进行重新赋值（即将其指向一个新的对象），并不会改变原来的可变类型对象</u></strong>，此时则需要在<strong>声明赋值前</strong>先使用<code>global</code>关键字<strong>声明全局变量</strong>，否则电脑认为是函数内部的赋值了一个同名的局部变量，而不会影响到函数外部的同名变量。（<strong>重新赋值指的是重新在函数内给外部的可变类型参数赋值</strong>）</p>
 <p>形参和实参的赋值规则：<strong>优先关键字（同名）参数</strong>，再是位置参数</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="k">def</span>  <span class="nf">num</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">):</span>
-<a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>    <span class="n">shang</span><span class="o">=</span><span class="n">a</span><span class="o">//</span><span class="n">b</span>
-<a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a>    <span class="n">yushu</span><span class="o">=</span><span class="n">a</span><span class="o">-</span><span class="n">shang</span><span class="o">*</span><span class="n">b</span>
-<a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a>    <span class="k">return</span> <span class="n">shang</span><span class="p">,</span><span class="n">yushu</span>
-<a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a><span class="nb">print</span><span class="p">(</span><span class="n">num</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+<div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1"></a><a href="#__codelineno-24-1"><span class="linenos" data-linenos="1 "></span></a><span class="k">def</span>  <span class="nf">num</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">):</span>
+<a id="__codelineno-24-2" name="__codelineno-24-2"></a><a href="#__codelineno-24-2"><span class="linenos" data-linenos="2 "></span></a>    <span class="n">shang</span><span class="o">=</span><span class="n">a</span><span class="o">//</span><span class="n">b</span>
+<a id="__codelineno-24-3" name="__codelineno-24-3"></a><a href="#__codelineno-24-3"><span class="linenos" data-linenos="3 "></span></a>    <span class="n">yushu</span><span class="o">=</span><span class="n">a</span><span class="o">-</span><span class="n">shang</span><span class="o">*</span><span class="n">b</span>
+<a id="__codelineno-24-4" name="__codelineno-24-4"></a><a href="#__codelineno-24-4"><span class="linenos" data-linenos="4 "></span></a>    <span class="k">return</span> <span class="n">shang</span><span class="p">,</span><span class="n">yushu</span>
+<a id="__codelineno-24-5" name="__codelineno-24-5"></a><a href="#__codelineno-24-5"><span class="linenos" data-linenos="5 "></span></a><span class="nb">print</span><span class="p">(</span><span class="n">num</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
 </code></pre></div>
 <p>结果为（2，1）</p>
 <h3 id="k">缺省参数(k)：<a class="headerlink" href="#k" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="c1">#缺省参数，缺少一个参数值，缺少的值会按照默认的值输出，但是默认的缺省参数必须在最后一位，否则就会按照位置参数上的来</span>
-<a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a><span class="k">def</span> <span class="nf">num</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="o">=</span><span class="mi">35</span><span class="p">):</span>
-<a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Name:&quot;</span><span class="p">,</span><span class="n">a</span><span class="p">)</span>
-<a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Age:&quot;</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
-<a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a><span class="n">d</span><span class="o">=</span><span class="mi">10</span>
-<a id="__codelineno-25-6" name="__codelineno-25-6" href="#__codelineno-25-6"></a><span class="n">c</span><span class="o">=</span><span class="mi">15</span>
-<a id="__codelineno-25-7" name="__codelineno-25-7" href="#__codelineno-25-7"></a><span class="n">num</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
-<a id="__codelineno-25-8" name="__codelineno-25-8" href="#__codelineno-25-8"></a><span class="n">num</span><span class="p">(</span><span class="n">d</span><span class="p">,</span><span class="n">c</span><span class="p">)</span><span class="c1">#c也可以直接输入数字</span>
-<a id="__codelineno-25-9" name="__codelineno-25-9" href="#__codelineno-25-9"></a><span class="n">num</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="s1">&#39;which&#39;</span><span class="p">)</span>
-<a id="__codelineno-25-10" name="__codelineno-25-10" href="#__codelineno-25-10"></a><span class="n">num</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="s1">&#39;which&#39;</span><span class="p">,</span><span class="n">b</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
+<div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1"></a><a href="#__codelineno-25-1"><span class="linenos" data-linenos=" 1 "></span></a><span class="c1">#缺省参数，缺少一个参数值，缺少的值会按照默认的值输出，但是默认的缺省参数必须在最后一位，否则就会按照位置参数上的来</span>
+<a id="__codelineno-25-2" name="__codelineno-25-2"></a><a href="#__codelineno-25-2"><span class="linenos" data-linenos=" 2 "></span></a><span class="k">def</span> <span class="nf">num</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="o">=</span><span class="mi">35</span><span class="p">):</span>
+<a id="__codelineno-25-3" name="__codelineno-25-3"></a><a href="#__codelineno-25-3"><span class="linenos" data-linenos=" 3 "></span></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Name:&quot;</span><span class="p">,</span><span class="n">a</span><span class="p">)</span>
+<a id="__codelineno-25-4" name="__codelineno-25-4"></a><a href="#__codelineno-25-4"><span class="linenos" data-linenos=" 4 "></span></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Age:&quot;</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
+<a id="__codelineno-25-5" name="__codelineno-25-5"></a><a href="#__codelineno-25-5"><span class="linenos" data-linenos=" 5 "></span></a><span class="n">d</span><span class="o">=</span><span class="mi">10</span>
+<a id="__codelineno-25-6" name="__codelineno-25-6"></a><a href="#__codelineno-25-6"><span class="linenos" data-linenos=" 6 "></span></a><span class="n">c</span><span class="o">=</span><span class="mi">15</span>
+<a id="__codelineno-25-7" name="__codelineno-25-7"></a><a href="#__codelineno-25-7"><span class="linenos" data-linenos=" 7 "></span></a><span class="n">num</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+<a id="__codelineno-25-8" name="__codelineno-25-8"></a><a href="#__codelineno-25-8"><span class="linenos" data-linenos=" 8 "></span></a><span class="n">num</span><span class="p">(</span><span class="n">d</span><span class="p">,</span><span class="n">c</span><span class="p">)</span><span class="c1">#c也可以直接输入数字</span>
+<a id="__codelineno-25-9" name="__codelineno-25-9"></a><a href="#__codelineno-25-9"><span class="linenos" data-linenos=" 9 "></span></a><span class="n">num</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="s1">&#39;which&#39;</span><span class="p">)</span>
+<a id="__codelineno-25-10" name="__codelineno-25-10"></a><a href="#__codelineno-25-10"><span class="linenos" data-linenos="10 "></span></a><span class="n">num</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="s1">&#39;which&#39;</span><span class="p">,</span><span class="n">b</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
 </code></pre></div>
 <p>有默认值的话没有实参则输出默认值，有的话就会输出实参计算的结果</p>
 <h3 id="_21">不定长参数：<a class="headerlink" href="#_21" title="Permanent link">&para;</a></h3>
@@ -2845,15 +2845,15 @@ a=1 if x&gt;5 <strong>else</strong> **b</p>
 <p>a      a=10    *<em>a </em>a    a=10</p>
 <p>如果，关键字参数和位置参数对调位置也可以正常定义（但其他格式不会正常定义），不特别声明的话，形参只会使用默认参数的默认值。</p>
 <p>递归函数：递归函数通过自建函数来反复引用从而达到某种目的</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="k">def</span> <span class="nf">factorial</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-<a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a>
-<a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a>  <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-<a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a>
-<a id="__codelineno-26-5" name="__codelineno-26-5" href="#__codelineno-26-5"></a><span class="err">​</span>    <span class="k">return</span> <span class="mi">1</span>
-<a id="__codelineno-26-6" name="__codelineno-26-6" href="#__codelineno-26-6"></a>
-<a id="__codelineno-26-7" name="__codelineno-26-7" href="#__codelineno-26-7"></a>  <span class="k">else</span><span class="p">:</span>
-<a id="__codelineno-26-8" name="__codelineno-26-8" href="#__codelineno-26-8"></a>
-<a id="__codelineno-26-9" name="__codelineno-26-9" href="#__codelineno-26-9"></a><span class="err">​</span>    <span class="k">return</span> <span class="n">n</span> <span class="o">*</span> <span class="n">factorial</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+<div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1"></a><a href="#__codelineno-26-1"><span class="linenos" data-linenos="1 "></span></a><span class="k">def</span> <span class="nf">factorial</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<a id="__codelineno-26-2" name="__codelineno-26-2"></a><a href="#__codelineno-26-2"><span class="linenos" data-linenos="2 "></span></a>
+<a id="__codelineno-26-3" name="__codelineno-26-3"></a><a href="#__codelineno-26-3"><span class="linenos" data-linenos="3 "></span></a>  <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+<a id="__codelineno-26-4" name="__codelineno-26-4"></a><a href="#__codelineno-26-4"><span class="linenos" data-linenos="4 "></span></a>
+<a id="__codelineno-26-5" name="__codelineno-26-5"></a><a href="#__codelineno-26-5"><span class="linenos" data-linenos="5 "></span></a><span class="err">​</span>    <span class="k">return</span> <span class="mi">1</span>
+<a id="__codelineno-26-6" name="__codelineno-26-6"></a><a href="#__codelineno-26-6"><span class="linenos" data-linenos="6 "></span></a>
+<a id="__codelineno-26-7" name="__codelineno-26-7"></a><a href="#__codelineno-26-7"><span class="linenos" data-linenos="7 "></span></a>  <span class="k">else</span><span class="p">:</span>
+<a id="__codelineno-26-8" name="__codelineno-26-8"></a><a href="#__codelineno-26-8"><span class="linenos" data-linenos="8 "></span></a>
+<a id="__codelineno-26-9" name="__codelineno-26-9"></a><a href="#__codelineno-26-9"><span class="linenos" data-linenos="9 "></span></a><span class="err">​</span>    <span class="k">return</span> <span class="n">n</span> <span class="o">*</span> <span class="n">factorial</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
 </code></pre></div>
 <p>此处利用递归函数计算阶乘（自建函数，反复引用）</p>
 <p>引用传参：参数是引用类型的参数，如：列表，元组，字典。</p>
@@ -2878,12 +2878,12 @@ a=1 if x&gt;5 <strong>else</strong> **b</p>
 <h3 id="eval">eval<a class="headerlink" href="#eval" title="Permanent link">&para;</a></h3>
 <p>eval是 Python 中的一个内置函数，它可以将字符串作为表达式求值，并返回结果。通俗一点说，eval 函数可以把一个字符串当做一段 Python 代码来执行。是真的当成代码来执行</p>
 <p>例如，你可以使用 eval 函数来计算一个字符串类型的数学表达式：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="n">expr</span> <span class="o">=</span> <span class="s2">&quot;3 + 4 * 2&quot;</span>
-<a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a>
-<a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a><span class="n">result</span> <span class="o">=</span> <span class="nb">eval</span><span class="p">(</span><span class="n">expr</span><span class="p">)</span>
-<a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a>
-<a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a><span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span> 
-<a id="__codelineno-27-6" name="__codelineno-27-6" href="#__codelineno-27-6"></a><span class="o">&gt;</span><span class="mi">11</span>
+<div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1"></a><a href="#__codelineno-27-1"><span class="linenos" data-linenos="1 "></span></a><span class="n">expr</span> <span class="o">=</span> <span class="s2">&quot;3 + 4 * 2&quot;</span>
+<a id="__codelineno-27-2" name="__codelineno-27-2"></a><a href="#__codelineno-27-2"><span class="linenos" data-linenos="2 "></span></a>
+<a id="__codelineno-27-3" name="__codelineno-27-3"></a><a href="#__codelineno-27-3"><span class="linenos" data-linenos="3 "></span></a><span class="n">result</span> <span class="o">=</span> <span class="nb">eval</span><span class="p">(</span><span class="n">expr</span><span class="p">)</span>
+<a id="__codelineno-27-4" name="__codelineno-27-4"></a><a href="#__codelineno-27-4"><span class="linenos" data-linenos="4 "></span></a>
+<a id="__codelineno-27-5" name="__codelineno-27-5"></a><a href="#__codelineno-27-5"><span class="linenos" data-linenos="5 "></span></a><span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span> 
+<a id="__codelineno-27-6" name="__codelineno-27-6"></a><a href="#__codelineno-27-6"><span class="linenos" data-linenos="6 "></span></a><span class="o">&gt;</span><span class="mi">11</span>
 </code></pre></div>
 <p>在这个例子中，expr 是一个字符串类型的表达式，包含加、乘等操作符和数字。然后，我们使用 eval 函数对这个表达式求值，并将结果赋值给 result 变量。最终，result 的值为 11，这是表达式 "3 + 4 * 2" 的计算结果。</p>
 <h2 id="string">string方法<a class="headerlink" href="#string" title="Permanent link">&para;</a></h2>
@@ -3017,17 +3017,17 @@ a=1 if x&gt;5 <strong>else</strong> **b</p>
 <li>List可以像字符串一样进行<code>+ *</code> 操作 </li>
 </ul>
 <p>特殊创建方法：（在list内直接填写list的value条件）</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="n">new_ls</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">ls</span> <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="n">m</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">]</span>
+<div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1"></a><a href="#__codelineno-28-1"><span class="linenos" data-linenos="1 "></span></a><span class="n">new_ls</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">ls</span> <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="n">m</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">]</span>
 </code></pre></div>
 <p>这个新列表的的value添加方法可以直接写在里面</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="n">List</span><span class="o">=</span><span class="p">[</span><span class="n">参数</span> <span class="k">for</span> <span class="n">参数</span> <span class="ow">in</span> <span class="n">范围</span> <span class="k">if</span> <span class="n">满足何种条件</span><span class="p">]</span><span class="err">（</span><span class="n">条件可不写</span><span class="err">）</span>
+<div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1"></a><a href="#__codelineno-29-1"><span class="linenos" data-linenos="1 "></span></a><span class="n">List</span><span class="o">=</span><span class="p">[</span><span class="n">参数</span> <span class="k">for</span> <span class="n">参数</span> <span class="ow">in</span> <span class="n">范围</span> <span class="k">if</span> <span class="n">满足何种条件</span><span class="p">]</span><span class="err">（</span><span class="n">条件可不写</span><span class="err">）</span>
 </code></pre></div>
 <p>也可以是</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="nb">list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span> <span class="k">if</span> <span class="n">a</span><span class="o">==</span><span class="mi">1</span> <span class="k">else</span> <span class="o">-</span><span class="mi">1</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">y</span><span class="p">]</span> <span class="c1">#会将y当中的元素转为1或者-1</span>
+<div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1"></a><a href="#__codelineno-30-1"><span class="linenos" data-linenos="1 "></span></a><span class="nb">list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span> <span class="k">if</span> <span class="n">a</span><span class="o">==</span><span class="mi">1</span> <span class="k">else</span> <span class="o">-</span><span class="mi">1</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">y</span><span class="p">]</span> <span class="c1">#会将y当中的元素转为1或者-1</span>
 </code></pre></div>
 <h3 id="_23">列表推导式<a class="headerlink" href="#_23" title="Permanent link">&para;</a></h3>
 <p>列表推导式： </p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a>[expression for item in iterable if condition]
+<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1"></a><a href="#__codelineno-31-1"><span class="linenos" data-linenos="1 "></span></a>[expression for item in iterable if condition]
 </code></pre></div>
 <p>其中</p>
 <p><code>expression</code> :是对每个元素执行的操作，可以是任意表达式；</p>
@@ -3035,25 +3035,25 @@ a=1 if x&gt;5 <strong>else</strong> **b</p>
 <p><code>iterable</code>: 是一个可迭代对象，比如列表、元组、集合等；</p>
 <p><code>condition</code>: 是一个可选的条件表达式，如果不满足条件则不返回。</p>
 <p>eg1:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="n">ls</span><span class="o">=</span><span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span> <span class="k">if</span> <span class="n">x</span><span class="o">%</span><span class="mi">13</span><span class="o">==</span><span class="mi">0</span><span class="p">]</span><span class="c1">#以100以内可以被13整除的值组成列表</span>
+<div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1"></a><a href="#__codelineno-32-1"><span class="linenos" data-linenos="1 "></span></a><span class="n">ls</span><span class="o">=</span><span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span> <span class="k">if</span> <span class="n">x</span><span class="o">%</span><span class="mi">13</span><span class="o">==</span><span class="mi">0</span><span class="p">]</span><span class="c1">#以100以内可以被13整除的值组成列表</span>
 </code></pre></div>
 <p>eg2:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="n">squares</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="o">**</span> <span class="mi">2</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">)]</span>
-<a id="__codelineno-33-2" name="__codelineno-33-2" href="#__codelineno-33-2"></a>
-<a id="__codelineno-33-3" name="__codelineno-33-3" href="#__codelineno-33-3"></a><span class="nb">print</span><span class="p">(</span><span class="n">squares</span><span class="p">)</span> 
-<a id="__codelineno-33-4" name="__codelineno-33-4" href="#__codelineno-33-4"></a>
-<a id="__codelineno-33-5" name="__codelineno-33-5" href="#__codelineno-33-5"></a><span class="c1"># 输出：[1, 4, 9, 16, 25, 36, 49, 64, 81, 100] ，以1~10的平方数组成列表</span>
+<div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1"></a><a href="#__codelineno-33-1"><span class="linenos" data-linenos="1 "></span></a><span class="n">squares</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="o">**</span> <span class="mi">2</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">)]</span>
+<a id="__codelineno-33-2" name="__codelineno-33-2"></a><a href="#__codelineno-33-2"><span class="linenos" data-linenos="2 "></span></a>
+<a id="__codelineno-33-3" name="__codelineno-33-3"></a><a href="#__codelineno-33-3"><span class="linenos" data-linenos="3 "></span></a><span class="nb">print</span><span class="p">(</span><span class="n">squares</span><span class="p">)</span> 
+<a id="__codelineno-33-4" name="__codelineno-33-4"></a><a href="#__codelineno-33-4"><span class="linenos" data-linenos="4 "></span></a>
+<a id="__codelineno-33-5" name="__codelineno-33-5"></a><a href="#__codelineno-33-5"><span class="linenos" data-linenos="5 "></span></a><span class="c1"># 输出：[1, 4, 9, 16, 25, 36, 49, 64, 81, 100] ，以1~10的平方数组成列表</span>
 </code></pre></div>
 <p>eg3:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a><span class="n">words</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;apple&#39;</span><span class="p">,</span> <span class="s1">&#39;banana&#39;</span><span class="p">,</span> <span class="s1">&#39;pear&#39;</span><span class="p">]</span>
-<a id="__codelineno-34-2" name="__codelineno-34-2" href="#__codelineno-34-2"></a>
-<a id="__codelineno-34-3" name="__codelineno-34-3" href="#__codelineno-34-3"></a><span class="n">lengths</span> <span class="o">=</span> <span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">word</span><span class="p">)</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">words</span><span class="p">]</span>
-<a id="__codelineno-34-4" name="__codelineno-34-4" href="#__codelineno-34-4"></a>
-<a id="__codelineno-34-5" name="__codelineno-34-5" href="#__codelineno-34-5"></a><span class="nb">print</span><span class="p">(</span><span class="n">lengths</span><span class="p">)</span> 
-<a id="__codelineno-34-6" name="__codelineno-34-6" href="#__codelineno-34-6"></a>
-<a id="__codelineno-34-7" name="__codelineno-34-7" href="#__codelineno-34-7"></a><span class="c1"># 输出：[5, 6, 4]，以原列表内每个单词的词长组成列表</span>
-<a id="__codelineno-34-8" name="__codelineno-34-8" href="#__codelineno-34-8"></a>
-<a id="__codelineno-34-9" name="__codelineno-34-9" href="#__codelineno-34-9"></a><span class="n">作用</span><span class="err">：</span><span class="n">通常用于快速生产一个新列表</span>
+<div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1"></a><a href="#__codelineno-34-1"><span class="linenos" data-linenos="1 "></span></a><span class="n">words</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;apple&#39;</span><span class="p">,</span> <span class="s1">&#39;banana&#39;</span><span class="p">,</span> <span class="s1">&#39;pear&#39;</span><span class="p">]</span>
+<a id="__codelineno-34-2" name="__codelineno-34-2"></a><a href="#__codelineno-34-2"><span class="linenos" data-linenos="2 "></span></a>
+<a id="__codelineno-34-3" name="__codelineno-34-3"></a><a href="#__codelineno-34-3"><span class="linenos" data-linenos="3 "></span></a><span class="n">lengths</span> <span class="o">=</span> <span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">word</span><span class="p">)</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">words</span><span class="p">]</span>
+<a id="__codelineno-34-4" name="__codelineno-34-4"></a><a href="#__codelineno-34-4"><span class="linenos" data-linenos="4 "></span></a>
+<a id="__codelineno-34-5" name="__codelineno-34-5"></a><a href="#__codelineno-34-5"><span class="linenos" data-linenos="5 "></span></a><span class="nb">print</span><span class="p">(</span><span class="n">lengths</span><span class="p">)</span> 
+<a id="__codelineno-34-6" name="__codelineno-34-6"></a><a href="#__codelineno-34-6"><span class="linenos" data-linenos="6 "></span></a>
+<a id="__codelineno-34-7" name="__codelineno-34-7"></a><a href="#__codelineno-34-7"><span class="linenos" data-linenos="7 "></span></a><span class="c1"># 输出：[5, 6, 4]，以原列表内每个单词的词长组成列表</span>
+<a id="__codelineno-34-8" name="__codelineno-34-8"></a><a href="#__codelineno-34-8"><span class="linenos" data-linenos="8 "></span></a>
+<a id="__codelineno-34-9" name="__codelineno-34-9"></a><a href="#__codelineno-34-9"><span class="linenos" data-linenos="9 "></span></a><span class="n">作用</span><span class="err">：</span><span class="n">通常用于快速生产一个新列表</span>
 </code></pre></div>
 <p>过滤列表中的元素：</p>
 <p>List=[n for n in numbers if n % 2 == 0]</p>
@@ -3065,40 +3065,40 @@ a=1 if x&gt;5 <strong>else</strong> **b</p>
 <p>List=[f"{k}={v}" for k, v in dict.items()]</p>
 <h3 id="_24">增添<a class="headerlink" href="#_24" title="Permanent link">&para;</a></h3>
 <p>末尾插入</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a><span class="n">strs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="c1">#将内容作为单一元素在末尾插入，也就说任意形式的迭代器也会以单一的形式插入</span>
+<div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><a id="__codelineno-35-1" name="__codelineno-35-1"></a><a href="#__codelineno-35-1"><span class="linenos" data-linenos="1 "></span></a><span class="n">strs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="c1">#将内容作为单一元素在末尾插入，也就说任意形式的迭代器也会以单一的形式插入</span>
 </code></pre></div>
 <p>拆开插入</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a><span class="n">strs</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="c1">#将内容拆开多个单个元素从后插入</span>
+<div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><a id="__codelineno-36-1" name="__codelineno-36-1"></a><a href="#__codelineno-36-1"><span class="linenos" data-linenos="1 "></span></a><span class="n">strs</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="c1">#将内容拆开多个单个元素从后插入</span>
 </code></pre></div>
 <p>精准插入</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a><span class="n">strs</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">位置i</span><span class="p">,</span> <span class="s2">&quot;超人&quot;</span><span class="p">)</span><span class="c1">#找到准确位置整体插入，后面的元素均向后移一位</span>
+<div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><a id="__codelineno-37-1" name="__codelineno-37-1"></a><a href="#__codelineno-37-1"><span class="linenos" data-linenos="1 "></span></a><span class="n">strs</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">位置i</span><span class="p">,</span> <span class="s2">&quot;超人&quot;</span><span class="p">)</span><span class="c1">#找到准确位置整体插入，后面的元素均向后移一位</span>
 </code></pre></div>
 <h3 id="_25">删除<a class="headerlink" href="#_25" title="Permanent link">&para;</a></h3>
 <p>按照索引删除</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a><span class="k">del</span> <span class="n">strs</span><span class="p">[</span><span class="mi">8</span><span class="p">]</span><span class="c1">#删除某个位置（根据索引删除，易报错）</span>
+<div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><a id="__codelineno-38-1" name="__codelineno-38-1"></a><a href="#__codelineno-38-1"><span class="linenos" data-linenos="1 "></span></a><span class="k">del</span> <span class="n">strs</span><span class="p">[</span><span class="mi">8</span><span class="p">]</span><span class="c1">#删除某个位置（根据索引删除，易报错）</span>
 </code></pre></div>
 <p>范围删除</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a><span class="k">del</span> <span class="nb">str</span><span class="p">[</span><span class="n">a</span><span class="p">:</span><span class="n">b</span><span class="p">]</span><span class="c1">#删除从a到b-1（左闭右开原则）范围内的所有元素</span>
+<div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><a id="__codelineno-39-1" name="__codelineno-39-1"></a><a href="#__codelineno-39-1"><span class="linenos" data-linenos="1 "></span></a><span class="k">del</span> <span class="nb">str</span><span class="p">[</span><span class="n">a</span><span class="p">:</span><span class="n">b</span><span class="p">]</span><span class="c1">#删除从a到b-1（左闭右开原则）范围内的所有元素</span>
 </code></pre></div>
 <p>看注释</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a><span class="n">strs</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span><span class="c1">#删除。pop（）也可以用()内的参数删除对应下标，默认删除最后一个元素。且pop()方法返回被删除的元素，因此您可以在删除元素的同时访问被删除的元素。</span>
+<div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><a id="__codelineno-40-1" name="__codelineno-40-1"></a><a href="#__codelineno-40-1"><span class="linenos" data-linenos="1 "></span></a><span class="n">strs</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span><span class="c1">#删除。pop（）也可以用()内的参数删除对应下标，默认删除最后一个元素。且pop()方法返回被删除的元素，因此您可以在删除元素的同时访问被删除的元素。</span>
 </code></pre></div>
 <p><code>remove()</code>:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a><span class="n">strs</span><span class="o">.</span><span class="n">remove</span><span class="p">([</span><span class="s1">&#39;超级战队&#39;</span><span class="p">,</span><span class="s1">&#39;初号机&#39;</span><span class="p">])</span><span class="c1">#删除指定量,多个元素相同的情况下只删除列表内找到的第一个（根据元素进行删除）</span>
-<a id="__codelineno-41-2" name="__codelineno-41-2" href="#__codelineno-41-2"></a>
-<a id="__codelineno-41-3" name="__codelineno-41-3" href="#__codelineno-41-3"></a><span class="n">strs</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s2">&quot;奥特曼&quot;</span><span class="p">)</span><span class="c1">#通过元素删除，但只对列表操作，并不会返回任何的值。</span>
+<div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><a id="__codelineno-41-1" name="__codelineno-41-1"></a><a href="#__codelineno-41-1"><span class="linenos" data-linenos="1 "></span></a><span class="n">strs</span><span class="o">.</span><span class="n">remove</span><span class="p">([</span><span class="s1">&#39;超级战队&#39;</span><span class="p">,</span><span class="s1">&#39;初号机&#39;</span><span class="p">])</span><span class="c1">#删除指定量,多个元素相同的情况下只删除列表内找到的第一个（根据元素进行删除）</span>
+<a id="__codelineno-41-2" name="__codelineno-41-2"></a><a href="#__codelineno-41-2"><span class="linenos" data-linenos="2 "></span></a>
+<a id="__codelineno-41-3" name="__codelineno-41-3"></a><a href="#__codelineno-41-3"><span class="linenos" data-linenos="3 "></span></a><span class="n">strs</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s2">&quot;奥特曼&quot;</span><span class="p">)</span><span class="c1">#通过元素删除，但只对列表操作，并不会返回任何的值。</span>
 </code></pre></div>
 <p><strong>经验</strong>：del是通过索引来删除元素，而remove是通过元素的内容来删除元素。在使用del时，如果指定的索引超出了列表的范围，则会引发IndexError异常（索引异常）。而如果使用remove，则会尝试在整个列表中查找相应的元素并将其删除，如果元素不存在于列表中，则会引发ValueError异常（内容异常）。因此，在使用del和remove时，分别需要注意列表的边界情况和要删除的元素是否存在于列表中。</p>
 <h3 id="_26">修改<a class="headerlink" href="#_26" title="Permanent link">&para;</a></h3>
 <p>索引修改</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a><span class="n">strs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">=</span><span class="s2">&quot;初号机&quot;</span><span class="c1">#替换值，可以用索引直接替换更改</span>
+<div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><a id="__codelineno-42-1" name="__codelineno-42-1"></a><a href="#__codelineno-42-1"><span class="linenos" data-linenos="1 "></span></a><span class="n">strs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">=</span><span class="s2">&quot;初号机&quot;</span><span class="c1">#替换值，可以用索引直接替换更改</span>
 </code></pre></div>
 <h3 id="_27">访问列表<a class="headerlink" href="#_27" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-43-1" name="__codelineno-43-1" href="#__codelineno-43-1"></a><span class="nb">list</span><span class="p">[</span><span class="n">number</span><span class="p">]</span> <span class="c1">#访问元素</span>
-<a id="__codelineno-43-2" name="__codelineno-43-2" href="#__codelineno-43-2"></a>
-<a id="__codelineno-43-3" name="__codelineno-43-3" href="#__codelineno-43-3"></a><span class="c1">#访问元素内详细的值</span>
-<a id="__codelineno-43-4" name="__codelineno-43-4" href="#__codelineno-43-4"></a>
-<a id="__codelineno-43-5" name="__codelineno-43-5" href="#__codelineno-43-5"></a><span class="n">For</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">list</span> <span class="c1">#遍历元素</span>
+<div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><a id="__codelineno-43-1" name="__codelineno-43-1"></a><a href="#__codelineno-43-1"><span class="linenos" data-linenos="1 "></span></a><span class="nb">list</span><span class="p">[</span><span class="n">number</span><span class="p">]</span> <span class="c1">#访问元素</span>
+<a id="__codelineno-43-2" name="__codelineno-43-2"></a><a href="#__codelineno-43-2"><span class="linenos" data-linenos="2 "></span></a>
+<a id="__codelineno-43-3" name="__codelineno-43-3"></a><a href="#__codelineno-43-3"><span class="linenos" data-linenos="3 "></span></a><span class="c1">#访问元素内详细的值</span>
+<a id="__codelineno-43-4" name="__codelineno-43-4"></a><a href="#__codelineno-43-4"><span class="linenos" data-linenos="4 "></span></a>
+<a id="__codelineno-43-5" name="__codelineno-43-5"></a><a href="#__codelineno-43-5"><span class="linenos" data-linenos="5 "></span></a><span class="n">For</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">list</span> <span class="c1">#遍历元素</span>
 </code></pre></div>
 <p>i[start: end: step]#取该元素的第几位到第几位 取 出方法如range()</p>
 <h2 id="_28">元组的操作<a class="headerlink" href="#_28" title="Permanent link">&para;</a></h2>
@@ -3115,50 +3115,50 @@ a=1 if x&gt;5 <strong>else</strong> **b</p>
 <p>dict = {'key':'value'}</p>
 <p><code>Key</code>必须是<strong>不可变类型</strong></p>
 <h3 id="_30">字典的创建<a class="headerlink" href="#_30" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-44-1" name="__codelineno-44-1" href="#__codelineno-44-1"></a><span class="nb">dict</span><span class="o">=</span><span class="p">{</span><span class="n">x</span><span class="p">:</span><span class="n">y</span><span class="p">}</span>
-<a id="__codelineno-44-2" name="__codelineno-44-2" href="#__codelineno-44-2"></a>
-<a id="__codelineno-44-3" name="__codelineno-44-3" href="#__codelineno-44-3"></a>    <span class="nb">dict</span><span class="p">(</span><span class="n">x1</span><span class="o">=</span><span class="n">y1</span><span class="p">,</span><span class="n">x2</span><span class="o">=</span><span class="n">y2</span><span class="p">)</span>
-<a id="__codelineno-44-4" name="__codelineno-44-4" href="#__codelineno-44-4"></a>
-<a id="__codelineno-44-5" name="__codelineno-44-5" href="#__codelineno-44-5"></a>    <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">([</span><span class="n">list1</span><span class="p">],[</span><span class="n">list2</span><span class="p">]))</span><span class="c1">#</span>
-<a id="__codelineno-44-6" name="__codelineno-44-6" href="#__codelineno-44-6"></a>
-<a id="__codelineno-44-7" name="__codelineno-44-7" href="#__codelineno-44-7"></a><span class="n">推导式</span> <span class="nb">dict</span><span class="p">(</span><span class="n">num</span><span class="p">:</span> <span class="n">num</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><a id="__codelineno-44-1" name="__codelineno-44-1"></a><a href="#__codelineno-44-1"><span class="linenos" data-linenos="1 "></span></a><span class="nb">dict</span><span class="o">=</span><span class="p">{</span><span class="n">x</span><span class="p">:</span><span class="n">y</span><span class="p">}</span>
+<a id="__codelineno-44-2" name="__codelineno-44-2"></a><a href="#__codelineno-44-2"><span class="linenos" data-linenos="2 "></span></a>
+<a id="__codelineno-44-3" name="__codelineno-44-3"></a><a href="#__codelineno-44-3"><span class="linenos" data-linenos="3 "></span></a>    <span class="nb">dict</span><span class="p">(</span><span class="n">x1</span><span class="o">=</span><span class="n">y1</span><span class="p">,</span><span class="n">x2</span><span class="o">=</span><span class="n">y2</span><span class="p">)</span>
+<a id="__codelineno-44-4" name="__codelineno-44-4"></a><a href="#__codelineno-44-4"><span class="linenos" data-linenos="4 "></span></a>
+<a id="__codelineno-44-5" name="__codelineno-44-5"></a><a href="#__codelineno-44-5"><span class="linenos" data-linenos="5 "></span></a>    <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">([</span><span class="n">list1</span><span class="p">],[</span><span class="n">list2</span><span class="p">]))</span><span class="c1">#</span>
+<a id="__codelineno-44-6" name="__codelineno-44-6"></a><a href="#__codelineno-44-6"><span class="linenos" data-linenos="6 "></span></a>
+<a id="__codelineno-44-7" name="__codelineno-44-7"></a><a href="#__codelineno-44-7"><span class="linenos" data-linenos="7 "></span></a><span class="n">推导式</span> <span class="nb">dict</span><span class="p">(</span><span class="n">num</span><span class="p">:</span> <span class="n">num</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
 </code></pre></div>
 <p>如果各个迭代器的元素个数不一致，则返回列表长度与最短的对象相同，利用 * 号操作符，可以将元组解压为列表。</p>
 <h3 id="_31">增加<a class="headerlink" href="#_31" title="Permanent link">&para;</a></h3>
 <p>字典可以通过<code>dict[key]=value</code>的方式添加新键值对</p>
 <p>函数上添加</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-45-1" name="__codelineno-45-1" href="#__codelineno-45-1"></a><span class="nb">dict</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="n">key</span><span class="p">,</span><span class="n">value</span><span class="p">)</span><span class="c1">#增加，格式上直接输入key,value即可只能输入一对，且key如若是字符串需要带引号。</span>
+<div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><a id="__codelineno-45-1" name="__codelineno-45-1"></a><a href="#__codelineno-45-1"><span class="linenos" data-linenos="1 "></span></a><span class="nb">dict</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="n">key</span><span class="p">,</span><span class="n">value</span><span class="p">)</span><span class="c1">#增加，格式上直接输入key,value即可只能输入一对，且key如若是字符串需要带引号。</span>
 </code></pre></div>
 <h3 id="_32">删除<a class="headerlink" href="#_32" title="Permanent link">&para;</a></h3>
 <p>字典删除采用del以及clear()：</p>
 <p>按key删除</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-46-1" name="__codelineno-46-1" href="#__codelineno-46-1"></a><span class="k">del</span> <span class="nb">dict</span><span class="p">[</span><span class="s1">&#39;age&#39;</span><span class="p">]</span><span class="c1">#删除某个</span>
+<div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><a id="__codelineno-46-1" name="__codelineno-46-1"></a><a href="#__codelineno-46-1"><span class="linenos" data-linenos="1 "></span></a><span class="k">del</span> <span class="nb">dict</span><span class="p">[</span><span class="s1">&#39;age&#39;</span><span class="p">]</span><span class="c1">#删除某个</span>
 </code></pre></div>
 <p>全删</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-47-1" name="__codelineno-47-1" href="#__codelineno-47-1"></a><span class="nb">dict</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span><span class="c1">#全删</span>
+<div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><a id="__codelineno-47-1" name="__codelineno-47-1"></a><a href="#__codelineno-47-1"><span class="linenos" data-linenos="1 "></span></a><span class="nb">dict</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span><span class="c1">#全删</span>
 </code></pre></div>
 <p>删除末位并返回元组</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-48-1" name="__codelineno-48-1" href="#__codelineno-48-1"></a><span class="nb">dict</span><span class="o">.</span><span class="n">popitem</span><span class="p">()</span><span class="c1">#删除最后的键值对，并返回键值对（元组）</span>
+<div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><a id="__codelineno-48-1" name="__codelineno-48-1"></a><a href="#__codelineno-48-1"><span class="linenos" data-linenos="1 "></span></a><span class="nb">dict</span><span class="o">.</span><span class="n">popitem</span><span class="p">()</span><span class="c1">#删除最后的键值对，并返回键值对（元组）</span>
 </code></pre></div>
 <p>删除精确位置返回key</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-49-1" name="__codelineno-49-1" href="#__codelineno-49-1"></a><span class="nb">dict</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span><span class="c1">#删除一个精确的键值对，并且返回键</span>
+<div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><a id="__codelineno-49-1" name="__codelineno-49-1"></a><a href="#__codelineno-49-1"><span class="linenos" data-linenos="1 "></span></a><span class="nb">dict</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span><span class="c1">#删除一个精确的键值对，并且返回键</span>
 </code></pre></div>
 <p>添加也可以修改</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-50-1" name="__codelineno-50-1" href="#__codelineno-50-1"></a><span class="nb">dict</span><span class="o">.</span><span class="n">update</span><span class="p">()</span><span class="c1">#添加和修改：格式采用xxx=xxx，不需要引号，可多个</span>
+<div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><a id="__codelineno-50-1" name="__codelineno-50-1"></a><a href="#__codelineno-50-1"><span class="linenos" data-linenos="1 "></span></a><span class="nb">dict</span><span class="o">.</span><span class="n">update</span><span class="p">()</span><span class="c1">#添加和修改：格式采用xxx=xxx，不需要引号，可多个</span>
 </code></pre></div>
 <p>直接遍历dict，用的是键。用值需要<code>dict.values()</code>，用键值对需要<code>dict.items()</code></p>
 <h3 id="_33">查<a class="headerlink" href="#_33" title="Permanent link">&para;</a></h3>
 <p>get查找</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-51-1" name="__codelineno-51-1" href="#__codelineno-51-1"></a><span class="nb">dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="c1">#此处并非一对键值对。查找键key的value，若字典内没有键key，则会返回value来说明并没有这个key</span>
+<div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><a id="__codelineno-51-1" name="__codelineno-51-1"></a><a href="#__codelineno-51-1"><span class="linenos" data-linenos="1 "></span></a><span class="nb">dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="c1">#此处并非一对键值对。查找键key的value，若字典内没有键key，则会返回value来说明并没有这个key</span>
 </code></pre></div>
 <p>统计键值对数目</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-52-1" name="__codelineno-52-1" href="#__codelineno-52-1"></a><span class="nb">len</span><span class="p">(</span><span class="nb">dict</span><span class="p">)</span> <span class="c1">#用于统计键值对的数量</span>
+<div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><a id="__codelineno-52-1" name="__codelineno-52-1"></a><a href="#__codelineno-52-1"><span class="linenos" data-linenos="1 "></span></a><span class="nb">len</span><span class="p">(</span><span class="nb">dict</span><span class="p">)</span> <span class="c1">#用于统计键值对的数量</span>
 </code></pre></div>
 <p>判断</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-53-1" name="__codelineno-53-1" href="#__codelineno-53-1"></a><span class="nb">dict</span><span class="o">.</span><span class="n">has_key</span><span class="p">(</span><span class="n">key</span><span class="p">)</span> <span class="c1">#判断字典内是否含有key键返回false和true</span>
+<div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><a id="__codelineno-53-1" name="__codelineno-53-1"></a><a href="#__codelineno-53-1"><span class="linenos" data-linenos="1 "></span></a><span class="nb">dict</span><span class="o">.</span><span class="n">has_key</span><span class="p">(</span><span class="n">key</span><span class="p">)</span> <span class="c1">#判断字典内是否含有key键返回false和true</span>
 </code></pre></div>
 <p>访问键值，键值对</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-54-1" name="__codelineno-54-1" href="#__codelineno-54-1"></a><span class="nb">dict</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span><span class="o">/</span><span class="n">values</span><span class="p">()</span><span class="o">/</span><span class="n">items</span><span class="p">()</span> <span class="c1">#用于访问所有的键，值，列表</span>
+<div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><a id="__codelineno-54-1" name="__codelineno-54-1"></a><a href="#__codelineno-54-1"><span class="linenos" data-linenos="1 "></span></a><span class="nb">dict</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span><span class="o">/</span><span class="n">values</span><span class="p">()</span><span class="o">/</span><span class="n">items</span><span class="p">()</span> <span class="c1">#用于访问所有的键，值，列表</span>
 </code></pre></div>
 <p>补充：</p>
 <p><code>list[start : end : step]</code> #<strong>切片操作</strong></p>
@@ -3171,28 +3171,28 @@ a=1 if x&gt;5 <strong>else</strong> **b</p>
 <p>output:把内存当中的内容输出到硬盘</p>
 <p>相对路径：文件名或者路径名 demo 123.txt</p>
 <p>绝对路径：//Windows  C://        linux /      #和代码所在的盘</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-55-1" name="__codelineno-55-1" href="#__codelineno-55-1"></a><span class="n">filename</span> <span class="o">=</span> <span class="s2">&quot;example.txt&quot;</span>
-<a id="__codelineno-55-2" name="__codelineno-55-2" href="#__codelineno-55-2"></a><span class="n">content_to_write</span> <span class="o">=</span> <span class="s2">&quot;这是写入文件的内容。</span><span class="se">\n</span><span class="s2">&quot;</span>
-<a id="__codelineno-55-3" name="__codelineno-55-3" href="#__codelineno-55-3"></a>
-<a id="__codelineno-55-4" name="__codelineno-55-4" href="#__codelineno-55-4"></a><span class="c1"># 创建或打开文件进行写入</span>
-<a id="__codelineno-55-5" name="__codelineno-55-5" href="#__codelineno-55-5"></a><span class="n">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span>
-<a id="__codelineno-55-6" name="__codelineno-55-6" href="#__codelineno-55-6"></a><span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">content_to_write</span><span class="p">)</span>
-<a id="__codelineno-55-7" name="__codelineno-55-7" href="#__codelineno-55-7"></a><span class="n">file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>  <span class="c1"># 记得关闭文件释放资源，否则会报错</span>
-<a id="__codelineno-55-8" name="__codelineno-55-8" href="#__codelineno-55-8"></a><span class="c1">#且如果想用另一个模式对file进行操作也需要close</span>
-<a id="__codelineno-55-9" name="__codelineno-55-9" href="#__codelineno-55-9"></a>
-<a id="__codelineno-55-10" name="__codelineno-55-10" href="#__codelineno-55-10"></a>
-<a id="__codelineno-55-11" name="__codelineno-55-11" href="#__codelineno-55-11"></a><span class="c1"># 打开文件进行读取</span>
-<a id="__codelineno-55-12" name="__codelineno-55-12" href="#__codelineno-55-12"></a><span class="n">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
-<a id="__codelineno-55-13" name="__codelineno-55-13" href="#__codelineno-55-13"></a><span class="n">content</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-<a id="__codelineno-55-14" name="__codelineno-55-14" href="#__codelineno-55-14"></a><span class="nb">print</span><span class="p">(</span><span class="n">content</span><span class="p">)</span>  <span class="c1"># 打印文件内容</span>
-<a id="__codelineno-55-15" name="__codelineno-55-15" href="#__codelineno-55-15"></a><span class="n">file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>  <span class="c1"># 记得关闭文件</span>
-<a id="__codelineno-55-16" name="__codelineno-55-16" href="#__codelineno-55-16"></a>
-<a id="__codelineno-55-17" name="__codelineno-55-17" href="#__codelineno-55-17"></a>
-<a id="__codelineno-55-18" name="__codelineno-55-18" href="#__codelineno-55-18"></a><span class="c1"># 打开文件进行追加</span>
-<a id="__codelineno-55-19" name="__codelineno-55-19" href="#__codelineno-55-19"></a><span class="n">additional_content</span> <span class="o">=</span> <span class="s2">&quot;这是追加到文件的内容。</span><span class="se">\n</span><span class="s2">&quot;</span>
-<a id="__codelineno-55-20" name="__codelineno-55-20" href="#__codelineno-55-20"></a><span class="n">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">)</span>
-<a id="__codelineno-55-21" name="__codelineno-55-21" href="#__codelineno-55-21"></a><span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">additional_content</span><span class="p">)</span>
-<a id="__codelineno-55-22" name="__codelineno-55-22" href="#__codelineno-55-22"></a><span class="n">file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>  <span class="c1"># 记得关闭文件</span>
+<div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><a id="__codelineno-55-1" name="__codelineno-55-1"></a><a href="#__codelineno-55-1"><span class="linenos" data-linenos=" 1 "></span></a><span class="n">filename</span> <span class="o">=</span> <span class="s2">&quot;example.txt&quot;</span>
+<a id="__codelineno-55-2" name="__codelineno-55-2"></a><a href="#__codelineno-55-2"><span class="linenos" data-linenos=" 2 "></span></a><span class="n">content_to_write</span> <span class="o">=</span> <span class="s2">&quot;这是写入文件的内容。</span><span class="se">\n</span><span class="s2">&quot;</span>
+<a id="__codelineno-55-3" name="__codelineno-55-3"></a><a href="#__codelineno-55-3"><span class="linenos" data-linenos=" 3 "></span></a>
+<a id="__codelineno-55-4" name="__codelineno-55-4"></a><a href="#__codelineno-55-4"><span class="linenos" data-linenos=" 4 "></span></a><span class="c1"># 创建或打开文件进行写入</span>
+<a id="__codelineno-55-5" name="__codelineno-55-5"></a><a href="#__codelineno-55-5"><span class="linenos" data-linenos=" 5 "></span></a><span class="n">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span>
+<a id="__codelineno-55-6" name="__codelineno-55-6"></a><a href="#__codelineno-55-6"><span class="linenos" data-linenos=" 6 "></span></a><span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">content_to_write</span><span class="p">)</span>
+<a id="__codelineno-55-7" name="__codelineno-55-7"></a><a href="#__codelineno-55-7"><span class="linenos" data-linenos=" 7 "></span></a><span class="n">file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>  <span class="c1"># 记得关闭文件释放资源，否则会报错</span>
+<a id="__codelineno-55-8" name="__codelineno-55-8"></a><a href="#__codelineno-55-8"><span class="linenos" data-linenos=" 8 "></span></a><span class="c1">#且如果想用另一个模式对file进行操作也需要close</span>
+<a id="__codelineno-55-9" name="__codelineno-55-9"></a><a href="#__codelineno-55-9"><span class="linenos" data-linenos=" 9 "></span></a>
+<a id="__codelineno-55-10" name="__codelineno-55-10"></a><a href="#__codelineno-55-10"><span class="linenos" data-linenos="10 "></span></a>
+<a id="__codelineno-55-11" name="__codelineno-55-11"></a><a href="#__codelineno-55-11"><span class="linenos" data-linenos="11 "></span></a><span class="c1"># 打开文件进行读取</span>
+<a id="__codelineno-55-12" name="__codelineno-55-12"></a><a href="#__codelineno-55-12"><span class="linenos" data-linenos="12 "></span></a><span class="n">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<a id="__codelineno-55-13" name="__codelineno-55-13"></a><a href="#__codelineno-55-13"><span class="linenos" data-linenos="13 "></span></a><span class="n">content</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<a id="__codelineno-55-14" name="__codelineno-55-14"></a><a href="#__codelineno-55-14"><span class="linenos" data-linenos="14 "></span></a><span class="nb">print</span><span class="p">(</span><span class="n">content</span><span class="p">)</span>  <span class="c1"># 打印文件内容</span>
+<a id="__codelineno-55-15" name="__codelineno-55-15"></a><a href="#__codelineno-55-15"><span class="linenos" data-linenos="15 "></span></a><span class="n">file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>  <span class="c1"># 记得关闭文件</span>
+<a id="__codelineno-55-16" name="__codelineno-55-16"></a><a href="#__codelineno-55-16"><span class="linenos" data-linenos="16 "></span></a>
+<a id="__codelineno-55-17" name="__codelineno-55-17"></a><a href="#__codelineno-55-17"><span class="linenos" data-linenos="17 "></span></a>
+<a id="__codelineno-55-18" name="__codelineno-55-18"></a><a href="#__codelineno-55-18"><span class="linenos" data-linenos="18 "></span></a><span class="c1"># 打开文件进行追加</span>
+<a id="__codelineno-55-19" name="__codelineno-55-19"></a><a href="#__codelineno-55-19"><span class="linenos" data-linenos="19 "></span></a><span class="n">additional_content</span> <span class="o">=</span> <span class="s2">&quot;这是追加到文件的内容。</span><span class="se">\n</span><span class="s2">&quot;</span>
+<a id="__codelineno-55-20" name="__codelineno-55-20"></a><a href="#__codelineno-55-20"><span class="linenos" data-linenos="20 "></span></a><span class="n">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">)</span>
+<a id="__codelineno-55-21" name="__codelineno-55-21"></a><a href="#__codelineno-55-21"><span class="linenos" data-linenos="21 "></span></a><span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">additional_content</span><span class="p">)</span>
+<a id="__codelineno-55-22" name="__codelineno-55-22"></a><a href="#__codelineno-55-22"><span class="linenos" data-linenos="22 "></span></a><span class="n">file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>  <span class="c1"># 记得关闭文件</span>
 </code></pre></div>
 <h3 id="_36">打开文件：<a class="headerlink" href="#_36" title="Permanent link">&para;</a></h3>
 <p>open(文件名，访问模式)#可以打开一个已经存在的文件，也可以新建一个文件，创建文件取决于访问模式</p>
@@ -3257,86 +3257,86 @@ a=1 if x&gt;5 <strong>else</strong> **b</p>
 <p>f.encoding#获取文件的编码方式</p>
 <p>f.tell()#用于获取当前读取到的位置，即已经读取的长度</p>
 <p>f.seek(offset,from)#读写文件过程中需要从另一个位置进行操作。offset是偏移量，from是方向：0是开头，1是当前位置，2是末尾</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-56-1" name="__codelineno-56-1" href="#__codelineno-56-1"></a><span class="k">def</span> <span class="nf">write_file</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">content</span><span class="p">):</span>
-<a id="__codelineno-56-2" name="__codelineno-56-2" href="#__codelineno-56-2"></a>    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
-<a id="__codelineno-56-3" name="__codelineno-56-3" href="#__codelineno-56-3"></a>    <span class="c1"># with语句打开文件时，文件会在 with 块执行完成后自动关闭</span>
-<a id="__codelineno-56-4" name="__codelineno-56-4" href="#__codelineno-56-4"></a>        <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">content</span><span class="p">)</span>
-<a id="__codelineno-56-5" name="__codelineno-56-5" href="#__codelineno-56-5"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;文件 &#39;</span><span class="si">{</span><span class="n">filename</span><span class="si">}</span><span class="s2">&#39; 已被写入内容。&quot;</span><span class="p">)</span>
-<a id="__codelineno-56-6" name="__codelineno-56-6" href="#__codelineno-56-6"></a>
-<a id="__codelineno-56-7" name="__codelineno-56-7" href="#__codelineno-56-7"></a><span class="c1"># 读取文件</span>
-<a id="__codelineno-56-8" name="__codelineno-56-8" href="#__codelineno-56-8"></a><span class="k">def</span> <span class="nf">read_file</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
-<a id="__codelineno-56-9" name="__codelineno-56-9" href="#__codelineno-56-9"></a>    <span class="k">try</span><span class="p">:</span>
-<a id="__codelineno-56-10" name="__codelineno-56-10" href="#__codelineno-56-10"></a>        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
-<a id="__codelineno-56-11" name="__codelineno-56-11" href="#__codelineno-56-11"></a>            <span class="n">content</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-<a id="__codelineno-56-12" name="__codelineno-56-12" href="#__codelineno-56-12"></a>            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;文件 &#39;</span><span class="si">{</span><span class="n">filename</span><span class="si">}</span><span class="s2">&#39; 的内容是：&quot;</span><span class="p">)</span>
-<a id="__codelineno-56-13" name="__codelineno-56-13" href="#__codelineno-56-13"></a>            <span class="nb">print</span><span class="p">(</span><span class="n">content</span><span class="p">)</span>
-<a id="__codelineno-56-14" name="__codelineno-56-14" href="#__codelineno-56-14"></a>    <span class="k">except</span> <span class="ne">FileNotFoundError</span><span class="p">:</span>
-<a id="__codelineno-56-15" name="__codelineno-56-15" href="#__codelineno-56-15"></a>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;文件 &#39;</span><span class="si">{</span><span class="n">filename</span><span class="si">}</span><span class="s2">&#39; 未找到。&quot;</span><span class="p">)</span>
-<a id="__codelineno-56-16" name="__codelineno-56-16" href="#__codelineno-56-16"></a>
-<a id="__codelineno-56-17" name="__codelineno-56-17" href="#__codelineno-56-17"></a><span class="c1"># 追加内容到文件</span>
-<a id="__codelineno-56-18" name="__codelineno-56-18" href="#__codelineno-56-18"></a><span class="k">def</span> <span class="nf">append_to_file</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">content</span><span class="p">):</span>
-<a id="__codelineno-56-19" name="__codelineno-56-19" href="#__codelineno-56-19"></a>    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
-<a id="__codelineno-56-20" name="__codelineno-56-20" href="#__codelineno-56-20"></a>        <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">content</span><span class="p">)</span>
-<a id="__codelineno-56-21" name="__codelineno-56-21" href="#__codelineno-56-21"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;内容已被追加到文件 &#39;</span><span class="si">{</span><span class="n">filename</span><span class="si">}</span><span class="s2">&#39;。&quot;</span><span class="p">)</span>
-<a id="__codelineno-56-22" name="__codelineno-56-22" href="#__codelineno-56-22"></a>
-<a id="__codelineno-56-23" name="__codelineno-56-23" href="#__codelineno-56-23"></a><span class="c1"># 使用示例</span>
-<a id="__codelineno-56-24" name="__codelineno-56-24" href="#__codelineno-56-24"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
-<a id="__codelineno-56-25" name="__codelineno-56-25" href="#__codelineno-56-25"></a>    <span class="c1"># 定义文件名</span>
-<a id="__codelineno-56-26" name="__codelineno-56-26" href="#__codelineno-56-26"></a>    <span class="n">filename</span> <span class="o">=</span> <span class="s2">&quot;example.txt&quot;</span>
-<a id="__codelineno-56-27" name="__codelineno-56-27" href="#__codelineno-56-27"></a>
-<a id="__codelineno-56-28" name="__codelineno-56-28" href="#__codelineno-56-28"></a>    <span class="c1"># 写入内容到文件</span>
-<a id="__codelineno-56-29" name="__codelineno-56-29" href="#__codelineno-56-29"></a>    <span class="n">write_file</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s2">&quot;这是文件的初始内容。</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
-<a id="__codelineno-56-30" name="__codelineno-56-30" href="#__codelineno-56-30"></a>
-<a id="__codelineno-56-31" name="__codelineno-56-31" href="#__codelineno-56-31"></a>    <span class="c1"># 读取文件内容</span>
-<a id="__codelineno-56-32" name="__codelineno-56-32" href="#__codelineno-56-32"></a>    <span class="n">read_file</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
-<a id="__codelineno-56-33" name="__codelineno-56-33" href="#__codelineno-56-33"></a>
-<a id="__codelineno-56-34" name="__codelineno-56-34" href="#__codelineno-56-34"></a>    <span class="c1"># 追加内容到文件</span>
-<a id="__codelineno-56-35" name="__codelineno-56-35" href="#__codelineno-56-35"></a>    <span class="n">append_to_file</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s2">&quot;这是追加的内容。</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
-<a id="__codelineno-56-36" name="__codelineno-56-36" href="#__codelineno-56-36"></a>
-<a id="__codelineno-56-37" name="__codelineno-56-37" href="#__codelineno-56-37"></a>    <span class="c1"># 再次读取文件内容</span>
-<a id="__codelineno-56-38" name="__codelineno-56-38" href="#__codelineno-56-38"></a>    <span class="n">read_file</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+<div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><a id="__codelineno-56-1" name="__codelineno-56-1"></a><a href="#__codelineno-56-1"><span class="linenos" data-linenos=" 1 "></span></a><span class="k">def</span> <span class="nf">write_file</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">content</span><span class="p">):</span>
+<a id="__codelineno-56-2" name="__codelineno-56-2"></a><a href="#__codelineno-56-2"><span class="linenos" data-linenos=" 2 "></span></a>    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+<a id="__codelineno-56-3" name="__codelineno-56-3"></a><a href="#__codelineno-56-3"><span class="linenos" data-linenos=" 3 "></span></a>    <span class="c1"># with语句打开文件时，文件会在 with 块执行完成后自动关闭</span>
+<a id="__codelineno-56-4" name="__codelineno-56-4"></a><a href="#__codelineno-56-4"><span class="linenos" data-linenos=" 4 "></span></a>        <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">content</span><span class="p">)</span>
+<a id="__codelineno-56-5" name="__codelineno-56-5"></a><a href="#__codelineno-56-5"><span class="linenos" data-linenos=" 5 "></span></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;文件 &#39;</span><span class="si">{</span><span class="n">filename</span><span class="si">}</span><span class="s2">&#39; 已被写入内容。&quot;</span><span class="p">)</span>
+<a id="__codelineno-56-6" name="__codelineno-56-6"></a><a href="#__codelineno-56-6"><span class="linenos" data-linenos=" 6 "></span></a>
+<a id="__codelineno-56-7" name="__codelineno-56-7"></a><a href="#__codelineno-56-7"><span class="linenos" data-linenos=" 7 "></span></a><span class="c1"># 读取文件</span>
+<a id="__codelineno-56-8" name="__codelineno-56-8"></a><a href="#__codelineno-56-8"><span class="linenos" data-linenos=" 8 "></span></a><span class="k">def</span> <span class="nf">read_file</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+<a id="__codelineno-56-9" name="__codelineno-56-9"></a><a href="#__codelineno-56-9"><span class="linenos" data-linenos=" 9 "></span></a>    <span class="k">try</span><span class="p">:</span>
+<a id="__codelineno-56-10" name="__codelineno-56-10"></a><a href="#__codelineno-56-10"><span class="linenos" data-linenos="10 "></span></a>        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+<a id="__codelineno-56-11" name="__codelineno-56-11"></a><a href="#__codelineno-56-11"><span class="linenos" data-linenos="11 "></span></a>            <span class="n">content</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<a id="__codelineno-56-12" name="__codelineno-56-12"></a><a href="#__codelineno-56-12"><span class="linenos" data-linenos="12 "></span></a>            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;文件 &#39;</span><span class="si">{</span><span class="n">filename</span><span class="si">}</span><span class="s2">&#39; 的内容是：&quot;</span><span class="p">)</span>
+<a id="__codelineno-56-13" name="__codelineno-56-13"></a><a href="#__codelineno-56-13"><span class="linenos" data-linenos="13 "></span></a>            <span class="nb">print</span><span class="p">(</span><span class="n">content</span><span class="p">)</span>
+<a id="__codelineno-56-14" name="__codelineno-56-14"></a><a href="#__codelineno-56-14"><span class="linenos" data-linenos="14 "></span></a>    <span class="k">except</span> <span class="ne">FileNotFoundError</span><span class="p">:</span>
+<a id="__codelineno-56-15" name="__codelineno-56-15"></a><a href="#__codelineno-56-15"><span class="linenos" data-linenos="15 "></span></a>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;文件 &#39;</span><span class="si">{</span><span class="n">filename</span><span class="si">}</span><span class="s2">&#39; 未找到。&quot;</span><span class="p">)</span>
+<a id="__codelineno-56-16" name="__codelineno-56-16"></a><a href="#__codelineno-56-16"><span class="linenos" data-linenos="16 "></span></a>
+<a id="__codelineno-56-17" name="__codelineno-56-17"></a><a href="#__codelineno-56-17"><span class="linenos" data-linenos="17 "></span></a><span class="c1"># 追加内容到文件</span>
+<a id="__codelineno-56-18" name="__codelineno-56-18"></a><a href="#__codelineno-56-18"><span class="linenos" data-linenos="18 "></span></a><span class="k">def</span> <span class="nf">append_to_file</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">content</span><span class="p">):</span>
+<a id="__codelineno-56-19" name="__codelineno-56-19"></a><a href="#__codelineno-56-19"><span class="linenos" data-linenos="19 "></span></a>    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+<a id="__codelineno-56-20" name="__codelineno-56-20"></a><a href="#__codelineno-56-20"><span class="linenos" data-linenos="20 "></span></a>        <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">content</span><span class="p">)</span>
+<a id="__codelineno-56-21" name="__codelineno-56-21"></a><a href="#__codelineno-56-21"><span class="linenos" data-linenos="21 "></span></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;内容已被追加到文件 &#39;</span><span class="si">{</span><span class="n">filename</span><span class="si">}</span><span class="s2">&#39;。&quot;</span><span class="p">)</span>
+<a id="__codelineno-56-22" name="__codelineno-56-22"></a><a href="#__codelineno-56-22"><span class="linenos" data-linenos="22 "></span></a>
+<a id="__codelineno-56-23" name="__codelineno-56-23"></a><a href="#__codelineno-56-23"><span class="linenos" data-linenos="23 "></span></a><span class="c1"># 使用示例</span>
+<a id="__codelineno-56-24" name="__codelineno-56-24"></a><a href="#__codelineno-56-24"><span class="linenos" data-linenos="24 "></span></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+<a id="__codelineno-56-25" name="__codelineno-56-25"></a><a href="#__codelineno-56-25"><span class="linenos" data-linenos="25 "></span></a>    <span class="c1"># 定义文件名</span>
+<a id="__codelineno-56-26" name="__codelineno-56-26"></a><a href="#__codelineno-56-26"><span class="linenos" data-linenos="26 "></span></a>    <span class="n">filename</span> <span class="o">=</span> <span class="s2">&quot;example.txt&quot;</span>
+<a id="__codelineno-56-27" name="__codelineno-56-27"></a><a href="#__codelineno-56-27"><span class="linenos" data-linenos="27 "></span></a>
+<a id="__codelineno-56-28" name="__codelineno-56-28"></a><a href="#__codelineno-56-28"><span class="linenos" data-linenos="28 "></span></a>    <span class="c1"># 写入内容到文件</span>
+<a id="__codelineno-56-29" name="__codelineno-56-29"></a><a href="#__codelineno-56-29"><span class="linenos" data-linenos="29 "></span></a>    <span class="n">write_file</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s2">&quot;这是文件的初始内容。</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<a id="__codelineno-56-30" name="__codelineno-56-30"></a><a href="#__codelineno-56-30"><span class="linenos" data-linenos="30 "></span></a>
+<a id="__codelineno-56-31" name="__codelineno-56-31"></a><a href="#__codelineno-56-31"><span class="linenos" data-linenos="31 "></span></a>    <span class="c1"># 读取文件内容</span>
+<a id="__codelineno-56-32" name="__codelineno-56-32"></a><a href="#__codelineno-56-32"><span class="linenos" data-linenos="32 "></span></a>    <span class="n">read_file</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+<a id="__codelineno-56-33" name="__codelineno-56-33"></a><a href="#__codelineno-56-33"><span class="linenos" data-linenos="33 "></span></a>
+<a id="__codelineno-56-34" name="__codelineno-56-34"></a><a href="#__codelineno-56-34"><span class="linenos" data-linenos="34 "></span></a>    <span class="c1"># 追加内容到文件</span>
+<a id="__codelineno-56-35" name="__codelineno-56-35"></a><a href="#__codelineno-56-35"><span class="linenos" data-linenos="35 "></span></a>    <span class="n">append_to_file</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s2">&quot;这是追加的内容。</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<a id="__codelineno-56-36" name="__codelineno-56-36"></a><a href="#__codelineno-56-36"><span class="linenos" data-linenos="36 "></span></a>
+<a id="__codelineno-56-37" name="__codelineno-56-37"></a><a href="#__codelineno-56-37"><span class="linenos" data-linenos="37 "></span></a>    <span class="c1"># 再次读取文件内容</span>
+<a id="__codelineno-56-38" name="__codelineno-56-38"></a><a href="#__codelineno-56-38"><span class="linenos" data-linenos="38 "></span></a>    <span class="n">read_file</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
 </code></pre></div>
 <h2 id="random">random库<a class="headerlink" href="#random" title="Permanent link">&para;</a></h2>
 <p>pyrhon的一个基础库，不需要额外下载。</p>
 <p>在 Python 的 <code>random</code> 模块中，给定的范围通常是一个半开区间，即左闭右开区间）</p>
 <p><strong>rd.shuffle(seq)</strong>：随机打乱序列 seq 中的元素，<strong>不会创建一个新副本</strong>，而是<strong>打乱传入的对象</strong></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-57-1" name="__codelineno-57-1" href="#__codelineno-57-1"></a><span class="kn">import</span> <span class="nn">random</span> <span class="k">as</span> <span class="nn">rd</span>
-<a id="__codelineno-57-2" name="__codelineno-57-2" href="#__codelineno-57-2"></a><span class="n">num</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">]</span>
-<a id="__codelineno-57-3" name="__codelineno-57-3" href="#__codelineno-57-3"></a><span class="n">rd</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
-<a id="__codelineno-57-4" name="__codelineno-57-4" href="#__codelineno-57-4"></a><span class="nb">print</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
-<a id="__codelineno-57-5" name="__codelineno-57-5" href="#__codelineno-57-5"></a><span class="o">&gt;</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><a id="__codelineno-57-1" name="__codelineno-57-1"></a><a href="#__codelineno-57-1"><span class="linenos" data-linenos="1 "></span></a><span class="kn">import</span> <span class="nn">random</span> <span class="k">as</span> <span class="nn">rd</span>
+<a id="__codelineno-57-2" name="__codelineno-57-2"></a><a href="#__codelineno-57-2"><span class="linenos" data-linenos="2 "></span></a><span class="n">num</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">]</span>
+<a id="__codelineno-57-3" name="__codelineno-57-3"></a><a href="#__codelineno-57-3"><span class="linenos" data-linenos="3 "></span></a><span class="n">rd</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+<a id="__codelineno-57-4" name="__codelineno-57-4"></a><a href="#__codelineno-57-4"><span class="linenos" data-linenos="4 "></span></a><span class="nb">print</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+<a id="__codelineno-57-5" name="__codelineno-57-5"></a><a href="#__codelineno-57-5"><span class="linenos" data-linenos="5 "></span></a><span class="o">&gt;</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
 </code></pre></div>
 <p><strong>rd.choice(seq)</strong>：从序列 seq 中随机选择一个元素并返回</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-58-1" name="__codelineno-58-1" href="#__codelineno-58-1"></a><span class="kn">import</span> <span class="nn">random</span> <span class="k">as</span> <span class="nn">rd</span>
-<a id="__codelineno-58-2" name="__codelineno-58-2" href="#__codelineno-58-2"></a><span class="n">num</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">]</span>
-<a id="__codelineno-58-3" name="__codelineno-58-3" href="#__codelineno-58-3"></a><span class="n">a</span><span class="o">=</span><span class="n">rd</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
-<a id="__codelineno-58-4" name="__codelineno-58-4" href="#__codelineno-58-4"></a><span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-<a id="__codelineno-58-5" name="__codelineno-58-5" href="#__codelineno-58-5"></a><span class="o">&gt;</span><span class="mi">1</span>
+<div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><a id="__codelineno-58-1" name="__codelineno-58-1"></a><a href="#__codelineno-58-1"><span class="linenos" data-linenos="1 "></span></a><span class="kn">import</span> <span class="nn">random</span> <span class="k">as</span> <span class="nn">rd</span>
+<a id="__codelineno-58-2" name="__codelineno-58-2"></a><a href="#__codelineno-58-2"><span class="linenos" data-linenos="2 "></span></a><span class="n">num</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">]</span>
+<a id="__codelineno-58-3" name="__codelineno-58-3"></a><a href="#__codelineno-58-3"><span class="linenos" data-linenos="3 "></span></a><span class="n">a</span><span class="o">=</span><span class="n">rd</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+<a id="__codelineno-58-4" name="__codelineno-58-4"></a><a href="#__codelineno-58-4"><span class="linenos" data-linenos="4 "></span></a><span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<a id="__codelineno-58-5" name="__codelineno-58-5"></a><a href="#__codelineno-58-5"><span class="linenos" data-linenos="5 "></span></a><span class="o">&gt;</span><span class="mi">1</span>
 </code></pre></div>
 <p><strong>rd.randint(a, b)</strong>：返回一个从 a 到 b（包括 a 和 b）之间的随机整数</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-59-1" name="__codelineno-59-1" href="#__codelineno-59-1"></a><span class="kn">import</span> <span class="nn">random</span> <span class="k">as</span> <span class="nn">rd</span>
-<a id="__codelineno-59-2" name="__codelineno-59-2" href="#__codelineno-59-2"></a><span class="n">a</span><span class="o">=</span><span class="n">rd</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
-<a id="__codelineno-59-3" name="__codelineno-59-3" href="#__codelineno-59-3"></a><span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-<a id="__codelineno-59-4" name="__codelineno-59-4" href="#__codelineno-59-4"></a><span class="o">&gt;</span><span class="mi">7</span>
+<div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><a id="__codelineno-59-1" name="__codelineno-59-1"></a><a href="#__codelineno-59-1"><span class="linenos" data-linenos="1 "></span></a><span class="kn">import</span> <span class="nn">random</span> <span class="k">as</span> <span class="nn">rd</span>
+<a id="__codelineno-59-2" name="__codelineno-59-2"></a><a href="#__codelineno-59-2"><span class="linenos" data-linenos="2 "></span></a><span class="n">a</span><span class="o">=</span><span class="n">rd</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
+<a id="__codelineno-59-3" name="__codelineno-59-3"></a><a href="#__codelineno-59-3"><span class="linenos" data-linenos="3 "></span></a><span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<a id="__codelineno-59-4" name="__codelineno-59-4"></a><a href="#__codelineno-59-4"><span class="linenos" data-linenos="4 "></span></a><span class="o">&gt;</span><span class="mi">7</span>
 </code></pre></div>
 <p><strong>rd.random()</strong>：()内无需参数，返回一个 [0,1） 之间的随机浮点数</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-60-1" name="__codelineno-60-1" href="#__codelineno-60-1"></a><span class="kn">import</span> <span class="nn">random</span> <span class="k">as</span> <span class="nn">rd</span>
-<a id="__codelineno-60-2" name="__codelineno-60-2" href="#__codelineno-60-2"></a><span class="n">a</span><span class="o">=</span><span class="n">rd</span><span class="o">.</span><span class="n">random</span><span class="p">()</span>
-<a id="__codelineno-60-3" name="__codelineno-60-3" href="#__codelineno-60-3"></a><span class="o">&gt;</span><span class="mi">0</span><span class="o">~</span><span class="mi">1</span>
+<div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><a id="__codelineno-60-1" name="__codelineno-60-1"></a><a href="#__codelineno-60-1"><span class="linenos" data-linenos="1 "></span></a><span class="kn">import</span> <span class="nn">random</span> <span class="k">as</span> <span class="nn">rd</span>
+<a id="__codelineno-60-2" name="__codelineno-60-2"></a><a href="#__codelineno-60-2"><span class="linenos" data-linenos="2 "></span></a><span class="n">a</span><span class="o">=</span><span class="n">rd</span><span class="o">.</span><span class="n">random</span><span class="p">()</span>
+<a id="__codelineno-60-3" name="__codelineno-60-3"></a><a href="#__codelineno-60-3"><span class="linenos" data-linenos="3 "></span></a><span class="o">&gt;</span><span class="mi">0</span><span class="o">~</span><span class="mi">1</span>
 </code></pre></div>
 <p><strong>rd.seed()</strong>：设置随机数的种子值（种子值决定了生成的随机序列，默认是系统的时间。如果种子值相同，则生成的序列也相同。因此，可以使用这个函数来保证程序每次运行时生成相同的随机数序列。)</p>
 <p>例如，在实验或测试中需要固定生成的随机数序列以便进行比较或重复验证时，就可以使用该函数。</p>
 <p>seed能够帮助我们生成固定的随机数序列。参数可以任意类型，但是传入参数才有效。</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-61-1" name="__codelineno-61-1" href="#__codelineno-61-1"></a><span class="kn">import</span> <span class="nn">random</span> <span class="k">as</span> <span class="nn">rd</span>
-<a id="__codelineno-61-2" name="__codelineno-61-2" href="#__codelineno-61-2"></a><span class="n">rd</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-<a id="__codelineno-61-3" name="__codelineno-61-3" href="#__codelineno-61-3"></a><span class="nb">print</span><span class="p">(</span><span class="n">rd</span><span class="o">.</span><span class="n">random</span><span class="p">())</span>
-<a id="__codelineno-61-4" name="__codelineno-61-4" href="#__codelineno-61-4"></a><span class="o">&gt;</span><span class="mf">0.13436424411240122</span>
+<div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><a id="__codelineno-61-1" name="__codelineno-61-1"></a><a href="#__codelineno-61-1"><span class="linenos" data-linenos="1 "></span></a><span class="kn">import</span> <span class="nn">random</span> <span class="k">as</span> <span class="nn">rd</span>
+<a id="__codelineno-61-2" name="__codelineno-61-2"></a><a href="#__codelineno-61-2"><span class="linenos" data-linenos="2 "></span></a><span class="n">rd</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<a id="__codelineno-61-3" name="__codelineno-61-3"></a><a href="#__codelineno-61-3"><span class="linenos" data-linenos="3 "></span></a><span class="nb">print</span><span class="p">(</span><span class="n">rd</span><span class="o">.</span><span class="n">random</span><span class="p">())</span>
+<a id="__codelineno-61-4" name="__codelineno-61-4"></a><a href="#__codelineno-61-4"><span class="linenos" data-linenos="4 "></span></a><span class="o">&gt;</span><span class="mf">0.13436424411240122</span>
 </code></pre></div>
 <p><strong>rd.uniform(a, b)</strong>：函数来生成a到b范围内的随机小数[a,b)</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-62-1" name="__codelineno-62-1" href="#__codelineno-62-1"></a><span class="kn">import</span> <span class="nn">random</span> <span class="k">as</span> <span class="nn">rd</span>
-<a id="__codelineno-62-2" name="__codelineno-62-2" href="#__codelineno-62-2"></a><span class="n">a</span><span class="o">=</span><span class="n">rd</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span>
-<a id="__codelineno-62-3" name="__codelineno-62-3" href="#__codelineno-62-3"></a><span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-<a id="__codelineno-62-4" name="__codelineno-62-4" href="#__codelineno-62-4"></a><span class="o">&gt;</span><span class="mf">10.016896634129942</span>
+<div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><a id="__codelineno-62-1" name="__codelineno-62-1"></a><a href="#__codelineno-62-1"><span class="linenos" data-linenos="1 "></span></a><span class="kn">import</span> <span class="nn">random</span> <span class="k">as</span> <span class="nn">rd</span>
+<a id="__codelineno-62-2" name="__codelineno-62-2"></a><a href="#__codelineno-62-2"><span class="linenos" data-linenos="2 "></span></a><span class="n">a</span><span class="o">=</span><span class="n">rd</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span>
+<a id="__codelineno-62-3" name="__codelineno-62-3"></a><a href="#__codelineno-62-3"><span class="linenos" data-linenos="3 "></span></a><span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<a id="__codelineno-62-4" name="__codelineno-62-4"></a><a href="#__codelineno-62-4"><span class="linenos" data-linenos="4 "></span></a><span class="o">&gt;</span><span class="mf">10.016896634129942</span>
 </code></pre></div>
 <p>计算机中的随机数通常是<strong>基于当前时间来生成的</strong>，也就是所谓的<strong>伪随机数</strong>。在程序中我们可以使用各种算法来生成这些随机数，但是它们都<u>不能真正做到完全随机，因为它们都有一定的规律可循</u></p>
 <h2 id="os">os<a class="headerlink" href="#os" title="Permanent link">&para;</a></h2>
@@ -3347,17 +3347,17 @@ a=1 if x&gt;5 <strong>else</strong> **b</p>
 <p>Windows下python不能创建多级目录</p>
 <p>os.rkdir(‘名称‘)#删除文件夹</p>
 <h2 id="_39">异常处理：<a class="headerlink" href="#_39" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-63-1" name="__codelineno-63-1" href="#__codelineno-63-1"></a><span class="k">try</span><span class="p">:</span>
-<a id="__codelineno-63-2" name="__codelineno-63-2" href="#__codelineno-63-2"></a>
-<a id="__codelineno-63-3" name="__codelineno-63-3" href="#__codelineno-63-3"></a>  <span class="n">代码内容</span><span class="err">（</span><span class="n">主码</span><span class="err">）</span>
-<a id="__codelineno-63-4" name="__codelineno-63-4" href="#__codelineno-63-4"></a>
-<a id="__codelineno-63-5" name="__codelineno-63-5" href="#__codelineno-63-5"></a><span class="n">Except</span><span class="err">（</span><span class="n">error1</span><span class="err">）</span><span class="p">:</span>
-<a id="__codelineno-63-6" name="__codelineno-63-6" href="#__codelineno-63-6"></a>
-<a id="__codelineno-63-7" name="__codelineno-63-7" href="#__codelineno-63-7"></a>  <span class="n">出错后执行的代码</span>
-<a id="__codelineno-63-8" name="__codelineno-63-8" href="#__codelineno-63-8"></a>
-<a id="__codelineno-63-9" name="__codelineno-63-9" href="#__codelineno-63-9"></a><span class="n">Except</span><span class="err">（</span><span class="n">erro2</span><span class="err">）</span><span class="p">:</span>
-<a id="__codelineno-63-10" name="__codelineno-63-10" href="#__codelineno-63-10"></a>
-<a id="__codelineno-63-11" name="__codelineno-63-11" href="#__codelineno-63-11"></a>  <span class="err">……</span>
+<div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><a id="__codelineno-63-1" name="__codelineno-63-1"></a><a href="#__codelineno-63-1"><span class="linenos" data-linenos=" 1 "></span></a><span class="k">try</span><span class="p">:</span>
+<a id="__codelineno-63-2" name="__codelineno-63-2"></a><a href="#__codelineno-63-2"><span class="linenos" data-linenos=" 2 "></span></a>
+<a id="__codelineno-63-3" name="__codelineno-63-3"></a><a href="#__codelineno-63-3"><span class="linenos" data-linenos=" 3 "></span></a>  <span class="n">代码内容</span><span class="err">（</span><span class="n">主码</span><span class="err">）</span>
+<a id="__codelineno-63-4" name="__codelineno-63-4"></a><a href="#__codelineno-63-4"><span class="linenos" data-linenos=" 4 "></span></a>
+<a id="__codelineno-63-5" name="__codelineno-63-5"></a><a href="#__codelineno-63-5"><span class="linenos" data-linenos=" 5 "></span></a><span class="n">Except</span><span class="err">（</span><span class="n">error1</span><span class="err">）</span><span class="p">:</span>
+<a id="__codelineno-63-6" name="__codelineno-63-6"></a><a href="#__codelineno-63-6"><span class="linenos" data-linenos=" 6 "></span></a>
+<a id="__codelineno-63-7" name="__codelineno-63-7"></a><a href="#__codelineno-63-7"><span class="linenos" data-linenos=" 7 "></span></a>  <span class="n">出错后执行的代码</span>
+<a id="__codelineno-63-8" name="__codelineno-63-8"></a><a href="#__codelineno-63-8"><span class="linenos" data-linenos=" 8 "></span></a>
+<a id="__codelineno-63-9" name="__codelineno-63-9"></a><a href="#__codelineno-63-9"><span class="linenos" data-linenos=" 9 "></span></a><span class="n">Except</span><span class="err">（</span><span class="n">erro2</span><span class="err">）</span><span class="p">:</span>
+<a id="__codelineno-63-10" name="__codelineno-63-10"></a><a href="#__codelineno-63-10"><span class="linenos" data-linenos="10 "></span></a>
+<a id="__codelineno-63-11" name="__codelineno-63-11"></a><a href="#__codelineno-63-11"><span class="linenos" data-linenos="11 "></span></a>  <span class="err">……</span>
 </code></pre></div>
 <p>异常代码的执行原则：因为python是一行一行编译的，他在try处的主码内容，所产生的报错必然是第一个错误，所以主码的报错以主码出现的第一个错误为主。在except中同样，查询到主码的第一个错误后，与第一个相符的except内的错误条件匹配后，有且仅运行此except下的出错后执行的代码。</p>
 <p>补充：</p>
@@ -3460,13 +3460,13 @@ a=1 if x&gt;5 <strong>else</strong> **b</p>
 <p>属于一种自建函数，但区别在于有return的函数直接返回结果，程序终止不再运行，并销毁局部变量。而yield结尾的函数，则会生成一个生成器你可以用for循环或者调和next()方法遍历生成器对象来生成结果。</p>
 <p>底层运作原理是：调用生成器函数过程中，每次遇到yield都会暂停保存当前的所有运行信息，返回yield的值，并且下次运行时继续在此处开始。直到全部遍历。</p>
 <p>例子：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-64-1" name="__codelineno-64-1" href="#__codelineno-64-1"></a>def gen(max):
-<a id="__codelineno-64-2" name="__codelineno-64-2" href="#__codelineno-64-2"></a>       n = 0
-<a id="__codelineno-64-3" name="__codelineno-64-3" href="#__codelineno-64-3"></a>       while n &lt;max:
-<a id="__codelineno-64-4" name="__codelineno-64-4" href="#__codelineno-64-4"></a>                    print(n)
-<a id="__codelineno-64-5" name="__codelineno-64-5" href="#__codelineno-64-5"></a>                    n += 1
-<a id="__codelineno-64-6" name="__codelineno-64-6" href="#__codelineno-64-6"></a>                    yield n
-<a id="__codelineno-64-7" name="__codelineno-64-7" href="#__codelineno-64-7"></a>g=gen(10000)
+<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><a id="__codelineno-64-1" name="__codelineno-64-1"></a><a href="#__codelineno-64-1"><span class="linenos" data-linenos="1 "></span></a>def gen(max):
+<a id="__codelineno-64-2" name="__codelineno-64-2"></a><a href="#__codelineno-64-2"><span class="linenos" data-linenos="2 "></span></a>       n = 0
+<a id="__codelineno-64-3" name="__codelineno-64-3"></a><a href="#__codelineno-64-3"><span class="linenos" data-linenos="3 "></span></a>       while n &lt;max:
+<a id="__codelineno-64-4" name="__codelineno-64-4"></a><a href="#__codelineno-64-4"><span class="linenos" data-linenos="4 "></span></a>                    print(n)
+<a id="__codelineno-64-5" name="__codelineno-64-5"></a><a href="#__codelineno-64-5"><span class="linenos" data-linenos="5 "></span></a>                    n += 1
+<a id="__codelineno-64-6" name="__codelineno-64-6"></a><a href="#__codelineno-64-6"><span class="linenos" data-linenos="6 "></span></a>                    yield n
+<a id="__codelineno-64-7" name="__codelineno-64-7"></a><a href="#__codelineno-64-7"><span class="linenos" data-linenos="7 "></span></a>g=gen(10000)
 </code></pre></div>
 <p>需要一个全局变量来引用这个生成器。</p>
 <h2 id="statistics">Statistics库:<a class="headerlink" href="#statistics" title="Permanent link">&para;</a></h2>

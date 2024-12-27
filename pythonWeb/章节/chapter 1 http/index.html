@@ -1402,9 +1402,9 @@
 <p>Flask对用户所访问的URL进行<strong>解析</strong>，找到<strong>相应的响应内容</strong>，将其<strong>返回到浏览器</strong>。</p>
 <p><strong>路由</strong>的作用是帮助Flask知晓URL对应的内容在哪儿。</p>
 <p>Flask运行的代码是由多个被<strong>装饰器</strong><code>app.route</code> 装饰的<strong>函数</strong>所组成。这个装饰器用于<strong>定义路由</strong>，由此确定URL和python函数之间的映射。</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="k">def</span> <span class="nf">hello</span><span class="p">():</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    <span class="k">return</span> <span class="s1">&#39;hello world&#39;</span>
+<div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><a href="#__codelineno-0-1"><span class="linenos" data-linenos="1 "></span></a><span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a><a href="#__codelineno-0-2"><span class="linenos" data-linenos="2 "></span></a><span class="k">def</span> <span class="nf">hello</span><span class="p">():</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a><a href="#__codelineno-0-3"><span class="linenos" data-linenos="3 "></span></a>    <span class="k">return</span> <span class="s1">&#39;hello world&#39;</span>
 </code></pre></div>
 <p>被路由装饰器装饰的函数我们称作：<strong>视图函数</strong></p>
 <p>用于返回URL请求的相应响应内容。</p>
@@ -1500,10 +1500,10 @@
 <p>Flask默认以第2种种方式存储Session。即所有Session数据<strong>在服务器端加密</strong>，<strong>存储在浏览器的Cookie中</strong>。</p>
 <p><code>tips</code></p>
 <p>删除cookie操作</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">resp</span><span class="o">.</span><span class="n">delete_cookie</span><span class="p">(</span><span class="s1">&#39;last_access_time&#39;</span><span class="p">)</span>
+<div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><a href="#__codelineno-1-1"><span class="linenos" data-linenos="1 "></span></a><span class="n">resp</span><span class="o">.</span><span class="n">delete_cookie</span><span class="p">(</span><span class="s1">&#39;last_access_time&#39;</span><span class="p">)</span>
 </code></pre></div>
 <p>删除session操作</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">session</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;sign_in_time_prev&#39;</span><span class="p">)</span> <span class="c1">#删除特定的Session</span>
+<div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><a href="#__codelineno-2-1"><span class="linenos" data-linenos="1 "></span></a><span class="n">session</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;sign_in_time_prev&#39;</span><span class="p">)</span> <span class="c1">#删除特定的Session</span>
 </code></pre></div>
 <h1 id="_9">扩展补充<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h1>
 <h3 id="django">Django<a class="headerlink" href="#django" title="Permanent link">&para;</a></h3>
