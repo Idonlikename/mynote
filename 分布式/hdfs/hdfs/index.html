@@ -951,19 +951,28 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
-      数据备份
+      数据持久化
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="数据备份">
+    <nav class="md-nav" aria-label="数据持久化">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#edits" class="md-nav__link">
     <span class="md-ellipsis">
       edits
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fsimage" class="md-nav__link">
+    <span class="md-ellipsis">
+      fsimage
     </span>
   </a>
   
@@ -1012,7 +1021,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
       脑裂
     </span>
@@ -1026,7 +1035,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#_6" class="md-nav__link">
     <span class="md-ellipsis">
       数据副本机制
     </span>
@@ -1036,7 +1045,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#_7" class="md-nav__link">
     <span class="md-ellipsis">
       副本距离
     </span>
@@ -1045,7 +1054,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
+  <a href="#_8" class="md-nav__link">
     <span class="md-ellipsis">
       副本放置策略
     </span>
@@ -1375,19 +1384,28 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
-      数据备份
+      数据持久化
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="数据备份">
+    <nav class="md-nav" aria-label="数据持久化">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#edits" class="md-nav__link">
     <span class="md-ellipsis">
       edits
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fsimage" class="md-nav__link">
+    <span class="md-ellipsis">
+      fsimage
     </span>
   </a>
   
@@ -1436,7 +1454,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
       脑裂
     </span>
@@ -1450,7 +1468,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#_6" class="md-nav__link">
     <span class="md-ellipsis">
       数据副本机制
     </span>
@@ -1460,7 +1478,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#_7" class="md-nav__link">
     <span class="md-ellipsis">
       副本距离
     </span>
@@ -1469,7 +1487,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
+  <a href="#_8" class="md-nav__link">
     <span class="md-ellipsis">
       副本放置策略
     </span>
@@ -1508,74 +1526,99 @@
   <h1>hdfs</h1>
 
 <h2 id="hdfs-"><code>HDFS</code>-数据存储<a class="headerlink" href="#hdfs-" title="Permanent link">&para;</a></h2>
-<p><code>HDFS</code> 集群是建立在 <code>Hadoop</code> 集群之上的，由于 <code>HDFS</code> 是 <code>Hadoop</code> 最主要的<strong>守护进程</strong>基本可以认为是整个<code>Hadoop</code>的base。<code>HDFS</code> 和数据库相似。使用 <code>HDFS</code> 需要用 <code>HDFS</code> 客户端通过<code>Socket</code>连接到 <code>HDFS</code> 服务器实现文件系统的使用。</p>
-<p>不支持随机写，但支持追加写。（因为是顺序写入）适合一次写入，多次读取。</p>
+<p>Hadoop Distributed File System，Hadoop 分布式文件系统，简称 HDFS。</p>
+<p><code>HDFS</code> 用于在集群中储存文件，它所使用的核心思想是 Google 的 <code>GFS</code> 思想，可以存储很大的文件。在服务器集群中，文件存储往往被要求<strong>高效</strong>而<strong>稳定</strong>，<code>HDFS</code>同时实现了这两个优点。</p>
+<p>由于 <code>HDFS</code> 是 <code>Hadoop</code> 最主要的<strong>守护进程</strong>基本可以认为是整个<code>Hadoop</code>的基础（base）。<code>HDFS</code> 和数据库相似。使用 <code>HDFS</code> 需要用 <code>HDFS</code> 客户端通过 <code>Socket</code> 连接到 <code>HDFS</code> 服务器实现文件系统的使用。</p>
+<ul>
+<li>功能：<code>HDFS</code>的主要功能是读写和存储文件</li>
+<li>特点：不支持随机写，但支持追加写（因为是顺序写入）。适合一次写入，多次读取。</li>
+</ul>
 <h3 id="hdfs">HDFS基本结构<a class="headerlink" href="#hdfs" title="Permanent link">&para;</a></h3>
 <p>其最基本的构成是一台主节点（<code>NameNode</code>）与多台数据节点（<code>DataNode</code>）</p>
 <p><a class="glightbox" href="https://Idonlikename.github.io/mynote/分布式/hdfs/image/img1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="img" src="https://Idonlikename.github.io/mynote/分布式/hdfs/image/img1.png" /></a></p>
 <h4 id="_1">元数据<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h4>
 <p>元数据管理是<code>HDFS</code>运行中的一个重要组成部分，它涉及到文件系统的<strong>命名空间</strong>、<strong>文件</strong>和<strong>目录的组织</strong>、<strong>权限控制</strong>等方面。其大小通常为<code>128B</code> </p>
 <h4 id="block"><code>Block</code><a class="headerlink" href="#block" title="Permanent link">&para;</a></h4>
-<p>物理磁盘中有块 <code>Block</code> 的概念，磁盘的物理Block是磁盘操作最小的单元，<strong>读写操作均以Block作为最小单元</strong>，一般为<code>512 Byte</code>。</p>
+<h5 id="_2">物理磁盘块<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h5>
+<p>物理磁盘中有块 <code>Block</code> 的概念，磁盘的物理Block是磁盘<strong>最小操作单元</strong>，读写操作均以<code>Block</code>作为最小单元，一般为<code>512 Byte</code>。</p>
+<h5 id="_3">文件系统块<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h5>
 <p>文件系统在物理磁盘的Block之上抽象了另一层概念，文件系统Block物理磁盘Block的<strong>整数倍</strong>。通常为几KB。<code>Hadoop</code>提供的<code>df</code>、<code>fsck</code>这类运维工具都是在<strong>文件系统的Block级别上进行操作</strong>。</p>
-<p>块越小，读写速度就越快（当然是磁盘自身传输速度固定的前提下），但是寻址的速度也就越慢。</p>
-<p><code>HDFS</code>的Block块比一般单机文件系统大得多，默认为<code>128M</code>。设置的如此之大是为了<strong>最小化查找（seek）时间</strong>，<u>控制定位文件与传输文件所用的时间比例</u>。</p>
-<p>比如定位到Block所需的时间为<code>10ms</code>，磁盘传输速度为<code>100M/s</code>。如果要将定位到Block所用时间占传输时间的比例控制1%，前面两个数据是一定的，我们需要 <strong>定位时间 = 0.01*block_size / 传输速度</strong>，则Block大小需要约<code>100M</code>。</p>
-<p>但是如果Block设置过大，在<code>MapReduce</code>任务中，Map或者Reduce任务的个数就会变少。如果任务的个数小于集群机器数量，会使得作业运行效率很低。</p>
-<p><code>HDFS</code>的文件被拆分成block-sized的<code>chunk</code>，<code>chunk</code>作为<strong>独立单元存储</strong>。<strong>比Block小的文件不会占用整个Block</strong>，只会占据实际大小。</p>
-<p>例如， 如果一个文件大小为<code>1M</code>，则在<code>HDFS</code>中只会占用<code>1M</code>的空间，而不是<code>128M</code>。<strong>Block块只是一个逻辑概念</strong>，实际占用的物理存储空间是以文件大小为准的。</p>
-<p>以一种情况帮忙理解，从客户端上传一个大小为130MB的文件。根据块大小，此时应该有2个block块，其中1个块大小是128MB，1个块大小是2MB，再上传一个大小为 24MB 的文件，这个24MB 的文件上传后是一个独立的文件块，占用物理存储空间大小为24MB，而不会与之前的block块合并。</p>
+<p><u>块越小，读写速度就越快（当然是磁盘自身传输速度固定的前提下），但是寻址的速度也就越慢。</u></p>
+<h5 id="hdfs_1">HDFS块<a class="headerlink" href="#hdfs_1" title="Permanent link">&para;</a></h5>
+<p><code>HDFS</code>的<code>Block</code>块比一般单机文件系统大得多，默认为<code>128M</code>。设置的如此之大是为了<strong>最小化查找（seek）时间</strong>，<u>控制定位文件与传输文件所用的时间比例</u>。比如：</p>
+<p>定位到Block所需的时间为<code>10ms</code>，磁盘传输速度为<code>100M/s</code>。如果要将定位到Block所用时间占传输时间的比例控制1%，前面两个数据是一定的，我们需要 <strong>定位时间 = 0.01*block_size / 传输速度</strong>，则Block大小需要约<code>100M</code>。</p>
+<p>但是如果Block设置过大，在<code>MapReduce</code>任务中，Map或者Reduce任务的个数就会变少。如果任务的个数小于集群机器数量，会使得作业运行效率很低。Block大小是影响<code>MapReduce</code>任务分配的因素之一。</p>
+<h6 id="hdfs_2">关于HDFS块存储的问题<a class="headerlink" href="#hdfs_2" title="Permanent link">&para;</a></h6>
+<p>关于<code>HDFS</code>中的文件是否会无论大小，占据块的整数倍大小的实际存储空间问题。<code>HDFS</code>的文件可以通过设置，选择是否让比块小的文件占据一整个块。</p>
+<p><strong>默认情况下</strong></p>
+<p><code>HDFS</code>会让一个<code>1M</code>会占据<code>128MB</code></p>
+<p>但<code>HDFS</code>同时也提供了一个把<code>block</code>拆分成block-sized的<code>chunk</code>，将<code>chunk</code>作为<strong>独立单元存储</strong>。使得<strong>比Block小的文件不会占用整个Block</strong>，只会占据实际大小。</p>
+<p>例如， 如果一个文件大小为<code>1M</code>，则在<code>HDFS</code>中只会占用<code>1M</code>的空间，而不是<code>128M</code>。在这种情况下，<strong>Block块只是一个逻辑概念</strong>，实际占用的物理存储空间是以文件大小为准的。</p>
 <p>这里要注意两个数据，<code>hdfs</code>中有两个128分别为：</p>
 <ul>
 <li><code>128MB</code> <code>hdfs</code>默认切分块的大小。</li>
 <li><code>128B</code>   <code>hdfs</code>默认元数据的大小。</li>
 </ul>
 <h4 id="namenodenn"><strong><code>NameNode</code>（nn）</strong><a class="headerlink" href="#namenodenn" title="Permanent link">&para;</a></h4>
-<p><strong>主节点</strong>或称<strong>命名节点</strong>，用于管理整个文件目录树（目录树在内存当中）。</p>
+<p><strong>主节点</strong>或称<strong>命名节点</strong>，用于管理整个文件目录树（目录树在<strong>内存 cache</strong>当中）。</p>
 <p><code>NameNode</code>如何进行文件目录管理呢？</p>
 <p>可以理解为，<code>NameNode</code>存储着所有在<code>DataNode</code>所存储的文件的<strong>元数据</strong>，如其文件名，文件目录结构，文件属性（生成时间、副本数、文件权限），以及每个文件的块所在的 <code>DataNode</code> 等。</p>
-<p>与此同时，为了管理各个<code>DataNode</code>，协调各个<code>dn</code>，<code>nn</code>会监控每一个<code>dn</code>。为了让<code>nn</code>能够判断，<code>dn</code>有心跳机制每过一段时间发送心跳信号给<code>nn</code>，对于长时间无反应的<code>dn</code> <code>nn</code>便不再访问（说明网络问题或者<code>dn</code>宕机其他不可用问题）。这种机制很好地保证了，在使用时<code>dn</code>写入的<strong>数据的完整可用</strong>，对于数据节点的<strong>故障检测</strong>，<strong>防止脑裂（脑裂也就是出现两个<code>NameNode</code>的情况，准确说是两个<code>NameNode</code>认为自己是Active的情况）</strong>。在<code>dn</code>写入上来说，<code>nn</code>会将写入的数据<strong>均匀负载</strong>，避免集中在某个节点导致过度访问。</p>
-<p>命名节点 (<code>NameNode</code>) 是用于指挥其它节点存储的节点。任何一个"文件系统"(File System, FS) 都需要具备根据文件路径映射到文件的功能，命名节点就是用于<strong>储存这些映射信息并提供映射服务的计算机</strong>，在整个 <code>HDFS</code> 系统中扮演"管理员"的角色，因此一个 <code>HDFS</code> 集群中只有一个命名节点。client想要读写哪一个data都是由<code>nn</code>分配创建或查找<code>dn</code>实现。</p>
+<p>与此同时，为了管理各个<code>DataNode</code>，协调各个<code>dn</code>，<code>nn</code>会监控每一个<code>dn</code>。为了让<code>nn</code>能够判断，<code>dn</code>有<strong>心跳机制</strong>每过一段时间发送心跳信号给<code>nn</code>，对于长时间无反应的<code>dn</code> ，<code>nn</code>便不再访问（说明网络问题或者<code>dn</code>宕机等，其他不可用问题）。</p>
+<p>这种机制很好地保证了，在使用时<code>dn</code>写入的<strong>数据的完整可用</strong>，对于数据节点的<strong>故障检测</strong>，<strong>防止脑裂（脑裂也就是出现两个<code>NameNode</code>的情况，准确说是两个<code>NameNode</code>认为自己是Active的情况）</strong>。在<code>dn</code>写入上来说，<code>nn</code>会将写入的数据<strong>均匀负载</strong>，避免集中在某个节点导致过度访问。</p>
+<p>命名节点 (<code>NameNode</code>) 是用于指挥其它节点存储的节点。任何一个"文件系统"(File System, FS) 都需要具备根据文件路径映射到文件的功能，命名节点就是用于<strong>储存这些映射信息并提供映射服务的计算机</strong>，在整个 <code>HDFS</code> 系统中扮演"管理员"的角色，因此一个 <code>HDFS</code> 集群中只有一个命名节点。client想要读写哪一个<code>data</code> 都是由<code>nn</code>分配创建或查找<code>dn</code>实现。</p>
 <h4 id="datanodedn"><strong><code>DataNode</code>（dn）</strong><a class="headerlink" href="#datanodedn" title="Permanent link">&para;</a></h4>
 <p><strong>数据节点</strong>，用于存储数据，以及对Client提供数据的读写服务。</p>
-<p>数据节点 (<code>DataNode</code>) 使用来储存数据块的节点。当一个文件被命名节点承认并分块之后将会被储存到被分配的数据节点中去。数据节点具有储存数据、读写数据的功能，其中存储的数据块比较类似于硬盘中的"扇区"概念，是 <code>HDFS</code> <strong>存储的基本单位</strong>。</p>
+<p>数据节点 (<code>DataNode</code>) 使用来储存数据块的节点。当一个文件被命名节点 <code>nn</code> 承认并分块<code>Block</code>之后将会被储存到被分配的数据节点中去。数据节点具有储存数据、读写数据的功能。其中存储的数据块<code>Block</code> 比较类似于硬盘中的"<strong>扇区</strong>"概念，是 <code>HDFS</code> <strong>存储的基本单位</strong>。</p>
 <p><code>dn</code>支持热扩展，即在整个<code>HDFS</code>使用过程中添加新的<code>dn</code> ，而无需重启。</p>
-<p>为了保证我们的数据的安全，会进行数据Replication，也就是备份又称数据冗余来保护我们的数据。<code>FSDataOutputStream</code>(文件系统输出流)在写入数据在某一个数据节点时，这个节点会借助计算机网络实现在多个节点的备份。在完成备份之后<code>DataNode</code>才会告诉<code>nn</code>写入完成。</p>
-<p>读写</p>
+<p>为了保证我们的数据的安全，会进行数据备份——<code>Replication</code>，又称<strong>数据冗余</strong>来保护我们的数据。<code>FSDataOutputStream</code>(文件系统输出流)在写入数据在某一个数据节点时，这个节点会借助计算机网络实现在多个节点的备份。</p>
+<p><strong>在完成备份之后<code>DataNode</code>才会告诉<code>nn</code>写入完成。</strong></p>
+<p>读过程</p>
+<p>客户端通过<code>HDFS</code>客户端模块向分布式文件系统发起打开文件的请求，接着从<code>NameNode</code>获取文件数据块的位置信息，随后客户端通过<code>FSDataInputStream</code>接口从<code>DataNode</code>读取数据块，这个过程涉及客户端发送读取请求到多个<code>DataNode</code>，<code>DataNode</code>响应并发送数据，客户端在接收完所有数据后关闭文件流，完成数据的读取操作。</p>
 <p><a class="glightbox" href="https://Idonlikename.github.io/mynote/分布式/hdfs/image/img3.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="这里写图片描述" src="https://Idonlikename.github.io/mynote/分布式/hdfs/image/img3.png" /></a></p>
-<p>写数据</p>
+<p>写过程</p>
+<p>客户端首先通过<code>HDFS</code>客户端模块向<code>NameNode</code>发送创建文件的请求，<code>NameNode</code>在文件系统命名空间中<strong>创建新文件并记录元数据</strong>，然后客户端通过<code>FSDataOutputStream</code>向<code>DataNode</code>发送写入数据的请求，数据被分块并写入到一个<code>DataNode</code>的<strong>pipeline</strong>中，这个<strong>pipeline</strong>由多个<code>DataNode</code>组成，用于存储数据块的副本，每个<code>DataNode</code>在接收到数据包后会发送确认包（<code>ack packet</code>）回客户端，确保数据的可靠传输，最后客户端关闭输出流并通知<code>NameNode</code>完成文件写入，<code>NameNode</code><strong>更新文件的元数据</strong>，确保文件的创建过程在<code>HDFS</code>中正确记录。</p>
 <p><a class="glightbox" href="https://Idonlikename.github.io/mynote/分布式/hdfs/image/img2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="这里写图片描述" src="https://Idonlikename.github.io/mynote/分布式/hdfs/image/img2.png" /></a></p>
-<h3 id="_2">数据备份<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
-<p>因为Client访问文件必须经由<code>NN</code>，这使得<code>NN</code>在整个结构中都很重要。甚至<code>NN</code>是整个<code>HDFS</code>的主要性能瓶颈，提高<code>NN</code>的性能就能提高整个系统的响应速度。为了保证系统的响应速度，其实整个文件系统的<strong>目录树都在内存中</strong>。这反而导致了一个问题，一旦<code>NN</code>突然崩溃内存中的文件就会失去，那就会失去整个目录树，导致我们找不到<code>DataNode</code>中的文件了。</p>
+<h3 id="_4">数据持久化<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>因为Client访问文件必须经由<code>NN</code>，这使得<code>NN</code>在整个结构中都很重要。甚至<code>NN</code>是整个<code>HDFS</code>的主要性能瓶颈，提高<code>NN</code>的性能就能提高整个系统的响应速度。为了保证系统的响应速度，其实整个文件系统的<strong>目录树都在内存中</strong>。这反而导致了一个问题，一旦<code>NN</code>突然崩溃内存中的文件就会失去，那就会失去整个目录树，导致我们找不到<code>DataNode</code>中的文件了。（内存保证了nn的效率，但也是其易丢失）</p>
 <p>所以我们利用如下的两个结构帮助我们解决<code>NN</code>挂掉的问题。（在整个分布式系统中必须要考虑我们的任何节点会挂的可能）</p>
-<p>默认情况数据持久化的触发条件为：<strong>64MB</strong>或者<strong>1h</strong></p>
+<p>默认情况数据持久化的两个触发条件为：大小为<strong><code>64MB</code></strong>或者时间到达<strong><code>1h</code></strong></p>
 <h4 id="edits">edits<a class="headerlink" href="#edits" title="Permanent link">&para;</a></h4>
-<p>我们使用<strong>日志</strong>来帮助我们回复目录树，在任何引起<code>HDFS</code>改变的操作执行时，我们便会把操作写入<strong>日志文件——edits</strong>。当我们重启<code>NN</code>时，<u>edits会像一个脚本，读取那些操作执行</u>，将<code>NN</code>的目录树恢复到挂掉之前。</p>
-<p>这引起了另一个问题，<u>如果我们的目录树更新的十分多，单单使用edits会导致恢复的时间异常漫长。</u></p>
-<p>为了解决这个问题我们引入<code>fsimage</code>——file system image <strong>文件系统镜像</strong>。也就是采用批处理的方法，当edits积累到一定程度我们则会把edits的操作并入<code>fsimage</code>中，保证我们的<code>fsimage</code>足够接近我们最新的目录树，当我们的<code>NN</code>挂掉之后，我们只需要直接将<code>fsimage</code>读入内存，再把<code>edits</code>执行，就可以恢复目录树。<code>fsimage</code>+<code>edits</code> = 内存元数据，保证了元数据持久化。</p>
-<h4 id="secondarynamenode2nn"><strong><code>SecondaryNameNode</code>（2nn）</strong><a class="headerlink" href="#secondarynamenode2nn" title="Permanent link">&para;</a></h4>
-<p>用来监控 <code>HDFS</code> 状态的辅助后台程序，每隔一段时间获取 <code>HDFS</code> 元数据的快照（<code>fsimage</code>+<code>edits</code>）。也就是备份节点。也就是负责更新<code>fsimage</code>的节点，启动时其会获取<code>NN</code>的<code>fsimage</code>再<strong>定期（也就是每隔一段时间）</strong>从<code>NN</code>获取<code>edits</code>来更新<code>2nn</code>当中的<code>fsimage</code>，<code>fsimage</code>与<code>edits</code>会合并出一个<code>fsimage.ckpt</code>返回给<code>NN</code>。</p>
-<p><code>2nn</code>仅保证了<code>nn</code>当中的镜像足够新，<u>具体用来重启的镜像实际仍存在在<code>NN</code>中</u>。</p>
-<p>副命名节点 (<code>SecondaryNameNode</code>) 别名"次命名节点"，是命名节点的"秘书"。这个形容很贴切，因为它并<strong>不能代替命名节点的工作</strong>，无论命名节点是否有能力继续工作，因为在整个架构设计之初，<code>2nn</code>仅与<code>nn</code>通信，而不与<code>DN</code>由任何的关系。它主要负责分摊命名节点的压力、备份命名节点的状态并执行一些管理工作，如果命名节点要求它这样做的话。如果命名节点坏掉了，它也可以提供备份数据以恢复命名节点。<strong>副命名节点可以有多个。</strong></p>
+<p>我们使用<strong>日志</strong>来帮助我们回复目录树，在任何引起<code>HDFS</code>改变的操作执行时，我们便会把操作写入<strong>日志文件——edits</strong>。当我们重启<code>NN</code>时，<u>edits会像一个<strong>脚本</strong>，读取那些操作执行</u>，将<code>NN</code>的目录树恢复到挂掉之前。</p>
+<p>这引起了另一个问题，<u>如果我们的目录树更新的十分多，单单使用edits会导致<strong>恢复的时间异常漫长</strong>。</u></p>
+<h4 id="fsimage">fsimage<a class="headerlink" href="#fsimage" title="Permanent link">&para;</a></h4>
+<p>为了解决这个问题我们引入<code>fsimage</code>——file system image <strong>文件系统镜像</strong>。也就是采用批处理的方法，当edits积累到一定程度我们则会把edits的操作并入<code>fsimage</code>中（上文中提及的<code>64MB</code>），保证我们的<code>fsimage</code>足够接近我们最新的目录树，当我们的<code>NN</code>挂掉之后，我们只需要直接将<code>fsimage</code>读入内存，再把<code>edits</code>执行，就可以恢复目录树。</p>
+<p><code>fsimage</code>+<code>edits</code> = 内存元数据，保证了元数据持久化。</p>
+<h4 id="secondarynamenode2nn"><strong><code>SecondaryNameNode</code>（<code>2nn</code>）</strong><a class="headerlink" href="#secondarynamenode2nn" title="Permanent link">&para;</a></h4>
+<p><code>2nn</code>是用来监控 <code>HDFS</code> 状态的辅助后台程序，每隔一段时间获取 <code>HDFS</code> 元数据的快照（<code>fsimage</code>+<code>edits</code>）。</p>
+<p>也就是备份节点，是负责更新<code>fsimage</code>的节点，启动时其会获取<code>NN</code>的<code>fsimage</code>，再<strong>定期（<code>1h</code>）</strong>从<code>NN</code>获取<code>edits</code>来更新<code>2nn</code>当中的<code>fsimage</code>，<code>fsimage</code>与<code>edits</code>会合并出一个<code>fsimage.ckpt</code>返回给<code>NN</code>。</p>
+<p><code>2nn</code>仅保证了<code>nn</code>当中的镜像足够新，<u>具体用来重启的镜像实际仍存在在<code>NN</code>中</u>。也就是<code>nn</code>当中有个直接可用的<code>fsimage.ckpt</code>，而最新的<code>fsimage</code>在<code>2nn</code>手里。</p>
+<p>副命名节点 (<code>SecondaryNameNode</code>) 别名"次命名节点"，是命名节点的"秘书"。这个形容很贴切，因为它并<strong>不能代替命名节点的工作</strong>，无论命名节点是否有能力继续工作，因为在整个架构设计之初，<code>2nn</code>仅与<code>nn</code>通信，而不与<code>DN</code>由任何的关系。它主要负责分摊命名节点的压力、备份命名节点的状态并执行一些管理工作，如果命名节点要求它这样做的话。</p>
+<p>如果命名节点坏掉了，它也<strong>可以提供备份数据以恢复命名节点</strong>。<strong>副命名节点可以有多个。</strong></p>
+<p>仅仅负责更新镜像文件与主节点的重启。</p>
 <h3 id="hahigh-available">HA（High Available）架构<a class="headerlink" href="#hahigh-available" title="Permanent link">&para;</a></h3>
 <p>高度可用，消除单点故障问题，使得整个系统可用度变高。也就是使得系统变得强健。</p>
 <h4 id="standbynamenode"><code>StandbyNameNode</code><a class="headerlink" href="#standbynamenode" title="Permanent link">&para;</a></h4>
-<p>在<code>2nn</code>的基础上将<code>2nn</code>变为<code>Standby NameNode</code>，且我们<strong>设置多个 <code>Standby NameNode</code></strong> （在<code>Hadoop3</code>当中）。或者说我们设置了多个<code>NameNode</code>而对于起作用的<code>NameNode</code>我们叫做 <code>Active NameNode</code> ，而用于备份的<code>NameNode</code> 叫做<code>Standby NameNode</code>。当<code>Active</code>挂了，<code>Standby</code>就会起作用变为<code>Active</code>，同时原先的<code>Active</code>变为<code>Standby</code>。在一般情况下，<code>Standby</code>做的都是<code>2nn</code>的作用。有所不同的是<code>Standby</code><strong>也有心跳机制</strong>，也需要不断发送心跳信号给<code>Active</code><u>以保证在启用备用节点能够快速代替。</u></p>
-<p>与<code>2nn</code>不同，<code>standby</code><strong>不再是定期地获取<code>edits</code></strong>而是<u>通过与<code>Active</code>共享的形式来获取<code>edits</code></u>，一旦<code>edits</code>发生了更改，<code>Standby</code>都能立即获取，具体采用文件共享（采用局域网文件共享的协议）或日志共享。</p>
+<p>在<code>2nn</code>的基础上将<code>2nn</code>变为<code>Standby NameNode</code>，且我们<strong>设置多个 <code>Standby NameNode</code></strong> （在<code>Hadoop3</code>当中），或者说我们设置了多个<code>NameNode</code>。</p>
+<p>对于起作用的<code>NameNode</code>我们叫做 <code>Active NameNode</code> ，而用于备份的<code>NameNode</code> 叫做<code>Standby NameNode</code>。当<code>Active</code>挂了，<code>Standby</code>就会起作用变为<code>Active</code>，同时原先的<code>Active</code>变为<code>Standby</code>。在一般情况下，<code>Standby</code>做的都是<code>2nn</code>的作用。</p>
+<h5 id="2nn">与2nn的区别<a class="headerlink" href="#2nn" title="Permanent link">&para;</a></h5>
+<p>第一个不同的地方是<code>Standby</code><strong>也有心跳机制</strong>，也需要不断发送心跳信号给<code>Active</code><u>以保证在启用备用节点能够快速代替。</u></p>
+<p>且<code>standby</code><strong>不再是定期地获取<code>edits</code></strong>而是<u>通过与<code>Active</code>共享的形式来获取<code>edits</code></u>，一旦<code>edits</code>发生了更改，<code>Standby</code>都能立即获取，具体采用文件共享（采用局域网文件共享的协议）或日志共享。</p>
 <h4 id="zookeeper"><code>Zookeeper</code><a class="headerlink" href="#zookeeper" title="Permanent link">&para;</a></h4>
 <p>在有多个<code>stnn</code>的情况下，我们的系统会出现难以抉择出<code>New Active</code>的情形，此刻我们需要引入另外一个分布式软件——<code>zookeeper</code>，其提供<strong>辅助协调工具</strong>以帮助各个节点可以相互配合。甚至提供小数据存储。</p>
 <p>在我们所提出的问题中，我们利用的特性进行解决：节点监视——会监视每一个节点，当节点被删除的时候会收到信息。以此帮助我们<strong>判断<code>Active</code>挂了没</strong>。不仅能够帮助我们判断<code>Active</code>挂了没，同时，它还可以<strong>抉择出哪一个<code>Standby</code>作为下一个<code>Active</code></strong>，当获取<code>Active</code>挂了的信息之后，我们会让从<code>zookeeper</code>处<strong>获得到一个同步锁的节点成为下一个“大哥”节点</strong>。</p>
 <p><code>zookeeper</code>监控并选举<code>NN</code></p>
 <p><code>zookeeper</code>本身也有<code>leader</code>和<code>follower</code> 由leader执行写操作，其他功能权限一致。当follower收到了写操作它会转发给leader，再允许follower执行写。</p>
-<h4 id="_3">脑裂<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h4>
-<p>在之前我们已经提及了，脑裂就是两个<code>NN</code>认为自己都是AC的情况。客户端只会连接一个<code>ACNN</code>这个<code>ACNN</code>在<code>edits</code>所做的任何改变，另外一个<code>ACNN</code>都不会去读取进而导致了一个系统存在了多个目录树，导致了数据错乱等一系列问题。</p>
-<p>还可以通过编写fencing来避免脑裂。</p>
+<h4 id="_5">脑裂<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
+<p>在之前我们已经提及了，脑裂就是两个<code>NN</code>认为自己都是AC的情况。</p>
+<p>客户端只会连接一个<code>ACNN</code>这个<code>ACNN</code>在<code>edits</code>所做的任何改变，另外一个<code>ACNN</code>都不会去读取进而导致了一个系统存在了多个目录树，导致了数据错乱等一系列问题。</p>
+<p>可以通过编写<code>fencing</code>来避免脑裂。</p>
 <p><code>NFS</code>与<code>QJM</code>两种不同的共享edits方式，使得后者不需要担心脑裂。前者依靠网络，后者是共享文件。</p>
-<h3 id="_4">数据副本机制<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
-<p>我们提及过，对于一个分布式系统而言，我们是极不放心硬件的稳定性的。而<code>Hadoop</code>在设计时考虑到数据的安全与高效，数据文件默认在<code>HDFS</code>上存放三份，存储策略为<strong>本地一份</strong>，<strong>同机架内其它某一节点</strong>上一份，<strong>不同机架的某一节点</strong>上一份。这样如果本地数据损坏，节点可以从同一机架内的相邻节点拿到数据，速度肯定比从跨机架节点上拿数据要快；同时，如果整个机架的网络出现异常，也能保证在其它机架的节点上找到数据。确保了数据获取的高效。</p>
-<p>而对于一个服务器集群而言我们有同台服务器的概念（在同一台主机的硬件上），同一个机架（rack，共用很多资源，包括但不限于网络、电源）。</p>
-<p>对于同一个机架和不同机架的两个服务器，同一个机架的服务器可能因为使用同样的子网网络连接更直接，或使用同一根光缆，或者有更近的物理距离。因而交互的速度更快。</p>
-<h4 id="_5">副本距离<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
+<h3 id="_6">数据副本机制<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<p>我们提及过，对于一个分布式系统而言，我们是极不放心硬件的稳定性的。</p>
+<p>而<code>Hadoop</code>在设计时考虑到数据的安全与高效，数据文件默认在<code>HDFS</code>上存放<strong>三份</strong>，存储策略为<strong>本地一份</strong>，<strong>同机架内其它某一节点</strong>上一份，<strong>不同机架的某一节点</strong>上一份。</p>
+<p>这样如果本地数据损坏，节点可以从同一机架内的相邻节点拿到数据，速度肯定比从跨机架节点上拿数据要快；同时，如果整个机架的网络出现异常，也能保证在其它机架的节点上找到数据。确保了数据获取的高效。</p>
+<p>而对于一个服务器集群而言我们有<strong>同台服务器</strong>的概念（<strong>在同一台主机的硬件上</strong>）和<strong>同一个机架</strong>的概念（rack，共用很多资源，包括但不限于网络、电源）。对于同一个机架和不同机架的两个服务器，同一个机架的服务器可能因为使用同样的子网网络连接更直接，或使用同一根光缆，或者有更近的物理距离。因而交互的速度更快。</p>
+<h4 id="_7">副本距离<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h4>
 <p><strong>同一台服务器</strong>的距离为0
 $$
 Distance(Rack1/D1, Rack1/D1)=0
@@ -1588,10 +1631,10 @@ $$
 $$
 Distance(Rack1/D1, Rack2/D1)=4
 $$</p>
-<h4 id="_6">副本放置策略<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h4>
+<h4 id="_8">副本放置策略<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h4>
 <p>第一个副本（也就是原件）在本地机器</p>
 <p>第二个副本在远端机架的节点（也不一定是不同机架）</p>
-<p>第三个副本看之前的两个副本是否在同一机架，如果是则选择其他机架，否则选择和第一个副本相同机架的不同节点（确保前二、三副本在不同的机架上，使得在获取副本的时候有取舍）</p>
+<p>第三个副本看之前的两个副本是否在同一机架，如果是则选择其他机架，否则选择和第一个副本相同机架的不同节点（<strong>确保前二、三副本在不同的机架上，使得在获取副本的时候有取舍</strong>）</p>
 <p>第四个及以上的副本，随机选择副本存放位置。</p>
 
 
