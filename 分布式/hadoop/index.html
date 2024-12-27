@@ -13,7 +13,7 @@
         <link rel="canonical" href="https://idonlikename.github.io/mynote/%E5%88%86%E5%B8%83%E5%BC%8F/hadoop/">
       
       
-        <link rel="prev" href="../../Base/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/">
+        <link rel="prev" href="../%E5%88%86%E5%B8%83%E5%BC%8F%E8%AE%A1%E7%AE%97%E5%9F%BA%E7%A1%80/">
       
       
         <link rel="next" href="../hdfs/hdfs/">
@@ -806,7 +806,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../分布式/分布式.md" class="md-nav__link">
+      <a href="../%E5%88%86%E5%B8%83%E5%BC%8F%E8%AE%A1%E7%AE%97%E5%9F%BA%E7%A1%80/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -949,6 +949,27 @@
   
   <span class="md-ellipsis">
     mapreduce
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hive/hive/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    hive
   </span>
   
 
@@ -1175,12 +1196,12 @@
   <h1>hadoop</h1>
 
 <h3 id="hadoop">Hadoop基础介绍<a class="headerlink" href="#hadoop" title="Permanent link">&para;</a></h3>
-<p><strong>谷歌的介绍</strong>：当我们提及数据规模时，很难不想起谷歌的搜索引擎能够以闪电般的速度在互联网上索引和搜索全世界的数据。而谷歌这个名字恰是数据规模的同义词：<strong>Google(谷歌)</strong>与<strong>Googol(古戈尔)</strong>。Google是被故意拼写错误的<strong>古戈尔</strong>：意思是10^100，即1后有100个0。</p>
-<p><strong>时代背景</strong>：传统的存储系统，如<strong>关系数据库管理系统(<code>RDBMS</code>)</strong>和当时所有的编程方式都无法处理谷歌想要构建的互联网索引文档的数据规模。 于是，新的需求促进了新的技术诞生。促使谷歌的“<strong>三辆马车</strong>”诞生。</p>
+<p><strong>谷歌的介绍</strong>：谷歌最为出名的是其搜索引擎，其能以极快的速度在互联网上索引，搜索互联网上的数据。网络上多数的浏览器的<strong>内核</strong>均为谷歌内核。谷歌这个名字恰是数据规模的同义词：<strong>Google(谷歌)</strong>与<strong>Googol(古戈尔)</strong>。Google是被故意拼写错误的<strong>古戈尔</strong>：意思是10^100，即1后有100个0。</p>
+<p><strong>时代背景</strong>：传统的<strong>存储系统</strong>，即<strong>关系数据库管理系统(<code>RDBMS</code>)</strong> 以及 当时所有的<strong>编程方式</strong>都无法处理谷歌想要构建的<strong>互联网索引文档</strong>的数据规模。 于是，新的需求促进了新的技术诞生。谷歌的“<strong>三辆马车</strong>”应运而生。</p>
 <p>三辆马车分别是<strong>Google文件系统(<code>GFS</code>)</strong>、<strong>Map Reduce(<code>MR</code>)</strong>和<strong><code>Bigtable</code></strong>。</p>
 <ul>
-<li><code>GFS</code>通过<strong>多硬件服务器构成集群</strong>从而提供了<strong>容错</strong>和<strong>分布式文件系统</strong>的功能，但也<u>只是解决了海量数据存放的问题</u>。</li>
-<li><code>BigTable</code> 提供了<code>GFS</code>文件系统<strong>可伸缩扩展的结构化数据存储</strong>，将<code>GFS</code>的数据进行<strong>映射</strong>。另外MR基于函数式编程引入了一种新的并行编程范式，用户可以利用<code>MR</code>对<code>GFS</code>分布式文件系统以及<code>BigTable</code>映射的结构化数据进行大规模计算处理。<code>HBase</code></li>
+<li><code>GFS</code>是一种<strong>可扩展分布式文件系统</strong>。通过<strong>多硬件服务器构成集群</strong>从而提供了<strong>容错</strong>和<strong>分布式文件系统</strong>的功能，但也<u>只是解决了海量数据存放的问题</u>。</li>
+<li><code>BigTable</code> 提供了<code>GFS</code>文件系统<strong>可伸缩扩展的结构化数据存储</strong>，将<code>GFS</code>的数据进行<strong>映射</strong>。另外MR基于函数式编程引入了一种新的并行编程范式，用户可以利用<code>MR</code>对<code>GFS</code>分布式文件系统以及<code>BigTable</code>映射的结构化数据进行大规模计算处理。<code>HBase</code>的前身</li>
 <li><code>Map Reduce</code>与MR应用程序进行交互，实现将数据发送给计算模块处理，该计算模块主要由<code>map</code> 和 <code>reduce</code> 函数组成。核心设计理念是<strong>“移动计算而不是移动数据”</strong>，<strong>支持对数据和集群机架的感知</strong>，实现<strong>就近计算</strong>，而不是每次都把数据移动到应用程序做计算，这样可以减少数据传输的成本，从而在一定程度上提供计算效率。</li>
 </ul>
 <p>集群中的工作节点会对计算结果进行聚合，减少中间计算，并最终通过reduce函数将结果进行归一化输出，写入到分布式文件系统中去。程序也可以访问分布式文件系统（Java API）。</p>
