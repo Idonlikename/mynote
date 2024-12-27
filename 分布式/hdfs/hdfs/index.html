@@ -1433,7 +1433,7 @@
 <p>不支持随机写，但支持追加写。（因为是顺序写入）适合一次写入，多次读取。</p>
 <h3 id="hdfs">HDFS基本结构<a class="headerlink" href="#hdfs" title="Permanent link">&para;</a></h3>
 <p>其最基本的构成是一台主节点（<code>NameNode</code>）与多台数据节点（<code>DataNode</code>）</p>
-<p><a class="glightbox" href="\image\img1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="img" src="\image\img1.png" /></a></p>
+<p><a class="glightbox" href="https://Idonlikename.github.io/mynote/分布式/hdfs/image/img1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="img" src="https://Idonlikename.github.io/mynote/分布式/hdfs/image/img1.png" /></a></p>
 <h4 id="_1">元数据<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h4>
 <p>元数据管理是<code>HDFS</code>运行中的一个重要组成部分，它涉及到文件系统的<strong>命名空间</strong>、<strong>文件</strong>和<strong>目录的组织</strong>、<strong>权限控制</strong>等方面。其大小通常为<code>128B</code> </p>
 <h4 id="block"><code>Block</code><a class="headerlink" href="#block" title="Permanent link">&para;</a></h4>
@@ -1463,9 +1463,9 @@
 <p><code>dn</code>支持热扩展，即在整个<code>HDFS</code>使用过程中添加新的<code>dn</code> ，而无需重启。</p>
 <p>为了保证我们的数据的安全，会进行数据Replication，也就是备份又称数据冗余来保护我们的数据。<code>FSDataOutputStream</code>(文件系统输出流)在写入数据在某一个数据节点时，这个节点会借助计算机网络实现在多个节点的备份。在完成备份之后<code>DataNode</code>才会告诉<code>nn</code>写入完成。</p>
 <p>读写</p>
-<p><a class="glightbox" href="../image/img3.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="这里写图片描述" src="../image/img3.png" /></a></p>
+<p><a class="glightbox" href="https://Idonlikename.github.io/mynote/分布式/hdfs/image/img3.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="这里写图片描述" src="https://Idonlikename.github.io/mynote/分布式/hdfs/image/img3.png" /></a></p>
 <p>写数据</p>
-<p><a class="glightbox" href="../image/img2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="这里写图片描述" src="../image/img2.png" /></a></p>
+<p><a class="glightbox" href="https://Idonlikename.github.io/mynote/分布式/hdfs/image/img2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="这里写图片描述" src="https://Idonlikename.github.io/mynote/分布式/hdfs/image/img2.png" /></a></p>
 <h3 id="_2">数据备份<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <p>因为Client访问文件必须经由<code>NN</code>，这使得<code>NN</code>在整个结构中都很重要。甚至<code>NN</code>是整个<code>HDFS</code>的主要性能瓶颈，提高<code>NN</code>的性能就能提高整个系统的响应速度。为了保证系统的响应速度，其实整个文件系统的<strong>目录树都在内存中</strong>。这反而导致了一个问题，一旦<code>NN</code>突然崩溃内存中的文件就会失去，那就会失去整个目录树，导致我们找不到<code>DataNode</code>中的文件了。</p>
 <p>所以我们利用如下的两个结构帮助我们解决<code>NN</code>挂掉的问题。（在整个分布式系统中必须要考虑我们的任何节点会挂的可能）</p>

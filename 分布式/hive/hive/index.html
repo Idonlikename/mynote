@@ -1189,7 +1189,7 @@
 <h3 id="hive_1">Hive的场景<a class="headerlink" href="#hive_1" title="Permanent link">&para;</a></h3>
 <p>Hive构建在<code>Hadoop</code>文件系统之上，Hive不提供实时的查询和基于行级的数据更新操作，不适合需要低延迟的应用，如联机事务处理（On-line Transaction Processing，OLTP）相关应用。</p>
 <p>Hive适用于联机分析处理（On-Line Analytical Processing，OLAP），应用场景如图所示：</p>
-<p><a class="glightbox" href="../image/img1.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="img" src="../image/img1.jpeg" /></a></p>
+<p><a class="glightbox" href="https://Idonlikename.github.io/mynote/分布式/hive/image/img1.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="img" src="https://Idonlikename.github.io/mynote/分布式/hive/image/img1.jpeg" /></a></p>
 <h3 id="hive_2">Hive的特性<a class="headerlink" href="#hive_2" title="Permanent link">&para;</a></h3>
 <p>Hive作为数据仓库软件，使用类SQL的HiveQL语言实现数据查询，所有Hive数据均存储在Hadoop文件系统中，Hive具有以下特性。</p>
 <p>使用HiveQL以类SQL查询的方式轻松访问数据，将HiveQL查询转换为MapReduce的任务在Hadoop集群上执行，完成ETL（Extract、Transform、Load——提取、转换、加载）、报表、数据分析等数据仓库任务。HiveQL内置大量UDF（User Defined Function）来操作时间、字符串和其他的数据挖掘工具，支持用户扩展UDF函数来完成内置函数无法实现的操作。</p>
@@ -1202,7 +1202,7 @@
 <p>hive中的数据类型不是真正的数据类型，而是一种验证过程或者说限定。</p>
 <h3 id="_2">架构<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <p>Hive架构中主要包括客户端（Client）、Hive Server、元数据存储（MetaStore）、驱动器（Driver）。</p>
-<p><a class="glightbox" href="../image/img2.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="img" src="../image/img2.jpeg" /></a></p>
+<p><a class="glightbox" href="https://Idonlikename.github.io/mynote/分布式/hive/image/img2.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="img" src="https://Idonlikename.github.io/mynote/分布式/hive/image/img2.jpeg" /></a></p>
 <h4 id="hive_3">Hive架构<a class="headerlink" href="#hive_3" title="Permanent link">&para;</a></h4>
 <p>Hive有多种接口供客户端使用，其中包括Thrift（Apache的一种软件框架，用于可扩展的跨语言服务开发）接口、数据库接口、命令行接口和Web接口。</p>
 <p>数据库接口包括ODBC（Open Database Connectivity，开放数据库连接）和JDBC（Java DataBase Connectivity，Java数据库连接）。</p>
@@ -1213,10 +1213,10 @@
 <h4 id="hcatalog">HCatalog<a class="headerlink" href="#hcatalog" title="Permanent link">&para;</a></h4>
 <p>HCatalog用于Hadoop的表和元数据管理，使用户可以使用不同的数据处理工具（如Pig、MapReduce等）更轻松地读取和写入元数据。HCatalog基于Hive的MetaStore为数据处理工具提供服务。</p>
 <p>下图中，HCatalog通过Hive提供的HiveMetaStoreClient对象来间接访问MetaStore，对外提供HCatLoader、HCatInputFormat来读取数据；提供HCatStorer、HCatOutputFormat来写入数据。</p>
-<p><a class="glightbox" href="../image/img3.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="img" src="../image/img3.jpeg" /></a></p>
+<p><a class="glightbox" href="https://Idonlikename.github.io/mynote/分布式/hive/image/img3.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="img" src="https://Idonlikename.github.io/mynote/分布式/hive/image/img3.jpeg" /></a></p>
 <h4 id="webhcat">WebHCat<a class="headerlink" href="#webhcat" title="Permanent link">&para;</a></h4>
 <p>WebHCat是HCatalog的REST（Representational State Transfer，表现状态传输）接口，可以使用户能够通过安全的HTTPS协议执行操作。如图6-3所示，用户可以通过WebHCat访问Hadoop MapReduce（或YARN）、Pig（Apache的大型数据集分析平台）、Hive和HCatalog DDL（Data Definition Language，数据库模式定义语言）。WebHCat所使用的数据和代码在HDFS中维护，执行操作时需从HDFS读取。HCatalog DLL命令在接收请求时直接执行；MapReduce、Pig和Hive作业则由WebHCat服务器排队执行，可以根据需要监控或停止。</p>
-<p><a class="glightbox" href="../image/img4.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="img" src="../image/img4.jpeg" /></a></p>
+<p><a class="glightbox" href="https://Idonlikename.github.io/mynote/分布式/hive/image/img4.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="img" src="https://Idonlikename.github.io/mynote/分布式/hive/image/img4.jpeg" /></a></p>
 <h2 id="_3">行存储列存储<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <h3 id="_4">概述<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <p>目前大数据存储有两种方案可供选择：<strong>行存储（Row-Based）</strong>和<strong>列存储（Column-Based）</strong>。</p>
@@ -1247,7 +1247,7 @@
 <p>而列式数据库只需要读取存储着“时间、商品、销量”的数据列，而行式数据库需要读取所有的数据列。因此，列式数据库大大地提高了OLAP大数据量查询的效率</p>
 <p>OLTP    OnLine TransactionProcessor 在线联机事务处理系统（比如Mysql，Oracle等产品）</p>
 <p>OLAP    OnLine AnalaysierProcessor  在线联机分析处理系统（比如Hive  Hbase等）</p>
-<p><a class="glightbox" href="../image/img5.jpg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="img" src="../image/img5.jpg" /></a></p>
+<p><a class="glightbox" href="https://Idonlikename.github.io/mynote/分布式/hive/image/img5.jpg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="img" src="https://Idonlikename.github.io/mynote/分布式/hive/image/img5.jpg" /></a></p>
 <p>2）很多列式数据库还支持列族（column group，Bigtable系统中称为locality group），即将多个经常一起访问的数据列的各个值存放在一起。如果读取的数据列属于相同的列族，列式数据库可以从相同的地方一次性读取多个数据列的值，避免了多个数据列的合并。列族是一种行列混合存储模式，这种模式能够同时满足OLTP和OLAP的查询需求。</p>
 <p>3）此外，由于同一个数据列的数据重复度很高，因此，列式数据库压缩时有很大的优势。</p>
 <p>例如，Google Bigtable列式数据库对网页库压缩可以达到15倍以上的压缩率。另外，可以针对列式存储做专门的索引优化。比如，性别列只有两个值，“男”和“女”，可以对这一列建立位图索引：</p>

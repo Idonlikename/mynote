@@ -1349,7 +1349,7 @@
 <p><code>YARN</code> 仅仅<strong>负责分配资源</strong>，调用资源至于资源用于作业怎么运行，其不用关心。其为上层应用提供了统一的资源管理和调度，它为引入集群在<strong>利用率</strong>、<strong>资源统一管理</strong>和<strong>数据共享</strong>有很大的作用。</p>
 <p>我们把Client向yarn发送执行的应用程序称作作业（<code>job</code>）也称作任务</p>
 <p>下图是yarn的架构</p>
-<p><a class="glightbox" href="../image/img1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="在这里插入图片描述" src="../image/img1.png" /></a></p>
+<p><a class="glightbox" href="https://Idonlikename.github.io/mynote/分布式/yarn/image/img1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="在这里插入图片描述" src="https://Idonlikename.github.io/mynote/分布式/yarn/image/img1.png" /></a></p>
 <h3 id="word-count">word count<a class="headerlink" href="#word-count" title="Permanent link">&para;</a></h3>
 <h3 id="_1">架构<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
 <h4 id="resourcemanagerrm"><code>ResourceManager</code>（RM）<a class="headerlink" href="#resourcemanagerrm" title="Permanent link">&para;</a></h4>
@@ -1392,7 +1392,7 @@ $$
 当缺额为正，说明着队列还没有获得足够的资源，因此调度器会尝试分配更多资源（应该理解为这个队列的资源没有被充分调用）。</p>
 <p>一般最少为零，说明队列已经获得了公平的份额。</p>
 <h5 id="fair">Fair策略<a class="headerlink" href="#fair" title="Permanent link">&para;</a></h5>
-<p><a class="glightbox" href="\image\img4.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="在这里插入图片描述" src="\image\img4.png" /></a></p>
+<p><a class="glightbox" href="https://Idonlikename.github.io/mynote/分布式/yarn/image/img4.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="在这里插入图片描述" src="https://Idonlikename.github.io/mynote/分布式/yarn/image/img4.png" /></a></p>
 <h5 id="drf">DRF策略<a class="headerlink" href="#drf" title="Permanent link">&para;</a></h5>
 <p>上述说的资源都是单一标准，例如只考虑内存(Yarn默认情况)。但很多时候我们资源有很多种，例如内存、CPU、网络带宽等，这样就很难衡量两个应用应该分配的资源比例。</p>
 <p>所以在Yarn中，我们使用DRF来决定如何调度：</p>
@@ -1401,10 +1401,10 @@ $$
 <h4 id="_5">资源分配算法<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
 <h5 id="_6">队列资源分配<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h5>
 <p>先根据队列数分，再根据需求和多余量，进行整合与重新分配</p>
-<p><a class="glightbox" href="../image/img2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="在这里插入图片描述" src="../image/img2.png" /></a></p>
+<p><a class="glightbox" href="https://Idonlikename.github.io/mynote/分布式/yarn/image/img2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="在这里插入图片描述" src="https://Idonlikename.github.io/mynote/分布式/yarn/image/img2.png" /></a></p>
 <h5 id="_7">作业资源分配<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h5>
 <p>也同样先根据总数分，再根据需求和多余量，进行整合与重新分配直到没有空闲资源，或者<code>job</code>的资源被分配完全。</p>
-<p><a class="glightbox" href="../image/img3.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="请添加图片描述" src="../image/img3.png" /></a></p>
+<p><a class="glightbox" href="https://Idonlikename.github.io/mynote/分布式/yarn/image/img3.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="请添加图片描述" src="https://Idonlikename.github.io/mynote/分布式/yarn/image/img3.png" /></a></p>
 <h3 id="_8">自动故障转移<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
 
 
