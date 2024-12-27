@@ -1225,19 +1225,22 @@
 <li><strong>应用</strong>：集群常用于<strong>高性能计算</strong>、Web服务、数据库服务等。</li>
 </ul>
 <p>差别：</p>
-<p>分布式系统中：是一个事物分成多个小事物，由各个节点完成后汇总完成事情。<strong>配合完成</strong></p>
-<p>集群：是一个事物仅由单个节点服务，但多个节点服务于同类事物，存在可替代性（<strong>高可用性</strong>）。<strong>独立完成</strong></p>
+<p>分布式系统中：是一个事物分成多个小事物，由各个节点完成后汇总完成事情。<strong>配合完成，一项单独的任务</strong></p>
+<p>集群：是一个事物<strong>仅由单个节点服务</strong>，但多个节点<strong>服务于同类事物</strong>，存在可替代性（<strong>高可用性</strong>）。<strong>集群中的各个单个节点负责一项单独的任务</strong></p>
 <p><u>Hadoop是一种分布式系统</u></p>
 <h3 id="_6">补充<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
 <p>不同的文件系统可支持的元数据大小不同，进而限制了可以传入的单个文件的大小。</p>
-<p>一般我们电脑当中默认的文件管理系统为<strong>NTFS</strong></p>
-<p><strong>Merge（合并）</strong>： 合并是指将两个或多个数据集按照某种规则（例如，基于共享的键）组合成一个数据集。在大数据领域，这通常涉及到将不同来源或分布式存储的数据整合在一起。例如，Spark和Hadoop中的Join操作就是一种典型的合并操作。Merge操作有多种类型，例如Inner Join、Left Join、Right Join和Full Outer Join。</p>
-<p><strong>Combine（组合）</strong>： 在大数据处理中，组合通常是指在数据分区和处理过程中，将相同键的数据整合在一起。组合的主要目的是减少数据在网络中传输的开销，从而提高处理性能。例如，在MapReduce、Spark等大数据框架中，Shuffle过程中的Combiner可以将同一个节点上的中间结果组合起来，以减少数据在网络中的传输。Combiner操作通常用于那些满足结合律和交换律的操作，例如计数、求和、最大值和最小值等。</p>
-<p><strong>Aggregate（聚合）</strong>： 聚合是指将一组数据通过某种操作（例如，求和、计数、平均、最大值、最小值等）汇总成一个值。在大数据处理中，聚合操作通常用于从大量数据中提取有价值的信息。例如，在SQL查询中的GROUP BY子句，以及Spark、Hadoop等大数据框架中的Reduce操作，都涉及到对数据进行聚合。</p>
+</li>
+<li>
+<p>一般我们电脑当中默认的文件管理系统为<strong><code>NTFS</code></strong></p>
+</li>
+</ul>
 <h4 id="_7">守护进程<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h4>
-<p>脱离于终端（并不在终端上显示自身的启动，且不会因终端所产生的终端信息打断）并且在后台运行的进程</p>
+<p>守护进程是一种<strong>脱离于终端</strong>（并不在终端上显示自身的启动，且不会因终端所产生的终端信息打断）并且在<strong>后台运行</strong>的进程</p>
 <h4 id="_8">元数据<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h4>
-<p>我们在nn中提及，文件系统目录树当中的每个节点，包含了文件的信息以及和数据节点的对应关系（映射），这些数据就是meta data，元数据。</p>
+<p>用于描述文件信息的数据。我们在<code>nn(namenode)</code>会中提及：文件系统<strong>目录树</strong>当中的<strong>每个节点</strong>，包含了文件的信息以及和数据节点的对应关系（映射），这些数据就是<code>meta data</code>，元数据。</p>
 
 
 
