@@ -1533,7 +1533,7 @@
 <p>MapReduce 把任务分为 Map 阶段和 Reduce 阶段。开发人员使用存储在HDFS 中数据（可实现快速存储），编写 Hadoop 的 MapReduce 任务。由于 MapReduce工作原理的特性， Hadoop 能以并行的方式访问数据，从而实现快速访问数据。</p>
 <h3 id="_1">结构部分<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
 <p>MapReduce体系结构主要由四个部分组成，分别是：<code>Client</code>、<code>JobTracker</code>、<code>TaskTracker</code>以及<code>Task</code></p>
-<p><img alt="img" src="E:\site\note\docs\分布式\mapreduce\image\image1.png" /></p>
+<p><img alt="img" src="\image\image1.png" /></p>
 <h4 id="client">Client<a class="headerlink" href="#client" title="Permanent link">&para;</a></h4>
 <p>用户编写的MapReduce程序通过Client提交到JobTracker端 用户可通过Client提供的一些接口查看作业运行状态。</p>
 <h4 id="jobtracker">JobTracker<a class="headerlink" href="#jobtracker" title="Permanent link">&para;</a></h4>
@@ -1544,9 +1544,9 @@
 <p>Task 分为Map Task 和Reduce Task 两种，均由TaskTracker 启动。</p>
 <h3 id="_2">执行阶段<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <p>MapReduce各个执行阶段：</p>
-<p><img alt="img" src="E:\site\note\docs\分布式\mapreduce\image\image2.png" /></p>
+<p><img alt="img" src="\image\image2.png" /></p>
 <p>MapReduce应用程序执行过程：</p>
-<p><img alt="img" src="E:\site\note\docs\分布式\mapreduce\image\image3.png" /></p>
+<p><img alt="img" src="\image\image3.png" /></p>
 <h2 id="word-count">Word Count<a class="headerlink" href="#word-count" title="Permanent link">&para;</a></h2>
 <h3 id="map">Map<a class="headerlink" href="#map" title="Permanent link">&para;</a></h3>
 <p>进行<strong>切片操作</strong>，它负责将大规模数据集分割成小块，并对每一块进行初步处理和转换，为Reduce阶段的聚合操作打下基础。主要负责处理输入数据并生成<strong>中间键值对</strong>（key-value pairs）</p>
@@ -1827,7 +1827,7 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>hadoop<span class="w"> </span>jar<span class="w"> </span>average.jar<span class="w"> </span>hadoop.mapreduce.CourseScoreDriver<span class="w"> </span>/data<span class="w"> </span>/data/output
 </code></pre></div>
 <p>查看结果，如下图：</p>
-<p><img alt="img" src="E:\site\note\docs\分布式\mapreduce\image\image5.png" /></p>
+<p><img alt="img" src="\image\image5.png" /></p>
 <h4 id="semesterword-count-jar">Semester——word count jar<a class="headerlink" href="#semesterword-count-jar" title="Permanent link">&para;</a></h4>
 <p>import相应的jar包</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">org.apache.hadoop.conf.Configuration</span><span class="p">;</span>
