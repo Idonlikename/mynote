@@ -51,7 +51,16 @@
     
     
     
-  </head>
+   <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../../assets/javascripts/glightbox.min.js"></script></head>
   
   
     
@@ -149,43 +158,6 @@
       <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
     
     
-    
-      <label class="md-header__button md-icon" for="__search">
-        
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
-      </label>
-      <div class="md-search" data-md-component="search" role="dialog">
-  <label class="md-search__overlay" for="__search"></label>
-  <div class="md-search__inner" role="search">
-    <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
-      <label class="md-search__icon md-icon" for="__search">
-        
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
-        
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
-      </label>
-      <nav class="md-search__options" aria-label="查找">
-        
-        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
-          
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
-        </button>
-      </nav>
-      
-    </form>
-    <div class="md-search__output">
-      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
-        <div class="md-search-result" data-md-component="search-result">
-          <div class="md-search-result__meta">
-            正在初始化搜索引擎
-          </div>
-          <ol class="md-search-result__list" role="presentation"></ol>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
     
     
       <div class="md-header__source">
@@ -1461,7 +1433,7 @@
 <p>不支持随机写，但支持追加写。（因为是顺序写入）适合一次写入，多次读取。</p>
 <h3 id="hdfs">HDFS基本结构<a class="headerlink" href="#hdfs" title="Permanent link">&para;</a></h3>
 <p>其最基本的构成是一台主节点（<code>NameNode</code>）与多台数据节点（<code>DataNode</code>）</p>
-<p><img alt="img" src="E:\Desktop\File\大三上\分布式计算\hdfs\image\img1.png" /></p>
+<p><a class="glightbox" href="https://Idonlikename.github.io/mynote/分布式/hdfs/image/img1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="img" src="https://Idonlikename.github.io/mynote/分布式/hdfs/image/img1.png" /></a></p>
 <h4 id="_1">元数据<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h4>
 <p>元数据管理是<code>HDFS</code>运行中的一个重要组成部分，它涉及到文件系统的<strong>命名空间</strong>、<strong>文件</strong>和<strong>目录的组织</strong>、<strong>权限控制</strong>等方面。其大小通常为<code>128B</code> </p>
 <h4 id="block"><code>Block</code><a class="headerlink" href="#block" title="Permanent link">&para;</a></h4>
@@ -1491,9 +1463,9 @@
 <p><code>dn</code>支持热扩展，即在整个<code>HDFS</code>使用过程中添加新的<code>dn</code> ，而无需重启。</p>
 <p>为了保证我们的数据的安全，会进行数据Replication，也就是备份又称数据冗余来保护我们的数据。<code>FSDataOutputStream</code>(文件系统输出流)在写入数据在某一个数据节点时，这个节点会借助计算机网络实现在多个节点的备份。在完成备份之后<code>DataNode</code>才会告诉<code>nn</code>写入完成。</p>
 <p>读写</p>
-<p><img alt="这里写图片描述" src="https://i-blog.csdnimg.cn/blog_migrate/086f55e2b446b9f68e99cd73ddaa24fd.png" /></p>
+<p><a class="glightbox" href="https://Idonlikename.github.io/mynote/分布式/hdfs/image/img3.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="这里写图片描述" src="https://Idonlikename.github.io/mynote/分布式/hdfs/image/img3.png" /></a></p>
 <p>写数据</p>
-<p><img alt="这里写图片描述" src="E:\Desktop\File\大三上\分布式计算\hdfs\image\img2.png" /></p>
+<p><a class="glightbox" href="https://Idonlikename.github.io/mynote/分布式/hdfs/image/img2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="这里写图片描述" src="https://Idonlikename.github.io/mynote/分布式/hdfs/image/img2.png" /></a></p>
 <h3 id="_2">数据备份<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <p>因为Client访问文件必须经由<code>NN</code>，这使得<code>NN</code>在整个结构中都很重要。甚至<code>NN</code>是整个<code>HDFS</code>的主要性能瓶颈，提高<code>NN</code>的性能就能提高整个系统的响应速度。为了保证系统的响应速度，其实整个文件系统的<strong>目录树都在内存中</strong>。这反而导致了一个问题，一旦<code>NN</code>突然崩溃内存中的文件就会失去，那就会失去整个目录树，导致我们找不到<code>DataNode</code>中的文件了。</p>
 <p>所以我们利用如下的两个结构帮助我们解决<code>NN</code>挂掉的问题。（在整个分布式系统中必须要考虑我们的任何节点会挂的可能）</p>
@@ -1602,5 +1574,7 @@ $$</p>
         <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
-  </body>
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
 </html>

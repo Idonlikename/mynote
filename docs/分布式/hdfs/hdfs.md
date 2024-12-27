@@ -10,7 +10,7 @@
 
 其最基本的构成是一台主节点（`NameNode`）与多台数据节点（`DataNode`）
 
-![img](E:\Desktop\File\大三上\分布式计算\hdfs\image\img1.png)
+![img](https://Idonlikename.github.io/mynote/分布式/hdfs/image/img1.png)
 
 #### 元数据
 
@@ -73,11 +73,11 @@
 
 读写
 
-![这里写图片描述](https://i-blog.csdnimg.cn/blog_migrate/086f55e2b446b9f68e99cd73ddaa24fd.png)
+![这里写图片描述](https://Idonlikename.github.io/mynote/分布式/hdfs/image/img3.png)
 
 写数据
 
-![这里写图片描述](E:\Desktop\File\大三上\分布式计算\hdfs\image\img2.png)
+![这里写图片描述](https://Idonlikename.github.io/mynote/分布式/hdfs/image/img2.png)
 
 ### 数据备份
 

@@ -12,7 +12,7 @@ Hive构建在`Hadoop`文件系统之上，Hive不提供实时的查询和基于�
 
 Hive适用于联机分析处理（On-Line Analytical Processing，OLAP），应用场景如图所示：
 
-![img](E:\Desktop\File\大三上\分布式计算\hive\image\img1.jpeg)
+![img](https://Idonlikename.github.io/mynote/分布式/hive/image/img1.jpeg)
 
 ### Hive的特性
 
@@ -40,7 +40,7 @@ hive中的数据类型不是真正的数据类型，而是一种验证过程或�
 
 Hive架构中主要包括客户端（Client）、Hive Server、元数据存储（MetaStore）、驱动器（Driver）。
 
-![img](E:\Desktop\File\大三上\分布式计算\hive\image\img2.jpeg)
+![img](https://Idonlikename.github.io/mynote/分布式/hive/image/img2.jpeg)
 
 #### Hive架构
 
@@ -62,7 +62,7 @@ HCatalog用于Hadoop的表和元数据管理，使用户可以使用不同的数
 
 下图中，HCatalog通过Hive提供的HiveMetaStoreClient对象来间接访问MetaStore，对外提供HCatLoader、HCatInputFormat来读取数据；提供HCatStorer、HCatOutputFormat来写入数据。
 
-![img](E:\Desktop\File\大三上\分布式计算\hive\image\img3.jpeg)
+![img](https://Idonlikename.github.io/mynote/分布式/hive/image/img3.jpeg)
 
 
 
@@ -70,7 +70,7 @@ HCatalog用于Hadoop的表和元数据管理，使用户可以使用不同的数
 
 WebHCat是HCatalog的REST（Representational State Transfer，表现状态传输）接口，可以使用户能够通过安全的HTTPS协议执行操作。如图6-3所示，用户可以通过WebHCat访问Hadoop MapReduce（或YARN）、Pig（Apache的大型数据集分析平台）、Hive和HCatalog DDL（Data Definition Language，数据库模式定义语言）。WebHCat所使用的数据和代码在HDFS中维护，执行操作时需从HDFS读取。HCatalog DLL命令在接收请求时直接执行；MapReduce、Pig和Hive作业则由WebHCat服务器排队执行，可以根据需要监控或停止。
 
-![img](E:\Desktop\File\大三上\分布式计算\hive\image\img4.jpeg)
+![img](https://Idonlikename.github.io/mynote/分布式/hive/image/img4.jpeg)
 
 ## 行存储列存储
 
@@ -114,7 +114,7 @@ OLTP    OnLine TransactionProcessor 在线联机事务处理系统（比如Mysql
 
 OLAP    OnLine AnalaysierProcessor  在线联机分析处理系统（比如Hive  Hbase等）
 
-![img](E:\Desktop\File\大三上\分布式计算\hive\image\img5.jpg)
+![img](https://Idonlikename.github.io/mynote/分布式/hive/image/img5.jpg)
 
 2）很多列式数据库还支持列族（column group，Bigtable系统中称为locality group），即将多个经常一起访问的数据列的各个值存放在一起。如果读取的数据列属于相同的列族，列式数据库可以从相同的地方一次性读取多个数据列的值，避免了多个数据列的合并。列族是一种行列混合存储模式，这种模式能够同时满足OLTP和OLAP的查询需求。
 

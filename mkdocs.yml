@@ -30,9 +30,22 @@ theme:
         icon: material/weather-sunny
         name: 切换至日间模式
     - features:  
-      - navigation.tabs #横向导航栏
+      - navigation.tabs # 导航标签
       - navigation.tabs.sticky  # 保证滚动时导航栏始终位于顶部
-
+      - navigation.sections  # 导航分区
+      - navigation.indexes  # 导航索引页，文档可以直接附加到节
+      - navigation.expand # 导航栏扩展，左侧边栏将默认展开所有可折叠的子部分
+      - navigation.instant  # 
+      - navigation.instant.progress
+      - navigation.tracking
+      - navigation.path
+      - navigation.top  # 快速返回顶部
+      - toc.follow # 启用目录的锚点跟踪后，目录边栏将自动滚动
+      - toc.integrate 
+      - navigation.top
+      - header.autohide
+      - announce.dismiss
+      - content.action.edit
 
 #[navigtion]
 nav:
@@ -91,6 +104,7 @@ markdown_extensions:
   - pymdownx.magiclink
   - pymdownx.superfences
   - pymdownx.inlinehilite
+  - pymdownx.blocks.caption
 
   - pymdownx.tabbed:
       alternate_style: true 
@@ -100,8 +114,12 @@ markdown_extensions:
       anchor_linenums: true
   - pymdownx.arithmatex:
       generic: true
-      
+
+plugins:
+  - glightbox
+
 extra_javascript:
 
   - javascripts/mathjax.js
   - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
+

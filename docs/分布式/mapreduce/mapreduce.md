@@ -20,7 +20,7 @@ MapReduce 把任务分为 Map 阶段和 Reduce 阶段。开发人员使用存储
 
 MapReduce体系结构主要由四个部分组成，分别是：`Client`、`JobTracker`、`TaskTracker`以及`Task`
 
-![img](E:\Desktop\File\大三上\分布式计算\mapreduce\image\image1.png)
+![img](https://Idonlikename.github.io/mynote/分布式/mapreduce/image/image1.png)
 
 #### Client
 
@@ -42,11 +42,11 @@ Task 分为Map Task 和Reduce Task 两种，均由TaskTracker 启动。
 
 MapReduce各个执行阶段：
 
-![img](E:\Desktop\File\大三上\分布式计算\mapreduce\image\image2.png)
+![img](https://Idonlikename.github.io/mynote/分布式/mapreduce/image/image2.png)
 
  MapReduce应用程序执行过程：
 
-![img](E:\Desktop\File\大三上\分布式计算\mapreduce\image\image3.png)
+![img](https://Idonlikename.github.io/mynote/分布式/mapreduce/image/image3.png)
 
 
 
@@ -395,7 +395,7 @@ public static void main(String[] args) throws Exception {
 
 首先准备三个文件 Chinese.txt、Math.txt、English.txt，添加如下内容：
 
-![img](E:\Desktop\File\大三上\分布式计算\mapreduce\image\image4.png)
+![img](https://Idonlikename.github.io/mynote/分布式/mapreduce/image/image4.png)
 
  将文件上传到HDFS的data目录下： 
 
@@ -414,7 +414,7 @@ hadoop jar average.jar hadoop.mapreduce.CourseScoreDriver /data /data/output
 
  查看结果，如下图：
 
-![img](E:\Desktop\File\大三上\分布式计算\mapreduce\image\image5.png)
+![img](https://Idonlikename.github.io/mynote/分布式/mapreduce/image/image5.png)
 
 #### Semester——word count jar
 
