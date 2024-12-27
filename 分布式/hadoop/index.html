@@ -1204,7 +1204,7 @@
 <li><code>BigTable</code> 提供了<code>GFS</code>文件系统<strong>可伸缩扩展的结构化数据存储</strong>，将<code>GFS</code>的数据进行<strong>映射</strong>。另外MR基于函数式编程引入了一种新的并行编程范式，用户可以利用<code>MR</code>对<code>GFS</code>分布式文件系统以及<code>BigTable</code>映射的结构化数据进行大规模计算处理。<code>HBase</code>的前身</li>
 <li><code>Map Reduce</code>与MR应用程序进行交互，实现将数据发送给计算模块处理，该计算模块主要由<code>map</code> 和 <code>reduce</code> 函数组成。核心设计理念是<strong>“移动计算而不是移动数据”</strong>，<strong>支持对数据和集群机架的感知</strong>，实现<strong>就近计算</strong>，而不是每次都把数据移动到应用程序做计算，这样可以减少数据传输的成本，从而在一定程度上提供计算效率。</li>
 </ul>
-<p>集群中的工作节点会对计算结果进行聚合，减少中间计算，并最终通过reduce函数将结果进行归一化输出，写入到分布式文件系统中去。程序也可以访问分布式文件系统（Java API）。</p>
+<p>集群中的工作节点会对计算结果进行<strong>聚合</strong>，减少中间计算，并最终通过reduce函数将结果进行归一化输出，写入到分布式文件系统中去。程序也可以访问分布式文件系统（Java API）。</p>
 <p>这样的工作模式可以显著减少网络流量，并且保证大部分的 输入/输出（I/O）在本地进行落盘，而不是分配在网络上。</p>
 <p>谷歌所做的大部分工作都是属于定制化的，不具备通用性，但是上述三篇论文中所表达的设计思想却激发了开源社区对<strong>分布式文件系统（HDFS）</strong>和<strong>大规模计算（MapReduce）</strong>以及<strong>大数据数据结构化存储（HBase）</strong>的创新想法</p>
 <ul>
@@ -1219,10 +1219,10 @@
 </ul>
 <h3 id="hbase">HBase的补充<a class="headerlink" href="#hbase" title="Permanent link">&para;</a></h3>
 <p><strong>一、什么是 HBase？</strong></p>
-<p>关于 HBase 的实现，是基本遵循 Bigtable 的论文。HBase 是一个面向列的分布式数据库，也是个非关系型数据库系统（NoSQL），它建立在 Hadoop 文件系统之上。面向列的数据库是将数据表存储为数据列的一部分而不是数据行的数据库。</p>
-<p>HBase 是一个分布式，持久，严格一致的存储系统，具有接近最佳的写入 I / O 通道饱和度和出色的读取性能。而且 HBase 只考虑单个索引，类似于 RDBMS 中的主键，提供服务器端实现灵活的二级索引解决方案。</p>
+<p>关于 HBase 的实现，是基本遵循 Bigtable 的论文。HBase 是一个<strong>面向列的分布式数据库（列存储）</strong>，也是个非关系型数据库系统（NoSQL），它建立在 Hadoop 文件系统之上。面向列的数据库是将数据表存储为数据列的一部分而不是数据行的数据库。</p>
+<p>HBase 是一个分布式，持久，严格一致的存储系统，具有接近最佳的写入 <code>I/O</code> 通道饱和度和读取性能。而且 HBase 只考虑单个索引，类似于 RDBMS 中的主键，提供服务器端实现灵活的二级索引解决方案。</p>
 <p><strong>二、为什么使用 HBase？</strong></p>
-<p>HBase 是 Hadoop 生态圈中重要的一环，用于存储，管理和处理数据。我们知道 Hadoop HDFS 是无法处理高速随机写入和读取，也无法在不重写文件的情况下对文件进行修改。HBase 正好解决了 HDFS 的缺点，因为它使用优化的方式快速随机写入和读取。此外，随着数据呈指数增长，关系数据库无法提供更好性能去处理海量的数据。HBase提供可扩展性和分区，以实现高效的存储和检索。</p>
+<p>HBase 是 Hadoop 生态圈中重要的一环，用于存储，管理和处理数据。我们知道 <code>Hadoop</code> <code>HDFS</code> 是<strong>无法处理高速随机写入和读取</strong>，也无法在不重写文件的情况下对文件进行修改。HBase 正好解决了 HDFS 的缺点，因为它使用优化的方式快速随机写入和读取。此外，随着数据呈指数增长，关系数据库无法提供更好性能去处理海量的数据。HBase提供可扩展性和分区，以实现高效的存储和检索。</p>
 
 
 

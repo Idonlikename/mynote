@@ -1416,7 +1416,7 @@
 </li>
 </ul>
 <p><strong>集群是分布式系统的一种实现方式</strong>，而分布式系统的概念更为广泛，包括了集群在内的多种计算机协同工作的形式。</p>
-<p><u><code>Hadoop</code>是一种用集群所实现的分布式系统</u></p>
+<p><u><code>Hadoop</code>是一种用集群所实现的分布式系统基础架构</u></p>
 <p>通过一系列的学习，不难发现 <code>Hadoop</code> 既具备分布式的”<strong>一个事务分成多个小事物，协同完成</strong>“的特点，也具备 集群”<strong>一个事务由单个节点负责</strong>“的特点。这是因为在宏观和微观上的差别。</p>
 <p><code>Hadoop</code>本身主要由<code>hdfs</code> <code>yarn</code> <code>mapreduce</code>三者组成。而这三个组件类似于三个不同的系统，负责不同的业务，这三个组件共同组成了一个分布式系统。而从微观上来看，三个组件在细节上实际是由集群的方式来实现的，以<code>hdfs</code>当中的<code>datanode</code>为例：各个<code>datanode</code>都负责存储，但这种存储实际上承担的事务是<strong>同类</strong>而<strong>不同个</strong>的。而 <code>hdfs</code> 用 <code>dn</code> 和 <code>nn</code>实现，这又组成了一个分布式系统（分布式文件系统）。</p>
 <h4 id="_8">深入<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h4>
