@@ -3,7 +3,7 @@
 /* 全局字体和动画 */
 .md-typeset {
   font-family: 'Noto Sans SC', sans-serif;
-  font-size: 10px;
+  font-size: 13px;
   line-height: 1.8;
   animation: fadeIn 0.8s ease-in;
 }
