@@ -2,17 +2,29 @@
 
 .md-typeset {
   font-family: 'Noto Sans SC', sans-serif;
-  font-size: 18px;
+  font-size: 14px;
   line-height: 1.8;
+  animation: fadeIn 0.5s ease-in;
 }
 
 .md-header {
   font-weight: bold;
 }
 
+.md-nav__link:hover {
+  color: #ff9800; /* 与accent色橙色一致 */
+  transition: color 0.3s ease;
+}
+
 .md-top {
   background-color: #ff9800;
   border-radius: 50%;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.md-top:hover {
+  transform: scale(1.1);
+  opacity: 0.9;
 }
 
 .highlight pre {
@@ -24,4 +36,14 @@
 .highlight .lineno {
   color: #999;
   padding-right: 10px;
+}
+
+/* 内容淡入动画 */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
