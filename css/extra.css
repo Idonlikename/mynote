@@ -3,7 +3,7 @@
 /* 全局样式 */
 .md-typeset {
   font-family: 'Noto Sans SC', sans-serif;
-  font-size: 14px;
+  font-size: 15px;
   line-height: 1.8;
   animation: fadeIn 0.8s ease-in;
 }
@@ -80,10 +80,10 @@
   animation: slideIn 0.5s ease;
 }
 
-/* 标题样式 */
+/* 标题样式（恢复默认左对齐） */
 .md-typeset h1 {
   font-size: 2.5rem;
-  text-align: center;
+  /* text-align: center; */ /* 已注释，恢复默认对齐 */
 }
 
 /* 按钮样式 */
