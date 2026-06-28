@@ -40,6 +40,8 @@
       
     
     
+      <link rel="stylesheet" href="../../../../css/timeago.css">
+    
       <link rel="stylesheet" href="../../../../css/extra.css">
     
     <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
@@ -227,6 +229,23 @@
     
   
   Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../tags/" class="md-tabs__link">
+        
+  
+    
+  
+  标签
 
       </a>
     </li>
@@ -445,6 +464,26 @@
   
   <span class="md-ellipsis">
     Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../tags/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    标签
   </span>
   
 
@@ -1068,80 +1107,49 @@
 <p>所有的图像都需要在<code>plt.show()</code>的时候才会输出，可以看作有一个画板，后一个相同的操作会覆盖前一个相同操作，所以一个<code>plt.show()</code>只会输出指令前最终的图表，并且会清空原来画板中的全部内容（不会输出任何内容）。也就意味着不能继续用前一个图表的标签，注释等。</p>
 <h2 id="_1">折线图<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <h3 id="_2">单数值折线图<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
-<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-0-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-0-10">10</a></span>
-<span class="normal"><a href="#__codelineno-0-11">11</a></span>
-<span class="normal"><a href="#__codelineno-0-12">12</a></span>
-<span class="normal"><a href="#__codelineno-0-13">13</a></span>
-<span class="normal"><a href="#__codelineno-0-14">14</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2"></a>
-<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="n">numlist</span><span class="o">=</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">])</span>    <span class="c1">#括号中括号([])，组成作图的点的值</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4"></a>
-<a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="n">xpoints</span> <span class="o">=</span> <span class="n">numlist</span>    <span class="c1">#若不定义X轴只定义y轴，默认是0 1 2 3</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="n">ypoints</span> <span class="o">=</span> <span class="n">numlist</span>    <span class="c1">#由此可见直接用列表是可以的。明面上不行（不规范），但是本身可行。</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7"></a>
-<a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="c1">#也可以：xpoints=([100,458])#各个点的坐标</span>
-<a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="c1">#       ypoints=([300,100])</span>
-<a id="__codelineno-0-10" name="__codelineno-0-10"></a>
-<a id="__codelineno-0-11" name="__codelineno-0-11"></a>
-<a id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ypoints</span><span class="p">,</span><span class="n">marker</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="err">，</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;y-label&#39;</span><span class="p">)</span><span class="c1">#用一个值序列做一个折线的折线图，并且用marker的赋值来描点(一般是&#39;o&#39;和&#39;x&#39;代表点和叉)。此处不定义x，若不定义x程序自己则会用默认数值。</span>
-<a id="__codelineno-0-13" name="__codelineno-0-13"></a>
-<a id="__codelineno-0-14" name="__codelineno-0-14"></a><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span><span class="c1">#输出作图</span>
-</code></pre></div></td></tr></table></div>
+<div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><a href="#__codelineno-0-1"><span class="linenos" data-linenos=" 1 "></span></a><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a><a href="#__codelineno-0-2"><span class="linenos" data-linenos=" 2 "></span></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a><a href="#__codelineno-0-3"><span class="linenos" data-linenos=" 3 "></span></a><span class="n">numlist</span><span class="o">=</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">])</span>    <span class="c1">#括号中括号([])，组成作图的点的值</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a><a href="#__codelineno-0-4"><span class="linenos" data-linenos=" 4 "></span></a>
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a><a href="#__codelineno-0-5"><span class="linenos" data-linenos=" 5 "></span></a><span class="n">xpoints</span> <span class="o">=</span> <span class="n">numlist</span>    <span class="c1">#若不定义X轴只定义y轴，默认是0 1 2 3</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a><a href="#__codelineno-0-6"><span class="linenos" data-linenos=" 6 "></span></a><span class="n">ypoints</span> <span class="o">=</span> <span class="n">numlist</span>    <span class="c1">#由此可见直接用列表是可以的。明面上不行（不规范），但是本身可行。</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7"></a><a href="#__codelineno-0-7"><span class="linenos" data-linenos=" 7 "></span></a>
+<a id="__codelineno-0-8" name="__codelineno-0-8"></a><a href="#__codelineno-0-8"><span class="linenos" data-linenos=" 8 "></span></a><span class="c1">#也可以：xpoints=([100,458])#各个点的坐标</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9"></a><a href="#__codelineno-0-9"><span class="linenos" data-linenos=" 9 "></span></a><span class="c1">#       ypoints=([300,100])</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10"></a><a href="#__codelineno-0-10"><span class="linenos" data-linenos="10 "></span></a>
+<a id="__codelineno-0-11" name="__codelineno-0-11"></a><a href="#__codelineno-0-11"><span class="linenos" data-linenos="11 "></span></a>
+<a id="__codelineno-0-12" name="__codelineno-0-12"></a><a href="#__codelineno-0-12"><span class="linenos" data-linenos="12 "></span></a><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ypoints</span><span class="p">,</span><span class="n">marker</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="err">，</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;y-label&#39;</span><span class="p">)</span><span class="c1">#用一个值序列做一个折线的折线图，并且用marker的赋值来描点(一般是&#39;o&#39;和&#39;x&#39;代表点和叉)。此处不定义x，若不定义x程序自己则会用默认数值。</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13"></a><a href="#__codelineno-0-13"><span class="linenos" data-linenos="13 "></span></a>
+<a id="__codelineno-0-14" name="__codelineno-0-14"></a><a href="#__codelineno-0-14"><span class="linenos" data-linenos="14 "></span></a><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span><span class="c1">#输出作图</span>
+</code></pre></div>
 <p><a class="glightbox" href="C:\Users\LLLLL\AppData\Roaming\Typora\typora-user-images\image-20240106230430799.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="C:\Users\LLLLL\AppData\Roaming\Typora\typora-user-images\image-20240106230430799.png" alt="image-20240106230430799" style="zoom:67%;" /></a></p>
 <p>​                                                                                                   （一）第一个折线图</p>
 <h3 id="_3">双数值折线图<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
-<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-1-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-1-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-1-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-1-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-1-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-1-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-1-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-1-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2"></a>
-<a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="n">numlist</span><span class="o">=</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">])</span>    <span class="c1">#括号中括号([])，组成作图的点的值</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4"></a>
-<a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="n">xpoints</span> <span class="o">=</span> <span class="n">numlist</span>    
-<a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="n">ypoints</span> <span class="o">=</span> <span class="n">numlist</span>   
-<a id="__codelineno-1-7" name="__codelineno-1-7"></a>
-<a id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xpoints</span><span class="p">,</span><span class="n">ypoints</span><span class="p">,</span><span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">)</span>  <span class="c1">#用两个值序列，做一个折线的折线图</span>
-<a id="__codelineno-1-9" name="__codelineno-1-9"></a>
-<a id="__codelineno-1-10" name="__codelineno-1-10"></a><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</code></pre></div></td></tr></table></div>
+<div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><a href="#__codelineno-1-1"><span class="linenos" data-linenos=" 1 "></span></a><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a><a href="#__codelineno-1-2"><span class="linenos" data-linenos=" 2 "></span></a>
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a><a href="#__codelineno-1-3"><span class="linenos" data-linenos=" 3 "></span></a><span class="n">numlist</span><span class="o">=</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">])</span>    <span class="c1">#括号中括号([])，组成作图的点的值</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4"></a><a href="#__codelineno-1-4"><span class="linenos" data-linenos=" 4 "></span></a>
+<a id="__codelineno-1-5" name="__codelineno-1-5"></a><a href="#__codelineno-1-5"><span class="linenos" data-linenos=" 5 "></span></a><span class="n">xpoints</span> <span class="o">=</span> <span class="n">numlist</span>    
+<a id="__codelineno-1-6" name="__codelineno-1-6"></a><a href="#__codelineno-1-6"><span class="linenos" data-linenos=" 6 "></span></a><span class="n">ypoints</span> <span class="o">=</span> <span class="n">numlist</span>   
+<a id="__codelineno-1-7" name="__codelineno-1-7"></a><a href="#__codelineno-1-7"><span class="linenos" data-linenos=" 7 "></span></a>
+<a id="__codelineno-1-8" name="__codelineno-1-8"></a><a href="#__codelineno-1-8"><span class="linenos" data-linenos=" 8 "></span></a><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xpoints</span><span class="p">,</span><span class="n">ypoints</span><span class="p">,</span><span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">)</span>  <span class="c1">#用两个值序列，做一个折线的折线图</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9"></a><a href="#__codelineno-1-9"><span class="linenos" data-linenos=" 9 "></span></a>
+<a id="__codelineno-1-10" name="__codelineno-1-10"></a><a href="#__codelineno-1-10"><span class="linenos" data-linenos="10 "></span></a><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div>
 <p><a class="glightbox" href="C:\Users\LLLLL\AppData\Roaming\Typora\typora-user-images\image-20240106225408088.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="C:\Users\LLLLL\AppData\Roaming\Typora\typora-user-images\image-20240106225408088.png" alt="image-20240106225408088" style="zoom: 67%;" /></a></p>
 <p>​                                                                                               （二）第二个折线图</p>
 <h3 id="_4">多折线图<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
-<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-2-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-2-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-2-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-2-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-2-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-2-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-2-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2"></a>
-<a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="n">numlist</span><span class="o">=</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">])</span>    <span class="c1">#括号中括号([])，组成作图的点的值</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4"></a>
-<a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="n">xpoints</span> <span class="o">=</span> <span class="n">numlist</span>
-<a id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="n">ypoints</span> <span class="o">=</span> <span class="n">numlist</span>
-<a id="__codelineno-2-7" name="__codelineno-2-7"></a>
-<a id="__codelineno-2-8" name="__codelineno-2-8"></a><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">xpoints</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">ypoints</span><span class="p">,</span><span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">)</span><span class="c1">#用两个值序列作图，输出两条折线。举一反三，可以通过两两成对的参数形式来输出多个折线作图。</span>
-<a id="__codelineno-2-9" name="__codelineno-2-9"></a>
-<a id="__codelineno-2-10" name="__codelineno-2-10"></a><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</code></pre></div></td></tr></table></div>
+<div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><a href="#__codelineno-2-1"><span class="linenos" data-linenos=" 1 "></span></a><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a><a href="#__codelineno-2-2"><span class="linenos" data-linenos=" 2 "></span></a>
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a><a href="#__codelineno-2-3"><span class="linenos" data-linenos=" 3 "></span></a><span class="n">numlist</span><span class="o">=</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">])</span>    <span class="c1">#括号中括号([])，组成作图的点的值</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a><a href="#__codelineno-2-4"><span class="linenos" data-linenos=" 4 "></span></a>
+<a id="__codelineno-2-5" name="__codelineno-2-5"></a><a href="#__codelineno-2-5"><span class="linenos" data-linenos=" 5 "></span></a><span class="n">xpoints</span> <span class="o">=</span> <span class="n">numlist</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6"></a><a href="#__codelineno-2-6"><span class="linenos" data-linenos=" 6 "></span></a><span class="n">ypoints</span> <span class="o">=</span> <span class="n">numlist</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7"></a><a href="#__codelineno-2-7"><span class="linenos" data-linenos=" 7 "></span></a>
+<a id="__codelineno-2-8" name="__codelineno-2-8"></a><a href="#__codelineno-2-8"><span class="linenos" data-linenos=" 8 "></span></a><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">xpoints</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">ypoints</span><span class="p">,</span><span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">)</span><span class="c1">#用两个值序列作图，输出两条折线。举一反三，可以通过两两成对的参数形式来输出多个折线作图。</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9"></a><a href="#__codelineno-2-9"><span class="linenos" data-linenos=" 9 "></span></a>
+<a id="__codelineno-2-10" name="__codelineno-2-10"></a><a href="#__codelineno-2-10"><span class="linenos" data-linenos="10 "></span></a><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div>
 <p><a class="glightbox" href="C:\Users\LLLLL\AppData\Roaming\Typora\typora-user-images\image-20240106225446665.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="C:\Users\LLLLL\AppData\Roaming\Typora\typora-user-images\image-20240106225446665.png" alt="image-20240106225446665" style="zoom:67%;" /></a></p>
 <p>​                                                                                           （三）第三个折线图</p>
 <h2 id="_5">以折线图为例补全图标<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
@@ -1150,40 +1158,24 @@
 <p>x轴标签：<code>plt.xlabel('')</code></p>
 <p>y轴标签：<code>plt.ylabel('')</code></p>
 <p>折线标签：<code>plt.plot(... , label='')</code> 和 <code>plt.legend()</code></p>
-<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-3-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-3-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-3-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-3-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-3-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-3-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-3-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-3-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-3-10">10</a></span>
-<span class="normal"><a href="#__codelineno-3-11">11</a></span>
-<span class="normal"><a href="#__codelineno-3-12">12</a></span>
-<span class="normal"><a href="#__codelineno-3-13">13</a></span>
-<span class="normal"><a href="#__codelineno-3-14">14</a></span>
-<span class="normal"><a href="#__codelineno-3-15">15</a></span>
-<span class="normal"><a href="#__codelineno-3-16">16</a></span>
-<span class="normal"><a href="#__codelineno-3-17">17</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="n">numlist</span><span class="o">=</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">])</span>  
-<a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="n">xpoints</span> <span class="o">=</span> <span class="n">numlist</span>    
-<a id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="n">ypoints</span> <span class="o">=</span> <span class="n">numlist</span>    
-<a id="__codelineno-3-5" name="__codelineno-3-5"></a>
-<a id="__codelineno-3-6" name="__codelineno-3-6"></a><span class="c1">#标签操作</span>
-<a id="__codelineno-3-7" name="__codelineno-3-7"></a><span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;title&quot;</span><span class="p">)</span>  <span class="c1">#提供一个图表的标题</span>
-<a id="__codelineno-3-8" name="__codelineno-3-8"></a>
-<a id="__codelineno-3-9" name="__codelineno-3-9"></a><span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;x-label&quot;</span><span class="p">)</span>  <span class="c1">#提供x轴的数据的标签,x轴数据的含义</span>
-<a id="__codelineno-3-10" name="__codelineno-3-10"></a><span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;y-label&#39;</span><span class="p">)</span>  <span class="c1">#提供y轴地数据的标签,y轴数据的含义</span>
-<a id="__codelineno-3-11" name="__codelineno-3-11"></a>
-<a id="__codelineno-3-12" name="__codelineno-3-12"></a><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ypoints</span><span class="p">,</span><span class="n">marker</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;y-label&#39;</span><span class="p">)</span>
-<a id="__codelineno-3-13" name="__codelineno-3-13"></a><span class="c1">#用一个值序列做一个折线的折线图，并且用marker的赋值来描点(一般是&#39;o&#39;和&#39;x&#39;代表点和叉)。</span>
-<a id="__codelineno-3-14" name="__codelineno-3-14"></a><span class="c1">#再定义一个label用于标注折线的含义（也就是再一次标注y轴）。</span>
-<a id="__codelineno-3-15" name="__codelineno-3-15"></a><span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span><span class="c1">#直接用plot是没有用的，需要legend()函数才会有效显示</span>
-<a id="__codelineno-3-16" name="__codelineno-3-16"></a>
-<a id="__codelineno-3-17" name="__codelineno-3-17"></a><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</code></pre></div></td></tr></table></div>
+<div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><a href="#__codelineno-3-1"><span class="linenos" data-linenos=" 1 "></span></a><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2"></a><a href="#__codelineno-3-2"><span class="linenos" data-linenos=" 2 "></span></a><span class="n">numlist</span><span class="o">=</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">])</span>  
+<a id="__codelineno-3-3" name="__codelineno-3-3"></a><a href="#__codelineno-3-3"><span class="linenos" data-linenos=" 3 "></span></a><span class="n">xpoints</span> <span class="o">=</span> <span class="n">numlist</span>    
+<a id="__codelineno-3-4" name="__codelineno-3-4"></a><a href="#__codelineno-3-4"><span class="linenos" data-linenos=" 4 "></span></a><span class="n">ypoints</span> <span class="o">=</span> <span class="n">numlist</span>    
+<a id="__codelineno-3-5" name="__codelineno-3-5"></a><a href="#__codelineno-3-5"><span class="linenos" data-linenos=" 5 "></span></a>
+<a id="__codelineno-3-6" name="__codelineno-3-6"></a><a href="#__codelineno-3-6"><span class="linenos" data-linenos=" 6 "></span></a><span class="c1">#标签操作</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7"></a><a href="#__codelineno-3-7"><span class="linenos" data-linenos=" 7 "></span></a><span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;title&quot;</span><span class="p">)</span>  <span class="c1">#提供一个图表的标题</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8"></a><a href="#__codelineno-3-8"><span class="linenos" data-linenos=" 8 "></span></a>
+<a id="__codelineno-3-9" name="__codelineno-3-9"></a><a href="#__codelineno-3-9"><span class="linenos" data-linenos=" 9 "></span></a><span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;x-label&quot;</span><span class="p">)</span>  <span class="c1">#提供x轴的数据的标签,x轴数据的含义</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10"></a><a href="#__codelineno-3-10"><span class="linenos" data-linenos="10 "></span></a><span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;y-label&#39;</span><span class="p">)</span>  <span class="c1">#提供y轴地数据的标签,y轴数据的含义</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11"></a><a href="#__codelineno-3-11"><span class="linenos" data-linenos="11 "></span></a>
+<a id="__codelineno-3-12" name="__codelineno-3-12"></a><a href="#__codelineno-3-12"><span class="linenos" data-linenos="12 "></span></a><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ypoints</span><span class="p">,</span><span class="n">marker</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;y-label&#39;</span><span class="p">)</span>
+<a id="__codelineno-3-13" name="__codelineno-3-13"></a><a href="#__codelineno-3-13"><span class="linenos" data-linenos="13 "></span></a><span class="c1">#用一个值序列做一个折线的折线图，并且用marker的赋值来描点(一般是&#39;o&#39;和&#39;x&#39;代表点和叉)。</span>
+<a id="__codelineno-3-14" name="__codelineno-3-14"></a><a href="#__codelineno-3-14"><span class="linenos" data-linenos="14 "></span></a><span class="c1">#再定义一个label用于标注折线的含义（也就是再一次标注y轴）。</span>
+<a id="__codelineno-3-15" name="__codelineno-3-15"></a><a href="#__codelineno-3-15"><span class="linenos" data-linenos="15 "></span></a><span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span><span class="c1">#直接用plot是没有用的，需要legend()函数才会有效显示</span>
+<a id="__codelineno-3-16" name="__codelineno-3-16"></a><a href="#__codelineno-3-16"><span class="linenos" data-linenos="16 "></span></a>
+<a id="__codelineno-3-17" name="__codelineno-3-17"></a><a href="#__codelineno-3-17"><span class="linenos" data-linenos="17 "></span></a><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div>
 <p><a class="glightbox" href="C:\Users\LLLLL\AppData\Roaming\Typora\typora-user-images\image-20240106231542975.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="C:\Users\LLLLL\AppData\Roaming\Typora\typora-user-images\image-20240106231542975.png" alt="image-20240106231542975" style="zoom:67%;" /></a></p>
 <p>给x,y轴都标注上相应的标签，并且图表有相应的标题。同时折线本身也有了注释（主要用于多折线情况用于讲解区分）。</p>
 <h3 id="_7">参考线<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
@@ -1191,122 +1183,78 @@
 <p>在制作图表的时候，难免会遇到需要对比的情况（如对比折线图整体是否在0之上或0之上）</p>
 <p>这时候参考线会起到相应的作用，为我们在观测数据的时候有更好的对照物。</p>
 <p>这里以零线为例：</p>
-<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-4-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-4-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-4-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-4-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-4-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-4-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-4-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-4-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-4-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="n">numlist</span><span class="o">=</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">])</span>    
-<a id="__codelineno-4-3" name="__codelineno-4-3"></a>
-<a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="n">xpoints</span> <span class="o">=</span> <span class="n">numlist</span>    
-<a id="__codelineno-4-5" name="__codelineno-4-5"></a><span class="n">ypoints</span> <span class="o">=</span> <span class="n">numlist</span>    
-<a id="__codelineno-4-6" name="__codelineno-4-6"></a>
-<a id="__codelineno-4-7" name="__codelineno-4-7"></a><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ypoints</span><span class="p">,</span><span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">)</span>
-<a id="__codelineno-4-8" name="__codelineno-4-8"></a>
-<a id="__codelineno-4-9" name="__codelineno-4-9"></a><span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="c1">#零线</span>
-<a id="__codelineno-4-10" name="__codelineno-4-10"></a><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</code></pre></div></td></tr></table></div>
+<div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><a href="#__codelineno-4-1"><span class="linenos" data-linenos=" 1 "></span></a><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2"></a><a href="#__codelineno-4-2"><span class="linenos" data-linenos=" 2 "></span></a><span class="n">numlist</span><span class="o">=</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">])</span>    
+<a id="__codelineno-4-3" name="__codelineno-4-3"></a><a href="#__codelineno-4-3"><span class="linenos" data-linenos=" 3 "></span></a>
+<a id="__codelineno-4-4" name="__codelineno-4-4"></a><a href="#__codelineno-4-4"><span class="linenos" data-linenos=" 4 "></span></a><span class="n">xpoints</span> <span class="o">=</span> <span class="n">numlist</span>    
+<a id="__codelineno-4-5" name="__codelineno-4-5"></a><a href="#__codelineno-4-5"><span class="linenos" data-linenos=" 5 "></span></a><span class="n">ypoints</span> <span class="o">=</span> <span class="n">numlist</span>    
+<a id="__codelineno-4-6" name="__codelineno-4-6"></a><a href="#__codelineno-4-6"><span class="linenos" data-linenos=" 6 "></span></a>
+<a id="__codelineno-4-7" name="__codelineno-4-7"></a><a href="#__codelineno-4-7"><span class="linenos" data-linenos=" 7 "></span></a><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ypoints</span><span class="p">,</span><span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">)</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8"></a><a href="#__codelineno-4-8"><span class="linenos" data-linenos=" 8 "></span></a>
+<a id="__codelineno-4-9" name="__codelineno-4-9"></a><a href="#__codelineno-4-9"><span class="linenos" data-linenos=" 9 "></span></a><span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="c1">#零线</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10"></a><a href="#__codelineno-4-10"><span class="linenos" data-linenos="10 "></span></a><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div>
 <p><a class="glightbox" href="C:\Users\LLLLL\AppData\Roaming\Typora\typora-user-images\image-20240106231801423.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="C:\Users\LLLLL\AppData\Roaming\Typora\typora-user-images\image-20240106231801423.png" alt="image-20240106231801423" style="zoom:67%;" /></a></p>
 <p><code>plt.axhline()</code>在此处以零线为例，实际情况可以灵活使用。</p>
 <h3 id="_8">网格线<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
 <p><code>plt.grid()</code>给图表提供一个网格线</p>
-<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-5-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-5-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-5-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-5-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-5-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-5-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-5-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-5-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-5-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="n">numlist</span><span class="o">=</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">])</span>    
-<a id="__codelineno-5-3" name="__codelineno-5-3"></a>
-<a id="__codelineno-5-4" name="__codelineno-5-4"></a><span class="n">xpoints</span> <span class="o">=</span> <span class="n">numlist</span>    
-<a id="__codelineno-5-5" name="__codelineno-5-5"></a><span class="n">ypoints</span> <span class="o">=</span> <span class="n">numlist</span>    
-<a id="__codelineno-5-6" name="__codelineno-5-6"></a>
-<a id="__codelineno-5-7" name="__codelineno-5-7"></a><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ypoints</span><span class="p">,</span><span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">)</span>
-<a id="__codelineno-5-8" name="__codelineno-5-8"></a>
-<a id="__codelineno-5-9" name="__codelineno-5-9"></a><span class="n">plt</span><span class="o">.</span><span class="n">gird</span><span class="p">()</span>
-<a id="__codelineno-5-10" name="__codelineno-5-10"></a><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</code></pre></div></td></tr></table></div>
+<div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><a href="#__codelineno-5-1"><span class="linenos" data-linenos=" 1 "></span></a><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2"></a><a href="#__codelineno-5-2"><span class="linenos" data-linenos=" 2 "></span></a><span class="n">numlist</span><span class="o">=</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">])</span>    
+<a id="__codelineno-5-3" name="__codelineno-5-3"></a><a href="#__codelineno-5-3"><span class="linenos" data-linenos=" 3 "></span></a>
+<a id="__codelineno-5-4" name="__codelineno-5-4"></a><a href="#__codelineno-5-4"><span class="linenos" data-linenos=" 4 "></span></a><span class="n">xpoints</span> <span class="o">=</span> <span class="n">numlist</span>    
+<a id="__codelineno-5-5" name="__codelineno-5-5"></a><a href="#__codelineno-5-5"><span class="linenos" data-linenos=" 5 "></span></a><span class="n">ypoints</span> <span class="o">=</span> <span class="n">numlist</span>    
+<a id="__codelineno-5-6" name="__codelineno-5-6"></a><a href="#__codelineno-5-6"><span class="linenos" data-linenos=" 6 "></span></a>
+<a id="__codelineno-5-7" name="__codelineno-5-7"></a><a href="#__codelineno-5-7"><span class="linenos" data-linenos=" 7 "></span></a><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ypoints</span><span class="p">,</span><span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">)</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8"></a><a href="#__codelineno-5-8"><span class="linenos" data-linenos=" 8 "></span></a>
+<a id="__codelineno-5-9" name="__codelineno-5-9"></a><a href="#__codelineno-5-9"><span class="linenos" data-linenos=" 9 "></span></a><span class="n">plt</span><span class="o">.</span><span class="n">gird</span><span class="p">()</span>
+<a id="__codelineno-5-10" name="__codelineno-5-10"></a><a href="#__codelineno-5-10"><span class="linenos" data-linenos="10 "></span></a><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div>
 <p><a class="glightbox" href="C:\Users\LLLLL\AppData\Roaming\Typora\typora-user-images\image-20240106232259016.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="C:\Users\LLLLL\AppData\Roaming\Typora\typora-user-images\image-20240106232259016.png" alt="image-20240106232259016" style="zoom:67%;" /></a></p>
 <h2 id="_9"><strong>曲线图以及散点图</strong><a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
 <p>x y = ？     ？可以是列表、元组、NdArray</p>
 <h3 id="_10">曲线图<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
-<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-6-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-6-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-6-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-6-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-6-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-6-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-6-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-6-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-6-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<a id="__codelineno-6-3" name="__codelineno-6-3"></a>
-<a id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">)</span>
-<a id="__codelineno-6-5" name="__codelineno-6-5"></a>
-<a id="__codelineno-6-6" name="__codelineno-6-6"></a><span class="n">y1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>  <span class="c1"># 做曲线，x做一个范围(定义域)，y=f(x)(值域)，用f(x)来表达y的表达式</span>
-<a id="__codelineno-6-7" name="__codelineno-6-7"></a>
-<a id="__codelineno-6-8" name="__codelineno-6-8"></a><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y1</span><span class="p">,</span><span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">)</span>
-<a id="__codelineno-6-9" name="__codelineno-6-9"></a><span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
-<a id="__codelineno-6-10" name="__codelineno-6-10"></a><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</code></pre></div></td></tr></table></div>
+<div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><a href="#__codelineno-6-1"><span class="linenos" data-linenos=" 1 "></span></a><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2"></a><a href="#__codelineno-6-2"><span class="linenos" data-linenos=" 2 "></span></a><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3"></a><a href="#__codelineno-6-3"><span class="linenos" data-linenos=" 3 "></span></a>
+<a id="__codelineno-6-4" name="__codelineno-6-4"></a><a href="#__codelineno-6-4"><span class="linenos" data-linenos=" 4 "></span></a><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">)</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5"></a><a href="#__codelineno-6-5"><span class="linenos" data-linenos=" 5 "></span></a>
+<a id="__codelineno-6-6" name="__codelineno-6-6"></a><a href="#__codelineno-6-6"><span class="linenos" data-linenos=" 6 "></span></a><span class="n">y1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>  <span class="c1"># 做曲线，x做一个范围(定义域)，y=f(x)(值域)，用f(x)来表达y的表达式</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7"></a><a href="#__codelineno-6-7"><span class="linenos" data-linenos=" 7 "></span></a>
+<a id="__codelineno-6-8" name="__codelineno-6-8"></a><a href="#__codelineno-6-8"><span class="linenos" data-linenos=" 8 "></span></a><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y1</span><span class="p">,</span><span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">)</span>
+<a id="__codelineno-6-9" name="__codelineno-6-9"></a><a href="#__codelineno-6-9"><span class="linenos" data-linenos=" 9 "></span></a><span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<a id="__codelineno-6-10" name="__codelineno-6-10"></a><a href="#__codelineno-6-10"><span class="linenos" data-linenos="10 "></span></a><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div>
 <p><a class="glightbox" href="C:\Users\LLLLL\AppData\Roaming\Typora\typora-user-images\image-20240113151100129.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="C:\Users\LLLLL\AppData\Roaming\Typora\typora-user-images\image-20240113151100129.png" alt="image-20240113151100129" style="zoom:67%;" /></a></p>
 <h3 id="_11">散点图<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
 <p><code>plt.scatter(x,y,s,alpha,c,camp)</code></p>
 <p>绘制x y的散点图，<strong>s控制点的大小</strong>；<strong>alpha控制点的不透明度</strong>；<strong>c控制颜色</strong>，以上都<strong><u>可以通过列表来改变一个图内各个点的状态属性</u></strong>；<u>c也可以通过等于一个和y相关的z来控制所有散点的颜色</u>类似于camp；<u>camp等于特定的值来控制热力图的颜色</u>，但需要在前面加一个c=y,来让y变换颜色</p>
-<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-7-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-7-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-7-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-7-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-7-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-7-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-7-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-7-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-7-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<a id="__codelineno-7-2" name="__codelineno-7-2"></a>
-<a id="__codelineno-7-3" name="__codelineno-7-3"></a><span class="n">x</span> <span class="o">=</span> <span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">])</span>
-<a id="__codelineno-7-4" name="__codelineno-7-4"></a>
-<a id="__codelineno-7-5" name="__codelineno-7-5"></a><span class="n">y</span> <span class="o">=</span> <span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
-<a id="__codelineno-7-6" name="__codelineno-7-6"></a>
-<a id="__codelineno-7-7" name="__codelineno-7-7"></a><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span><span class="n">s</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>  
-<a id="__codelineno-7-8" name="__codelineno-7-8"></a>
-<a id="__codelineno-7-9" name="__codelineno-7-9"></a><span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">()</span>  <span class="c1"># 输出右侧一个颜色的对照图</span>
-<a id="__codelineno-7-10" name="__codelineno-7-10"></a><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</code></pre></div></td></tr></table></div>
+<div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a><a href="#__codelineno-7-1"><span class="linenos" data-linenos=" 1 "></span></a><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2"></a><a href="#__codelineno-7-2"><span class="linenos" data-linenos=" 2 "></span></a>
+<a id="__codelineno-7-3" name="__codelineno-7-3"></a><a href="#__codelineno-7-3"><span class="linenos" data-linenos=" 3 "></span></a><span class="n">x</span> <span class="o">=</span> <span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">])</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4"></a><a href="#__codelineno-7-4"><span class="linenos" data-linenos=" 4 "></span></a>
+<a id="__codelineno-7-5" name="__codelineno-7-5"></a><a href="#__codelineno-7-5"><span class="linenos" data-linenos=" 5 "></span></a><span class="n">y</span> <span class="o">=</span> <span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6"></a><a href="#__codelineno-7-6"><span class="linenos" data-linenos=" 6 "></span></a>
+<a id="__codelineno-7-7" name="__codelineno-7-7"></a><a href="#__codelineno-7-7"><span class="linenos" data-linenos=" 7 "></span></a><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span><span class="n">s</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>  
+<a id="__codelineno-7-8" name="__codelineno-7-8"></a><a href="#__codelineno-7-8"><span class="linenos" data-linenos=" 8 "></span></a>
+<a id="__codelineno-7-9" name="__codelineno-7-9"></a><a href="#__codelineno-7-9"><span class="linenos" data-linenos=" 9 "></span></a><span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">()</span>  <span class="c1"># 输出右侧一个颜色的对照图</span>
+<a id="__codelineno-7-10" name="__codelineno-7-10"></a><a href="#__codelineno-7-10"><span class="linenos" data-linenos="10 "></span></a><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div>
 <p><a class="glightbox" href="C:\Users\LLLLL\AppData\Roaming\Typora\typora-user-images\image-20240113151629806.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="C:\Users\LLLLL\AppData\Roaming\Typora\typora-user-images\image-20240113151629806.png" alt="image-20240113151629806" style="zoom:67%;" /></a></p>
 <h2 id="_12">右侧热力参考图：<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h2>
 <p><code>plt.colorbar</code>#输出右侧的热力图，数值的参考图，颜色受cmap控制，参数较多。此处介绍几类几种参数</p>
 <p><code>extend='min'/'max'/'both'</code>控制热力图的上下是否展现出尖角。</p>
 <p><code>shrink</code>是缩放参数</p>
 <p><code>pad</code>是热力图和子图的间距参数</p>
-<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span>
-<span class="normal"><a href="#__codelineno-8-2">2</a></span>
-<span class="normal"><a href="#__codelineno-8-3">3</a></span>
-<span class="normal"><a href="#__codelineno-8-4">4</a></span>
-<span class="normal"><a href="#__codelineno-8-5">5</a></span>
-<span class="normal"><a href="#__codelineno-8-6">6</a></span>
-<span class="normal"><a href="#__codelineno-8-7">7</a></span>
-<span class="normal"><a href="#__codelineno-8-8">8</a></span>
-<span class="normal"><a href="#__codelineno-8-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<a id="__codelineno-8-2" name="__codelineno-8-2"></a>
-<a id="__codelineno-8-3" name="__codelineno-8-3"></a><span class="n">x</span> <span class="o">=</span> <span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">])</span>
-<a id="__codelineno-8-4" name="__codelineno-8-4"></a>
-<a id="__codelineno-8-5" name="__codelineno-8-5"></a><span class="n">y</span> <span class="o">=</span> <span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
-<a id="__codelineno-8-6" name="__codelineno-8-6"></a>
-<a id="__codelineno-8-7" name="__codelineno-8-7"></a><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span><span class="n">s</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span><span class="n">c</span><span class="o">=</span><span class="n">y</span><span class="p">,</span><span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;inferno&#39;</span><span class="p">)</span> 
-<a id="__codelineno-8-8" name="__codelineno-8-8"></a><span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">()</span>  <span class="c1"># 输出右侧一个颜色的对照图</span>
-<a id="__codelineno-8-9" name="__codelineno-8-9"></a><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</code></pre></div></td></tr></table></div>
+<div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a><a href="#__codelineno-8-1"><span class="linenos" data-linenos="1 "></span></a><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2"></a><a href="#__codelineno-8-2"><span class="linenos" data-linenos="2 "></span></a>
+<a id="__codelineno-8-3" name="__codelineno-8-3"></a><a href="#__codelineno-8-3"><span class="linenos" data-linenos="3 "></span></a><span class="n">x</span> <span class="o">=</span> <span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">])</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4"></a><a href="#__codelineno-8-4"><span class="linenos" data-linenos="4 "></span></a>
+<a id="__codelineno-8-5" name="__codelineno-8-5"></a><a href="#__codelineno-8-5"><span class="linenos" data-linenos="5 "></span></a><span class="n">y</span> <span class="o">=</span> <span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6"></a><a href="#__codelineno-8-6"><span class="linenos" data-linenos="6 "></span></a>
+<a id="__codelineno-8-7" name="__codelineno-8-7"></a><a href="#__codelineno-8-7"><span class="linenos" data-linenos="7 "></span></a><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span><span class="n">s</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span><span class="n">c</span><span class="o">=</span><span class="n">y</span><span class="p">,</span><span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;inferno&#39;</span><span class="p">)</span> 
+<a id="__codelineno-8-8" name="__codelineno-8-8"></a><a href="#__codelineno-8-8"><span class="linenos" data-linenos="8 "></span></a><span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">()</span>  <span class="c1"># 输出右侧一个颜色的对照图</span>
+<a id="__codelineno-8-9" name="__codelineno-8-9"></a><a href="#__codelineno-8-9"><span class="linenos" data-linenos="9 "></span></a><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div>
 <p><a class="glightbox" href="C:\Users\LLLLL\AppData\Roaming\Typora\typora-user-images\image-20240113152749475.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="C:\Users\LLLLL\AppData\Roaming\Typora\typora-user-images\image-20240113152749475.png" alt="image-20240113152749475" style="zoom:67%;" /></a></p>
 <h3 id="extend">extend<a class="headerlink" href="#extend" title="Permanent link">&para;</a></h3>
 <p><a class="glightbox" href="https://ask.qcloudimg.com/http-save/yehe-6248316/jxhzewc5zq.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://ask.qcloudimg.com/http-save/yehe-6248316/jxhzewc5zq.png" alt="img" style="zoom: 33%;" /></a></p>
@@ -1329,237 +1277,130 @@
 <li>tick_label 表示柱子的刻度标签，字符串或字符串列表，默认值为 None。</li>
 <li>linestyle 表示线条样式 (ls)。</li>
 </ul>
-<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span>
-<span class="normal"><a href="#__codelineno-9-2">2</a></span>
-<span class="normal"><a href="#__codelineno-9-3">3</a></span>
-<span class="normal"><a href="#__codelineno-9-4">4</a></span>
-<span class="normal"><a href="#__codelineno-9-5">5</a></span>
-<span class="normal"><a href="#__codelineno-9-6">6</a></span>
-<span class="normal"><a href="#__codelineno-9-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<a id="__codelineno-9-2" name="__codelineno-9-2"></a>
-<a id="__codelineno-9-3" name="__codelineno-9-3"></a><span class="n">x</span><span class="o">=</span><span class="p">([</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;c&#39;</span><span class="p">,</span><span class="s1">&#39;d&#39;</span><span class="p">])</span><span class="c1">#需要的是各个柱形的标签</span>
-<a id="__codelineno-9-4" name="__codelineno-9-4"></a><span class="n">y</span><span class="o">=</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span><span class="c1">#柱形的值</span>
-<a id="__codelineno-9-5" name="__codelineno-9-5"></a>
-<a id="__codelineno-9-6" name="__codelineno-9-6"></a><span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span><span class="c1">#纵向柱形图，其他参数：width是每一个住的宽度（取值0~1，默认是0.8）</span>
-<a id="__codelineno-9-7" name="__codelineno-9-7"></a><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</code></pre></div></td></tr></table></div>
+<div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a><a href="#__codelineno-9-1"><span class="linenos" data-linenos="1 "></span></a><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2"></a><a href="#__codelineno-9-2"><span class="linenos" data-linenos="2 "></span></a>
+<a id="__codelineno-9-3" name="__codelineno-9-3"></a><a href="#__codelineno-9-3"><span class="linenos" data-linenos="3 "></span></a><span class="n">x</span><span class="o">=</span><span class="p">([</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;c&#39;</span><span class="p">,</span><span class="s1">&#39;d&#39;</span><span class="p">])</span><span class="c1">#需要的是各个柱形的标签</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4"></a><a href="#__codelineno-9-4"><span class="linenos" data-linenos="4 "></span></a><span class="n">y</span><span class="o">=</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span><span class="c1">#柱形的值</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5"></a><a href="#__codelineno-9-5"><span class="linenos" data-linenos="5 "></span></a>
+<a id="__codelineno-9-6" name="__codelineno-9-6"></a><a href="#__codelineno-9-6"><span class="linenos" data-linenos="6 "></span></a><span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span><span class="c1">#纵向柱形图，其他参数：width是每一个住的宽度（取值0~1，默认是0.8）</span>
+<a id="__codelineno-9-7" name="__codelineno-9-7"></a><a href="#__codelineno-9-7"><span class="linenos" data-linenos="7 "></span></a><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div>
 <p><a class="glightbox" href="C:\Users\LLLLL\AppData\Roaming\Typora\typora-user-images\image-20240113153558609.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="C:\Users\LLLLL\AppData\Roaming\Typora\typora-user-images\image-20240113153558609.png" alt="image-20240113153558609" style="zoom:67%;" /></a></p>
-<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1">1</a></span>
-<span class="normal"><a href="#__codelineno-10-2">2</a></span>
-<span class="normal"><a href="#__codelineno-10-3">3</a></span>
-<span class="normal"><a href="#__codelineno-10-4">4</a></span>
-<span class="normal"><a href="#__codelineno-10-5">5</a></span>
-<span class="normal"><a href="#__codelineno-10-6">6</a></span>
-<span class="normal"><a href="#__codelineno-10-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<a id="__codelineno-10-2" name="__codelineno-10-2"></a>
-<a id="__codelineno-10-3" name="__codelineno-10-3"></a><span class="n">x</span><span class="o">=</span><span class="p">([</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;c&#39;</span><span class="p">,</span><span class="s1">&#39;d&#39;</span><span class="p">])</span><span class="c1">#需要的是各个柱形的标签</span>
-<a id="__codelineno-10-4" name="__codelineno-10-4"></a><span class="n">y</span><span class="o">=</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span><span class="c1">#柱形的值</span>
-<a id="__codelineno-10-5" name="__codelineno-10-5"></a>
-<a id="__codelineno-10-6" name="__codelineno-10-6"></a><span class="n">plt</span><span class="o">.</span><span class="n">barh</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span><span class="c1">#横向柱形图，不用width更改宽度，用height</span>
-<a id="__codelineno-10-7" name="__codelineno-10-7"></a><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</code></pre></div></td></tr></table></div>
+<div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1"></a><a href="#__codelineno-10-1"><span class="linenos" data-linenos="1 "></span></a><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2"></a><a href="#__codelineno-10-2"><span class="linenos" data-linenos="2 "></span></a>
+<a id="__codelineno-10-3" name="__codelineno-10-3"></a><a href="#__codelineno-10-3"><span class="linenos" data-linenos="3 "></span></a><span class="n">x</span><span class="o">=</span><span class="p">([</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;c&#39;</span><span class="p">,</span><span class="s1">&#39;d&#39;</span><span class="p">])</span><span class="c1">#需要的是各个柱形的标签</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4"></a><a href="#__codelineno-10-4"><span class="linenos" data-linenos="4 "></span></a><span class="n">y</span><span class="o">=</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span><span class="c1">#柱形的值</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5"></a><a href="#__codelineno-10-5"><span class="linenos" data-linenos="5 "></span></a>
+<a id="__codelineno-10-6" name="__codelineno-10-6"></a><a href="#__codelineno-10-6"><span class="linenos" data-linenos="6 "></span></a><span class="n">plt</span><span class="o">.</span><span class="n">barh</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span><span class="c1">#横向柱形图，不用width更改宽度，用height</span>
+<a id="__codelineno-10-7" name="__codelineno-10-7"></a><a href="#__codelineno-10-7"><span class="linenos" data-linenos="7 "></span></a><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div>
 <p><a class="glightbox" href="C:\Users\LLLLL\AppData\Roaming\Typora\typora-user-images\image-20240113153638967.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="C:\Users\LLLLL\AppData\Roaming\Typora\typora-user-images\image-20240113153638967.png" alt="image-20240113153638967" style="zoom:67%;" /></a></p>
 <h2 id="_14">直方图：类似于正态分布的图像<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h2>
-<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-11-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-11-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-11-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-11-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-11-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-11-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-11-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-11-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-11-10">10</a></span>
-<span class="normal"><a href="#__codelineno-11-11">11</a></span>
-<span class="normal"><a href="#__codelineno-11-12">12</a></span>
-<span class="normal"><a href="#__codelineno-11-13">13</a></span>
-<span class="normal"><a href="#__codelineno-11-14">14</a></span>
-<span class="normal"><a href="#__codelineno-11-15">15</a></span>
-<span class="normal"><a href="#__codelineno-11-16">16</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<a id="__codelineno-11-2" name="__codelineno-11-2"></a><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<a id="__codelineno-11-3" name="__codelineno-11-3"></a><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<a id="__codelineno-11-4" name="__codelineno-11-4"></a>
-<a id="__codelineno-11-5" name="__codelineno-11-5"></a> <span class="c1"># numpy生成随机数</span>
-<a id="__codelineno-11-6" name="__codelineno-11-6"></a><span class="n">random_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">170</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">250</span><span class="p">)</span>
-<a id="__codelineno-11-7" name="__codelineno-11-7"></a>
-<a id="__codelineno-11-8" name="__codelineno-11-8"></a><span class="c1"># 将数据转换为Pandas DataFrame</span>
-<a id="__codelineno-11-9" name="__codelineno-11-9"></a><span class="n">dataframe</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">random_data</span><span class="p">)</span>
-<a id="__codelineno-11-10" name="__codelineno-11-10"></a>
-<a id="__codelineno-11-11" name="__codelineno-11-11"></a><span class="c1"># 使用pandas hist()绘制直方图</span>
-<a id="__codelineno-11-12" name="__codelineno-11-12"></a><span class="n">dataframe</span><span class="o">.</span><span class="n">hist</span><span class="p">()</span>
-<a id="__codelineno-11-13" name="__codelineno-11-13"></a>
-<a id="__codelineno-11-14" name="__codelineno-11-14"></a><span class="c1">#也可以设置图表属性，title x—lable y-lable</span>
-<a id="__codelineno-11-15" name="__codelineno-11-15"></a>
-<a id="__codelineno-11-16" name="__codelineno-11-16"></a><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</code></pre></div></td></tr></table></div>
+<div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1"></a><a href="#__codelineno-11-1"><span class="linenos" data-linenos=" 1 "></span></a><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2"></a><a href="#__codelineno-11-2"><span class="linenos" data-linenos=" 2 "></span></a><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3"></a><a href="#__codelineno-11-3"><span class="linenos" data-linenos=" 3 "></span></a><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<a id="__codelineno-11-4" name="__codelineno-11-4"></a><a href="#__codelineno-11-4"><span class="linenos" data-linenos=" 4 "></span></a>
+<a id="__codelineno-11-5" name="__codelineno-11-5"></a><a href="#__codelineno-11-5"><span class="linenos" data-linenos=" 5 "></span></a> <span class="c1"># numpy生成随机数</span>
+<a id="__codelineno-11-6" name="__codelineno-11-6"></a><a href="#__codelineno-11-6"><span class="linenos" data-linenos=" 6 "></span></a><span class="n">random_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">170</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">250</span><span class="p">)</span>
+<a id="__codelineno-11-7" name="__codelineno-11-7"></a><a href="#__codelineno-11-7"><span class="linenos" data-linenos=" 7 "></span></a>
+<a id="__codelineno-11-8" name="__codelineno-11-8"></a><a href="#__codelineno-11-8"><span class="linenos" data-linenos=" 8 "></span></a><span class="c1"># 将数据转换为Pandas DataFrame</span>
+<a id="__codelineno-11-9" name="__codelineno-11-9"></a><a href="#__codelineno-11-9"><span class="linenos" data-linenos=" 9 "></span></a><span class="n">dataframe</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">random_data</span><span class="p">)</span>
+<a id="__codelineno-11-10" name="__codelineno-11-10"></a><a href="#__codelineno-11-10"><span class="linenos" data-linenos="10 "></span></a>
+<a id="__codelineno-11-11" name="__codelineno-11-11"></a><a href="#__codelineno-11-11"><span class="linenos" data-linenos="11 "></span></a><span class="c1"># 使用pandas hist()绘制直方图</span>
+<a id="__codelineno-11-12" name="__codelineno-11-12"></a><a href="#__codelineno-11-12"><span class="linenos" data-linenos="12 "></span></a><span class="n">dataframe</span><span class="o">.</span><span class="n">hist</span><span class="p">()</span>
+<a id="__codelineno-11-13" name="__codelineno-11-13"></a><a href="#__codelineno-11-13"><span class="linenos" data-linenos="13 "></span></a>
+<a id="__codelineno-11-14" name="__codelineno-11-14"></a><a href="#__codelineno-11-14"><span class="linenos" data-linenos="14 "></span></a><span class="c1">#也可以设置图表属性，title x—lable y-lable</span>
+<a id="__codelineno-11-15" name="__codelineno-11-15"></a><a href="#__codelineno-11-15"><span class="linenos" data-linenos="15 "></span></a>
+<a id="__codelineno-11-16" name="__codelineno-11-16"></a><a href="#__codelineno-11-16"><span class="linenos" data-linenos="16 "></span></a><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div>
 <p><a class="glightbox" href="C:\Users\LLLLL\AppData\Roaming\Typora\typora-user-images\image-20240113154442710.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="C:\Users\LLLLL\AppData\Roaming\Typora\typora-user-images\image-20240113154442710.png" alt="image-20240113154442710" style="zoom:67%;" /></a></p>
 <p>柱状图：</p>
-<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-12-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-12-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-12-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-12-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-12-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-12-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-12-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-12-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-12-10">10</a></span>
-<span class="normal"><a href="#__codelineno-12-11">11</a></span>
-<span class="normal"><a href="#__codelineno-12-12">12</a></span>
-<span class="normal"><a href="#__codelineno-12-13">13</a></span>
-<span class="normal"><a href="#__codelineno-12-14">14</a></span>
-<span class="normal"><a href="#__codelineno-12-15">15</a></span>
-<span class="normal"><a href="#__codelineno-12-16">16</a></span>
-<span class="normal"><a href="#__codelineno-12-17">17</a></span>
-<span class="normal"><a href="#__codelineno-12-18">18</a></span>
-<span class="normal"><a href="#__codelineno-12-19">19</a></span>
-<span class="normal"><a href="#__codelineno-12-20">20</a></span>
-<span class="normal"><a href="#__codelineno-12-21">21</a></span>
-<span class="normal"><a href="#__codelineno-12-22">22</a></span>
-<span class="normal"><a href="#__codelineno-12-23">23</a></span>
-<span class="normal"><a href="#__codelineno-12-24">24</a></span>
-<span class="normal"><a href="#__codelineno-12-25">25</a></span>
-<span class="normal"><a href="#__codelineno-12-26">26</a></span>
-<span class="normal"><a href="#__codelineno-12-27">27</a></span>
-<span class="normal"><a href="#__codelineno-12-28">28</a></span>
-<span class="normal"><a href="#__codelineno-12-29">29</a></span>
-<span class="normal"><a href="#__codelineno-12-30">30</a></span>
-<span class="normal"><a href="#__codelineno-12-31">31</a></span>
-<span class="normal"><a href="#__codelineno-12-32">32</a></span>
-<span class="normal"><a href="#__codelineno-12-33">33</a></span>
-<span class="normal"><a href="#__codelineno-12-34">34</a></span>
-<span class="normal"><a href="#__codelineno-12-35">35</a></span>
-<span class="normal"><a href="#__codelineno-12-36">36</a></span>
-<span class="normal"><a href="#__codelineno-12-37">37</a></span>
-<span class="normal"><a href="#__codelineno-12-38">38</a></span>
-<span class="normal"><a href="#__codelineno-12-39">39</a></span>
-<span class="normal"><a href="#__codelineno-12-40">40</a></span>
-<span class="normal"><a href="#__codelineno-12-41">41</a></span>
-<span class="normal"><a href="#__codelineno-12-42">42</a></span>
-<span class="normal"><a href="#__codelineno-12-43">43</a></span>
-<span class="normal"><a href="#__codelineno-12-44">44</a></span>
-<span class="normal"><a href="#__codelineno-12-45">45</a></span>
-<span class="normal"><a href="#__codelineno-12-46">46</a></span>
-<span class="normal"><a href="#__codelineno-12-47">47</a></span>
-<span class="normal"><a href="#__codelineno-12-48">48</a></span>
-<span class="normal"><a href="#__codelineno-12-49">49</a></span>
-<span class="normal"><a href="#__codelineno-12-50">50</a></span>
-<span class="normal"><a href="#__codelineno-12-51">51</a></span>
-<span class="normal"><a href="#__codelineno-12-52">52</a></span>
-<span class="normal"><a href="#__codelineno-12-53">53</a></span>
-<span class="normal"><a href="#__codelineno-12-54">54</a></span>
-<span class="normal"><a href="#__codelineno-12-55">55</a></span>
-<span class="normal"><a href="#__codelineno-12-56">56</a></span>
-<span class="normal"><a href="#__codelineno-12-57">57</a></span>
-<span class="normal"><a href="#__codelineno-12-58">58</a></span>
-<span class="normal"><a href="#__codelineno-12-59">59</a></span>
-<span class="normal"><a href="#__codelineno-12-60">60</a></span>
-<span class="normal"><a href="#__codelineno-12-61">61</a></span>
-<span class="normal"><a href="#__codelineno-12-62">62</a></span>
-<span class="normal"><a href="#__codelineno-12-63">63</a></span>
-<span class="normal"><a href="#__codelineno-12-64">64</a></span>
-<span class="normal"><a href="#__codelineno-12-65">65</a></span>
-<span class="normal"><a href="#__codelineno-12-66">66</a></span>
-<span class="normal"><a href="#__codelineno-12-67">67</a></span>
-<span class="normal"><a href="#__codelineno-12-68">68</a></span>
-<span class="normal"><a href="#__codelineno-12-69">69</a></span>
-<span class="normal"><a href="#__codelineno-12-70">70</a></span>
-<span class="normal"><a href="#__codelineno-12-71">71</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<a id="__codelineno-12-2" name="__codelineno-12-2"></a><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<a id="__codelineno-12-3" name="__codelineno-12-3"></a>
-<a id="__codelineno-12-4" name="__codelineno-12-4"></a><span class="n">a</span> <span class="o">=</span> <span class="p">([</span><span class="mi">20</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">27</span><span class="p">])</span>
-<a id="__codelineno-12-5" name="__codelineno-12-5"></a><span class="n">b</span> <span class="o">=</span> <span class="p">([</span><span class="mi">25</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">27</span><span class="p">])</span>
-<a id="__codelineno-12-6" name="__codelineno-12-6"></a>
-<a id="__codelineno-12-7" name="__codelineno-12-7"></a><span class="c1"># 设置相关参数</span>
-<a id="__codelineno-12-8" name="__codelineno-12-8"></a>
-<a id="__codelineno-12-9" name="__codelineno-12-9"></a><span class="n">index</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
-<a id="__codelineno-12-10" name="__codelineno-12-10"></a>
-<a id="__codelineno-12-11" name="__codelineno-12-11"></a><span class="n">bar_width</span> <span class="o">=</span> <span class="mf">0.35</span>
-<a id="__codelineno-12-12" name="__codelineno-12-12"></a>
-<a id="__codelineno-12-13" name="__codelineno-12-13"></a>
-<a id="__codelineno-12-14" name="__codelineno-12-14"></a><span class="c1"># 画柱状图</span>
-<a id="__codelineno-12-15" name="__codelineno-12-15"></a>
-<a id="__codelineno-12-16" name="__codelineno-12-16"></a><span class="c1"># 第一个参数代表的是每一个柱子的位置情况</span>
-<a id="__codelineno-12-17" name="__codelineno-12-17"></a>
-<a id="__codelineno-12-18" name="__codelineno-12-18"></a><span class="c1"># 第二个参数代表该柱子的高度</span>
-<a id="__codelineno-12-19" name="__codelineno-12-19"></a>
-<a id="__codelineno-12-20" name="__codelineno-12-20"></a><span class="c1"># width:代表每一个柱的宽度，label:对应的是哪一个</span>
-<a id="__codelineno-12-21" name="__codelineno-12-21"></a>
-<a id="__codelineno-12-22" name="__codelineno-12-22"></a><span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="n">bar_width</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;a&quot;</span><span class="p">)</span>
-<a id="__codelineno-12-23" name="__codelineno-12-23"></a>
-<a id="__codelineno-12-24" name="__codelineno-12-24"></a><span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">index</span> <span class="o">+</span> <span class="n">bar_width</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="n">bar_width</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;b&quot;</span><span class="p">)</span>
-<a id="__codelineno-12-25" name="__codelineno-12-25"></a>
-<a id="__codelineno-12-26" name="__codelineno-12-26"></a>
-<a id="__codelineno-12-27" name="__codelineno-12-27"></a><span class="c1"># 设置柱状图标示（数字）</span>
-<a id="__codelineno-12-28" name="__codelineno-12-28"></a>
-<a id="__codelineno-12-29" name="__codelineno-12-29"></a><span class="c1"># zip: x和y作为循环变量，循环条件对应的谁，按顺序来走，x -&gt; index, y -&gt; a</span>
-<a id="__codelineno-12-30" name="__codelineno-12-30"></a>
-<a id="__codelineno-12-31" name="__codelineno-12-31"></a><span class="c1"># x代表横坐标的位置，y代表数字的大小</span>
-<a id="__codelineno-12-32" name="__codelineno-12-32"></a>
-<a id="__codelineno-12-33" name="__codelineno-12-33"></a><span class="c1"># 第一个参数：数字的横坐标位置，需要与柱状图保持一致</span>
-<a id="__codelineno-12-34" name="__codelineno-12-34"></a>
-<a id="__codelineno-12-35" name="__codelineno-12-35"></a><span class="c1"># 第二个参数：数字的纵坐标位置，需要略高于柱子一点点</span>
-<a id="__codelineno-12-36" name="__codelineno-12-36"></a>
-<a id="__codelineno-12-37" name="__codelineno-12-37"></a><span class="c1"># 第三个参数：数字的大小</span>
-<a id="__codelineno-12-38" name="__codelineno-12-38"></a>
-<a id="__codelineno-12-39" name="__codelineno-12-39"></a><span class="c1"># ha属性代表数字在此柱状图的哪个横向位置，如若不定义，则默认靠右</span>
-<a id="__codelineno-12-40" name="__codelineno-12-40"></a>
-<a id="__codelineno-12-41" name="__codelineno-12-41"></a><span class="c1"># va属性代表数字在此柱状图的哪个纵向位置，如若不定义，则默认与柱状图贴着,top是向下，bottom是向上</span>
-<a id="__codelineno-12-42" name="__codelineno-12-42"></a>
-<a id="__codelineno-12-43" name="__codelineno-12-43"></a><span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">a</span><span class="p">):</span>
-<a id="__codelineno-12-44" name="__codelineno-12-44"></a>    <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">+</span> <span class="mf">0.3</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s2">&quot;center&quot;</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s2">&quot;bottom&quot;</span><span class="p">)</span>
-<a id="__codelineno-12-45" name="__codelineno-12-45"></a>
-<a id="__codelineno-12-46" name="__codelineno-12-46"></a><span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
-<a id="__codelineno-12-47" name="__codelineno-12-47"></a>    <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">bar_width</span><span class="p">,</span> <span class="n">y</span> <span class="o">+</span> <span class="mf">0.3</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s2">&quot;center&quot;</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s2">&quot;bottom&quot;</span><span class="p">)</span>
-<a id="__codelineno-12-48" name="__codelineno-12-48"></a>
-<a id="__codelineno-12-49" name="__codelineno-12-49"></a>
-<a id="__codelineno-12-50" name="__codelineno-12-50"></a> <span class="c1"># 设置刻度范围/坐标轴名称等</span>
-<a id="__codelineno-12-51" name="__codelineno-12-51"></a>
-<a id="__codelineno-12-52" name="__codelineno-12-52"></a><span class="c1"># y轴显示的取值范围</span>
-<a id="__codelineno-12-53" name="__codelineno-12-53"></a>
-<a id="__codelineno-12-54" name="__codelineno-12-54"></a><span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">40</span><span class="p">)</span>  <span class="c1"># 取值范围</span>
-<a id="__codelineno-12-55" name="__codelineno-12-55"></a>
-<a id="__codelineno-12-56" name="__codelineno-12-56"></a><span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">)</span>
-<a id="__codelineno-12-57" name="__codelineno-12-57"></a>
-<a id="__codelineno-12-58" name="__codelineno-12-58"></a><span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;b&quot;</span><span class="p">)</span>
-<a id="__codelineno-12-59" name="__codelineno-12-59"></a>
-<a id="__codelineno-12-60" name="__codelineno-12-60"></a><span class="c1"># 横坐标的值的定义，如若不定义，默认为0 1 2 3 4</span>
-<a id="__codelineno-12-61" name="__codelineno-12-61"></a>
-<a id="__codelineno-12-62" name="__codelineno-12-62"></a><span class="c1"># 第一个参数为横坐标的位置，柱状图是一列的情况下，与数据的宽度相同即可，若是两列需要在数据宽度的后面加上 + 柱子的宽度 / 2</span>
-<a id="__codelineno-12-63" name="__codelineno-12-63"></a>
-<a id="__codelineno-12-64" name="__codelineno-12-64"></a><span class="c1"># 第二个参数为横坐标的值</span>
-<a id="__codelineno-12-65" name="__codelineno-12-65"></a>
-<a id="__codelineno-12-66" name="__codelineno-12-66"></a>
-<a id="__codelineno-12-67" name="__codelineno-12-67"></a><span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">index</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;B&quot;</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">,</span> <span class="s2">&quot;D&quot;</span><span class="p">,</span> <span class="s2">&quot;E&quot;</span><span class="p">)</span>
-<a id="__codelineno-12-68" name="__codelineno-12-68"></a>
-<a id="__codelineno-12-69" name="__codelineno-12-69"></a><span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">index</span> <span class="o">+</span> <span class="p">(</span><span class="n">bar_width</span> <span class="o">/</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;B&quot;</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">,</span> <span class="s2">&quot;D&quot;</span><span class="p">,</span> <span class="s2">&quot;E&quot;</span><span class="p">))</span>
-<a id="__codelineno-12-70" name="__codelineno-12-70"></a>
-<a id="__codelineno-12-71" name="__codelineno-12-71"></a><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</code></pre></div></td></tr></table></div>
+<div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1"></a><a href="#__codelineno-12-1"><span class="linenos" data-linenos=" 1 "></span></a><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2"></a><a href="#__codelineno-12-2"><span class="linenos" data-linenos=" 2 "></span></a><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3"></a><a href="#__codelineno-12-3"><span class="linenos" data-linenos=" 3 "></span></a>
+<a id="__codelineno-12-4" name="__codelineno-12-4"></a><a href="#__codelineno-12-4"><span class="linenos" data-linenos=" 4 "></span></a><span class="n">a</span> <span class="o">=</span> <span class="p">([</span><span class="mi">20</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">27</span><span class="p">])</span>
+<a id="__codelineno-12-5" name="__codelineno-12-5"></a><a href="#__codelineno-12-5"><span class="linenos" data-linenos=" 5 "></span></a><span class="n">b</span> <span class="o">=</span> <span class="p">([</span><span class="mi">25</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">27</span><span class="p">])</span>
+<a id="__codelineno-12-6" name="__codelineno-12-6"></a><a href="#__codelineno-12-6"><span class="linenos" data-linenos=" 6 "></span></a>
+<a id="__codelineno-12-7" name="__codelineno-12-7"></a><a href="#__codelineno-12-7"><span class="linenos" data-linenos=" 7 "></span></a><span class="c1"># 设置相关参数</span>
+<a id="__codelineno-12-8" name="__codelineno-12-8"></a><a href="#__codelineno-12-8"><span class="linenos" data-linenos=" 8 "></span></a>
+<a id="__codelineno-12-9" name="__codelineno-12-9"></a><a href="#__codelineno-12-9"><span class="linenos" data-linenos=" 9 "></span></a><span class="n">index</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+<a id="__codelineno-12-10" name="__codelineno-12-10"></a><a href="#__codelineno-12-10"><span class="linenos" data-linenos="10 "></span></a>
+<a id="__codelineno-12-11" name="__codelineno-12-11"></a><a href="#__codelineno-12-11"><span class="linenos" data-linenos="11 "></span></a><span class="n">bar_width</span> <span class="o">=</span> <span class="mf">0.35</span>
+<a id="__codelineno-12-12" name="__codelineno-12-12"></a><a href="#__codelineno-12-12"><span class="linenos" data-linenos="12 "></span></a>
+<a id="__codelineno-12-13" name="__codelineno-12-13"></a><a href="#__codelineno-12-13"><span class="linenos" data-linenos="13 "></span></a>
+<a id="__codelineno-12-14" name="__codelineno-12-14"></a><a href="#__codelineno-12-14"><span class="linenos" data-linenos="14 "></span></a><span class="c1"># 画柱状图</span>
+<a id="__codelineno-12-15" name="__codelineno-12-15"></a><a href="#__codelineno-12-15"><span class="linenos" data-linenos="15 "></span></a>
+<a id="__codelineno-12-16" name="__codelineno-12-16"></a><a href="#__codelineno-12-16"><span class="linenos" data-linenos="16 "></span></a><span class="c1"># 第一个参数代表的是每一个柱子的位置情况</span>
+<a id="__codelineno-12-17" name="__codelineno-12-17"></a><a href="#__codelineno-12-17"><span class="linenos" data-linenos="17 "></span></a>
+<a id="__codelineno-12-18" name="__codelineno-12-18"></a><a href="#__codelineno-12-18"><span class="linenos" data-linenos="18 "></span></a><span class="c1"># 第二个参数代表该柱子的高度</span>
+<a id="__codelineno-12-19" name="__codelineno-12-19"></a><a href="#__codelineno-12-19"><span class="linenos" data-linenos="19 "></span></a>
+<a id="__codelineno-12-20" name="__codelineno-12-20"></a><a href="#__codelineno-12-20"><span class="linenos" data-linenos="20 "></span></a><span class="c1"># width:代表每一个柱的宽度，label:对应的是哪一个</span>
+<a id="__codelineno-12-21" name="__codelineno-12-21"></a><a href="#__codelineno-12-21"><span class="linenos" data-linenos="21 "></span></a>
+<a id="__codelineno-12-22" name="__codelineno-12-22"></a><a href="#__codelineno-12-22"><span class="linenos" data-linenos="22 "></span></a><span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="n">bar_width</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;a&quot;</span><span class="p">)</span>
+<a id="__codelineno-12-23" name="__codelineno-12-23"></a><a href="#__codelineno-12-23"><span class="linenos" data-linenos="23 "></span></a>
+<a id="__codelineno-12-24" name="__codelineno-12-24"></a><a href="#__codelineno-12-24"><span class="linenos" data-linenos="24 "></span></a><span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">index</span> <span class="o">+</span> <span class="n">bar_width</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="n">bar_width</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;b&quot;</span><span class="p">)</span>
+<a id="__codelineno-12-25" name="__codelineno-12-25"></a><a href="#__codelineno-12-25"><span class="linenos" data-linenos="25 "></span></a>
+<a id="__codelineno-12-26" name="__codelineno-12-26"></a><a href="#__codelineno-12-26"><span class="linenos" data-linenos="26 "></span></a>
+<a id="__codelineno-12-27" name="__codelineno-12-27"></a><a href="#__codelineno-12-27"><span class="linenos" data-linenos="27 "></span></a><span class="c1"># 设置柱状图标示（数字）</span>
+<a id="__codelineno-12-28" name="__codelineno-12-28"></a><a href="#__codelineno-12-28"><span class="linenos" data-linenos="28 "></span></a>
+<a id="__codelineno-12-29" name="__codelineno-12-29"></a><a href="#__codelineno-12-29"><span class="linenos" data-linenos="29 "></span></a><span class="c1"># zip: x和y作为循环变量，循环条件对应的谁，按顺序来走，x -&gt; index, y -&gt; a</span>
+<a id="__codelineno-12-30" name="__codelineno-12-30"></a><a href="#__codelineno-12-30"><span class="linenos" data-linenos="30 "></span></a>
+<a id="__codelineno-12-31" name="__codelineno-12-31"></a><a href="#__codelineno-12-31"><span class="linenos" data-linenos="31 "></span></a><span class="c1"># x代表横坐标的位置，y代表数字的大小</span>
+<a id="__codelineno-12-32" name="__codelineno-12-32"></a><a href="#__codelineno-12-32"><span class="linenos" data-linenos="32 "></span></a>
+<a id="__codelineno-12-33" name="__codelineno-12-33"></a><a href="#__codelineno-12-33"><span class="linenos" data-linenos="33 "></span></a><span class="c1"># 第一个参数：数字的横坐标位置，需要与柱状图保持一致</span>
+<a id="__codelineno-12-34" name="__codelineno-12-34"></a><a href="#__codelineno-12-34"><span class="linenos" data-linenos="34 "></span></a>
+<a id="__codelineno-12-35" name="__codelineno-12-35"></a><a href="#__codelineno-12-35"><span class="linenos" data-linenos="35 "></span></a><span class="c1"># 第二个参数：数字的纵坐标位置，需要略高于柱子一点点</span>
+<a id="__codelineno-12-36" name="__codelineno-12-36"></a><a href="#__codelineno-12-36"><span class="linenos" data-linenos="36 "></span></a>
+<a id="__codelineno-12-37" name="__codelineno-12-37"></a><a href="#__codelineno-12-37"><span class="linenos" data-linenos="37 "></span></a><span class="c1"># 第三个参数：数字的大小</span>
+<a id="__codelineno-12-38" name="__codelineno-12-38"></a><a href="#__codelineno-12-38"><span class="linenos" data-linenos="38 "></span></a>
+<a id="__codelineno-12-39" name="__codelineno-12-39"></a><a href="#__codelineno-12-39"><span class="linenos" data-linenos="39 "></span></a><span class="c1"># ha属性代表数字在此柱状图的哪个横向位置，如若不定义，则默认靠右</span>
+<a id="__codelineno-12-40" name="__codelineno-12-40"></a><a href="#__codelineno-12-40"><span class="linenos" data-linenos="40 "></span></a>
+<a id="__codelineno-12-41" name="__codelineno-12-41"></a><a href="#__codelineno-12-41"><span class="linenos" data-linenos="41 "></span></a><span class="c1"># va属性代表数字在此柱状图的哪个纵向位置，如若不定义，则默认与柱状图贴着,top是向下，bottom是向上</span>
+<a id="__codelineno-12-42" name="__codelineno-12-42"></a><a href="#__codelineno-12-42"><span class="linenos" data-linenos="42 "></span></a>
+<a id="__codelineno-12-43" name="__codelineno-12-43"></a><a href="#__codelineno-12-43"><span class="linenos" data-linenos="43 "></span></a><span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">a</span><span class="p">):</span>
+<a id="__codelineno-12-44" name="__codelineno-12-44"></a><a href="#__codelineno-12-44"><span class="linenos" data-linenos="44 "></span></a>    <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">+</span> <span class="mf">0.3</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s2">&quot;center&quot;</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s2">&quot;bottom&quot;</span><span class="p">)</span>
+<a id="__codelineno-12-45" name="__codelineno-12-45"></a><a href="#__codelineno-12-45"><span class="linenos" data-linenos="45 "></span></a>
+<a id="__codelineno-12-46" name="__codelineno-12-46"></a><a href="#__codelineno-12-46"><span class="linenos" data-linenos="46 "></span></a><span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+<a id="__codelineno-12-47" name="__codelineno-12-47"></a><a href="#__codelineno-12-47"><span class="linenos" data-linenos="47 "></span></a>    <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">bar_width</span><span class="p">,</span> <span class="n">y</span> <span class="o">+</span> <span class="mf">0.3</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s2">&quot;center&quot;</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s2">&quot;bottom&quot;</span><span class="p">)</span>
+<a id="__codelineno-12-48" name="__codelineno-12-48"></a><a href="#__codelineno-12-48"><span class="linenos" data-linenos="48 "></span></a>
+<a id="__codelineno-12-49" name="__codelineno-12-49"></a><a href="#__codelineno-12-49"><span class="linenos" data-linenos="49 "></span></a>
+<a id="__codelineno-12-50" name="__codelineno-12-50"></a><a href="#__codelineno-12-50"><span class="linenos" data-linenos="50 "></span></a> <span class="c1"># 设置刻度范围/坐标轴名称等</span>
+<a id="__codelineno-12-51" name="__codelineno-12-51"></a><a href="#__codelineno-12-51"><span class="linenos" data-linenos="51 "></span></a>
+<a id="__codelineno-12-52" name="__codelineno-12-52"></a><a href="#__codelineno-12-52"><span class="linenos" data-linenos="52 "></span></a><span class="c1"># y轴显示的取值范围</span>
+<a id="__codelineno-12-53" name="__codelineno-12-53"></a><a href="#__codelineno-12-53"><span class="linenos" data-linenos="53 "></span></a>
+<a id="__codelineno-12-54" name="__codelineno-12-54"></a><a href="#__codelineno-12-54"><span class="linenos" data-linenos="54 "></span></a><span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">40</span><span class="p">)</span>  <span class="c1"># 取值范围</span>
+<a id="__codelineno-12-55" name="__codelineno-12-55"></a><a href="#__codelineno-12-55"><span class="linenos" data-linenos="55 "></span></a>
+<a id="__codelineno-12-56" name="__codelineno-12-56"></a><a href="#__codelineno-12-56"><span class="linenos" data-linenos="56 "></span></a><span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">)</span>
+<a id="__codelineno-12-57" name="__codelineno-12-57"></a><a href="#__codelineno-12-57"><span class="linenos" data-linenos="57 "></span></a>
+<a id="__codelineno-12-58" name="__codelineno-12-58"></a><a href="#__codelineno-12-58"><span class="linenos" data-linenos="58 "></span></a><span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;b&quot;</span><span class="p">)</span>
+<a id="__codelineno-12-59" name="__codelineno-12-59"></a><a href="#__codelineno-12-59"><span class="linenos" data-linenos="59 "></span></a>
+<a id="__codelineno-12-60" name="__codelineno-12-60"></a><a href="#__codelineno-12-60"><span class="linenos" data-linenos="60 "></span></a><span class="c1"># 横坐标的值的定义，如若不定义，默认为0 1 2 3 4</span>
+<a id="__codelineno-12-61" name="__codelineno-12-61"></a><a href="#__codelineno-12-61"><span class="linenos" data-linenos="61 "></span></a>
+<a id="__codelineno-12-62" name="__codelineno-12-62"></a><a href="#__codelineno-12-62"><span class="linenos" data-linenos="62 "></span></a><span class="c1"># 第一个参数为横坐标的位置，柱状图是一列的情况下，与数据的宽度相同即可，若是两列需要在数据宽度的后面加上 + 柱子的宽度 / 2</span>
+<a id="__codelineno-12-63" name="__codelineno-12-63"></a><a href="#__codelineno-12-63"><span class="linenos" data-linenos="63 "></span></a>
+<a id="__codelineno-12-64" name="__codelineno-12-64"></a><a href="#__codelineno-12-64"><span class="linenos" data-linenos="64 "></span></a><span class="c1"># 第二个参数为横坐标的值</span>
+<a id="__codelineno-12-65" name="__codelineno-12-65"></a><a href="#__codelineno-12-65"><span class="linenos" data-linenos="65 "></span></a>
+<a id="__codelineno-12-66" name="__codelineno-12-66"></a><a href="#__codelineno-12-66"><span class="linenos" data-linenos="66 "></span></a>
+<a id="__codelineno-12-67" name="__codelineno-12-67"></a><a href="#__codelineno-12-67"><span class="linenos" data-linenos="67 "></span></a><span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">index</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;B&quot;</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">,</span> <span class="s2">&quot;D&quot;</span><span class="p">,</span> <span class="s2">&quot;E&quot;</span><span class="p">)</span>
+<a id="__codelineno-12-68" name="__codelineno-12-68"></a><a href="#__codelineno-12-68"><span class="linenos" data-linenos="68 "></span></a>
+<a id="__codelineno-12-69" name="__codelineno-12-69"></a><a href="#__codelineno-12-69"><span class="linenos" data-linenos="69 "></span></a><span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">index</span> <span class="o">+</span> <span class="p">(</span><span class="n">bar_width</span> <span class="o">/</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;B&quot;</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">,</span> <span class="s2">&quot;D&quot;</span><span class="p">,</span> <span class="s2">&quot;E&quot;</span><span class="p">))</span>
+<a id="__codelineno-12-70" name="__codelineno-12-70"></a><a href="#__codelineno-12-70"><span class="linenos" data-linenos="70 "></span></a>
+<a id="__codelineno-12-71" name="__codelineno-12-71"></a><a href="#__codelineno-12-71"><span class="linenos" data-linenos="71 "></span></a><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div>
 <p><a class="glightbox" href="C:\Users\LLLLL\AppData\Roaming\Typora\typora-user-images\image-20240113154745881.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="C:\Users\LLLLL\AppData\Roaming\Typora\typora-user-images\image-20240113154745881.png" alt="image-20240113154745881" style="zoom:67%;" /></a></p>
 <h2 id="_15">饼图<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h2>
-<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-13-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-13-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-13-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-13-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-13-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-13-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-13-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-13-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-13-10">10</a></span>
-<span class="normal"><a href="#__codelineno-13-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1"></a><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<a id="__codelineno-13-2" name="__codelineno-13-2"></a>
-<a id="__codelineno-13-3" name="__codelineno-13-3"></a><span class="n">size</span><span class="o">=</span><span class="p">[</span><span class="mi">35</span><span class="p">,</span><span class="mi">25</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="mi">25</span><span class="p">]</span>
-<a id="__codelineno-13-4" name="__codelineno-13-4"></a>
-<a id="__codelineno-13-5" name="__codelineno-13-5"></a><span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;c&#39;</span><span class="p">,</span><span class="s1">&#39;d&#39;</span><span class="p">]</span>
-<a id="__codelineno-13-6" name="__codelineno-13-6"></a>
-<a id="__codelineno-13-7" name="__codelineno-13-7"></a><span class="n">colors</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;#45695d&#39;</span><span class="p">,</span><span class="s1">&#39;#431a33&#39;</span><span class="p">,</span><span class="s1">&#39;#932422&#39;</span><span class="p">,</span><span class="s1">&#39;#332139&#39;</span><span class="p">]</span>
-<a id="__codelineno-13-8" name="__codelineno-13-8"></a>
-<a id="__codelineno-13-9" name="__codelineno-13-9"></a><span class="n">plt</span><span class="o">.</span><span class="n">pie</span><span class="p">(</span><span class="n">size</span><span class="p">,</span><span class="n">labels</span><span class="o">=</span><span class="n">labels</span><span class="p">,</span><span class="n">colors</span><span class="o">=</span><span class="n">colors</span><span class="p">,</span><span class="n">autopct</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">%1.1f%%</span><span class="s1">&#39;</span><span class="p">)</span><span class="c1">#autopct-给饼状图带上百分比</span>
-<a id="__codelineno-13-10" name="__codelineno-13-10"></a>
-<a id="__codelineno-13-11" name="__codelineno-13-11"></a><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</code></pre></div></td></tr></table></div>
+<div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1"></a><a href="#__codelineno-13-1"><span class="linenos" data-linenos=" 1 "></span></a><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2"></a><a href="#__codelineno-13-2"><span class="linenos" data-linenos=" 2 "></span></a>
+<a id="__codelineno-13-3" name="__codelineno-13-3"></a><a href="#__codelineno-13-3"><span class="linenos" data-linenos=" 3 "></span></a><span class="n">size</span><span class="o">=</span><span class="p">[</span><span class="mi">35</span><span class="p">,</span><span class="mi">25</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="mi">25</span><span class="p">]</span>
+<a id="__codelineno-13-4" name="__codelineno-13-4"></a><a href="#__codelineno-13-4"><span class="linenos" data-linenos=" 4 "></span></a>
+<a id="__codelineno-13-5" name="__codelineno-13-5"></a><a href="#__codelineno-13-5"><span class="linenos" data-linenos=" 5 "></span></a><span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;c&#39;</span><span class="p">,</span><span class="s1">&#39;d&#39;</span><span class="p">]</span>
+<a id="__codelineno-13-6" name="__codelineno-13-6"></a><a href="#__codelineno-13-6"><span class="linenos" data-linenos=" 6 "></span></a>
+<a id="__codelineno-13-7" name="__codelineno-13-7"></a><a href="#__codelineno-13-7"><span class="linenos" data-linenos=" 7 "></span></a><span class="n">colors</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;#45695d&#39;</span><span class="p">,</span><span class="s1">&#39;#431a33&#39;</span><span class="p">,</span><span class="s1">&#39;#932422&#39;</span><span class="p">,</span><span class="s1">&#39;#332139&#39;</span><span class="p">]</span>
+<a id="__codelineno-13-8" name="__codelineno-13-8"></a><a href="#__codelineno-13-8"><span class="linenos" data-linenos=" 8 "></span></a>
+<a id="__codelineno-13-9" name="__codelineno-13-9"></a><a href="#__codelineno-13-9"><span class="linenos" data-linenos=" 9 "></span></a><span class="n">plt</span><span class="o">.</span><span class="n">pie</span><span class="p">(</span><span class="n">size</span><span class="p">,</span><span class="n">labels</span><span class="o">=</span><span class="n">labels</span><span class="p">,</span><span class="n">colors</span><span class="o">=</span><span class="n">colors</span><span class="p">,</span><span class="n">autopct</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">%1.1f%%</span><span class="s1">&#39;</span><span class="p">)</span><span class="c1">#autopct-给饼状图带上百分比</span>
+<a id="__codelineno-13-10" name="__codelineno-13-10"></a><a href="#__codelineno-13-10"><span class="linenos" data-linenos="10 "></span></a>
+<a id="__codelineno-13-11" name="__codelineno-13-11"></a><a href="#__codelineno-13-11"><span class="linenos" data-linenos="11 "></span></a><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div>
 <p><a class="glightbox" href="C:\Users\LLLLL\AppData\Roaming\Typora\typora-user-images\image-20240113155125250.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image-20240113155125250" src="C:\Users\LLLLL\AppData\Roaming\Typora\typora-user-images\image-20240113155125250.png" /></a></p>
 
 
@@ -1568,6 +1409,38 @@
 
 
 
+  
+    
+  
+  
+    
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="最后更新">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2026年6月28日 22:35:51 CST"><span class="timeago" datetime="2026-06-28T22:35:51+08:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2026年6月28日 22:35:51 CST">2026-06-28</span>
+  </span>
+
+    
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="创建日期">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2026年6月28日 22:35:51 CST"><span class="timeago" datetime="2026-06-28T22:35:51+08:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2026年6月28日 22:35:51 CST">2026-06-28</span>
+  </span>
+
+    
+    
+    
+  </aside>
 
 
 
@@ -1635,9 +1508,17 @@
     
       <script src="../../../../assets/javascripts/bundle.83f73b43.min.js"></script>
       
+        <script src="../../../../js/timeago.min.js"></script>
+      
+        <script src="../../../../js/timeago_mkdocs_material.js"></script>
+      
         <script src="../../../../javascripts/mathjax.js"></script>
       
         <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/pangu/4.0.7/pangu.min.js"></script>
+      
+        <script src="../../../../javascripts/pangu-init.js"></script>
       
     
   <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});

@@ -137,6 +137,15 @@
   border-color: var(--md-accent-fg-color);
 }
 
+/* 卡片底部链接对齐（关键细节：文字长短不一时箭头仍齐平） */
+.md-typeset .grid.cards > ul > li {
+  display: flex;
+  flex-direction: column;
+}
+.md-typeset .grid.cards > ul > li > p:last-of-type {
+  margin-top: auto;
+}
+
 /* 卡片内大图标 */
 .md-typeset .grid.cards .lg,
 .md-typeset .grid.cards .twemoji.lg {

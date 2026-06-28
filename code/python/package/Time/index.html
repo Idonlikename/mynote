@@ -40,6 +40,8 @@
       
     
     
+      <link rel="stylesheet" href="../../../../css/timeago.css">
+    
       <link rel="stylesheet" href="../../../../css/extra.css">
     
     <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
@@ -227,6 +229,23 @@
     
   
   Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../tags/" class="md-tabs__link">
+        
+  
+    
+  
+  标签
 
       </a>
     </li>
@@ -445,6 +464,26 @@
   
   <span class="md-ellipsis">
     Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../tags/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    标签
   </span>
   
 
@@ -891,20 +930,14 @@
 <h1 id="time">Time库<a class="headerlink" href="#time" title="Permanent link">&para;</a></h1>
 <h2 id="_1"><strong>时间戳</strong><a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <p>自<strong>格林威治时间</strong>1970年01月01日00分00秒（北京时间1970年01月01日08时00分00秒）起至现在的<strong>总秒数</strong>。<strong>本质是数字</strong>，对于1970年<strong>之前的日期就无法</strong>以此表示了。<strong>太遥远的日期</strong>也不行，<strong>UNIX</strong>和<strong>Windows</strong>只<strong>支持到2038年</strong>。</p>
-<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
-<span class="normal"><a href="#__codelineno-0-2">2</a></span>
-<span class="normal"><a href="#__codelineno-0-3">3</a></span>
-<span class="normal"><a href="#__codelineno-0-4">4</a></span>
-<span class="normal"><a href="#__codelineno-0-5">5</a></span>
-<span class="normal"><a href="#__codelineno-0-6">6</a></span>
-<span class="normal"><a href="#__codelineno-0-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="kn">import</span> <span class="nn">time</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="n">时间戳</span><span class="err">：</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3"></a>
-<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="n">gmtime</span><span class="p">()</span> <span class="n">函数将一个时间戳转换为UTC时区</span><span class="err">（</span><span class="mi">0</span><span class="n">时区</span><span class="err">）</span><span class="n">的struct_time</span><span class="err">，</span><span class="n">可选的参数sec表示从1970</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="mi">1</span><span class="n">以来的秒数</span><span class="err">。</span><span class="n">其默认值为time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span><span class="err">，</span><span class="n">函数返回time</span><span class="o">.</span><span class="n">struct_time类型的对象</span><span class="err">。</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5"></a>
-<a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="n">time</span><span class="o">.</span><span class="n">ctime</span><span class="p">()</span><span class="n">函数把一个时间戳</span><span class="err">（</span><span class="n">按秒计算的浮点数</span><span class="err">）</span><span class="n">转化为time</span><span class="o">.</span><span class="n">asctime</span><span class="p">()</span><span class="n">的形式</span><span class="err">。</span> <span class="n">如果参数未给或者为None的时候</span><span class="err">，</span><span class="n">将会默认time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span><span class="n">为参数</span><span class="err">。</span><span class="n">它的作用相当于</span> <span class="n">asctime</span><span class="p">(</span><span class="n">localtime</span><span class="p">(</span><span class="n">secs</span><span class="p">))</span><span class="err">。</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="n">time</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="nb">format</span><span class="p">[,</span> <span class="n">t</span><span class="p">])</span>
-</code></pre></div></td></tr></table></div>
+<div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><a href="#__codelineno-0-1"><span class="linenos" data-linenos="1 "></span></a><span class="kn">import</span> <span class="nn">time</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a><a href="#__codelineno-0-2"><span class="linenos" data-linenos="2 "></span></a><span class="n">时间戳</span><span class="err">：</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a><a href="#__codelineno-0-3"><span class="linenos" data-linenos="3 "></span></a>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a><a href="#__codelineno-0-4"><span class="linenos" data-linenos="4 "></span></a><span class="n">gmtime</span><span class="p">()</span> <span class="n">函数将一个时间戳转换为UTC时区</span><span class="err">（</span><span class="mi">0</span><span class="n">时区</span><span class="err">）</span><span class="n">的struct_time</span><span class="err">，</span><span class="n">可选的参数sec表示从1970</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="mi">1</span><span class="n">以来的秒数</span><span class="err">。</span><span class="n">其默认值为time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span><span class="err">，</span><span class="n">函数返回time</span><span class="o">.</span><span class="n">struct_time类型的对象</span><span class="err">。</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a><a href="#__codelineno-0-5"><span class="linenos" data-linenos="5 "></span></a>
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a><a href="#__codelineno-0-6"><span class="linenos" data-linenos="6 "></span></a><span class="n">time</span><span class="o">.</span><span class="n">ctime</span><span class="p">()</span><span class="n">函数把一个时间戳</span><span class="err">（</span><span class="n">按秒计算的浮点数</span><span class="err">）</span><span class="n">转化为time</span><span class="o">.</span><span class="n">asctime</span><span class="p">()</span><span class="n">的形式</span><span class="err">。</span> <span class="n">如果参数未给或者为None的时候</span><span class="err">，</span><span class="n">将会默认time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span><span class="n">为参数</span><span class="err">。</span><span class="n">它的作用相当于</span> <span class="n">asctime</span><span class="p">(</span><span class="n">localtime</span><span class="p">(</span><span class="n">secs</span><span class="p">))</span><span class="err">。</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7"></a><a href="#__codelineno-0-7"><span class="linenos" data-linenos="7 "></span></a><span class="n">time</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="nb">format</span><span class="p">[,</span> <span class="n">t</span><span class="p">])</span>
+</code></pre></div>
 <h2 id="_2">时间元组<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p><strong>时间元组即  <code>struct_time</code>：</strong>时间是包含许多变量的，包括：年、月、日、小时、分钟、秒等。所以在Python中定义了一个元组<strong><code>struct_time</code></strong>将所有这些变量组合在一起</p>
 <table>
@@ -965,8 +998,8 @@
 </tr>
 </tbody>
 </table>
-<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>
-</code></pre></div></td></tr></table></div>
+<div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><a href="#__codelineno-1-1"><span class="linenos" data-linenos="1 "></span></a>
+</code></pre></div>
 <p><code>time localtime()</code> 函数</p>
 <p>类似<code>gmtime()</code>，作用是格式化时间戳为本地的时间。 如果sec参数未输入，则以当前时间为转换标准。 </p>
 <p>sec -- 转换为<code>time.struct_time</code>类型的对象的秒数。</p>
@@ -980,6 +1013,38 @@
 
 
 
+  
+    
+  
+  
+    
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="最后更新">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2026年6月28日 22:35:51 CST"><span class="timeago" datetime="2026-06-28T22:35:51+08:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2026年6月28日 22:35:51 CST">2026-06-28</span>
+  </span>
+
+    
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="创建日期">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2026年6月28日 22:35:51 CST"><span class="timeago" datetime="2026-06-28T22:35:51+08:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2026年6月28日 22:35:51 CST">2026-06-28</span>
+  </span>
+
+    
+    
+    
+  </aside>
 
 
 
@@ -1047,9 +1112,17 @@
     
       <script src="../../../../assets/javascripts/bundle.83f73b43.min.js"></script>
       
+        <script src="../../../../js/timeago.min.js"></script>
+      
+        <script src="../../../../js/timeago_mkdocs_material.js"></script>
+      
         <script src="../../../../javascripts/mathjax.js"></script>
       
         <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/pangu/4.0.7/pangu.min.js"></script>
+      
+        <script src="../../../../javascripts/pangu-init.js"></script>
       
     
   <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
