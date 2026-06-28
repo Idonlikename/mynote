@@ -2224,8 +2224,7 @@ $$
 <h3 id="_17">单链表<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h3>
 <p>单链表，指的是单个指针域。即单个方向，指向后继。查找到第 <span class="arithmatex">\(i\)</span> 个位置的元素，就难以回头查找 <span class="arithmatex">\(i-1\)</span> 个位置的元素（可以依靠环实现，即表尾指针指向头指针）。</p>
 <h4 id="_18">定义<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h4>
-<p>指的是通过任意一组存储单元来存储线性表中的数据元素，对于单个链表结点，不仅要存储元素自身的信息，还要存储一个指向后继的指针。结构如图所示：</p>
-<p><a class="glightbox" href="C:\Users\LLLLL\AppData\Roaming\Typora\typora-user-images\image-20260104200220192.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image-20260104200220192" src="C:\Users\LLLLL\AppData\Roaming\Typora\typora-user-images\image-20260104200220192.png" /></a></p>
+<p>指的是通过任意一组存储单元来存储线性表中的数据元素，对于单个链表结点，不仅要存储元素自身的信息，还要存储一个指向后继的指针。</p>
 <p>其中data为数据域，用来存储自身的信息；next为指针域，存储其后继结点的地址。</p>
 <p>两个域组成的存储映像（实现）称作<strong>Node-结点</strong></p>
 <p><strong>头指针</strong>（通常用L或者head指代）就是指向表头结点（可能是头结点（无信息），可能是第一个元素（带信息））的指针。</p>
