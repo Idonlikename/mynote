@@ -82,6 +82,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#cpu" class="md-skip">
+          跳转至
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -1232,6 +1237,19 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    第五章 中央处理器
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -1242,6 +1260,82 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      基本组成
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="基本组成">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      运算器
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="运算器">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#alu" class="md-nav__link">
+    <span class="md-ellipsis">
+      ALU的数据通路
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      控制器
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      功能
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1322,6 +1416,73 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      基本组成
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="基本组成">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      运算器
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="运算器">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#alu" class="md-nav__link">
+    <span class="md-ellipsis">
+      ALU的数据通路
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      控制器
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      功能
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -1339,9 +1500,688 @@
   
 
 
-  <h1>第五章 中央处理器</h1>
-
-
+<h1 id="cpu">CPU<a class="headerlink" href="#cpu" title="Permanent link">&para;</a></h1>
+<h2 id="_1">基本组成<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h3 id="_2">运算器<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p><code>ACC</code>：累加器，放操作数或者运算结果</p>
+<p><code>MQ</code>：乘商寄存器，在乘除中，用于存放操作数和运算结构。</p>
+<p><code>X</code>：通用寄存器，存放操作数</p>
+<p><code>ALU</code>：算术逻辑单元</p>
+<h4 id="alu">ALU的数据通路<a class="headerlink" href="#alu" title="Permanent link">&para;</a></h4>
+<p><strong>专用数据通路方式</strong>：根据指令执行过程中的<strong>数据和地址的流动方向，安排连接线路</strong></p>
+<ul>
+<li>使用多路选择器，根据信号选择一路输出</li>
+<li>使用三态门，可以控制每一路是否输出</li>
+<li>性能高，但是复杂</li>
+</ul>
+<h5 id="_3">暂存寄存器<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h5>
+<p><strong>内部单向总线</strong>：所有的寄存器的输入端和输出端，都连接到一条公共通道上</p>
+<ul>
+<li>利用控制信号，控制寄存器的输入和输出</li>
+<li>结构简单，容易导致数据冲突，性能较低</li>
+</ul>
+<h5 id="_4">加入一个暂存<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h5>
+<p>为了避免冲突，引入一个<strong>暂存寄存器</strong>，用于<strong>暂存从主存读来的数据</strong>（在<strong>CPU总线</strong>和ALU之间）。这个数据不能放在通用寄存器中，否则会破坏原有内容。 </p>
+<h5 id="_5">加入一个暂存<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h5>
+<p>为了避免，在ALU两端信号<strong>未稳定前，就输出信号</strong>。在ALU的输出处也补上一个暂存寄存器。</p>
+<ul>
+<li>在这个寄存器的输出侧，补上一个三态门。</li>
+<li>三态门在ALU的输入信号稳定后导通</li>
+<li>再将输出结果送回总线 </li>
+</ul>
+<p>还有<strong>状态字寄存器</strong>，也就是第二章的溢出标志等。<code>PSW</code>存储状态信息</p>
+<p>移位器。</p>
+<p>ALU内部的<strong>计数器</strong></p>
+<h3 id="_6">控制器<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<p><code>CU</code>：Control Unit，控制单元。给出控制信号。</p>
+<p><code>IR</code>：Instruction Register，指令寄存器，<strong>存放当前执行的指令</strong></p>
+<p><code>PC</code>：program counter，程序计数器</p>
+<p><a class="glightbox" href="image\控制器.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="image\控制器.png" alt="image-20260707203811711" style="zoom: 50%;" /></a>控制器各个单元作用如图所示</p>
+<p><strong>时序系统</strong>：用于产生时序信号，用统一时钟 <code>CLOCK</code>分频得到。</p>
+<p><code>MAR</code>：存储地址的寄存器，也是控制器的一部分。同时还<strong>连接地址总线</strong></p>
+<p><code>MDR</code>：存储数据的寄存器，也是控制器的一部分。也<strong>连接地址总线</strong>，还有<strong>数据总线</strong></p>
+<ul>
+<li>有一个<span class="arithmatex">\(MDR_{in/out}E\)</span>的信号位，用于控制<code>MDR</code>和数据总线的I/O</li>
+</ul>
+<p><a class="glightbox" href="../image/CPU%E5%86%85%E9%83%A8.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image-20260707205856955" src="../image/CPU%E5%86%85%E9%83%A8.png" /></a></p>
+<p>其中，<code>PSW</code>、<code>PC</code>、<code>ACC</code>和通用寄存器组是<strong>面向用户可见的</strong>可以编程。PSW和PC联系上一章的机器码，就可以理解为什么可见了。</p>
+<h2 id="_7">功能<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>指令控制</strong>，完成取指，分析指令，执行指令</li>
+<li><strong>操作控制</strong>，发出控制信号给各个部件完成操作</li>
+<li><strong>时间控制</strong>，时钟</li>
+<li><strong>数据加工</strong>，完成逻辑运算和算术运算</li>
+<li><strong>中断处理</strong>，对异常情况和特殊请求进行处理</li>
+</ol>
+<h1 id="_8">指令的执行过程<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h1>
+<h2 id="_9">指令周期<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<p>指令周期指的是：CPU从主存中<strong>取出并执行一条指令所需的全部时间</strong>。</p>
+<p><a class="glightbox" href="image\指令周期.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="image\指令周期.png" alt="image-20260707210441296" style="zoom:50%;" /></a></p>
+<p>一个指令周期，由若干个机器周期表示，机器周期（CPU周期），一个机器周期又包含若干个时钟周期。</p>
+<p><strong>指令周期</strong></p>
+<ul>
+<li>若干个<strong>机器周期</strong>（CPU周期）表示</li>
+<li>机器周期，指的是<strong>完成一个子工作所需的时间</strong>（比如取指）。</li>
+<li>若干个<strong>时钟周期</strong>表示</li>
+<li>是CPU操作的基本单位。也叫做<strong>节拍</strong>，<strong>T周期</strong></li>
+<li>CPU之前说过的频率，就是特指时钟周期的时间的倒数</li>
+</ul>
+<p>分为<strong>定长的机器周期</strong>，和<strong>不定长机器周期</strong>。</p>
+<h3 id="_10">定长机器周期<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+<ul>
+<li>完成所有子工作的<strong>时钟周期数相同</strong></li>
+</ul>
+<p>不定长反之，每个指令周期内的机器周期数不相等，机器周期内的节拍数也不相等。</p>
+<h3 id="_11">一些指令的指令周期<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
+<p><strong>空指令<code>NOP</code></strong></p>
+<p>指令周期仅需一个机器周期（取指周期）</p>
+<blockquote>
+<p>因为<strong>分析指令在取指阶段完成</strong>，没有执行指令的阶段</p>
+</blockquote>
+<p><strong>加法指令<code>ADD</code></strong></p>
+<p>指令周期，需要两个机器周期。（取指与执行）</p>
+<p><strong>乘法指令<code>MUL</code></strong></p>
+<p>指令周期需要若干个机器周期（一个取指，多个执行）</p>
+<p><strong>具有间接寻址的指令</strong></p>
+<p><span class="arithmatex">\(EA = (A)\)</span> </p>
+<p>指令周期需要若干个机器周期（一个取指，一个执行，多个<strong>间址</strong>）</p>
+<p><strong>具有中断指令的指令</strong></p>
+<p>指令周期的在完成，取指、（间址。可能没有）、执行，之后进入<strong>中断周期</strong></p>
+<h3 id="_12">指令周期流程<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
+<p>CPU通过<strong>触发器判断</strong>，具体处于哪个指令周期。四个阶段<strong>可能触发访存操作</strong>，但各自之间<strong>访存的目的不同</strong>。</p>
+<ul>
+<li>取值周期——<strong>取指令</strong></li>
+<li>间址周期——<strong>取有效地址</strong></li>
+<li>执行周期——<strong>取操作数</strong></li>
+<li>中断周期——<strong>保存程序断点</strong></li>
+</ul>
+<p><a class="glightbox" href="../image/%E6%8C%87%E4%BB%A4%E5%91%A8%E6%9C%9F%E6%B5%81%E7%A8%8B.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image-20260707212203206" src="../image/%E6%8C%87%E4%BB%A4%E5%91%A8%E6%9C%9F%E6%B5%81%E7%A8%8B.png" /></a></p>
+<h2 id="_13">数据流<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h2>
+<h3 id="_14">取指周期<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h3>
+<p>主要用到了控制器当中的组件。</p>
+<p><a class="glightbox" href="image\取指周期数据流.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="image\取指周期数据流.png" alt="image-20260708185042209" style="zoom: 50%;" /></a></p>
+<h3 id="_15">间址周期<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h3>
+<p><a class="glightbox" href="image\间址周期数据流.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="image\间址周期数据流.png" alt="image-20260708185315077" style="zoom:50%;" /></a></p>
+<h3 id="_16">执行周期<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h3>
+<p>执行周期的任务：根据<code>IR</code>中的指令字操作码，将操作数通过<code>ALU</code>操作产生结果。</p>
+<p><strong>不同指令的执行周期操作不同</strong>，因而没有统一的数据流向。</p>
+<h3 id="_17">中断周期<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h3>
+<p>在执行指令，进行中断指令，本质上也是跳转到了另一套指令，而后还是要<strong>恢复当前任务</strong>，所以需要保存断点</p>
+<p>用堆栈保存断点，参考机器语言部分指令的栈堆。同样由高地址向低地址生长。</p>
+<p><code>SP</code>指向栈顶，因为<strong>先指向新栈顶</strong>，再压入栈顶数据。具体操作如图所示。</p>
+<p><a class="glightbox" href="image\中断周期数据流.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="image\中断周期数据流.png" alt="image-20260708192554164" style="zoom:50%;" /></a></p>
+<blockquote>
+<p><strong>explain</strong>：</p>
+<ol>
+<li>这里的 <span class="arithmatex">\((SP)\rightarrow MAR\)</span> 的作用是获得<code>SP</code>的新地址，然后准备往这个新地址里塞入新数据。</li>
+</ol>
+<p>接着就是如图所示的，<code>CU</code>发出写操作，将PC（旧地址）压入栈顶</p>
+<ol start="2">
+<li>向量地址 <span class="arithmatex">\(\rightarrow\)</span> PC是中断周期进入另一个指令周期任务当中的第一个指令的地址（<strong>向量地址就是指针</strong>）</li>
+</ol>
+<ul>
+<li>
+<p>本质上，中断向量是第一个指令的地址，而<strong>中断向量地址</strong>是存放中断向量的内存地址。</p>
+</li>
+<li>
+<p><u>中断向量<strong>本质就是个指令的地址</strong>，但是为了<strong>声明其为一个中断程序的起始地址</strong>，所以我们用了一个中断向量地址指过去</u>。</p>
+</li>
+</ul>
+</blockquote>
+<h2 id="_18">指令执行方案<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h2>
+<p>一个指令周期通常包括多个<strong>时间段</strong>（执行步骤），每个步骤完成指令的一部分功能，几个依次执行的步骤完成这条指令的全部功能。</p>
+<h3 id="_19">单指令周期<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h3>
+<p>所有指令<strong>选用相同的执行时间完成</strong>。</p>
+<p>指令之间<strong>串行执行</strong>；指令周期<strong>取决于执行最长的指令的执行时间</strong></p>
+<h3 id="_20">多指令周期<a class="headerlink" href="#_20" title="Permanent link">&para;</a></h3>
+<p>同样<strong>串行执行</strong></p>
+<p>不同类型的指令选用不同的执行步骤来完成。</p>
+<h3 id="_21">流水线方案<a class="headerlink" href="#_21" title="Permanent link">&para;</a></h3>
+<p>在每个时钟周期，启动一条指令，尽量让多条指令同时进行。</p>
+<p><strong>并行执行</strong></p>
+<h1 id="_22">数据通路<a class="headerlink" href="#_22" title="Permanent link">&para;</a></h1>
+<p>数据在功能部件之间的传送路径。即之前提及的：CPU内部总线，数据总线，地址总线。</p>
+<p>分为<strong>CPU内部单总线方式</strong>，<strong>CPU内部多总线方式</strong>，<strong>专用数据通路方式</strong></p>
+<h2 id="cpu_1">CPU内部单总线<a class="headerlink" href="#cpu_1" title="Permanent link">&para;</a></h2>
+<p><strong>内部总线</strong>：指的是同一部件，如<strong>CPU内部</strong>连接各寄存器及其运算部件之间的总线</p>
+<p><strong>系统总线</strong>：同一台计算机系统的各部件互相连接的总线。</p>
+<h3 id="_23">寄存器之间的数据传送<a class="headerlink" href="#_23" title="Permanent link">&para;</a></h3>
+<p>以<code>PC</code>内容传入<code>MAR</code>为例，实现传送的流程以及控制信号。</p>
+<p><span class="arithmatex">\((PC) \rightarrow Bus\)</span>    <span class="arithmatex">\(PC_{out}\)</span>有效 数据传入总线</p>
+<p><span class="arithmatex">\(Bus \rightarrow MAR\)</span>      <span class="arithmatex">\(MAR_{in}\)</span>有效 数据传入MAR</p>
+<p>可写作 <span class="arithmatex">\((PC)\rightarrow Bus \rightarrow MAR\)</span> ，直接写成：<span class="arithmatex">\((PC) \rightarrow MAR\)</span> </p>
+<h3 id="cpu_2">主存和CPU之间的数据传送<a class="headerlink" href="#cpu_2" title="Permanent link">&para;</a></h3>
+<p>都需要判断总线的 <code>in</code> 和 <code>out</code>是否有效，这里略写。主要以<code>Bus</code>中进新数据的时候不含有旧数据判断。</p>
+<p><span class="arithmatex">\((PC)\rightarrow Bus \rightarrow MAR\)</span> </p>
+<p><span class="arithmatex">\(1 \rightarrow R\)</span>   <code>CU</code>发出读命令。</p>
+<p><span class="arithmatex">\(MEM(MAR) \rightarrow MDR\)</span>  将主存<code>MAR</code>位置的数据传入<code>MDR</code>中</p>
+<p><span class="arithmatex">\(MDR \rightarrow Bus \rightarrow IR\)</span>    最后数据进入<code>Bus</code> 传入<code>IR</code>执行指令</p>
+<h3 id="_24">执行算术或逻辑运算<a class="headerlink" href="#_24" title="Permanent link">&para;</a></h3>
+<p><span class="arithmatex">\(Ad(IR) \rightarrow Bus \rightarrow MAR\)</span>     这个不重要，<code>MDR</code>还是还是从<code>IR</code>传入都可以 </p>
+<p><span class="arithmatex">\(1 \rightarrow R\)</span>  </p>
+<p><span class="arithmatex">\(MEM(MAR) \rightarrow 数据线 \rightarrow MDR\)</span>  </p>
+<p><span class="arithmatex">\(MDR \rightarrow Bus \rightarrow Y\)</span>   因为<code>ALU</code><strong>需要两个输入同时有效</strong>，所以这里先将数据暂存在<code>Y</code>当中</p>
+<p><span class="arithmatex">\((ACC) + (Y) \rightarrow Z\)</span>     然后<code>ACC</code>将自己的数据，和暂存器的数据同时传入<code>ALU</code>当中执行加法，<strong><code>ACC</code>的数据走的是CPU内部总线</strong></p>
+<p><span class="arithmatex">\(Z \rightarrow ACC\)</span>z    </p>
+<p>这里的<code>Y</code>和<code>Z</code>都是暂存器。这里需要Z进行隔离操作，如果直接传入<code>ACC</code>，可以视作加法瞬间完成，但是输入信号还没有转换，导致累加器真的开始累加。</p>
+<h4 id="_25">例题<a class="headerlink" href="#_25" title="Permanent link">&para;</a></h4>
+<p><a class="glightbox" href="image\数据通路例题.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="image\数据通路例题.png" alt="image-20260709155618945" style="zoom: 50%;" /></a></p>
+<p>解: 由题目给出的<strong><code>ADD (R0),R1</code></strong> 不难得：需要将<code>R1</code>的操作数和<code>R0</code>所存地址的操作数<strong>相加</strong>，并且将结果传入到<code>R0</code>存的地址当中。</p>
+<p>易得到指令功能：<span class="arithmatex">\(((R0)) +R1\rightarrow (R0)\)</span></p>
+<blockquote>
+<p>这里 <strong><code>R0</code> 需要两个括号</strong>。因为 <code>R0</code>存储的只是一个地址，如果只是 <strong><code>(R0)</code> 那操作数是地址码</strong>。再用一个括号，传入的才是这个<strong>地址的操作数</strong>。而第二个 <code>R0</code> 只用一个地址，是因为传入的位置就是由地址码提供，所以一个括号即可。</p>
+</blockquote>
+<p>可得所需要的指令周期：<strong>取指周期</strong>，<strong>间址周期</strong>，<strong>执行周期</strong></p>
+<blockquote>
+<p>根据上述知识点：共有四个周期，<strong>取指周期</strong>，<strong>执行周期</strong>，<strong>间址周期</strong>，<strong>中断周期</strong>。</p>
+<p>取指周期一定有，这里有一个间址，所以有间址周期，因为执行了<code>ADD</code>一定有执行周期。</p>
+</blockquote>
+<p>写出各阶段的指令流程。并且要附上有效控制信号。这个部分有数就行</p>
+<p>取指：要记住<strong><code>PC</code>给<code>MAR</code>地址</strong>，然后找到<strong>地址的指令给<code>MDR</code></strong>同时<strong><code>PC</code>自增</strong>，<strong><code>IR</code>获取<code>MDR</code>的指令</strong>。固定流程</p>
+<p>间址：要先让<strong><code>MAR</code>拿到<code>(R0)</code>的地址</strong>，然后根据这个地址，<strong><code>M(MAR)</code>把数据传给<code>MDR</code></strong>，记得先把<strong>数据给<code>Y</code></strong>。</p>
+<p>执行：<code>(R1)</code>直接走总线和<code>Y</code>的数据相加并入<code>ALU</code>，并结果传给<code>Z</code>，<code>Z</code>传回<code>MDR</code>（可能也是<code>ACC</code>），最后传给主存也就是 <code>(R0)</code></p>
+<blockquote>
+<p>因为<strong>要写回主存</strong>，所以要传给<code>MDR</code>，才能传回主存给<code>R0</code>存储的地址。</p>
+<p><strong><code>ALU</code>要配合暂存器使用</strong>（单总线的情况下），因为<code>ALU</code>需要两个输入有效</p>
+</blockquote>
+<h2 id="cpu_3">CPU内部多总线<a class="headerlink" href="#cpu_3" title="Permanent link">&para;</a></h2>
+<h2 id="_26">专用数据通路<a class="headerlink" href="#_26" title="Permanent link">&para;</a></h2>
+<p>多个<strong>多路选择器</strong>或<strong>三态门</strong>。</p>
+<p>和CPU内部多总线一样，相较于单总线，可以一次性执行多个指令。</p>
+<p>相比内部单总线：</p>
+<ul>
+<li>有效信号从 <span class="arithmatex">\(MAR_{in}\)</span> 改成 <span class="arithmatex">\(C_{1}\)</span>、<span class="arithmatex">\(C_2\)</span></li>
+</ul>
+<p>额，没什么额外知识点，主要考察<strong>指令功能</strong>和<strong>有效信号</strong></p>
+<h1 id="_27">控制器<a class="headerlink" href="#_27" title="Permanent link">&para;</a></h1>
+<p>本节是针对<code>CU</code>的知识点讲解，所谓的<strong>微命令</strong>和<strong>微操作</strong>分别对应上一节当中的：</p>
+<ul>
+<li>微操作：<span class="arithmatex">\((PC) \rightarrow MAR\)</span></li>
+<li>微命令：<span class="arithmatex">\(PC_{out},MAR_{in}\)</span></li>
+</ul>
+<h2 id="_28">硬布线<a class="headerlink" href="#_28" title="Permanent link">&para;</a></h2>
+<p><code>CU</code>会根据 <strong>指令操作码</strong>、<strong>目前的机器周期</strong>、<strong>节拍信号</strong>、<strong>机器状态条件</strong>，来确定在当前时钟周期（节拍）下，发出何种微指令。</p>
+<ul>
+<li><strong>指令操作码</strong>：由<code>IR</code>控制<strong>译码器</strong>发出。即各个指令，<code>ADD</code> <code>JMP</code> <code>LDA</code>这些指令。</li>
+<li><span class="arithmatex">\(OP(IR) \rightarrow ID\)</span> 这里的<code>ID</code>就是<code>IR</code>给出的</li>
+<li><strong>机器周期</strong>：即<strong>取指</strong>、<strong>间址</strong>、<strong>执行</strong>、<strong>中断</strong>。由<strong>触发器</strong>控制，<strong>触发器集成在<code>CU</code>内部</strong></li>
+<li>信号缩写分别是：<strong>FE (Fetch)</strong>，<strong>IND(Indirect)</strong>，<strong>EX(Execute)</strong>，<strong>INT(Interrupt)</strong></li>
+<li><strong>节拍信号</strong>：<strong>节拍发生器</strong>给出，循环发出（每个时钟周期发出一个，多少个周期视作一个<strong>循环取决于节拍发生器的输出端数</strong>）</li>
+<li>如果采用定长机器周期，则<strong>每个机器周期的节拍信号数量一致</strong></li>
+<li>若节拍发生器有 <span class="arithmatex">\(m+1\)</span>（含0） 个输出，则一个机器周期的时钟周期共有<span class="arithmatex">\(m+1\)</span>个时钟周期</li>
+<li>用 <span class="arithmatex">\(T_k\)</span> 表示</li>
+<li><strong>机器状态条件</strong>：标志位，信号源来自<code>PSW</code>、<code>ACC</code>的符号位或者来自I/O设备、主存</li>
+</ul>
+<p>每个<strong>输出的控制信号</strong>对应一个微命令（也就是对应一个微操作），输出信号也是 <span class="arithmatex">\(C_{k}\)</span> ，但是不是和专用通路一致不确定。</p>
+<p>也就是效信号位：<span class="arithmatex">\(MAR_{in}\)</span> 或者 <span class="arithmatex">\(C_{k}\)</span>。但本质上还需要转接，如<span class="arithmatex">\(C_{1}\)</span>对应<span class="arithmatex">\((PC) \rightarrow MAR\)</span> 需要将信号接到 <span class="arithmatex">\(PC_{out}\)</span> 、<span class="arithmatex">\(MAR_{in}\)</span></p>
+<p>因为所有指令的指令周期，<span class="arithmatex">\(T_0\)</span>节拍下一定要完成 <code>PC</code> 到 <code>MAR</code> 的操作：有 <span class="arithmatex">\(C_1 = FE \cdot T_0\)</span></p>
+<h3 id="_29">设计<a class="headerlink" href="#_29" title="Permanent link">&para;</a></h3>
+<p>硬布线可以表示成如下的结构。此处的设计主要是设计逻辑表达式。</p>
+<p><a class="glightbox" href="image\微操作命令的逻辑表达式.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="image\微操作命令的逻辑表达式.png" alt="image-20260709201737351" style="zoom:50%;" /></a></p>
+<blockquote>
+<p>由图不难看出，实际上就是给每个用到这条微指令的机器周期设计好这条微指令的触发条件，然后让各个机器周期的指令相互用一个或门连接实现。</p>
+</blockquote>
+<p>设计的步骤：</p>
+<ol>
+<li>分析每个阶段的微操作序列（四个阶段）
+   - 可以理解成<strong>找到共有的部分</strong></li>
+<li>选择CPU的控制方式
+   - 定长机器周期还是非定长机器周期
+   - 如果是<strong>定长机器周期</strong>则默认一个机器周期<strong>三个节拍</strong></li>
+<li>安排微操作时序
+   - 考虑3个节拍实现所有微操作</li>
+<li>电路设计</li>
+</ol>
+<h4 id="_30">时序安排<a class="headerlink" href="#_30" title="Permanent link">&para;</a></h4>
+<p>取指周期的时序安排</p>
+<p><a class="glightbox" href="image\安排时序.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="image\安排时序.png" alt="image-20260709205021715" style="zoom: 50%;" /></a></p>
+<blockquote>
+<p><span class="arithmatex">\(OP(IR) \rightarrow ID\)</span>  <code>ID</code>是<strong>指令译码器</strong>，指的是从指令寄存器取指令送给译码器，发出控制信号</p>
+</blockquote>
+<p>间址周期的时序安排</p>
+<p><a class="glightbox" href="image\间址周期时序安排.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="image\间址周期时序安排.png" alt="image-20260709205300349" style="zoom:50%;" /></a></p>
+<h2 id="_31">微程序<a class="headerlink" href="#_31" title="Permanent link">&para;</a></h2>
+<p>程序本身由指令序列组成。一个指令周期分成最多四个机器周期，一个机器周期内又有多个微操作。</p>
+<p>而微程序的思想，是通过<strong>一个微指令完成同一个时序内的多个微操作</strong>进而实现了指令的功能。</p>
+<p>这些微指令共同构成了<strong>微程序</strong>。</p>
+<ul>
+<li><strong>一种机器指令对应一个微程序</strong></li>
+<li>在微程序实现的控制器中，指令可以<strong>视作对微指令功能的封装</strong></li>
+</ul>
+<p><strong>指令</strong>是对<strong>程序执行</strong>步骤的描述。<strong>微指令</strong>是对<strong>指令执行</strong>步骤的描述</p>
+<p><a class="glightbox" href="image\微程序组成.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="image\微程序组成.png" alt="image-20260709221934946" style="zoom: 50%;" /></a></p>
+<blockquote>
+<p>区分：</p>
+<ul>
+<li><strong>微命令</strong>和<strong>微操作</strong>一一对应</li>
+<li><strong>微指令</strong>包含多个<strong>微操作/微命令</strong></li>
+</ul>
+</blockquote>
+<p>微指令的<strong>基本结构</strong>：<code>|操作控制|顺序控制|</code> ，顺序控制的信息用于<strong>指明下一条微指令的地址</strong>。</p>
+<p>微指令存储在<strong>控制器的存储器</strong>中。</p>
+<h3 id="_32">微指令控制器的结构<a class="headerlink" href="#_32" title="Permanent link">&para;</a></h3>
+<p><code>CU</code>的组成：</p>
+<ul>
+<li><code>CM</code>-控制存储器</li>
+<li>用于存放各指令的微程序</li>
+<li>由<code>ROM</code>构成，可以理解为 <code>BIOS</code></li>
+<li>可以理解为<strong>主存</strong></li>
+<li><code>CMAR</code>-微地址寄存器。另称：<span class="arithmatex">\(\mu PC\)</span></li>
+<li>功能等同于整个计算机结构中的<code>MAR</code></li>
+<li>提供了<strong>读取<code>CM</code>中微指令的地址</strong><ul>
+<li>在此还需要一个<strong>地址译码器</strong>将<strong>地址码转为存储单元控制信号</strong></li>
+</ul>
+</li>
+<li><code>CMDR</code>-微指令寄存器。另称：<span class="arithmatex">\(\mu IR\)</span></li>
+<li>位数等同于微指令字长</li>
+<li>下个微指令的地址，也在此部件中</li>
+<li>微地址形成部件</li>
+<li>产生<strong>初始微地址</strong>与<strong>后续微地址</strong>。</li>
+</ul>
+<p><a class="glightbox" href="../image/%E5%BE%AE%E7%A8%8B%E5%BA%8F%E6%8E%A7%E5%88%B6%E5%99%A8%E7%BB%93%E6%9E%84.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image-20260711191324162" src="../image/%E5%BE%AE%E7%A8%8B%E5%BA%8F%E6%8E%A7%E5%88%B6%E5%99%A8%E7%BB%93%E6%9E%84.png" /></a><a class="glightbox" href="image\微指令存放地址.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="image\微指令存放地址.png" alt="" style="zoom: 33%;" /></a></p>
+<blockquote>
+<p>以取数指令 <code>LDA X</code> 为例</p>
+<p>取指周期执行：#0、#1、#2。</p>
+<p>特殊点：</p>
+<ul>
+<li>当执行完#2，按序应跳转到#3，但如果<strong>标志位没有传入间址的信息</strong></li>
+<li>则代表无需间接寻址，直接跳转到对应<strong>操作码</strong>（此处#13）</li>
+<li>同理，当#15结束后，按<strong>标志位</strong>的输入信息决定跳转到<strong>中断周期</strong>还是<strong>取指周期</strong></li>
+</ul>
+</blockquote>
+<p>因为取指周期是公用的，所以当某<strong>指令系统中有n条机器指令</strong>，意味着微程序数量是 n + 1。<strong>多一个取指周期的微程序</strong></p>
+<blockquote>
+<p>但有时：一条指令对应一个微程序，所以会将<strong>取指周期微程序</strong>和<strong>执行周期微程序</strong>，视作一个整体</p>
+</blockquote>
+<h3 id="_33">微指令的设计<a class="headerlink" href="#_33" title="Permanent link">&para;</a></h3>
+<h4 id="_34">微指令的格式<a class="headerlink" href="#_34" title="Permanent link">&para;</a></h4>
+<p>微指令按照格式区分可以分为以下几种：</p>
+<ul>
+<li>水平型微指令</li>
+<li>基本格式：<code>操作控制|顺序控制</code></li>
+<li>特点：一条微指令<strong>可以定义多个可并行的微命令</strong></li>
+<li>优点：<strong>微程序短</strong>，执行速度快</li>
+<li>缺点：<strong>微指令长</strong>，编写微程序开发效率低</li>
+<li>垂直型微指令</li>
+<li>基本格式：<code>微操作码|目的地址|源地址</code></li>
+<li>特点：一条微指令<strong>只能定义一个微命令</strong>，由微操作码字规定具体功能</li>
+<li>优点：<strong>微指令短</strong>，简单，便于编写微程序</li>
+<li>缺点：<strong>微命令长</strong>，执行速度慢</li>
+<li>混合型微指令</li>
+<li><strong>在垂直型的基础上，增加一些并行操纵</strong></li>
+<li>微指令较短，仍便于编写</li>
+<li>较垂直型的执行速度加快</li>
+</ul>
+<p>同时还有</p>
+<p><strong>相容性微命令</strong>：可以并行完成的微命令</p>
+<p><strong>互斥性微命令</strong>：不允许并行完成的微命令</p>
+<h4 id="_35">微指令的编码方式<a class="headerlink" href="#_35" title="Permanent link">&para;</a></h4>
+<p>伪指令的编码方式又称作<strong>微指令的控制方式</strong>。指，对微指令的控制字段进行编码。</p>
+<p>水平型微指令：</p>
+<h5 id="_36">直接编码<a class="headerlink" href="#_36" title="Permanent link">&para;</a></h5>
+<p>即在操作控制部分，<strong>每个比特位代表一个微操作命令</strong>。所以多位为<code>1</code>就实现了事先说的<strong>定义多个可并行的微命令</strong>。</p>
+<p>优点：简单直观，速度快，操作并行性好</p>
+<p>缺点：微指令字长过长，n个微命令则需要 <strong>n位</strong>操作字段。造成<code>control memory-CM</code>容量极大</p>
+<h5 id="_37">字段直接编码<a class="headerlink" href="#_37" title="Permanent link">&para;</a></h5>
+<p><strong>将控制字段分成若干段</strong>，每段<strong>译码之后发出控制信号</strong>。</p>
+<p>分段原则：</p>
+<ul>
+<li>互斥性微命令分在同一段内，相容性在不同段内</li>
+<li>每个小段的<strong>信息位不能太多</strong>，否则增加译码线路的复杂性和译码时间。</li>
+<li>需要留出一个状态，<strong>表明不发出任何微命令</strong>。通常用<strong>全0表示</strong></li>
+</ul>
+<p>优点：可以缩短微指令字长</p>
+<p>缺点：需要先译码，比直接编码慢</p>
+<h5 id="_38">字段间接编码<a class="headerlink" href="#_38" title="Permanent link">&para;</a></h5>
+<p>一个字段的某些微命令<strong>需由另一个字段中的某些微命令解释</strong>。也就是需要其他字段译码搭配发出控制信号。</p>
+<p>优点：<strong>可以进一步缩短字长</strong></p>
+<p>缺点：削弱了并行控制能力，一般作为直接编码的辅助手段</p>
+<h4 id="_39">微指令的地址形成方式<a class="headerlink" href="#_39" title="Permanent link">&para;</a></h4>
+<h5 id="_40">下地址字段<a class="headerlink" href="#_40" title="Permanent link">&para;</a></h5>
+<p>微指令格式中，设置好下一个地址字段。这个字段直接给出后继指令的地址，称为<strong>断定方式</strong></p>
+<h5 id="_41">机器指令操作码形成<a class="headerlink" href="#_41" title="Permanent link">&para;</a></h5>
+<p>当机器指令取至指令寄存器后，微指令地址由<strong>操作码</strong>经为<strong>地址形成部件</strong>形成</p>
+<h5 id="_42">增量计数器<a class="headerlink" href="#_42" title="Permanent link">&para;</a></h5>
+<p><span class="arithmatex">\((CMAR)+1 \rightarrow CMAR\)</span></p>
+<h5 id="_43">分支转移<a class="headerlink" href="#_43" title="Permanent link">&para;</a></h5>
+<p><code>操作控制字段|转移方式|转移地址</code></p>
+<p>多了一个<strong>转移方式</strong></p>
+<p>转移方式：指明判别条件。</p>
+<h5 id="_44">通过测试网络<a class="headerlink" href="#_44" title="Permanent link">&para;</a></h5>
+<h5 id="_45">由硬件直接产生微程序入口地址<a class="headerlink" href="#_45" title="Permanent link">&para;</a></h5>
+<p>第一条微指令地址：由专门硬件生成</p>
+<p>中断周期，由硬件产生中断周期微程序首地址（用专门的硬件记录）</p>
+<h3 id="_46">微程序控制单元设计<a class="headerlink" href="#_46" title="Permanent link">&para;</a></h3>
+<p>设计步骤：</p>
+<ol>
+<li>分析每个阶段的微操作序列</li>
+<li>写出对应机器指令的微操作命令及节拍安排</li>
+<li>确定微指令格式</li>
+<li>编写微指令码点</li>
+</ol>
+<p><a class="glightbox" href="image\取指周期的节拍安排.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="image\取指周期的节拍安排.png" alt="image-20260713215440703" style="zoom:67%;" /></a></p>
+<blockquote>
+<p>硬布线给译码器，微程序控制器给出<strong>微程序的首个地址</strong></p>
+</blockquote>
+<p>此处<strong>有三个微指令</strong>。</p>
+<p><a class="glightbox" href="image\节拍安排.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="image\节拍安排.png" alt="image-20260713220002364" style="zoom:50%;" /></a> </p>
+<p><a class="glightbox" href="image\微程序控制单元设计.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="image\微程序控制单元设计.png" alt="image-20260714194757232" style="zoom: 50%;" /></a></p>
+<p>取址周期通常还要补充如下的<strong>微操作</strong>
+$$
+Ad(CMDR) \rightarrow CMAR \
+OP(IR) \rightarrow 微地址形成部件 \rightarrow CMAR
+$$</p>
+<blockquote>
+<p>在获得地址之后<code>CMDR</code>中存储着下地址，将下地址传给 <code>CMAR</code> 。</p>
+<p>这个<strong>微操作</strong>保证了微命令一直不断往下执行。可以这么理解，之前的机器指令是控制所有的组件之间如何交互，这个微操作控制着如何<strong>让微命令不断持续工作</strong>。</p>
+<p><code>IR</code>将操作码传入到 <code>CMAR</code>中，这个过程需要配合<strong>微地址形成部件</strong>以及<strong>标志</strong>处理之后传入<code>CMAR</code>，<strong>准备进入下一个周期</strong> </p>
+</blockquote>
+<p>执行周期结束后：
+$$
+Ad(CMDR) \rightarrow CMAR
+$$</p>
+<blockquote>
+<p>同理，也是将下地址传给<code>CMAR</code> ，不断执行下一条指令。</p>
+<p>其实其他周期最后一条也是这个，进而实现不断进入下一个指令。</p>
+</blockquote>
+<h4 id="_47">确定微指令的格式<a class="headerlink" href="#_47" title="Permanent link">&para;</a></h4>
+<p>也就是在<strong>微指令的编码</strong>中所提及的三种编码方式：</p>
+<ul>
+<li>直接编码</li>
+<li>字段直接编码</li>
+<li>字段间接编码</li>
+</ul>
+<p>目的：</p>
+<ul>
+<li>确定<strong>控制字段字长</strong></li>
+<li>根据<code>CM</code>中的<strong>微指令总数</strong>，确定微指令的顺序控制字段的位数（也就是下指令，根据总条数编址）</li>
+<li>操作控制字段+顺序控制字段。共同组成了<strong>微指令字长</strong></li>
+</ul>
+<h4 id="_48">编写微指令码点<a class="headerlink" href="#_48" title="Permanent link">&para;</a></h4>
+<p>根据操作控制字段每一位代表的微操作命令，编写每一条微指令的<strong>码点</strong></p>
+<blockquote>
+<p>码点，互斥字段内，代表某一种具体操作的，唯一的二进制编码。</p>
+</blockquote>
+<h4 id="_49">微程序设计分类<a class="headerlink" href="#_49" title="Permanent link">&para;</a></h4>
+<p><strong>静态</strong>：微程序无需改变，采用ROM</p>
+<p><strong>动态</strong>：通过<strong>改变微指令</strong>和<strong>微程序</strong>从而改变机器指令。利于仿真，采用 <code>EPROM</code></p>
+<h5 id="_50">毫微程序<a class="headerlink" href="#_50" title="Permanent link">&para;</a></h5>
+<h1 id="_51">指令流水线<a class="headerlink" href="#_51" title="Permanent link">&para;</a></h1>
+<p>一条指令的执行过程，分成多个阶段。</p>
+<ul>
+<li><strong>取指</strong>：根据<code>PC</code>取出指令，送至<code>IR</code></li>
+<li><strong>分析</strong>：对指令操作码进行译码，得到有效地址<code>EA</code>，并从<code>EA</code>中取出操作数</li>
+<li><strong>执行</strong>：根据操作码字段，完成指定功能。</li>
+</ul>
+<h2 id="_52">执行方式<a class="headerlink" href="#_52" title="Permanent link">&para;</a></h2>
+<p>设：三个阶段的耗时均为 <span class="arithmatex">\(t\)</span> 总耗时为 <span class="arithmatex">\(T\)</span> ，任务数量为 <span class="arithmatex">\(n\)</span></p>
+<h3 id="_53">顺序执行方式（串行）<a class="headerlink" href="#_53" title="Permanent link">&para;</a></h3>
+<div class="arithmatex">\[
+T = 3nt
+\]</div>
+<p>传统冯诺依曼机，采用顺序执行方式。</p>
+<p><strong>优点</strong>：控制简单，硬件代价小。<strong>缺点</strong>：执行指令的速度较慢，功能部件的利用率低。</p>
+<h3 id="_54">一次重叠执行方式<a class="headerlink" href="#_54" title="Permanent link">&para;</a></h3>
+<div class="arithmatex">\[
+T = 3t + 2t(n-1)=(1+2n)t
+\]</div>
+<p>也就是只重叠一次，即在<strong>上一个指令的执行阶段，进行下一条指令的取指阶段</strong>。</p>
+<p><strong>优点</strong>：执行时间缩短了<span class="arithmatex">\(\frac{1}{3}\)</span> 功能部件的利用率提高。<strong>缺点</strong>：硬件开销大，控制过程执行相较更复杂</p>
+<h3 id="_55">二次重叠执行方式<a class="headerlink" href="#_55" title="Permanent link">&para;</a></h3>
+<div class="arithmatex">\[
+T = 3t+t(n-1) = (2+n)t
+\]</div>
+<p>也就是重叠两次。在分析阶段就开始取指</p>
+<h2 id="_56">性能指标<a class="headerlink" href="#_56" title="Permanent link">&para;</a></h2>
+<h3 id="_57">吞吐率<a class="headerlink" href="#_57" title="Permanent link">&para;</a></h3>
+<p>吞吐率指的是单位时间内，流水线所完成的任务数量。</p>
+<p>在上述的前提之下，<span class="arithmatex">\(T_k\)</span> 表示处理n个任务所用的时间。
+$$
+TP = \frac{n}{T_k}
+$$
+<span class="arithmatex">\(TP\)</span>，代表着吞吐量。</p>
+<p><a class="glightbox" href="image\吞吐率时空图.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="image\吞吐率时空图.png" alt="image-20260714210117218" style="zoom: 67%;" /></a></p>
+<p>此处k 代表一条指令分为k个阶段，每个阶段耗时 <span class="arithmatex">\(\Delta t\)</span> 一般一个 <span class="arithmatex">\(\Delta t\)</span> <strong>视作一个时钟周期</strong>
+$$
+T_k = (k+n-1)\Delta t\
+实际吞吐率：
+TP = \frac{n}{(k+n-1)\Delta t}
+$$
+ <strong>装入时间</strong>：指的是<strong>第一条指令</strong>从开始到结束所需的时间（使得同一时间指令运行数量达最大）</p>
+<p><strong>排空时间</strong>：<strong>最后一条指令</strong>从开始到结束所需的时间（使得运行指令数量不再增加）</p>
+<h3 id="_58">加速比<a class="headerlink" href="#_58" title="Permanent link">&para;</a></h3>
+<p>同样完成一批任务，<strong>使用流水线和不使用流水线的比值</strong>。</p>
+<p>设 <span class="arithmatex">\(T_0\)</span>代表不使用流水线所需的时间，即<strong>顺序执行的用时</strong>； <span class="arithmatex">\(T_k\)</span> 表示使用流水线的用时
+$$
+S = \frac{T_0}{T_k}
+$$
+单独完成一个任务耗时为 <span class="arithmatex">\(k\Delta t\)</span> 则完成n个任务有 <span class="arithmatex">\(T_0=nk\Delta t\)</span></p>
+<p>实际加速比：
+$$
+S = \frac{kn\Delta t}{(k+n-1)\Delta t}=\frac{kn}{k+n-1}
+$$</p>
+<h3 id="_59">效率<a class="headerlink" href="#_59" title="Permanent link">&para;</a></h3>
+<p>流水线的设备利用率。</p>
+<p>从流水线时空图上看，即：<strong>完成n个任务占用的时空区有效面积</strong>与<strong>n个任务所用时间与k个流水段所围成的时空区</strong>的面积比。</p>
+<p>也就是同一时间，运行的指令数量。
+$$
+E = \frac{T_0}{kT_k}=\frac{n}{k+n-1}
+$$
+因而最高效率应为，<span class="arithmatex">\(E_{max} = 1\)</span></p>
+<h2 id="_60">指令流水线影响因素和分类<a class="headerlink" href="#_60" title="Permanent link">&para;</a></h2>
+<p><code>MIPS</code>架构中，机器周期的设置分为五段：<code>IF-Instruction Fetch</code>，<code>ID-Instruction Decode</code>，<code>EX-Execute</code>，<code>M-Memory</code>，<code>WB-Wirte Back</code>。这里的取指（<code>IF</code>）和访存（<code>M</code>），实际上主要访问的是 <code>Cache</code>而非主存。分别为 <code>Instruction Cache</code>和<code>Data Cache</code></p>
+<p><a class="glightbox" href="image\五段机器周期.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="image\五段机器周期.png" alt="image-20260715185724564" style="zoom:67%;" /></a></p>
+<p>为了方便流水线的设计，将每个阶段的耗时设为相同，<strong>以最长耗时为准</strong>。为了实现此种设计，会在每个阶段的最后（传递输出），补上一个<strong>缓冲寄存器</strong>，也称<strong>锁存器</strong>。保存本阶段的结果，待到达到最长耗时，再传给下一个阶段的组件。</p>
+<ul>
+<li>在<code>MIPS</code>架构中，不同于<code>RISC</code>架构，一般<strong>取操作数并非从主存中取</strong>，而是将其先放入<strong>通用寄存器</strong>中，再取。</li>
+<li>在解码阶段，有<strong>立即数寄存器</strong>，由取指阶段的结果所得。</li>
+<li>为避免资源冲突，这里的取指和访所用的<code>Cache</code>不同。</li>
+</ul>
+<h3 id="_61">影响因素<a class="headerlink" href="#_61" title="Permanent link">&para;</a></h3>
+<h4 id="_62">结构相关（资源冲突）<a class="headerlink" href="#_62" title="Permanent link">&para;</a></h4>
+<p>即，<strong>互斥问题</strong>。多个阶段在同一时刻争用同一资源，</p>
+<p>解决方法：</p>
+<ul>
+<li>后一相关指令暂停一周期</li>
+<li>资源重复配置：即拆分争抢资源，如上述的 <code>Cache</code></li>
+</ul>
+<h4 id="_63">数据相关（数据冲突）<a class="headerlink" href="#_63" title="Permanent link">&para;</a></h4>
+<p><strong>同步问题</strong>。也就是一条指令需要等前一个指令完成获取到数据，才能执行的情况。</p>
+<p>解决方法：</p>
+<ul>
+<li>数据相关的指令，及其后续指令，都暂停若干个周期</li>
+<li>待到数据冲突问题消失后继续执行</li>
+<li>通过<strong>硬件阻塞（stall）</strong>和<strong>软件插入（NOP，什么都不做）</strong>，两个方法实现（分别为硬件实现和软件实现）</li>
+<li>数据旁路技术</li>
+<li>将数据直接送入所需的组件<strong>而非寄存器</strong></li>
+<li>例如直接将结果送至<code>ALU</code>供下一个指令使用</li>
+<li>编译优化</li>
+<li>通过<strong>编译器调整顺序</strong>解决数据相关</li>
+<li>即，将后续无关的指令先执行，再执行数据相关指令</li>
+</ul>
+<h4 id="_64">控制相关（控制冲突）<a class="headerlink" href="#_64" title="Permanent link">&para;</a></h4>
+<p>当流水线遇到<strong>转移指令</strong>和其他改变<code>PC</code>值的指令造成<strong>断流</strong>。</p>
+<p>解决方法（针对转移指令）：</p>
+<ul>
+<li>转移指令<strong>分支预测</strong></li>
+<li>简单预测（永远猜 <code>ture or false</code> ）</li>
+<li>动态预测（根据历史情况动态调整）</li>
+<li><strong>预取</strong>转移成功和不成功两个控制流的目标指令</li>
+<li>加快和提前形成条件码。</li>
+<li>提高转移方向的猜准率</li>
+</ul>
+<h3 id="_65">分类<a class="headerlink" href="#_65" title="Permanent link">&para;</a></h3>
+<h4 id="_66">按使用级别分<a class="headerlink" href="#_66" title="Permanent link">&para;</a></h4>
+<p>分为：部件功能级流水线，处理机级流水线和处理机间流水线。</p>
+<h5 id="_67">部件功能级别流水线<a class="headerlink" href="#_67" title="Permanent link">&para;</a></h5>
+<p>将复杂的算术逻辑运算组成流水线工作。例如，将浮点加法操作分为：<strong>求阶差</strong>，<strong>对阶</strong>，<strong>尾数相加</strong>以及<strong>结果规格化</strong>四个子过程。四个子过程进行按流水线执行。</p>
+<h5 id="_68">处理机级流水线<a class="headerlink" href="#_68" title="Permanent link">&para;</a></h5>
+<p>把一条指令的<strong>解释过程</strong>分成多个子过程。之前说的<strong>五个阶段</strong>即为处理机级流水线</p>
+<h5 id="_69">处理机间流水线<a class="headerlink" href="#_69" title="Permanent link">&para;</a></h5>
+<p>将处理机级流水线视作一个整体，每个处理机完成一个任务，各个处理机所得到的结果存放在与下一个处理机共享的存储器中。（也就是每个处理机所执行的工作不同）</p>
+<h4 id="_70">按功能分类<a class="headerlink" href="#_70" title="Permanent link">&para;</a></h4>
+<h5 id="_71">单功能流水线<a class="headerlink" href="#_71" title="Permanent link">&para;</a></h5>
+<p>只能实现一种固定的流水线。</p>
+<h5 id="_72">多功能流水线<a class="headerlink" href="#_72" title="Permanent link">&para;</a></h5>
+<p>可以完成多种功能的流水线。</p>
+<h4 id="_73">按各段连接方式<a class="headerlink" href="#_73" title="Permanent link">&para;</a></h4>
+<p>同一时间内<strong>各段之间的连接方式</strong>。流水线可分为静态流水线，动态流水线。</p>
+<p><strong>静态流水线</strong>指在同一时间内，流水线各段只能一种功能的连接方式连接。（比如算术运算只能完成浮点数运算）</p>
+<p><strong>动态流水线</strong>指在同一时间内，某些段正在实现某种运算，另一段可实现另一种运算。效率高，但更复杂。</p>
+<h4 id="_74"><strong>按功能段是否有反馈信号</strong><a class="headerlink" href="#_74" title="Permanent link">&para;</a></h4>
+<p>分为<strong>线性流水线</strong>和<strong>非线性流水线</strong></p>
+<p><strong>线性流水线</strong>，指从输入到输出，每个功能段只能经过一次，不存在反馈回路</p>
+<p><strong>非线性流水线</strong>，从输入到输出，某些<strong>功能段将数次通过流水线</strong>。（可以理解为，输出返回去继续当输入）这种流水线适合线性递归算法的运算。</p>
+<h3 id="_75">流水线多发技术<a class="headerlink" href="#_75" title="Permanent link">&para;</a></h3>
+<h4 id="_76">超标量技术<a class="headerlink" href="#_76" title="Permanent link">&para;</a></h4>
+<p>每个时钟周期内，可以<strong>并发多条独立指令</strong>。</p>
+<ul>
+<li>要<strong>配置多个功能部件</strong></li>
+<li><strong>不能调整指令的执行顺序</strong>。</li>
+<li>能够通过编译优化技术，把可并行的指令搭配起来</li>
+</ul>
+<h4 id="_77">超流水技术<a class="headerlink" href="#_77" title="Permanent link">&para;</a></h4>
+<p>将时钟周期再分多段。</p>
+<p>将一个部件在一个时钟周期内使用多次。</p>
+<p><strong>不能够调整指令的执行顺序</strong>。</p>
+<h4 id="_78">超长指令字<a class="headerlink" href="#_78" title="Permanent link">&para;</a></h4>
+<p>由编译程序挖掘指令间的<strong>潜在并行性</strong></p>
+<p>将<strong>多条</strong>能并行的指令组合为一条。</p>
+<p>具有多个操作码字段的超长指令字。</p>
+<h2 id="_79">五段式指令流水线<a class="headerlink" href="#_79" title="Permanent link">&para;</a></h2>
+<h3 id="_80">运算指令<a class="headerlink" href="#_80" title="Permanent link">&para;</a></h3>
+<p>举例：</p>
+<ul>
+<li><code>ADD Rd,Rs</code>   <span class="arithmatex">\((Rs)+(Rd) \rightarrow Rd\)</span></li>
+<li><code>SHL Rd</code>     <span class="arithmatex">\((Rd)&lt;&lt;&lt;2 \rightarrow Rd\)</span>（算术左移） </li>
+</ul>
+<p>过程：</p>
+<ul>
+<li><code>IF</code>：根据<code>PC</code>从cache取指令到<strong>IF段的锁存器</strong>中</li>
+<li><code>ID</code>：取操作数至 <code>ID</code>段的<strong>锁存器</strong>中</li>
+<li><code>EX</code>：运算，结果存入<code>EX</code>段<strong>锁存器</strong></li>
+<li><code>M</code> ：空段</li>
+<li><code>WB</code>：将运算结果写回指定寄存器</li>
+</ul>
+<h3 id="load">LOAD指令<a class="headerlink" href="#load" title="Permanent link">&para;</a></h3>
+<p>举例：</p>
+<ul>
+<li><code>LOAD Rd,996(Rs)</code>    <span class="arithmatex">\((996+(Rs))\rightarrow Rd\)</span></li>
+<li><code>Rs</code>存的是基址，996是偏移量，是将这个<strong>基址+偏移量</strong>的地址的值，写入到<code>Rd</code>中</li>
+</ul>
+<p>过程：</p>
+<ul>
+<li><code>IF</code>：根据<code>PC</code>从cache取指令到<strong>IF的锁存器</strong>中</li>
+<li><code>ID</code>：将基址寄存器（<strong>Rs</strong>）的值放到<strong>锁存器</strong>（通用寄存器下有两个锁存器，放到A中）中，偏移量放入<strong>立即数寄存器</strong></li>
+<li><code>EX</code>：运算，得到有效地址 <code>EA</code></li>
+<li><code>M</code> ：根据<code>EA</code>从<code>Data Cache</code>中取数放入锁存器</li>
+<li><code>WB</code>：<code>M</code>中取出的数写回寄存器（<code>Rd</code>）</li>
+</ul>
+<p>在<code>RISC</code>中只有<strong>取数</strong><code>LOAD</code>和<strong>存数</strong><code>STORE</code>可以访问主存</p>
+<h3 id="store">STORE指令<a class="headerlink" href="#store" title="Permanent link">&para;</a></h3>
+<p>因为<code>STORE</code>和<code>LOAD</code>本质是一个电路，遵循着左边的地址为寄存器，右边的地址为内存。所以</p>
+<p>其格式为：<code>STORE Rs 996(Rd)</code> ，所以<code>STORE</code>存数<strong>走的是存入右边的地址</strong>。（为什么存入右边）</p>
+<p>并且因为<strong>汇编限制</strong>：<strong>偏移量必须在后面</strong>，所以只能对 <code>Rd</code>进行偏移操作（为什么还是右边偏移）</p>
+<p>过程</p>
+<ul>
+<li><code>IF</code>：根据<code>PC</code>从cache取指令到<strong>IF的锁存器</strong>中</li>
+<li><code>ID</code>：将基址寄存器（<strong>Rs</strong>）的值放到<strong>锁存器A</strong>中，偏移量放入<strong>立即数寄存器</strong>。要存的数放入<strong>锁存器B</strong>中。</li>
+<li><code>EX</code>：运算，得到有效地址 <code>EA</code>，并将<strong>锁存器B</strong>的内容放到锁存器<code>Store</code></li>
+<li><code>M</code> ：写入数据到<code>Data Cache</code></li>
+<li><code>WB</code>：空段</li>
+</ul>
+<h3 id="_81">条件转移<a class="headerlink" href="#_81" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>beq Rs,Rt,#bias</code></li>
+<li>如果<code>Rs</code>和<code>Rt</code><strong>相等</strong>（(Rs) == (Rt)），则 <span class="arithmatex">\((PC)+指令字长+(偏移量×指令字长) \rightarrow PC\)</span> 否则：<span class="arithmatex">\((PC)+指令字长 \rightarrow PC\)</span></li>
+<li><code>bne Rs,Rt,#bias</code></li>
+<li><strong>如果不相等</strong>，则进行上述操作。</li>
+</ul>
+<p>过程：</p>
+<ul>
+<li><code>IF</code>：根据<code>PC</code>从cache取指令到<strong>IF的锁存器</strong>中</li>
+<li><code>ID</code>：将<strong>两个比较的数</strong>的值放到<strong>锁存器A、B</strong>中，偏移量放入<strong>立即数寄存器</strong>。</li>
+<li><code>EX</code>：运算，比较两个数</li>
+<li><code>M</code> ：根据结果，将目标<code>PC</code>值写回<code>PC</code></li>
+<li><code>WB</code>：空段</li>
+</ul>
+<blockquote>
+<p>写回<code>PC</code> 被称为：<code>WrPC</code> 其耗时比 <code>M</code> 更短，在<code>M</code>阶段完成</p>
+</blockquote>
+<h3 id="_82">无条件转移指令<a class="headerlink" href="#_82" title="Permanent link">&para;</a></h3>
+<p><code>jmp bias</code>：<span class="arithmatex">\((PC)+指令字长+(偏移量×指令字长) \rightarrow PC\)</span></p>
+<p>过程：</p>
+<ul>
+<li><code>IF</code>：根据<code>PC</code>从cache取指令到<strong>IF的锁存器</strong>中</li>
+<li><code>ID</code>：偏移量放入<strong>立即数寄存器</strong>。</li>
+<li><code>EX</code>：将<code>PC</code>值写回<code>PC</code></li>
+<li><code>M</code> ：空段 </li>
+<li><code>WB</code>：空段</li>
+</ul>
+<blockquote>
+<p><code>WrPC</code>耗时比<code>EX</code>段更短，可安排在<code>EX</code>段完成。越早完成，越能避免<strong>控制冲突</strong>。也有在 <code>WB</code> 段修改<code>PC</code>值的情况</p>
+</blockquote>
+<h1 id="_83">多处理器<a class="headerlink" href="#_83" title="Permanent link">&para;</a></h1>
+<h2 id="_84">基本概念<a class="headerlink" href="#_84" title="Permanent link">&para;</a></h2>
+<p>基于指令流的数量和数据流的数量，对计算机体系结构分为：<code>SISD</code>，<code>SIMD</code>，<code>MISD</code>，<code>MIMD</code>。常规的单处理器属于<code>SISD</code>，常规多处理器属于<code>MIMD</code></p>
+<h3 id="_85">单指令流单数据流<a class="headerlink" href="#_85" title="Permanent link">&para;</a></h3>
+<p>传统的串行计算机结构，仅包含<strong>一个处理器</strong>和<strong>一个存储器</strong>。处理器在一段时间内，仅能只能执行一条指令，按照顺序执行方式执行指令。为了提高速度。</p>
+<p>若采用指令流水线方式（需要设置多个功能部件），并采用<strong>多模块交叉方式组织存储器</strong>（低位交叉编址）</p>
+<h3 id="_86">单指令流多数据流<a class="headerlink" href="#_86" title="Permanent link">&para;</a></h3>
+<p><code>SIMD</code>是一个指令流能够对多个数据流进行处理，一般称为<strong>数据级并行技术</strong>。</p>
+<p>这种结构的计算机通常由<strong>一个指令控制部件（<code>CU</code>）</strong>、<strong>多个处理单元组成</strong>、<strong>多个局部存储器</strong>、<strong>一个主存储器</strong></p>
+<ul>
+<li>每个处理单元处理同一条指令</li>
+<li><strong>每个单元有各自的寄存器</strong>，进而实现了每个单元有不同的数据地址。</li>
+<li>因此<strong>不同的单元处理同一条指令所处理的结果是不同的</strong>。</li>
+<li>一个顺序应用程序编译后，可能按照<code>SISD</code>组织<strong>运行于串行硬件上</strong></li>
+<li>也可能按照<code>SIMD</code>组织<strong>运行于并行硬件上</strong></li>
+</ul>
+<p>可以理解为<code>GPU</code>的运行方式</p>
+<blockquote>
+<p>以上<strong>单指令流</strong>，<strong>只能实现并发，不能实现并行</strong></p>
+</blockquote>
+<h3 id="_87">多指令流单数据流<a class="headerlink" href="#_87" title="Permanent link">&para;</a></h3>
+<p>多条指令并行执行，处理同一个数据。现实中不存在</p>
+<h3 id="_88">多指令流多数据流<a class="headerlink" href="#_88" title="Permanent link">&para;</a></h3>
+<p>各指令序列<strong>并行执行</strong>，分别<strong>处理不同数据</strong>。是一种线程级并行、甚至是<strong>线程以上的并行技术</strong></p>
+<h4 id="_89">多处理系统<a class="headerlink" href="#_89" title="Permanent link">&para;</a></h4>
+<p>特性：各个处理器之间，用<code>LOAD</code>和<code>STORE</code>访问同一个主存，实现数据互传</p>
+<p>硬件组成：</p>
+<ul>
+<li>多个处理器+一个主存</li>
+<li>多个处理器共享单一的物理地址空间</li>
+</ul>
+<h4 id="_90">多计算机系统<a class="headerlink" href="#_90" title="Permanent link">&para;</a></h4>
+<p>特性：各个计算机之间并没有同个主存，而是采用<strong>消息传递</strong>互传数据</p>
+<p>硬件组成：</p>
+<ul>
+<li>多处理器+多个主存</li>
+<li>每台计算机拥有<strong>各自的私有存储器</strong>。物理地址空间相互独立</li>
+</ul>
+<h3 id="simd">向量处理机（SIMD）进阶<a class="headerlink" href="#simd" title="Permanent link">&para;</a></h3>
+<p>特性：指令处理的对象是向量。擅长对向量型数据并行计算、浮点数运算，常被用于超级计算机中。</p>
+<p>硬件：</p>
+<ul>
+<li>多个处理单元，多组<strong>向量寄存器</strong></li>
+<li>主存采用<strong>多端口同时读取</strong>的交叉多模块存储器</li>
+<li>主存大小限定了机器解体的规模，因此要有大容量、集中式的主存</li>
+</ul>
+<h2 id="_91">硬件多线程<a class="headerlink" href="#_91" title="Permanent link">&para;</a></h2>
+<h3 id="_92">细粒度多线程<a class="headerlink" href="#_92" title="Permanent link">&para;</a></h3>
+<p>指令发射：一个时钟周期发射一个线程。</p>
+<p>切换频率：每个时钟周期切换一次线程。</p>
+<p>代价：低</p>
+<p>并行性：<strong>指令级并行</strong>，线程间不并行</p>
+<h3 id="_93">粗粒度多线程<a class="headerlink" href="#_93" title="Permanent link">&para;</a></h3>
+<p>指令发射：连续几个时钟周期，<strong>发射同一个线程的指令序列</strong>。流水线阻塞时，切换另一个线程。</p>
+<p>切换频率：发生流水线阻塞时切换。</p>
+<p>代价：高，需要重载流水线</p>
+<p>并行性：<strong>指令级并行</strong>，线程间不并行</p>
+<h3 id="_94"><a class="headerlink" href="#_94" title="Permanent link">&para;</a></h3>
+<h3 id="smt">同时多线程（SMT）<a class="headerlink" href="#smt" title="Permanent link">&para;</a></h3>
+<p>指令发射：一个时钟周期，同时发射多个线程的指令。</p>
+<p>并行性：指令级并行，<strong>线程级也是并行</strong></p>
 
 
 
@@ -1364,7 +2204,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2026年6月29日 15:05:26 CST"><span class="timeago" datetime="2026-06-29T15:05:26+08:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2026年6月29日 15:05:26 CST">2026-06-29</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2026年7月16日 19:20:36 CST"><span class="timeago" datetime="2026-07-16T19:20:36+08:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2026年7月16日 19:20:36 CST">2026-07-16</span>
   </span>
 
     
@@ -1374,7 +2214,7 @@
     <span class="md-icon" title="创建日期">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2026年6月29日 15:05:26 CST"><span class="timeago" datetime="2026-06-29T15:05:26+08:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2026年6月29日 15:05:26 CST">2026-06-29</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2026年7月16日 19:20:36 CST"><span class="timeago" datetime="2026-07-16T19:20:36+08:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2026年7月16日 19:20:36 CST">2026-07-16</span>
   </span>
 
     

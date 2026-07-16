@@ -1338,7 +1338,7 @@
           <li class="md-nav__item">
   <a href="#_8" class="md-nav__link">
     <span class="md-ellipsis">
-      扩展操作码
+      指令结构和操作码
     </span>
   </a>
   
@@ -1346,6 +1346,15 @@
         
           <li class="md-nav__item">
   <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      扩展操作码
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
     <span class="md-ellipsis">
       设计扩展操作码
     </span>
@@ -1369,7 +1378,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_10" class="md-nav__link">
+  <a href="#_11" class="md-nav__link">
     <span class="md-ellipsis">
       数据传送
     </span>
@@ -1378,7 +1387,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_11" class="md-nav__link">
+  <a href="#_12" class="md-nav__link">
     <span class="md-ellipsis">
       算术逻辑操作
     </span>
@@ -1387,7 +1396,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_12" class="md-nav__link">
+  <a href="#_13" class="md-nav__link">
     <span class="md-ellipsis">
       移位操作
     </span>
@@ -1396,7 +1405,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_13" class="md-nav__link">
+  <a href="#_14" class="md-nav__link">
     <span class="md-ellipsis">
       转移操作
     </span>
@@ -1405,7 +1414,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_14" class="md-nav__link">
+  <a href="#_15" class="md-nav__link">
     <span class="md-ellipsis">
       输入输出操作
     </span>
@@ -1619,7 +1628,7 @@
           <li class="md-nav__item">
   <a href="#_8" class="md-nav__link">
     <span class="md-ellipsis">
-      扩展操作码
+      指令结构和操作码
     </span>
   </a>
   
@@ -1627,6 +1636,15 @@
         
           <li class="md-nav__item">
   <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      扩展操作码
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
     <span class="md-ellipsis">
       设计扩展操作码
     </span>
@@ -1650,7 +1668,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_10" class="md-nav__link">
+  <a href="#_11" class="md-nav__link">
     <span class="md-ellipsis">
       数据传送
     </span>
@@ -1659,7 +1677,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_11" class="md-nav__link">
+  <a href="#_12" class="md-nav__link">
     <span class="md-ellipsis">
       算术逻辑操作
     </span>
@@ -1668,7 +1686,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_12" class="md-nav__link">
+  <a href="#_13" class="md-nav__link">
     <span class="md-ellipsis">
       移位操作
     </span>
@@ -1677,7 +1695,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_13" class="md-nav__link">
+  <a href="#_14" class="md-nav__link">
     <span class="md-ellipsis">
       转移操作
     </span>
@@ -1686,7 +1704,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_14" class="md-nav__link">
+  <a href="#_15" class="md-nav__link">
     <span class="md-ellipsis">
       输入输出操作
     </span>
@@ -1793,6 +1811,7 @@
 </table>
 <p><strong>半字长指令</strong>，<strong>单字长字长</strong>，<strong>双字长指令</strong>。这些都是指令字长，<strong>其长度是机器字长的n倍</strong></p>
 <p>指令字长会<strong>影响取指效率</strong>。如果机器字长 = 存储字长，<strong>取双字长指令则需要进行两次访存</strong>。</p>
+<h4 id="_8">指令结构和操作码<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h4>
 <p><strong>定长指令字结构</strong>：指令系统中所有的<strong>指令字长</strong>相等。</p>
 <p><strong>变长指令字结构</strong>：指令系统的<strong>指令字长</strong>不同。</p>
 <p><strong>定长操作码</strong>：指令系统中所有指令的<strong>操作码长度</strong></p>
@@ -1805,14 +1824,14 @@
 <li>优点：灵活性强</li>
 <li>缺点：设计复杂</li>
 </ul>
-<h4 id="_8">扩展操作码<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h4>
+<h4 id="_9">扩展操作码<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h4>
 <p><strong>定长指令字结构</strong>搭配<strong>可变长操作码</strong>    可以<strong>扩展操作码指令格式</strong>。在指令长度有限的前提下，保持丰富的指令种类。</p>
 <p>具体来说：</p>
 <p>以指令字长为16位，每个地址码占 4 位。</p>
 <p>对于三地址指令而言（只有一个操作码），那<strong>操作码仅有4位</strong>，因为<strong>全1</strong>要用作<strong>判断指令是什么地址指令</strong>。故在此共有15条指令（<span class="arithmatex">\(2^4 -1=15\)</span>）。</p>
 <p>以此衍生，<strong>二地址指令</strong>，则是先<strong>通过前四位是否全1</strong>判断为二地址指令。同样的，八位全1要用作判断是否为一地址。</p>
 <p>所以三二一指令，在上述情况中，有且仅有<strong>15条指令</strong>。因为零无需给后续的指令预留全一，所以<strong>零地址有16条指令</strong></p>
-<h4 id="_9">设计扩展操作码<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h4>
+<h4 id="_10">设计扩展操作码<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h4>
 <p>严格依照以下两点设计：</p>
 <ol>
 <li>不允许短码是长码的前缀（哈夫曼树，前缀编码）。即短操作码不能和长操作码的前缀相同</li>
@@ -1822,30 +1841,449 @@
 <p>在考题中，会出现计算，设置每一个地址码指令数量。然后设计操作码，一般每一个地址码的操作数不同<strong>出现冗余</strong>。冗余的量<strong>m</strong></p>
 <p>和地址长度<strong>n</strong>，可以使得下一层有 <span class="arithmatex">\(m \times 2^n\)</span> 种状态</p>
 <h3 id="-_2">操作类型分类-操作码<a class="headerlink" href="#-_2" title="Permanent link">&para;</a></h3>
-<h4 id="_10">数据传送<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h4>
+<h4 id="_11">数据传送<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h4>
 <ul>
 <li><code>LOAD</code></li>
 <li>把存储器当中的数据放到寄存器中</li>
 <li><code>STORE</code></li>
 <li>把寄存器当中的数据放到存储器中</li>
 </ul>
-<h4 id="_11">算术逻辑操作<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h4>
+<h4 id="_12">算术逻辑操作<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h4>
 <p>算术操作：运算</p>
 <p>逻辑操作：与或非等。</p>
-<h4 id="_12">移位操作<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h4>
+<h4 id="_13">移位操作<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h4>
 <p>算术移位，逻辑移位，循环移位。第二章</p>
 <p><strong>和算术逻辑操作合成算术类</strong></p>
-<h4 id="_13">转移操作<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h4>
+<h4 id="_14">转移操作<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h4>
 <p>无条件转移 <code>JMP</code></p>
 <p>条件转移 <code>JZ</code>：结果为0；<code>JO</code>：结果溢出；<code>JC</code>：结果进位</p>
 <p>调用和返回：<code>CALL</code>和<code>RETURN</code></p>
 <p><code>TRAP</code>：陷阱指令</p>
-<h4 id="_14">输入输出操作<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h4>
-<h1 id="_15">寻址<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h1>
-<h2 id="_16">指令寻址<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h2>
-<h2 id="_17">数据寻址<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h2>
-<h3 id="_18">偏移寻址<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h3>
-<h3 id="_19">堆栈寻址<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h3>
+<h4 id="_15">输入输出操作<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h4>
+<h1 id="_16">寻址<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h1>
+<h2 id="_17">指令寻址<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h2>
+<p>确定下一条指令的存放地址，也就是<strong>程序计数器 <code>PC</code></strong>所存放的内容来判断下一个指令的地址。</p>
+<h3 id="_18">顺序寻址<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h3>
+<p><span class="arithmatex">\((PC)+'1' \rightarrow PC\)</span></p>
+<p><strong>在定长指令字结构中</strong></p>
+<p>若：指令字长=存储字长=16bit=2B </p>
+<ul>
+<li><strong>主存按字编址</strong>的情况，也就是<code>PC++</code>即可指向下一条指令。</li>
+<li><strong>主存按字节编址</strong>的情况，那<code>PC</code>指向下一个指令需要<code>+2</code>。</li>
+</ul>
+<blockquote>
+<p>这里的<strong>按字编址</strong>指的是按照一个字长编址，而这里的<strong>按字节编址</strong>，则是以 8bit=1B 的方式编址。具体可参考第二章的边界对齐</p>
+</blockquote>
+<p><strong>在变长指令字结构中</strong></p>
+<p>因为在变长指令字系统中，指令字长不定，不像上述情况中存在字长前提。</p>
+<ul>
+<li>主存按字节编址：</li>
+<li>读入一个字，根据操作码判断指令的<strong>总字节数n</strong></li>
+<li>以这个 n 修改PC的值</li>
+</ul>
+<h3 id="_19">跳跃寻址<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h3>
+<p>跳跃指令本质上顺序寻址的改良，在指令的执行过程中插入一个转移指令 <code>JMP</code> 确定下一个指令的位置。</p>
+<p><strong>在定长指令字结果沟中</strong></p>
+<p>若：指令字长，存储字长，均为16bit</p>
+<ul>
+<li>依旧使用<code>PC</code>+‘1’的方式，进行某一组指令</li>
+<li>在完成之后，继续跳转到下一个指令，跳转指令<code>JMP</code>将其跳转到一个新指令处。</li>
+<li>本质是直接改变了PC的值</li>
+</ul>
+<p>还有 <code>CALL</code> 也是跳跃寻址</p>
+<h2 id="_20">数据寻址<a class="headerlink" href="#_20" title="Permanent link">&para;</a></h2>
+<p>确定本条指令的<strong>地址码</strong>所指明的<strong>形式地址</strong>，如何转化为操作数的<strong>真实物理地址（有效地址，Effective Address, EA）</strong>。</p>
+<p>原先：操作码OP|地址码AD</p>
+<p>采用形式地址： 操作码OP|寻址特征(<strong>四位二进制决定何种方式寻址</strong>)|形式地址</p>
+<blockquote>
+<p><strong>前置格式暗号</strong>：数据寻址的指令格式中，地址码部分通常被拆分为 <code>| 寻址特征 | 形式地址 A |</code>。</p>
+<ul>
+<li><strong>寻址特征</strong>：告诉 CPU 应该用哪种寻址方式（比如查表、加寄存器等）。</li>
+<li><strong>形式地址 A</strong>：指令字面上的数值，不一定是最终的数，也不一定是最终的内存地址。</li>
+</ul>
+</blockquote>
+<p>上述形式针对<strong>一地址指令</strong>。</p>
+<p>若针对多地址指令，以二地址为例：</p>
+<ul>
+<li>操作码OP|寻址特征|形式地址|寻址特征|形式地址</li>
+<li><strong>给每一个形式地址添加寻址特征</strong></li>
+<li>可见多地址指令中的地址的<strong>寻址方式并不唯一</strong></li>
+</ul>
+<p><span class="arithmatex">\(EA\)</span> 是有效地址（Effective Address）</p>
+<h3 id="_21">基础寻址方式<a class="headerlink" href="#_21" title="Permanent link">&para;</a></h3>
+<h5 id="_22">直接寻址<a class="headerlink" href="#_22" title="Permanent link">&para;</a></h5>
+<ul>
+<li><strong>定义</strong>：形式地址 <span class="arithmatex">\(A\)</span> 即为<strong>真正地址</strong>。</li>
+<li><strong>硬件特性</strong>：<span class="arithmatex">\(EA = A\)</span>。</li>
+<li><strong>访存次数</strong>：<strong>2次</strong>（取指1次，读数据1次）。</li>
+<li><strong>优点</strong>：简单，不需要做复杂的地址计算。</li>
+<li><strong>缺点</strong>：<span class="arithmatex">\(A\)</span> 的位数决定了该指令只能访问局部的内存空间（如 <span class="arithmatex">\(A\)</span> 占4位，只能访问16个单元）。</li>
+</ul>
+<h5 id="_23">间接寻址<a class="headerlink" href="#_23" title="Permanent link">&para;</a></h5>
+<ul>
+<li><strong>定义</strong>：形式地址 <span class="arithmatex">\(A\)</span> 指向的内存单元里，装的是操作数的有效地址 （即“套娃/指路牌”）。</li>
+<li><strong>硬件特性</strong>：<span class="arithmatex">\(EA = (A)\)</span>（一次间寻）；或者 <span class="arithmatex">\(EA = ((A))\)</span>（多次间寻，看存储字首位是否为1判断是否继续套娃）。</li>
+<li><strong>访存次数</strong>：<strong>3次及以上</strong>（取指1次，读有效地址1次，读数据1次）。</li>
+<li><strong>优点</strong>：扩大了寻址范围（可以用短 <span class="arithmatex">\(A\)</span> 访问大内存），便于编制程序（如方便实现动态跳转或指针）。</li>
+<li><strong>缺点</strong>：多次访存，速度极慢。</li>
+</ul>
+<h5 id="_24">寄存器寻址<a class="headerlink" href="#_24" title="Permanent link">&para;</a></h5>
+<ul>
+<li><strong>定义</strong>：操作数不在内存里，而是放在 CPU 内部的<strong>通用寄存器</strong>中。形式地址 <span class="arithmatex">\(A\)</span> 给出的是<strong>寄存器编号</strong> <span class="arithmatex">\(R_i\)</span>。</li>
+<li><strong>硬件特性</strong>：<span class="arithmatex">\(EA = R_i\)</span>。</li>
+<li><strong>访存次数</strong>：<strong>1次</strong>（取指1次，执行阶段<strong>0次</strong>访存）。</li>
+<li><strong>优点</strong>：执行速度极快，且寄存器数量少，寄存器编号占用的地址码位数极短（省指令空间）。</li>
+<li><strong>缺点</strong>：寄存器硬件成本高，数量有限。</li>
+</ul>
+<h5 id="_25">寄存器间接寻址<a class="headerlink" href="#_25" title="Permanent link">&para;</a></h5>
+<ul>
+<li><strong>定义</strong>：寄存器 <span class="arithmatex">\(R_i\)</span> 里面装的不是数值，而是操作数在内存中的<strong>真正物理地址</strong>。</li>
+<li><strong>硬件特性</strong>：<span class="arithmatex">\(EA = (R_i)\)</span>。</li>
+<li><strong>访存次数</strong>：<strong>2次</strong>（取指1次，去内存读数据1次）。</li>
+<li><strong>大白话考点</strong>：兼具寄存器寻址省地址码空间的好处，又能像间接寻址一样访问大内存，且比内存间接寻址少访存一次，<strong>408考题中最常用的寻址方式之一</strong>。</li>
+</ul>
+<h5 id="_26">隐含寻址<a class="headerlink" href="#_26" title="Permanent link">&para;</a></h5>
+<ul>
+<li><strong>定义</strong>：操作数的地址不显式地写在指令中，而是由操作码隐含指明。</li>
+<li><strong>举例</strong>：一地址加法指令中，另一个操作数隐含在 <span class="arithmatex">\(ACC\)</span>（累加寄存器）中。</li>
+<li><strong>硬件特性</strong>：<span class="arithmatex">\(A \rightarrow ALU\)</span>，同时 <span class="arithmatex">\((ACC) \rightarrow ALU\)</span>。</li>
+<li><strong>优点</strong>：缩短指令字长，省地址码空间。</li>
+<li><strong>缺点</strong>：灵活性差。</li>
+</ul>
+<h5 id="_27">立即寻址<a class="headerlink" href="#_27" title="Permanent link">&para;</a></h5>
+<ul>
+<li><strong>定义</strong>：形式地址 <span class="arithmatex">\(A\)</span> 根本不是地址，它就是<strong>操作数本身</strong>（一般用补码表示，考题中常带有 <code>#</code> 符号）。又称作<strong>立即数</strong></li>
+<li><strong>硬件特性</strong>：有效地址 <span class="arithmatex">\(EA\)</span> 无定义。指令直接把 <span class="arithmatex">\(A\)</span> 送进 <span class="arithmatex">\(ALU\)</span>。</li>
+<li><strong>访存次数</strong>：<strong>1次</strong>（取指阶段访存，执行阶段<strong>0次</strong>访存）。</li>
+<li><strong>优点</strong>：执行速度最快（不用再去内存捞数）。</li>
+<li><strong>缺点</strong>：<span class="arithmatex">\(A\)</span> 的位数限制了操作数的范围，且改代码不方便。</li>
+</ul>
+<h4 id="_28">偏移寻址<a class="headerlink" href="#_28" title="Permanent link">&para;</a></h4>
+<p>偏移寻址的通用本质公式为：</p>
+<p><strong><span class="arithmatex">(<span class="arithmatex">\(EA = \text{某个特定寄存器的内容} + \text{形式地址 } A\)</span>\)</span></strong></p>
+<h5 id="base-address-register">基址寻址（Base Address Register）<a class="headerlink" href="#base-address-register" title="Permanent link">&para;</a></h5>
+<ul>
+<li><strong>公式</strong>：<span class="arithmatex">\(EA = (BR) + A\)</span> （<span class="arithmatex">\(BR\)</span> 为基址寄存器，或指定通用寄存器）。</li>
+<li><strong>核心规定</strong>：<strong><span class="arithmatex">\(BR\)</span> 的内容由操作系统（OS）或特权指令决定，程序运行期间其值不可变；而形式地址 <span class="arithmatex">\(A\)</span> 可变。</strong></li>
+<li><strong>大白话物理图像</strong>：把 <span class="arithmatex">\(BR\)</span> 看作整栋楼的“一楼大门口基准线”，<span class="arithmatex">\(A\)</span> 是“往上走几层”。</li>
+<li><strong>作用（考试必考原因）</strong>：</li>
+<li><strong>扩大寻址范围</strong>（<span class="arithmatex">\(BR\)</span> 位数通常很长，可以指到极深处的内存）。</li>
+<li><strong>有利于多道程序设计和程序的动态重定位</strong>。程序不管被整体搬到内存的哪个角落，只需要改一下 <span class="arithmatex">\(BR\)</span> 的初始值，代码里的 <span class="arithmatex">\(A\)</span> 完全不用改，就能直接顺序运行。</li>
+</ul>
+<p>在没有 <span class="arithmatex">\(BR\)</span> 的情况下，以<strong>通用寄存器</strong>作为<strong>基址寄存器</strong>使用，在指令侧，需要指明所用的通用寄存器。注意这里的<span class="arithmatex">\(R_0\)</span>不是直接指明了寄存器是哪个，还是<strong>通过二进制方式指出是哪个寄存器</strong>。</p>
+<p><a class="glightbox" href="image\通用作基址.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="image\通用作基址.png" alt="image-20260703211139106" style="zoom:67%;" /></a></p>
+<p>采用通用寄存器的时候，用户决定寄存器为基址寄存器，内容仍然由操作系统规定。</p>
+<h5 id="index-register">变址寻址（Index Register）<a class="headerlink" href="#index-register" title="Permanent link">&para;</a></h5>
+<ul>
+<li><strong>公式</strong>：<span class="arithmatex">\(EA = (IX) + A\)</span> （<span class="arithmatex">\(IX\)</span> 为变址寄存器）。</li>
+<li><strong>核心规定</strong>：<strong><span class="arithmatex">\(IX\)</span> 的内容由用户/程序员决定，程序运行期间其值频繁自动改变（如 <span class="arithmatex">\(IX++\)</span>）；而形式地址 <span class="arithmatex">\(A\)</span> 作为基准首地址，不可变。</strong> <span class="arithmatex">\(IX\)</span> 可以视作偏移量</li>
+<li>
+<p><strong>大白话物理图像</strong>：<span class="arithmatex">\(A\)</span> 是数组的首地址（如 <code>array[0]</code> 的位置），<span class="arithmatex">\(IX\)</span> 是循环里的下标 <code>i</code>。</p>
+</li>
+<li>
+<p><code>c
+    for (int i = 0 ; i &lt; 10; i++){
+        sum += a[i]
+    }</code></p>
+</li>
+<li>
+<p><strong>作用（回忆数据结构）</strong>：</p>
+</li>
+<li>
+<p><strong>专门为了高效处理“循环结构”和“数组/线性表遍历”而生</strong>。</p>
+</li>
+<li>配合跳跃寻址使用：每次循环结束前，硬件或指令自动给 <span class="arithmatex">\(IX\)</span> 加1，PC 再 <code>JMP</code> 回去，就能极其丝滑地顺序访问整个数组。</li>
+</ul>
+<h5 id="_29">相对寻址<a class="headerlink" href="#_29" title="Permanent link">&para;</a></h5>
+<ul>
+<li>
+<p><strong>公式</strong>：<span class="arithmatex">\(EA = (PC) + A\)</span> （针对当前程序计数器 <span class="arithmatex">\(PC\)</span> 做的偏移）。</p>
+</li>
+<li>
+<p><strong>核心规定</strong>：有效地址是基于<strong>当前 PC 值</strong>的相对位移。</p>
+</li>
+<li>
+<p><strong>必考计算题</strong>：</p>
+</li>
+</ul>
+<p>当 CPU 从内存中取出一条相对寻址的指令后，还未开始执行，<strong>PC 已经自动执行了顺序寻址的加步长操作</strong>（即 <span class="arithmatex">\(PC \leftarrow PC + \text{指令字长}\)</span>）。</p>
+<p>所以，计算真实的 <span class="arithmatex">\(EA\)</span> 时，代入的 <span class="arithmatex">\((PC)\)</span> 必须是“执行该跳转/寻址时，已经顺延指向下一条指令的那个新PC值”。</p>
+<ul>
+<li>
+<p><strong>作用</strong>：</p>
+</li>
+<li>
+<p><strong>专门为了“跳跃寻址（JMP/分支跳转）”而生</strong>。</p>
+</li>
+<li>使得代码在内存中具有<strong>程序局部浮动性</strong>（无论整段代码搬到内存哪里，由于跳转指令和目标指令的相对距离 <span class="arithmatex">\(A\)</span> 没变，代码依然能精准跳转）。</li>
+</ul>
+<h4 id="_30">堆栈寻址<a class="headerlink" href="#_30" title="Permanent link">&para;</a></h4>
+<p>操作数放置于堆栈中，隐含使用堆栈指针 <span class="arithmatex">\(SP\)</span> 作为操作数地址。<span class="arithmatex">\(SP-Stack\ Pointer\)</span></p>
+<ul>
+<li><strong>公式</strong>：<span class="arithmatex">\(EA = SP\)</span> </li>
+<li><strong>分类与执行流（结合数据结构复习）</strong>：</li>
+<li><strong>硬堆栈</strong>：CPU 内部有专门的寄存器串联成的栈（速度快，容量小）。</li>
+<li><strong>软堆栈</strong>：在主存中强行划出一块特定区域作为堆栈区（最常用）。</li>
+<li><strong>入栈（PUSH）与出栈（POP）的微操作时序（408高频选择题）</strong>：</li>
+<li>假设栈从<strong>大地址向小地址生长（往低地址压栈）</strong>：<ul>
+<li><code>PUSH</code> 过程：<span class="arithmatex">\((SP) - 1 \rightarrow SP\)</span>，然后将数据写入 <span class="arithmatex">\((SP)\)</span> 所指单元。（先动指针，后写数据）</li>
+<li><code>POP</code> 过程：先从 <span class="arithmatex">\((SP)\)</span> 所指单元读出数据，然后 <span class="arithmatex">\((SP) + 1 \rightarrow SP\)</span>。（先读数据，后动指针）</li>
+</ul>
+</li>
+<li><strong>与零地址指令串联</strong>：回到本章开头，堆栈计算机执行 <code>ADD</code> 时，无需显式地址，底层逻辑正是隐含地进行两次 <span class="arithmatex">\(SP\)</span> 出栈，ALU 算完后再次根据 <span class="arithmatex">\(SP\)</span> 指针执行入栈。</li>
+</ul>
+<h3 id="_31">数据寻址方式<a class="headerlink" href="#_31" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th><strong>寻址方式</strong></th>
+<th><strong>有效地址 EA 公式</strong></th>
+<th><strong>访存次数（不含取指）</strong></th>
+<th><strong>核心解决什么问题（一句话）</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>立即寻址</strong></td>
+<td>无定义（<span class="arithmatex">\(A\)</span> 就是操作数）</td>
+<td><strong>0</strong></td>
+<td>最求极限速度，用于常量赋值</td>
+</tr>
+<tr>
+<td><strong>直接寻址</strong></td>
+<td><span class="arithmatex">\(EA = A\)</span></td>
+<td><strong>1</strong></td>
+<td>最简单的内存访问</td>
+</tr>
+<tr>
+<td><strong>间接寻址</strong></td>
+<td><span class="arithmatex">\(EA = (A)\)</span></td>
+<td><strong>2次及以上</strong></td>
+<td>解决扩大寻址范围和指针问题</td>
+</tr>
+<tr>
+<td><strong>寄存器寻址</strong></td>
+<td><span class="arithmatex">\(EA = R_i\)</span></td>
+<td><strong>0</strong></td>
+<td>榨干速度，数放在 CPU 肚子里</td>
+</tr>
+<tr>
+<td><strong>寄存器间寻</strong></td>
+<td><span class="arithmatex">\(EA = (R_i)\)</span></td>
+<td><strong>1</strong></td>
+<td>高效访存的折中王牌，指针的底层</td>
+</tr>
+<tr>
+<td><strong>基址寻址</strong></td>
+<td><span class="arithmatex">\(EA = (BR) + A\)</span></td>
+<td><strong>1</strong></td>
+<td>操作系统管的，解决<strong>程序整体搬家（重定位）</strong></td>
+</tr>
+<tr>
+<td><strong>变址寻址</strong></td>
+<td><span class="arithmatex">\(EA = (IX) + A\)</span></td>
+<td><strong>1</strong></td>
+<td>程序员管的，专门用于<strong>数组和循环遍历</strong></td>
+</tr>
+<tr>
+<td><strong>相对寻址</strong></td>
+<td><span class="arithmatex">\(EA = (\text{更新后的}PC) + A\)</span></td>
+<td><strong>1</strong></td>
+<td>解决<strong>代码局部内跳转（if/while）</strong></td>
+</tr>
+<tr>
+<td><strong>堆栈寻址</strong></td>
+<td><span class="arithmatex">\(EA = SP\)</span></td>
+<td><strong>1</strong></td>
+<td>零地址指令、函数嵌套与表达式求值</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_32">机器语言<a class="headerlink" href="#_32" title="Permanent link">&para;</a></h2>
+<h3 id="x86">X86<a class="headerlink" href="#x86" title="Permanent link">&para;</a></h3>
+<h4 id="_33">寄存器<a class="headerlink" href="#_33" title="Permanent link">&para;</a></h4>
+<p><code>32bit</code>大小。</p>
+<p><a class="glightbox" href="image/寄存器.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="image/寄存器.png" style="zoom: 50%;" /></a></p>
+<p>需要注意的是：</p>
+<p><code>EBP</code>：指向的是<strong>栈帧的底部</strong></p>
+<p><code>ESP</code>：指向的是<strong>栈帧的顶部</strong></p>
+<h5 id="_34">通用寄存器<a class="headerlink" href="#_34" title="Permanent link">&para;</a></h5>
+<ul>
+<li>如果出现 <code>AX</code> <code>BX</code> <code>CX</code> 意味着通用寄存器我们使用低<code>16bit</code>。</li>
+<li><code>AX</code>可以被分为 <code>AH</code> <code>AL</code> 意味着使用指定 <code>8bit</code>ss</li>
+</ul>
+<p>另外两种寄存器，只能固定使用<code>32bit</code>。</p>
+<blockquote>
+<p><code>move eax [ebx]</code>  <code>move eax ebx</code> 的区别，这里的 <code>[]</code>相当于 C 当中的 <code>*</code>取地址符。</p>
+<p>前者是取ebx<strong>所存地址的值</strong>给eax，后者是<strong>ebx所存值</strong>直接给eax</p>
+</blockquote>
+<h4 id="_35">汇编语言格式<a class="headerlink" href="#_35" title="Permanent link">&para;</a></h4>
+<h5 id="intel">Intel<a class="headerlink" href="#intel" title="Permanent link">&para;</a></h5>
+<p><code>OP d s</code> s是<strong>源操作数</strong>，d是<strong>目的操作数</strong>。也就是最后的结果会写入到 d 当中。</p>
+<h5 id="att">AT&amp;T<a class="headerlink" href="#att" title="Permanent link">&para;</a></h5>
+<p><a class="glightbox" href="image\汇编格式对照表.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="image\汇编格式对照表.png" alt="image-20260706151338834" style="zoom: 80%;" /></a></p>
+<h3 id="_36">选择语句<a class="headerlink" href="#_36" title="Permanent link">&para;</a></h3>
+<p><code>PC</code>（Program Counter） = <code>IP</code>（Instruction Pointer）</p>
+<h4 id="_37">无条件跳转<a class="headerlink" href="#_37" title="Permanent link">&para;</a></h4>
+<p><code>JMP</code>的形式多样。</p>
+<ul>
+<li><code>JMP 128</code> 可以用 [常数] 跳转到地址，</li>
+<li><code>JMP eax</code>，也可以用寄存器</li>
+<li><code>JMP [999]</code>，地址也可以来自于主存。 </li>
+<li><code>JMP NEXT</code>，也可以用标号锚定。</li>
+</ul>
+<h4 id="_38">条件转移<a class="headerlink" href="#_38" title="Permanent link">&para;</a></h4>
+<p><a class="glightbox" href="image\条件跳转.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="image\条件跳转.png" alt="image-20260706152008719" style="zoom: 50%;" /></a></p>
+<h3 id="_39">循环语句<a class="headerlink" href="#_39" title="Permanent link">&para;</a></h3>
+<p>可以用条件转移实现循环。用四个部分构成：</p>
+<ol>
+<li>循环前初始化</li>
+<li>用条件转移判断是否直接跳过</li>
+<li>循环主语句</li>
+<li>是否继续循环</li>
+</ol>
+<div class="language-asm highlight"><span class="filename">GAS</span><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><a href="#__codelineno-0-1"><span class="linenos" data-linenos=" 1 "></span></a><span class="c1"># 初始化</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a><a href="#__codelineno-0-2"><span class="linenos" data-linenos=" 2 "></span></a><span class="nf">mov</span><span class="w"> </span><span class="no">eax</span><span class="p">,</span><span class="mi">0</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a><a href="#__codelineno-0-3"><span class="linenos" data-linenos=" 3 "></span></a><span class="nf">mov</span><span class="w"> </span><span class="no">edx</span><span class="p">,</span><span class="mi">1</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a><a href="#__codelineno-0-4"><span class="linenos" data-linenos=" 4 "></span></a><span class="c1"># 第一次判断</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a><a href="#__codelineno-0-5"><span class="linenos" data-linenos=" 5 "></span></a><span class="nf">cmp</span><span class="w"> </span><span class="no">edx</span><span class="p">,</span><span class="mi">100</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a><a href="#__codelineno-0-6"><span class="linenos" data-linenos=" 6 "></span></a><span class="nf">jg</span><span class="w"> </span><span class="no">L2</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7"></a><a href="#__codelineno-0-7"><span class="linenos" data-linenos=" 7 "></span></a><span class="c1"># 循环主体</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8"></a><a href="#__codelineno-0-8"><span class="linenos" data-linenos=" 8 "></span></a><span class="nl">L1:</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9"></a><a href="#__codelineno-0-9"><span class="linenos" data-linenos=" 9 "></span></a><span class="nf">add</span><span class="w"> </span><span class="no">eax</span><span class="p">,</span><span class="w"> </span><span class="no">edx</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10"></a><a href="#__codelineno-0-10"><span class="linenos" data-linenos="10 "></span></a><span class="nf">inc</span><span class="w"> </span><span class="no">edx</span><span class="w">   </span><span class="c1"># 自增</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11"></a><a href="#__codelineno-0-11"><span class="linenos" data-linenos="11 "></span></a><span class="c1"># 是否继续循环 </span>
+<a id="__codelineno-0-12" name="__codelineno-0-12"></a><a href="#__codelineno-0-12"><span class="linenos" data-linenos="12 "></span></a><span class="nf">cpm</span><span class="w"> </span><span class="no">edx</span><span class="p">,</span><span class="mi">100</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13"></a><a href="#__codelineno-0-13"><span class="linenos" data-linenos="13 "></span></a><span class="nf">jle</span><span class="w"> </span><span class="no">L1</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14"></a><a href="#__codelineno-0-14"><span class="linenos" data-linenos="14 "></span></a><span class="nl">L2:</span>
+</code></pre></div>
+<h4 id="loop">loop指令执行<a class="headerlink" href="#loop" title="Permanent link">&para;</a></h4>
+<p>指定使用 <code>ecx</code> 作为循环计数器。整体结构如下</p>
+<div class="language-asm highlight"><span class="filename">GAS</span><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><a href="#__codelineno-1-1"><span class="linenos" data-linenos="1 "></span></a><span class="nf">mov</span><span class="w"> </span><span class="no">ecx</span><span class="p">,</span><span class="mi">500</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a><a href="#__codelineno-1-2"><span class="linenos" data-linenos="2 "></span></a><span class="nl">Looptop:</span><span class="w">  </span><span class="c1"># 循环开始</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a><a href="#__codelineno-1-3"><span class="linenos" data-linenos="3 "></span></a>
+<a id="__codelineno-1-4" name="__codelineno-1-4"></a><a href="#__codelineno-1-4"><span class="linenos" data-linenos="4 "></span></a><span class="na">....</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5"></a><a href="#__codelineno-1-5"><span class="linenos" data-linenos="5 "></span></a>
+<a id="__codelineno-1-6" name="__codelineno-1-6"></a><a href="#__codelineno-1-6"><span class="linenos" data-linenos="6 "></span></a><span class="nf">loop</span><span class="w"> </span><span class="no">Looptop</span>
+</code></pre></div>
+<p><code>loop Looptop</code> 本质等价于</p>
+<div class="language-asm highlight"><span class="filename">GAS</span><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><a href="#__codelineno-2-1"><span class="linenos" data-linenos="1 "></span></a><span class="nf">dec</span><span class="w"> </span><span class="no">ecx</span><span class="w"> </span><span class="c1"># ecx -- </span>
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a><a href="#__codelineno-2-2"><span class="linenos" data-linenos="2 "></span></a><span class="nf">cmp</span><span class="w"> </span><span class="no">ecx</span><span class="p">,</span><span class="mi">0</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a><a href="#__codelineno-2-3"><span class="linenos" data-linenos="3 "></span></a><span class="nf">jne</span><span class="w"> </span><span class="no">Looptop</span>
+</code></pre></div>
+<p>采用<code>loop</code>指令的情况下，所用的寄存器<strong>一定是<code>ecx</code></strong>，不能用其他寄存器。</p>
+<p><code>loop</code>的意义：尽管我们可以用条件跳转实现等价的循环，但<code>loop</code>的好处还是其更为简洁。</p>
+<h3 id="_40">函数调用<a class="headerlink" href="#_40" title="Permanent link">&para;</a></h3>
+<p>在进行函数调用的时候，系统会为程序分配一个<strong>函数调用栈</strong></p>
+<p>在程序调用一次函数后，就会把函数的<strong>栈帧</strong>压入到栈区，直到函数<code>return</code>之后，才会被弹出栈区。</p>
+<blockquote>
+<p>所以在多个函数调用所组成的程序中（调用中包含调用，<strong>包括递归</strong>）</p>
+<p>不断调用会将栈帧不断压入栈区（栈区会不断生长，向着低地址生长。）</p>
+<p>而最新调用的函数一定是最先<code>return</code>的，也就是栈顶弹出</p>
+</blockquote>
+<p><strong>栈帧 Stake Frame</strong>：保存函数大括号内定义的局部变量、函数的调用相关信息</p>
+<p>调用指令 <code>call</code> 返回指令 <code>ret</code></p>
+<div class="language-asm highlight"><span class="filename">GAS</span><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><a href="#__codelineno-3-1"><span class="linenos" data-linenos="1 "></span></a><span class="nl">caller:</span><span class="w"> </span><span class="c1"># 用函数名作为标号置于函数开始</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2"></a><a href="#__codelineno-3-2"><span class="linenos" data-linenos="2 "></span></a><span class="err">····</span><span class="w"> </span><span class="c1"># 一系列初始化和操作</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3"></a><a href="#__codelineno-3-3"><span class="linenos" data-linenos="3 "></span></a><span class="nf">call</span><span class="w"> </span><span class="no">add</span><span class="w"> </span><span class="c1"># 调用另一个函数</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4"></a><a href="#__codelineno-3-4"><span class="linenos" data-linenos="4 "></span></a><span class="err">····</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5"></a><a href="#__codelineno-3-5"><span class="linenos" data-linenos="5 "></span></a><span class="nf">ret</span><span class="w"> </span><span class="c1"># 返回，结束调用</span>
+</code></pre></div>
+<p><code>call</code>指令的作用：</p>
+<ul>
+<li>将<code>IP</code>旧值压栈保存（保存在当前栈帧顶部）</li>
+<li>设置<code>IP</code>新值，无条件跳转至被调用函数的第一条指令 </li>
+</ul>
+<p><code>ret</code>指令：</p>
+<ul>
+<li>从函数栈帧的顶部找到<code>IP</code>旧值，将其出栈并恢复<code>IP</code>寄存器</li>
+</ul>
+<h4 id="_41">访问栈帧里的数据<a class="headerlink" href="#_41" title="Permanent link">&para;</a></h4>
+<p><code>ebp</code>：指向了栈帧的底部</p>
+<p><code>esp</code>：指向了栈帧的顶部</p>
+<h5 id="_42">方法一：<a class="headerlink" href="#_42" title="Permanent link">&para;</a></h5>
+<p>在<code>x86</code>系统中，默认都是以 <code>4byte</code> 作为栈的操作单位：</p>
+<ul>
+<li>所以栈帧是以4字节<strong>作为基本存储单位</strong>的</li>
+<li><code>Pop</code>和<code>Push</code>两个栈操作也是以4字节<strong>作为基本操作单位</strong> </li>
+<li><code>Push</code>的操作数可以是<strong>立即数</strong>、<strong>寄存器</strong>、<strong>主存地址</strong></li>
+<li><code>Pop</code>的操作数可以是<strong>寄存器</strong>、<strong>主存地址</strong>（少一个立即数）</li>
+</ul>
+<p>注意：<strong><code>pop</code>后面跟的操作数，是用来存储弹出数据的地址</strong></p>
+<blockquote>
+<p>push 和 pop的这种差距的原因是：</p>
+<p>push是将数据压入栈区，数据的来源可以是立即数，也可以是地址的数据</p>
+<p>而Pop是将栈区的数据弹出，<strong>数据存储到操作数中</strong>，所以操作数应该是一个地址</p>
+</blockquote>
+<h5 id="_43">方法二：<a class="headerlink" href="#_43" title="Permanent link">&para;</a></h5>
+<p>用<code>mov</code>指令，结合<code>esp</code>、<code>ebp</code>指针访问栈帧数据</p>
+<p>采用加减法指令，修改栈顶esp的值。</p>
+<h4 id="_44">切换栈帧<a class="headerlink" href="#_44" title="Permanent link">&para;</a></h4>
+<h5 id="call">执行<code>Call</code>指令的时候：<a class="headerlink" href="#call" title="Permanent link">&para;</a></h5>
+<ul>
+<li><code>IP</code>旧值压入栈中，压在当前的栈帧的栈顶（被视作当前栈帧的一部分，而非被调用栈帧的一部分）。</li>
+<li>设置<code>IP</code>的新值，无条件跳转到<strong>被调用函数</strong>的第一条指令</li>
+</ul>
+<p>对于 <code>esp</code>和 <code>ebp</code> 而言：</p>
+<ul>
+<li>
+<p>首先将 <code>ebp</code> 的地址信息<code>push</code>到栈顶</p>
+</li>
+<li>
+<p>再将 <code>esp</code>的值赋值给<code>ebp</code></p>
+</li>
+</ul>
+<div class="language-asm highlight"><span class="filename">GAS</span><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><a href="#__codelineno-4-1"><span class="linenos" data-linenos="1 "></span></a><span class="nf">push</span><span class="w"> </span><span class="no">ebp</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2"></a><a href="#__codelineno-4-2"><span class="linenos" data-linenos="2 "></span></a><span class="nf">mov</span><span class="w"> </span><span class="no">ebp</span><span class="w"> </span><span class="no">esp</span>
+</code></pre></div>
+<p>这两行指令等价于<code>enter</code>，<code>enter</code>无需任何操作数。</p>
+<ul>
+<li>也就是栈帧底部存储函数信息前，存储了<strong><code>IP</code>旧值</strong>和<strong>上一个函数的栈帧基址</strong></li>
+</ul>
+<p>可见栈帧的底部，存储的内容都是上一个函数栈帧的基址。<code>esp</code>的值不需要管，有东西<code>push</code>进栈，CPU中自然会给其更新。</p>
+<h5 id="ret">执行<code>ret</code>指令的时候：<a class="headerlink" href="#ret" title="Permanent link">&para;</a></h5>
+<ul>
+<li>让<code>esp</code>达到目前基址，再将<strong>栈顶的值弹出存入<code>ebp</code></strong></li>
+</ul>
+<div class="language-asm highlight"><span class="filename">GAS</span><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><a href="#__codelineno-5-1"><span class="linenos" data-linenos="1 "></span></a><span class="nf">mov</span><span class="w"> </span><span class="no">esp</span><span class="p">,</span><span class="no">ebp</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2"></a><a href="#__codelineno-5-2"><span class="linenos" data-linenos="2 "></span></a><span class="nf">pop</span><span class="w"> </span><span class="no">ebp</span>
+</code></pre></div>
+<blockquote>
+<p>在栈帧中<code>ebp</code>作为寄存器，其本身存储的就是<strong>当前栈帧的基址</strong>。（存储的是地址编码）</p>
+<p>而当前栈帧的基址存储着<strong>上一个栈帧的基址</strong></p>
+<p>这也是为什么，让<code>ebp</code>成为栈顶后，弹出的信息可以让<code>ebp</code>再次指向上一个基址。</p>
+</blockquote>
+<p>这两条指令等价于 <code>leave</code>，也无需操作数</p>
+<ul>
+<li>最后，<strong>从当前栈顶 <code>esp</code>找到<code>IP</code>旧值，恢复到<code>IP</code>寄存器</strong></li>
+</ul>
+<h4 id="_45">栈帧包含的内容<a class="headerlink" href="#_45" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>栈底</strong>是上一个栈帧的基址</li>
+<li><strong>栈顶</strong>是<code>IP</code>旧值</li>
+</ul>
+<p>最靠近<strong>栈底</strong>的部分是<strong>局部变量</strong>。不一定存在</p>
+<ul>
+<li>访问当前函数的局部变量通常采用，<code>[ebp - a]</code></li>
+</ul>
+<p>最靠近<strong>栈顶</strong>的部分是<strong>调用参数</strong>，不一定存在，有些函数调用不需要传参。同时这个调用参数，<strong>是给这个函数所调用的函数使用的</strong>。</p>
+<ul>
+<li>访问当前函数的调用参数，通常采用 <code>[ebp + a]</code> 存储在<strong>在上个函数当中</strong>。</li>
+</ul>
+<div class="language-c++ highlight"><span class="filename">C++</span><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><a href="#__codelineno-6-1"><span class="linenos" data-linenos="1 "></span></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2"></a><a href="#__codelineno-6-2"><span class="linenos" data-linenos="2 "></span></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3"></a><a href="#__codelineno-6-3"><span class="linenos" data-linenos="3 "></span></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w">   </span><span class="c1">// 这里的a b就是局部变量</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4"></a><a href="#__codelineno-6-4"><span class="linenos" data-linenos="4 "></span></a><span class="w">    </span><span class="n">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">);</span><span class="w">  </span><span class="c1">// 这里的a b就是调用参数</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5"></a><a href="#__codelineno-6-5"><span class="linenos" data-linenos="5 "></span></a><span class="p">}</span>
+</code></pre></div>
+<p><a class="glightbox" href="image\栈帧.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="image\栈帧.png" alt="image-20260706194302739" style="zoom:67%;" /></a></p>
+<p>gcc编译器，将每个栈帧的大小设置为<code>16B</code>的整数倍（<strong>当前的函数栈帧除外</strong>）</p>
+<h2 id="ciscrisc">CISC和RISC<a class="headerlink" href="#ciscrisc" title="Permanent link">&para;</a></h2>
+<p><strong>复杂指令集</strong>和<strong>精简指令集</strong>。</p>
+<p><strong>80-20规律</strong>：程序中80%的语句仅仅使用了20%的指令（CISC）。也就是20%的CISC指令是常用的。</p>
+<p><a class="glightbox" href="../image/CISC%E5%92%8CRISC.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image-20260707203122735" src="../image/CISC%E5%92%8CRISC.png" /></a></p>
+<p>乘法指令可以访存，一定是CISC（即同时完成访存和乘运算的指令）</p>
+<p>RISC仅含Load和Store是无法做到的。</p>
 
 
 
@@ -1868,7 +2306,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2026年6月29日 15:05:26 CST"><span class="timeago" datetime="2026-06-29T15:05:26+08:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2026年6月29日 15:05:26 CST">2026-06-29</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2026年7月16日 19:20:36 CST"><span class="timeago" datetime="2026-07-16T19:20:36+08:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2026年7月16日 19:20:36 CST">2026-07-16</span>
   </span>
 
     
@@ -1878,7 +2316,7 @@
     <span class="md-icon" title="创建日期">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2026年6月29日 15:05:26 CST"><span class="timeago" datetime="2026-06-29T15:05:26+08:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2026年6月29日 15:05:26 CST">2026-06-29</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2026年7月16日 19:20:36 CST"><span class="timeago" datetime="2026-07-16T19:20:36+08:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2026年7月16日 19:20:36 CST">2026-07-16</span>
   </span>
 
     
