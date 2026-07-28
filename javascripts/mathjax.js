@@ -1,13 +1,24 @@
 window.MathJax = {
   tex: {
-    inlineMath: [["\\(", "\\)"]],
-    displayMath: [["\\[", "\\]"]],
+    inlineMath: [["\\(", "\\)"], ["$", "$"]],
+    displayMath: [["\\[", "\\]"], ["$$", "$$"]],
     processEscapes: true,
-    processEnvironments: true
+    processEnvironments: true,
+    packages: { '[+]': ['ams', 'noerrors', 'noundefined'] }
   },
   options: {
     ignoreHtmlClass: ".*|",
-    processHtmlClass: "arithmatex"
+    processHtmlClass: "arithmatex",
+    enableMenu: false
+  },
+  loader: {
+    load: ['[tex]/ams', '[tex]/noerrors', '[tex]/noundefined']
+  },
+  startup: {
+    typeset: false,
+    pageReady() {
+      return MathJax.typesetPromise();
+    }
   }
 };
 
