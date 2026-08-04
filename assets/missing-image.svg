@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="480" viewBox="0 0 960 480" role="img" aria-labelledby="title desc">
+  <title id="title">图片资源缺失</title>
+  <desc id="desc">原始本地图片文件未随笔记仓库提交。</desc>
+  <rect width="960" height="480" rx="28" fill="#f8fafc"/>
+  <rect x="36" y="36" width="888" height="408" rx="22" fill="none" stroke="#cbd5e1" stroke-width="4" stroke-dasharray="16 14"/>
+  <circle cx="270" cy="180" r="44" fill="#cbd5e1"/>
+  <path d="M168 344l138-138 86 86 56-56 184 184H168z" fill="#e2e8f0"/>
+  <text x="480" y="206" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="38" font-weight="700" fill="#475569">图片资源缺失</text>
+  <text x="480" y="264" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="24" fill="#64748b">原 Typora 本地缓存图未提交，已用占位图避免页面破图</text>
+</svg>
