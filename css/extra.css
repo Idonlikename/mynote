@@ -159,13 +159,10 @@
   -webkit-overflow-scrolling: touch;
 }
 
-.md-typeset .arithmatex > * {
-  display: inline-block;
-  min-width: 100%;
-}
-
-/* 行间公式垂直间距 */
-.md-typeset div.arithmatex {
+/* 行间公式保持可横向滚动，行内公式不强制占满整行 */
+.md-typeset .arithmatex .katex-display {
+  overflow-x: auto;
+  overflow-y: hidden;
   padding: 0.5em 0;
 }
 
