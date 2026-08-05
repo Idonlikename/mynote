@@ -2,10 +2,10 @@
 
 /* ============ 主题色 / 字体 ============ */
 :root {
-  --md-primary-fg-color:        #3f51b5;
-  --md-primary-fg-color--light: #5c6bc0;
-  --md-primary-fg-color--dark:  #303f9f;
-  --md-accent-fg-color:         #536dfe;
+  --md-primary-fg-color:        #0f766e;
+  --md-primary-fg-color--light: #0d9488;
+  --md-primary-fg-color--dark:  #115e59;
+  --md-accent-fg-color:         #d97706;
   --md-code-font: "JetBrains Mono", "Noto Sans SC", monospace;
 }
 
@@ -23,7 +23,6 @@
 /* ============ 标题层级强化 ============ */
 .md-typeset h1 {
   font-weight: 700;
-  letter-spacing: 0.5px;
 }
 
 .md-typeset h2 {
@@ -119,21 +118,21 @@
 }
 .md-typeset .md-button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(63, 81, 181, 0.3);
+  box-shadow: 0 6px 16px rgba(15, 118, 110, 0.24);
 }
 
 /* ============ 首页网格卡片 ============ */
 .md-typeset .grid.cards > ul > li,
 .md-typeset .grid > .card {
-  border-radius: 12px;
+  border-radius: 8px;
   border: 1px solid var(--md-default-fg-color--lightest);
   padding: 1.2rem;
   transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 }
 .md-typeset .grid.cards > ul > li:hover,
 .md-typeset .grid > .card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 28px rgba(63, 81, 181, 0.18);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 22px rgba(15, 118, 110, 0.14);
   border-color: var(--md-accent-fg-color);
 }
 
@@ -170,4 +169,100 @@
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(8px); }
   to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ============ 首页与分区入口 ============ */
+.md-typeset .home-hero,
+.md-typeset .index-hero {
+  margin: 0 0 2rem;
+  padding: 1.25rem 1.5rem 1.4rem;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-left: 4px solid var(--md-primary-fg-color);
+  border-radius: 0 8px 8px 0;
+  background: var(--md-code-bg-color);
+}
+
+.md-typeset .home-hero h2,
+.md-typeset .index-hero h2 {
+  margin: 0.35rem 0 0.65rem;
+  padding: 0;
+  border: 0;
+  font-size: 1.55rem;
+}
+
+.md-typeset .home-hero p:last-child,
+.md-typeset .index-hero p:last-child {
+  margin-bottom: 0;
+  color: var(--md-default-fg-color--light);
+}
+
+.md-typeset .index-eyebrow {
+  color: var(--md-accent-fg-color);
+  font-size: 0.72rem;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.md-typeset .index-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin: 0 0 2rem;
+  border-top: 1px solid var(--md-default-fg-color--lightest);
+  border-bottom: 1px solid var(--md-default-fg-color--lightest);
+}
+
+.md-typeset .index-stat {
+  min-height: 5.25rem;
+  padding: 0.85rem 1rem;
+  color: var(--md-default-fg-color--light);
+  font-size: 0.82rem;
+}
+
+.md-typeset .index-stat + .index-stat {
+  border-left: 1px solid var(--md-default-fg-color--lightest);
+}
+
+.md-typeset .index-stat strong {
+  display: block;
+  margin-bottom: 0.2rem;
+  color: var(--md-primary-fg-color);
+  font-size: 1.15rem;
+  line-height: 1.35;
+}
+
+.md-typeset .home-focus {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.85rem;
+  margin: 1rem 0 2rem;
+}
+
+.md-typeset .home-focus > div {
+  padding: 1rem 1.1rem;
+  border-top: 3px solid var(--md-primary-fg-color);
+  background: var(--md-code-bg-color);
+}
+
+.md-typeset .home-focus strong {
+  color: var(--md-default-fg-color);
+}
+
+.md-typeset .home-focus p:last-child {
+  margin-bottom: 0;
+}
+
+@media screen and (max-width: 700px) {
+  .md-typeset .home-hero,
+  .md-typeset .index-hero {
+    padding: 1rem 1.1rem 1.15rem;
+  }
+
+  .md-typeset .home-hero h2,
+  .md-typeset .index-hero h2 {
+    font-size: 1.3rem;
+  }
+
+  .md-typeset .home-focus {
+    grid-template-columns: 1fr;
+  }
 }
