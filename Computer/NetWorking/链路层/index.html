@@ -87,6 +87,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#_2" class="md-skip">
+          跳转至
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -1365,6 +1370,17 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    链路层
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -1374,6 +1390,77 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      帧的基本结构
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      组帧与透明传输
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      差错检测
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      介质访问控制
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      交换机
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vlan" class="md-nav__link">
+    <span class="md-ellipsis">
+      VLAN
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -3224,6 +3311,68 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      帧的基本结构
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      组帧与透明传输
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      差错检测
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      介质访问控制
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      交换机
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vlan" class="md-nav__link">
+    <span class="md-ellipsis">
+      VLAN
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -3240,9 +3389,52 @@
   
 
 
-  <h1>链路层</h1>
-
-
+<h1 id="_1">链路层<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<p>链路层负责在相邻节点之间传输帧。它把网络层交来的 IP 分组封装成帧，并处理帧定界、差错检测、介质访问和局域网内转发。</p>
+<h2 id="_2">帧的基本结构<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>以太网帧通常包含目的 MAC 地址、源 MAC 地址、类型或长度字段、数据和帧校验序列 <code>FCS</code>。</p>
+<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><a href="#__codelineno-0-1"><span class="linenos" data-linenos="1 "></span></a>前导码 | 目的 MAC | 源 MAC | 类型 | 数据 | FCS
+</code></pre></div>
+<p>MAC 地址通常为 48 位。广播地址是全 1，多播地址用于把帧交给一组接口。</p>
+<h2 id="_3">组帧与透明传输<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>接收方必须知道一个帧从哪里开始、在哪里结束，这个过程叫帧定界。常见方法包括：</p>
+<ul>
+<li>字符计数法：首部记录帧长度，长度字段出错会影响后续帧的识别。</li>
+<li>字符填充：用特殊字符表示边界，数据中出现相同字符时进行转义。</li>
+<li>零比特填充：标志字段使用固定比特串，数据中出现相同模式时插入额外比特。</li>
+<li>违规编码：利用物理层没有定义的编码组合表示边界。</li>
+</ul>
+<h2 id="_4">差错检测<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>链路层常用 CRC 检测帧在传输过程中是否发生比特错误。发送方将数据看作一个二进制多项式，用约定的生成多项式相除，把余数附在帧尾；接收方重复计算并检查余数。</p>
+<p>CRC 能检测出许多常见错误，但通常只负责发现错误，不负责恢复错误。是否重传由上层协议或链路层协议决定。</p>
+<h2 id="_5">介质访问控制<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<p>多个设备共享一条介质时，必须决定谁可以发送：</p>
+<ul>
+<li><strong>信道划分</strong>：按频率、时间或码片把信道划分给不同用户。</li>
+<li><strong>随机访问</strong>：设备竞争信道，发生冲突后退避重试。</li>
+<li><strong>轮询访问</strong>：由控制节点依次询问设备。</li>
+</ul>
+<p>传统共享式以太网使用 CSMA/CD 检测冲突；现代交换式全双工以太网通常不会发生同一链路上的冲突。</p>
+<h2 id="_6">交换机<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<p>交换机通过自学习建立 MAC 地址表。收到帧时：</p>
+<ol>
+<li>把源 MAC 和接收端口写入地址表。</li>
+<li>查询目的 MAC 对应的端口。</li>
+<li>如果查到且不是入端口，只从对应端口转发。</li>
+<li>如果查不到或目的地址是广播，则向其他端口泛洪。</li>
+</ol>
+<p>交换机隔离冲突域，但默认不会隔离广播域；路由器或 VLAN 可以划分广播域。</p>
+<h2 id="vlan">VLAN<a class="headerlink" href="#vlan" title="Permanent link">&para;</a></h2>
+<p>VLAN 在逻辑上把一个物理局域网分成多个广播域。交换机端口可以配置为：</p>
+<ul>
+<li><strong>Access</strong>：连接终端，通常只属于一个 VLAN，发送普通以太网帧。</li>
+<li><strong>Trunk</strong>：连接交换机或路由器，使用标签携带 VLAN 编号。</li>
+</ul>
+<p>VLAN 能减少广播范围，也能按部门、业务或安全边界组织网络，但不同 VLAN 之间通信仍需要三层设备转发。</p>
+<div class="admonition tip">
+<p class="admonition-title">排错提示</p>
+<p>同一局域网内访问失败时，先检查网线、网卡和交换机端口，再检查 VLAN、MAC 地址表和 ARP 缓存，最后才检查路由和应用服务。</p>
+</div>
 
 
 

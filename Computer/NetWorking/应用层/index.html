@@ -87,6 +87,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#http" class="md-skip">
+          跳转至
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -1302,6 +1307,17 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    应用层
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -1311,6 +1327,92 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#http" class="md-nav__link">
+    <span class="md-ellipsis">
+      HTTP
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="HTTP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      请求和响应
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      常用方法
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      状态码
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dns" class="md-nav__link">
+    <span class="md-ellipsis">
+      DNS
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#https-tls" class="md-nav__link">
+    <span class="md-ellipsis">
+      HTTPS 与 TLS
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      应用层排错顺序
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -3224,6 +3326,83 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#http" class="md-nav__link">
+    <span class="md-ellipsis">
+      HTTP
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="HTTP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      请求和响应
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      常用方法
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      状态码
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dns" class="md-nav__link">
+    <span class="md-ellipsis">
+      DNS
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#https-tls" class="md-nav__link">
+    <span class="md-ellipsis">
+      HTTPS 与 TLS
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      应用层排错顺序
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -3240,9 +3419,124 @@
   
 
 
-  <h1>应用层</h1>
-
-
+<h1 id="_1">应用层<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<p>应用层负责定义应用进程之间交换数据的格式和规则。它不直接负责把数据送到对端，而是通过传输层提供的端口和连接完成通信。</p>
+<h2 id="http">HTTP<a class="headerlink" href="#http" title="Permanent link">&para;</a></h2>
+<p>HTTP 是 Web 应用最常见的应用层协议，采用请求-响应模型。客户端发送请求，服务器处理请求后返回响应。</p>
+<h3 id="_2">请求和响应<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p>一个 HTTP 请求通常由请求行、请求头、空行和可选的请求体组成。</p>
+<div class="language-http highlight"><span class="filename">HTTP</span><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><a href="#__codelineno-0-1"><span class="linenos" data-linenos="1 "></span></a><span class="nf">GET</span> <span class="nn">/index.html</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a><a href="#__codelineno-0-2"><span class="linenos" data-linenos="2 "></span></a><span class="na">Host</span><span class="o">:</span> <span class="l">example.com</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a><a href="#__codelineno-0-3"><span class="linenos" data-linenos="3 "></span></a><span class="na">Accept</span><span class="o">:</span> <span class="l">text/html</span>
+</code></pre></div>
+<p>响应包含状态行、响应头和响应体：</p>
+<div class="language-http highlight"><span class="filename">HTTP</span><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><a href="#__codelineno-1-1"><span class="linenos" data-linenos="1 "></span></a><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a><a href="#__codelineno-1-2"><span class="linenos" data-linenos="2 "></span></a><span class="na">Content-Type</span><span class="o">:</span> <span class="l">text/html; charset=utf-8</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a><a href="#__codelineno-1-3"><span class="linenos" data-linenos="3 "></span></a><span class="na">Content-Length</span><span class="o">:</span> <span class="l">42</span>
+</code></pre></div>
+<h3 id="_3">常用方法<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>作用</th>
+<th>是否幂等</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>GET</code></td>
+<td>获取资源</td>
+<td>是</td>
+</tr>
+<tr>
+<td><code>POST</code></td>
+<td>提交数据或创建资源</td>
+<td>否</td>
+</tr>
+<tr>
+<td><code>PUT</code></td>
+<td>完整替换资源</td>
+<td>是</td>
+</tr>
+<tr>
+<td><code>PATCH</code></td>
+<td>部分修改资源</td>
+<td>通常不是</td>
+</tr>
+<tr>
+<td><code>DELETE</code></td>
+<td>删除资源</td>
+<td>是</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_4">状态码<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>2xx</code> 表示请求成功，常见的是 <code>200 OK</code>、<code>201 Created</code>。</li>
+<li><code>3xx</code> 表示重定向，例如 <code>301</code>、<code>302</code> 和 <code>304</code>。</li>
+<li><code>4xx</code> 表示客户端请求有问题，例如 <code>400</code>、<code>401</code>、<code>403</code>、<code>404</code>。</li>
+<li><code>5xx</code> 表示服务器处理失败，例如 <code>500</code> 和 <code>502</code>。</li>
+</ul>
+<h2 id="dns">DNS<a class="headerlink" href="#dns" title="Permanent link">&para;</a></h2>
+<p>DNS 把便于记忆的域名转换为 IP 地址。解析通常从本地域名服务器开始，缓存未命中时再沿根域名服务器、顶级域名服务器和权威域名服务器查询。</p>
+<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><a href="#__codelineno-2-1"><span class="linenos" data-linenos="1 "></span></a>浏览器缓存 -&gt; 操作系统缓存 -&gt; 本地 DNS -&gt; 根 DNS
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a><a href="#__codelineno-2-2"><span class="linenos" data-linenos="2 "></span></a>                                      -&gt; 顶级域 DNS
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a><a href="#__codelineno-2-3"><span class="linenos" data-linenos="3 "></span></a>                                      -&gt; 权威 DNS
+</code></pre></div>
+<p>常见记录包括：</p>
+<table>
+<thead>
+<tr>
+<th>记录</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>A</code></td>
+<td>域名到 IPv4 地址</td>
+</tr>
+<tr>
+<td><code>AAAA</code></td>
+<td>域名到 IPv6 地址</td>
+</tr>
+<tr>
+<td><code>CNAME</code></td>
+<td>别名到规范域名</td>
+</tr>
+<tr>
+<td><code>MX</code></td>
+<td>邮件服务器</td>
+</tr>
+<tr>
+<td><code>TXT</code></td>
+<td>文本信息，常用于验证和安全策略</td>
+</tr>
+</tbody>
+</table>
+<h2 id="https-tls">HTTPS 与 TLS<a class="headerlink" href="#https-tls" title="Permanent link">&para;</a></h2>
+<p>HTTPS 可以理解为 HTTP over TLS。TLS 负责身份认证、机密性和完整性：</p>
+<ol>
+<li>客户端和服务器协商协议版本与密码套件。</li>
+<li>服务器发送证书，客户端验证证书链和域名。</li>
+<li>双方通过密钥交换得到会话密钥。</li>
+<li>后续 HTTP 数据使用对称加密传输。</li>
+</ol>
+<p>证书验证失败、域名不匹配或系统时间错误，都会导致浏览器提示连接不安全。</p>
+<h2 id="_5">应用层排错顺序<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<p>访问一个网站失败时，可以按下面的顺序缩小范围：</p>
+<ol>
+<li>用 <code>ping</code> 或 <code>ipconfig</code> 检查本机网络配置。</li>
+<li>用 <code>nslookup example.com</code> 检查 DNS 解析。</li>
+<li>用 <code>curl -I https://example.com</code> 检查 HTTP 响应。</li>
+<li>用浏览器开发者工具检查请求方法、状态码和响应头。</li>
+<li>如果是 HTTPS，再检查证书、代理和系统时间。</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">应用层和传输层的区别</p>
+<p>HTTP、DNS 和 SMTP 规定的是应用数据如何组织；TCP 和 UDP 规定的是这些数据如何在进程之间传输。端口号把应用进程与传输层连接起来。</p>
+</div>
 
 
 

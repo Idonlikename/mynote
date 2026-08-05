@@ -87,6 +87,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#io_1" class="md-skip">
+          跳转至
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -2573,6 +2578,17 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    第七章 IO系统
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -2582,6 +2598,86 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#io_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      IO 接口
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      程序查询方式
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      中断方式
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dma" class="md-nav__link">
+    <span class="md-ellipsis">
+      DMA
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#io_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      IO 通道
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      设备分类
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      典型比较
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -3230,6 +3326,77 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#io_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      IO 接口
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      程序查询方式
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      中断方式
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dma" class="md-nav__link">
+    <span class="md-ellipsis">
+      DMA
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#io_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      IO 通道
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      设备分类
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      典型比较
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -3246,9 +3413,112 @@
   
 
 
-  <h1>第七章 IO系统</h1>
-
-
+<h1 id="io">IO 系统<a class="headerlink" href="#io" title="Permanent link">&para;</a></h1>
+<p>IO 系统负责处理计算机与外部设备之间的数据交换。由于外设速度、数据格式和工作方式差异很大，CPU 通常通过 IO 接口和控制器与设备通信。</p>
+<h2 id="io_1">IO 接口<a class="headerlink" href="#io_1" title="Permanent link">&para;</a></h2>
+<p>一个典型的 IO 接口包括：</p>
+<ul>
+<li><strong>数据寄存器</strong>：暂存 CPU 和设备之间传输的数据。</li>
+<li><strong>状态寄存器</strong>：记录设备是否就绪、是否忙、是否出错。</li>
+<li><strong>控制寄存器</strong>：接收 CPU 发出的启动、停止或工作模式设置。</li>
+<li><strong>控制逻辑</strong>：协调总线、寄存器和设备之间的时序。</li>
+</ul>
+<p>CPU 可以通过统一编址或独立编址访问这些寄存器。统一编址把 IO 寄存器当作存储器地址空间的一部分；独立编址则使用专门的 IO 指令。</p>
+<h2 id="_1">程序查询方式<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>程序查询也叫程序控制 IO。CPU 反复读取设备状态，确认设备就绪后再传送数据：</p>
+<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><a href="#__codelineno-0-1"><span class="linenos" data-linenos="1 "></span></a>查询状态 -&gt; 未就绪则继续查询 -&gt; 就绪 -&gt; 传送数据 -&gt; 检查是否结束
+</code></pre></div>
+<p>优点是硬件和控制逻辑简单，缺点是 CPU 需要持续等待，设备速度较慢时会浪费大量 CPU 时间。</p>
+<h2 id="_2">中断方式<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>中断方式允许设备在准备好数据或发生异常时主动通知 CPU。CPU 响应中断后保存现场，转入中断服务程序，处理完成后恢复现场并返回被中断程序。</p>
+<p>一次中断处理通常包括：</p>
+<ol>
+<li>设备发出中断请求。</li>
+<li>CPU 在合适的边界响应中断。</li>
+<li>保存程序断点和必要的寄存器状态。</li>
+<li>根据中断类型找到中断服务程序。</li>
+<li>服务程序读写设备、清除中断请求。</li>
+<li>恢复现场并返回原程序。</li>
+</ol>
+<p>中断方式减少了无效查询，但每次中断都需要保存现场和执行服务程序。数据量很大时，频繁中断也会带来明显开销。</p>
+<h2 id="dma">DMA<a class="headerlink" href="#dma" title="Permanent link">&para;</a></h2>
+<p>DMA 适合高速、大批量的数据传送。CPU 只需要设置内存地址、传送数量和设备方向，DMA 控制器就可以直接在设备与主存之间传输数据。</p>
+<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><a href="#__codelineno-1-1"><span class="linenos" data-linenos="1 "></span></a>CPU 配置 DMA
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a><a href="#__codelineno-1-2"><span class="linenos" data-linenos="2 "></span></a>      -&gt; DMA 控制器取得总线控制权
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a><a href="#__codelineno-1-3"><span class="linenos" data-linenos="3 "></span></a>      -&gt; 设备与主存直接交换数据
+<a id="__codelineno-1-4" name="__codelineno-1-4"></a><a href="#__codelineno-1-4"><span class="linenos" data-linenos="4 "></span></a>      -&gt; DMA 完成后向 CPU 发出中断
+</code></pre></div>
+<p>DMA 传送期间可能通过周期挪用、突发传送或交替访问等方式使用总线。DMA 降低了 CPU 逐字节参与传送的开销，但会与 CPU 竞争主存和总线带宽。</p>
+<h2 id="io_2">IO 通道<a class="headerlink" href="#io_2" title="Permanent link">&para;</a></h2>
+<p>IO 通道是更独立的 IO 处理部件，可以执行一组 IO 指令或通道程序，完成设备初始化、数据传输和状态管理。它比 DMA 更灵活，适合设备种类多、控制流程复杂的系统。</p>
+<h2 id="_3">设备分类<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>分类方式</th>
+<th>类型</th>
+<th>特征</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>数据交换单位</td>
+<td>字符设备、块设备</td>
+<td>按字符或按数据块传输</td>
+</tr>
+<tr>
+<td>传输方向</td>
+<td>输入设备、输出设备、输入输出设备</td>
+<td>数据流方向不同</td>
+</tr>
+<tr>
+<td>共享方式</td>
+<td>独占设备、共享设备、虚拟设备</td>
+<td>同时使用者数量不同</td>
+</tr>
+<tr>
+<td>速度</td>
+<td>低速、中速、高速</td>
+<td>传输速率差异较大</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_4">典型比较<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>方式</th>
+<th>CPU 参与程度</th>
+<th>适用场景</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>程序查询</td>
+<td>很高</td>
+<td>简单、低速设备</td>
+</tr>
+<tr>
+<td>中断</td>
+<td>中等</td>
+<td>中小批量、事件驱动传输</td>
+</tr>
+<tr>
+<td>DMA</td>
+<td>较低</td>
+<td>高速、大批量数据传输</td>
+</tr>
+<tr>
+<td>IO 通道</td>
+<td>较低</td>
+<td>设备多、控制流程复杂</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">考试抓手</p>
+<p>查询方式的关键词是“CPU 不断查询”；中断方式的关键词是“设备准备好后通知 CPU”；DMA 的关键词是“设备和主存直接交换数据，完成后通知 CPU”。</p>
+</div>
 
 
 
@@ -3269,7 +3539,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2026年8月5日 15:13:53 CST"><span class="timeago" datetime="2026-08-05T15:13:53+08:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2026年8月5日 15:13:53 CST">2026-08-05</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2026年8月5日 15:21:01 CST"><span class="timeago" datetime="2026-08-05T15:21:01+08:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2026年8月5日 15:21:01 CST">2026-08-05</span>
   </span>
 
     

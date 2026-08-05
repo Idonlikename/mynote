@@ -87,6 +87,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#_2" class="md-skip">
+          跳转至
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -2315,6 +2320,17 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    图
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -2324,6 +2340,101 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      基本概念
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      存储方式
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="存储方式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      邻接矩阵
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      邻接表
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      图的遍历
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      拓扑排序
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      最短路径
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      最小生成树
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -3230,6 +3341,92 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      基本概念
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      存储方式
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="存储方式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      邻接矩阵
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      邻接表
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      图的遍历
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      拓扑排序
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      最短路径
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      最小生成树
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -3246,9 +3443,96 @@
   
 
 
-  <h1>图</h1>
-
-
+<h1 id="_1">图<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<p>图由顶点和边组成，用来表示对象之间的多对多关系。图可以是有向图或无向图，也可以给边附加权值表示距离、费用或时间。</p>
+<h2 id="_2">基本概念<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>顶点的度</strong>：无向图中与顶点关联的边数。</li>
+<li><strong>入度和出度</strong>：有向图中分别表示进入和离开顶点的边数。</li>
+<li><strong>路径</strong>：顶点和边交替组成的序列。</li>
+<li><strong>回路</strong>：起点和终点相同的路径。</li>
+<li><strong>连通图</strong>：任意两个顶点之间都存在路径。</li>
+<li><strong>连通分量</strong>：无向图中的极大连通子图。</li>
+<li><strong>强连通分量</strong>：有向图中任意两个顶点互相可达的极大子图。</li>
+</ul>
+<h2 id="_3">存储方式<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h3 id="_4">邻接矩阵<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>邻接矩阵使用二维数组表示边。适合顶点数量较少或需要快速判断两点是否直接相连的场景，空间复杂度为 <span class="arithmatex">\(O(V^2)\)</span>。</p>
+<h3 id="_5">邻接表<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p>邻接表为每个顶点保存相邻顶点列表，空间复杂度为 <span class="arithmatex">\(O(V+E)\)</span>，适合稀疏图。</p>
+<div class="language-cpp highlight"><span class="filename">C++</span><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><a href="#__codelineno-0-1"><span class="linenos" data-linenos="1 "></span></a><span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">pair</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="o">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">graph</span><span class="p">(</span><span class="n">n</span><span class="p">);</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a><a href="#__codelineno-0-2"><span class="linenos" data-linenos="2 "></span></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a><a href="#__codelineno-0-3"><span class="linenos" data-linenos="3 "></span></a><span class="kt">void</span><span class="w"> </span><span class="nf">addEdge</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">from</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">to</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">weight</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a><a href="#__codelineno-0-4"><span class="linenos" data-linenos="4 "></span></a><span class="w">    </span><span class="n">graph</span><span class="p">[</span><span class="n">from</span><span class="p">].</span><span class="n">push_back</span><span class="p">({</span><span class="n">to</span><span class="p">,</span><span class="w"> </span><span class="n">weight</span><span class="p">});</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a><a href="#__codelineno-0-5"><span class="linenos" data-linenos="5 "></span></a><span class="p">}</span>
+</code></pre></div>
+<h2 id="_6">图的遍历<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<p>DFS 使用递归或栈，沿一条路径尽可能深入；BFS 使用队列，按距离从近到远访问。</p>
+<div class="language-cpp highlight"><span class="filename">C++</span><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><a href="#__codelineno-1-1"><span class="linenos" data-linenos=" 1 "></span></a><span class="kt">void</span><span class="w"> </span><span class="nf">bfs</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">start</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;&amp;</span><span class="w"> </span><span class="n">graph</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a><a href="#__codelineno-1-2"><span class="linenos" data-linenos=" 2 "></span></a><span class="w">    </span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">bool</span><span class="o">&gt;</span><span class="w"> </span><span class="n">visited</span><span class="p">(</span><span class="n">graph</span><span class="p">.</span><span class="n">size</span><span class="p">(),</span><span class="w"> </span><span class="nb">false</span><span class="p">);</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a><a href="#__codelineno-1-3"><span class="linenos" data-linenos=" 3 "></span></a><span class="w">    </span><span class="n">queue</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">pending</span><span class="p">;</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4"></a><a href="#__codelineno-1-4"><span class="linenos" data-linenos=" 4 "></span></a><span class="w">    </span><span class="n">pending</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">start</span><span class="p">);</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5"></a><a href="#__codelineno-1-5"><span class="linenos" data-linenos=" 5 "></span></a><span class="w">    </span><span class="n">visited</span><span class="p">[</span><span class="n">start</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6"></a><a href="#__codelineno-1-6"><span class="linenos" data-linenos=" 6 "></span></a>
+<a id="__codelineno-1-7" name="__codelineno-1-7"></a><a href="#__codelineno-1-7"><span class="linenos" data-linenos=" 7 "></span></a><span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">pending</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8"></a><a href="#__codelineno-1-8"><span class="linenos" data-linenos=" 8 "></span></a><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">current</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pending</span><span class="p">.</span><span class="n">front</span><span class="p">();</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9"></a><a href="#__codelineno-1-9"><span class="linenos" data-linenos=" 9 "></span></a><span class="w">        </span><span class="n">pending</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10"></a><a href="#__codelineno-1-10"><span class="linenos" data-linenos="10 "></span></a><span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">next</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">graph</span><span class="p">[</span><span class="n">current</span><span class="p">])</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11"></a><a href="#__codelineno-1-11"><span class="linenos" data-linenos="11 "></span></a><span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">visited</span><span class="p">[</span><span class="n">next</span><span class="p">])</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12"></a><a href="#__codelineno-1-12"><span class="linenos" data-linenos="12 "></span></a><span class="w">                </span><span class="n">visited</span><span class="p">[</span><span class="n">next</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13"></a><a href="#__codelineno-1-13"><span class="linenos" data-linenos="13 "></span></a><span class="w">                </span><span class="n">pending</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">next</span><span class="p">);</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14"></a><a href="#__codelineno-1-14"><span class="linenos" data-linenos="14 "></span></a><span class="w">            </span><span class="p">}</span>
+<a id="__codelineno-1-15" name="__codelineno-1-15"></a><a href="#__codelineno-1-15"><span class="linenos" data-linenos="15 "></span></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-1-16" name="__codelineno-1-16"></a><a href="#__codelineno-1-16"><span class="linenos" data-linenos="16 "></span></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-1-17" name="__codelineno-1-17"></a><a href="#__codelineno-1-17"><span class="linenos" data-linenos="17 "></span></a><span class="p">}</span>
+</code></pre></div>
+<p>邻接表上的 DFS 和 BFS 时间复杂度都是 <span class="arithmatex">\(O(V+E)\)</span>。BFS 在无权图中可以求起点到其他顶点的最短边数。</p>
+<h2 id="_7">拓扑排序<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<p>拓扑排序只适用于有向无环图。结果序列满足每条有向边 <code>u -&gt; v</code> 中 <code>u</code> 出现在 <code>v</code> 之前。</p>
+<p>常用方法是统计入度：把入度为 0 的顶点加入队列，删除它发出的边并更新相邻顶点入度。如果最终处理的顶点数少于顶点总数，说明图中存在环。</p>
+<h2 id="_8">最短路径<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>算法</th>
+<th>适用范围</th>
+<th>主要限制</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>BFS</td>
+<td>无权图</td>
+<td>边权必须相同</td>
+</tr>
+<tr>
+<td>Dijkstra</td>
+<td>非负权图</td>
+<td>不能处理负权边</td>
+</tr>
+<tr>
+<td>Bellman-Ford</td>
+<td>可含负权边</td>
+<td>复杂度较高，可检测负环</td>
+</tr>
+<tr>
+<td>Floyd</td>
+<td>多源最短路</td>
+<td>适合顶点较少的图</td>
+</tr>
+</tbody>
+</table>
+<p>Dijkstra 每次确定当前距离最小且未处理的顶点，再用它松弛相邻边。若使用优先队列和邻接表，常见复杂度为 <span class="arithmatex">\(O((V+E)\log V)\)</span>。</p>
+<h2 id="_9">最小生成树<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<p>最小生成树针对连通无向带权图，包含全部顶点且没有回路，并使边权总和最小。</p>
+<ul>
+<li><strong>Prim</strong>：从一个顶点出发，每次选择连接已选集合和未选集合的最小边。</li>
+<li><strong>Kruskal</strong>：按边权从小到大枚举，只有连接两个不同连通分量时才加入；通常配合并查集。</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">算法选择</p>
+<p>看到“无权最短路”优先想到 BFS；看到“非负权最短路”想到 Dijkstra；看到“所有点对最短路”想到 Floyd；看到“连通且总权值最小”想到最小生成树。</p>
+</div>
 
 
 
@@ -3269,7 +3553,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2026年8月5日 15:13:53 CST"><span class="timeago" datetime="2026-08-05T15:13:53+08:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2026年8月5日 15:13:53 CST">2026-08-05</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2026年8月5日 15:21:02 CST"><span class="timeago" datetime="2026-08-05T15:21:02+08:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2026年8月5日 15:21:02 CST">2026-08-05</span>
   </span>
 
     

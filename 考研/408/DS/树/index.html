@@ -87,6 +87,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#_2" class="md-skip">
+          跳转至
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -2294,6 +2299,17 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    树
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -2303,6 +2319,83 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      基本概念
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      二叉树
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="二叉树">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      常见类型
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      遍历
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      二叉搜索树
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      堆
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -3230,6 +3323,74 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      基本概念
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      二叉树
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="二叉树">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      常见类型
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      遍历
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      二叉搜索树
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      堆
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -3246,9 +3407,87 @@
   
 
 
-  <h1>树</h1>
-
-
+<h1 id="_1">树<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<p>树是一种非线性数据结构。除根结点外，每个结点有且只有一个直接前驱，所有结点可以沿着父子关系组织成层次结构。</p>
+<h2 id="_2">基本概念<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>结点的度</strong>：结点拥有的孩子数。</li>
+<li><strong>树的度</strong>：树中所有结点度的最大值。</li>
+<li><strong>叶结点</strong>：度为 0 的结点。</li>
+<li><strong>结点的深度</strong>：从根结点到该结点经过的边数。</li>
+<li><strong>树的高度</strong>：树中结点的最大深度。</li>
+<li><strong>森林</strong>：若干棵互不相交的树组成的集合。</li>
+</ul>
+<h2 id="_3">二叉树<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>二叉树中的每个结点最多有两个孩子，分别称为左孩子和右孩子。左右次序不能互换，因此二叉树和普通的二叉树形树不同。</p>
+<h3 id="_4">常见类型<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>满二叉树</strong>：每一层都达到最大结点数。</li>
+<li><strong>完全二叉树</strong>：除最后一层外都满，最后一层结点从左到右连续排列。</li>
+<li><strong>二叉搜索树</strong>：左子树所有关键字小于根，右子树所有关键字大于根。</li>
+<li><strong>平衡二叉树</strong>：左右子树高度差受到限制，避免退化成链表。</li>
+</ul>
+<p>二叉树的链式结点定义如下：</p>
+<div class="language-cpp highlight"><span class="filename">C++</span><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><a href="#__codelineno-0-1"><span class="linenos" data-linenos="1 "></span></a><span class="k">struct</span><span class="w"> </span><span class="nc">Node</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a><a href="#__codelineno-0-2"><span class="linenos" data-linenos="2 "></span></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">key</span><span class="p">;</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a><a href="#__codelineno-0-3"><span class="linenos" data-linenos="3 "></span></a><span class="w">    </span><span class="n">Node</span><span class="o">*</span><span class="w"> </span><span class="n">left</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">nullptr</span><span class="p">;</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a><a href="#__codelineno-0-4"><span class="linenos" data-linenos="4 "></span></a><span class="w">    </span><span class="n">Node</span><span class="o">*</span><span class="w"> </span><span class="n">right</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">nullptr</span><span class="p">;</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a><a href="#__codelineno-0-5"><span class="linenos" data-linenos="5 "></span></a><span class="p">};</span>
+</code></pre></div>
+<h2 id="_5">遍历<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<p>前序、中序和后序遍历的区别在于根结点访问时机：</p>
+<table>
+<thead>
+<tr>
+<th>遍历</th>
+<th>顺序</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>前序</td>
+<td>根、左、右</td>
+</tr>
+<tr>
+<td>中序</td>
+<td>左、根、右</td>
+</tr>
+<tr>
+<td>后序</td>
+<td>左、右、根</td>
+</tr>
+<tr>
+<td>层序</td>
+<td>从上到下、从左到右</td>
+</tr>
+</tbody>
+</table>
+<div class="language-cpp highlight"><span class="filename">C++</span><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><a href="#__codelineno-1-1"><span class="linenos" data-linenos="1 "></span></a><span class="kt">void</span><span class="w"> </span><span class="nf">inorder</span><span class="p">(</span><span class="n">Node</span><span class="o">*</span><span class="w"> </span><span class="n">root</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a><a href="#__codelineno-1-2"><span class="linenos" data-linenos="2 "></span></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">root</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">nullptr</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a><a href="#__codelineno-1-3"><span class="linenos" data-linenos="3 "></span></a><span class="w">        </span><span class="k">return</span><span class="p">;</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4"></a><a href="#__codelineno-1-4"><span class="linenos" data-linenos="4 "></span></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5"></a><a href="#__codelineno-1-5"><span class="linenos" data-linenos="5 "></span></a><span class="w">    </span><span class="n">inorder</span><span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">left</span><span class="p">);</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6"></a><a href="#__codelineno-1-6"><span class="linenos" data-linenos="6 "></span></a><span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">root</span><span class="o">-&gt;</span><span class="n">key</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="sc">&#39; &#39;</span><span class="p">;</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7"></a><a href="#__codelineno-1-7"><span class="linenos" data-linenos="7 "></span></a><span class="w">    </span><span class="n">inorder</span><span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">);</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8"></a><a href="#__codelineno-1-8"><span class="linenos" data-linenos="8 "></span></a><span class="p">}</span>
+</code></pre></div>
+<p>二叉树的前、中、后序遍历都能在线性时间内完成；递归调用栈空间与树高有关。</p>
+<h2 id="_6">二叉搜索树<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<p>在二叉搜索树中查找、插入和删除都沿着比较结果向左或向右移动。若树较平衡，平均复杂度为 <span class="arithmatex">\(O(\log n)\)</span>；若每次都向同一侧增长，树会退化，复杂度变为 <span class="arithmatex">\(O(n)\)</span>。</p>
+<p>删除结点时分三种情况：</p>
+<ol>
+<li>叶结点，直接删除。</li>
+<li>只有一个孩子，用孩子替代当前结点。</li>
+<li>有两个孩子，用中序后继或中序前驱替换，再删除被替换的结点。</li>
+</ol>
+<h2 id="_7">堆<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<p>堆是一种完全二叉树，常用数组保存。大根堆的每个父结点不小于孩子，小根堆的每个父结点不大于孩子。</p>
+<p>若数组下标从 0 开始，结点 <code>i</code> 的孩子下标为 <code>2*i+1</code> 和 <code>2*i+2</code>，父结点下标为 <code>(i-1)/2</code>。</p>
+<p>堆可以支持优先队列：插入和删除堆顶的复杂度为 <span class="arithmatex">\(O(\log n)\)</span>，查看堆顶为 <span class="arithmatex">\(O(1)\)</span>，建堆可以在线性时间内完成。</p>
+<div class="admonition note">
+<p class="admonition-title">考试判断</p>
+<p>二叉搜索树的中序遍历结果一定是递增序列；完全二叉树适合顺序存储；普通二叉树不能直接使用堆的下标关系。</p>
+</div>
 
 
 
@@ -3269,7 +3508,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2026年8月5日 15:13:53 CST"><span class="timeago" datetime="2026-08-05T15:13:53+08:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2026年8月5日 15:13:53 CST">2026-08-05</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2026年8月5日 15:21:02 CST"><span class="timeago" datetime="2026-08-05T15:21:02+08:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2026年8月5日 15:21:02 CST">2026-08-05</span>
   </span>
 
     
