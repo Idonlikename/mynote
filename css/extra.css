@@ -60,10 +60,11 @@
 .md-top {
   border-radius: 50%;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  transition: transform 0.2s ease;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
 }
 .md-top:hover {
-  transform: scale(1.08);
+  transform: none;
+  box-shadow: 0 6px 16px rgba(15, 118, 110, 0.24);
 }
 
 /* ============ 代码块 ============ */
